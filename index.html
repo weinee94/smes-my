@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SMEs.my is an independent Malaysia SME services directory and lead platform for local businesses."
+    />
+    <title>SMEs.my | Malaysia SME Services Directory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="SMEs.my home">
+        <span class="brand-mark">SM</span>
+        <span>
+          <strong>SMEs.my</strong>
+          <small>Malaysia business network</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#directory">Directory</a>
+        <a href="#join">Join</a>
+        <a href="#pricing">Pricing</a>
+        <a href="mailto:hello@smes.com.my" class="nav-cta">Contact</a>
+      </nav>
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Built for Malaysian SMEs</p>
+          <h1>Malaysia SME services, easier to find and easier to trust.</h1>
+          <p class="hero-text">
+            SMEs.my connects local businesses with customers who are ready to compare, enquire,
+            and choose reliable service providers across Malaysia.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#join">List your business</a>
+            <a class="button secondary" href="#directory">Explore categories</a>
+          </div>
+          <dl class="hero-stats" aria-label="Platform focus">
+            <div>
+              <dt>100%</dt>
+              <dd>SME focused</dd>
+            </div>
+            <div>
+              <dt>MY</dt>
+              <dd>Malaysia market</dd>
+            </div>
+            <div>
+              <dt>B2B</dt>
+              <dd>Lead ready</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="market-visual" aria-label="SME service network visual">
+          <div class="visual-topbar">
+            <span></span><span></span><span></span>
+            <strong>Live categories</strong>
+          </div>
+          <div class="visual-grid">
+            <article class="service-tile active">
+              <span class="tile-icon">01</span>
+              <strong>Renovation</strong>
+              <small>Homes, shops, offices</small>
+            </article>
+            <article class="service-tile">
+              <span class="tile-icon">02</span>
+              <strong>Accounting</strong>
+              <small>Tax, payroll, audit</small>
+            </article>
+            <article class="service-tile">
+              <span class="tile-icon">03</span>
+              <strong>IT Services</strong>
+              <small>Web, POS, support</small>
+            </article>
+            <article class="service-tile">
+              <span class="tile-icon">04</span>
+              <strong>Logistics</strong>
+              <small>Delivery, warehousing</small>
+            </article>
+          </div>
+          <div class="lead-panel">
+            <div>
+              <span class="pulse"></span>
+              <strong>New enquiry</strong>
+            </div>
+            <p>Business owner needs 3 quotations in Selangor.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="directory">
+        <div class="section-heading">
+          <p class="eyebrow">Directory categories</p>
+          <h2>Start with practical local services.</h2>
+        </div>
+        <div class="category-grid">
+          <article>
+            <strong>Home & Property</strong>
+            <p>Renovation, inspection, cleaning, aircond, electrical, plumbing.</p>
+          </article>
+          <article>
+            <strong>Business Operations</strong>
+            <p>Accounting, company secretary, insurance, HR, payroll, legal.</p>
+          </article>
+          <article>
+            <strong>Digital & IT</strong>
+            <p>Websites, ecommerce, POS, cybersecurity, automation, support.</p>
+          </article>
+          <article>
+            <strong>Commercial Services</strong>
+            <p>Signage, printing, logistics, event vendors, office suppliers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="join">
+        <div>
+          <p class="eyebrow">For SME owners</p>
+          <h2>Use smes.com.my for corporate identity. Use smes.my for discovery.</h2>
+          <p>
+            Keep the corporate email on the more formal <strong>smes.com.my</strong> domain, while
+            <strong>smes.my</strong> becomes the shorter public marketplace and directory brand.
+          </p>
+        </div>
+        <form class="join-form" action="mailto:hello@smes.com.my" method="post" enctype="text/plain">
+          <label>
+            Business name
+            <input name="business_name" type="text" placeholder="ABC Services Sdn Bhd" required />
+          </label>
+          <label>
+            Service category
+            <select name="category" required>
+              <option value="">Choose a category</option>
+              <option>Home & Property</option>
+              <option>Business Operations</option>
+              <option>Digital & IT</option>
+              <option>Commercial Services</option>
+            </select>
+          </label>
+          <label>
+            WhatsApp or email
+            <input name="contact" type="text" placeholder="+60..." required />
+          </label>
+          <button class="button primary" type="submit">Request listing</button>
+        </form>
+      </section>
+
+      <section class="section band" id="pricing">
+        <div class="section-heading">
+          <p class="eyebrow">Simple launch packages</p>
+          <h2>Start lean, then charge for leads.</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="price">
+            <span>Starter</span>
+            <strong>Free</strong>
+            <p>Basic profile for early directory supply.</p>
+          </article>
+          <article class="price featured">
+            <span>Growth</span>
+            <strong>RM99/mo</strong>
+            <p>Featured listing, enquiry routing, and profile updates.</p>
+          </article>
+          <article class="price">
+            <span>Lead Partner</span>
+            <strong>Custom</strong>
+            <p>Pay-per-lead or category exclusivity for serious providers.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p><strong>SMEs.my</strong> is independently operated. Corporate email: hello@smes.com.my</p>
+      <a href="mailto:hello@smes.com.my">hello@smes.com.my</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
