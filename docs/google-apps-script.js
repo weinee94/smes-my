@@ -1,4 +1,5 @@
 const NOTIFY_EMAIL = "hello@smes.com.my";
+const SCRIPT_VERSION = "2026-05-27 split-sheets-v2";
 
 const FORM_CONFIG = {
   quote_request: {
@@ -31,7 +32,7 @@ function doPost(e) {
     sheet.appendRow(row);
     notify_(data);
 
-    return json_({ ok: true });
+    return json_({ ok: true, version: SCRIPT_VERSION, sheet: config.sheet });
   } catch (error) {
     return json_({ ok: false, error: error.message });
   } finally {
@@ -72,5 +73,5 @@ function json_(value) {
 }
 
 function doGet() {
-  return ContentService.createTextOutput("smes.my lead endpoint is running.");
+  return ContentService.createTextOutput(`smes.my lead endpoint is running: ${SCRIPT_VERSION}`);
 }
