@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>smes.my | Malaysia SME Services Directory</title>
+    <meta
+      name="description"
+      content="Find trusted business service providers for Malaysian SMEs. Compare accounting, company secretary, tax, payroll, digital marketing, IT, legal, financing, and logistics services."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="smes.my | Malaysia SME Services Directory" />
+    <meta
+      property="og:description"
+      content="A focused Malaysia SME services directory and lead platform for finding verified B2B service providers."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smes.my/" />
+    <meta name="theme-color" content="#14312b" />
+    <link rel="canonical" href="https://smes.my/" />
+    <link rel="icon" href="/assets/smes-site-icon.png" type="image/png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "smes.my",
+        "url": "https://smes.my/",
+        "description": "Malaysia SME services directory and lead platform.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://smes.my/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="smes.my home">
+        <img src="assets/smes-site-icon.png" alt="" />
+        <span>
+          <strong>smes.my</strong>
+          <small>商記 SME directory</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#categories">Services</a>
+        <a href="#providers">Providers</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#provider-plans">For providers</a>
+      </nav>
+      <a class="header-action" href="#quote">Request quotes</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="hero-brand">
+            <img src="assets/smes-main-logo.png" alt="商記 SMEs.MY" />
+            <span>Malaysia SME services directory</span>
+          </div>
+          <h1>Choose the right business service provider with less guesswork.</h1>
+          <p class="hero-text">
+            Compare Malaysia-focused providers for accounting, company secretary, payroll, websites,
+            marketing, IT, legal, financing, and operations support.
+          </p>
+          <div class="language-note">
+            <span>English-first directory</span>
+            <span>中文辅助: 商記 for Chinese-speaking SME owners</span>
+          </div>
+          <div class="search-box" role="search" aria-label="Search SME services">
+            <input type="search" placeholder="Search accounting, company secretary, payroll, website design..." />
+            <a class="button primary" href="#categories">Browse services</a>
+          </div>
+          <div class="popular-searches" aria-label="Popular searches">
+            <a href="#categories">Accounting</a>
+            <a href="#categories">Company Secretary</a>
+            <a href="#categories">Payroll</a>
+            <a href="#categories">Website Design</a>
+            <a href="#categories">Digital Marketing</a>
+          </div>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#quote">Request quotes</a>
+            <a class="button secondary" href="#list-business">List your business</a>
+          </div>
+          <dl class="hero-stats" aria-label="Platform focus">
+            <div>
+              <dt>10+</dt>
+              <dd>Service categories</dd>
+            </div>
+            <div>
+              <dt>MY</dt>
+              <dd>Malaysia-focused</dd>
+            </div>
+            <div>
+              <dt>Lead</dt>
+              <dd>Quote-ready briefs</dd>
+            </div>
+          </dl>
+        </div>
+        <aside class="quote-panel" id="quote" aria-labelledby="quote-title">
+          <div class="panel-header">
+            <span class="match-badge">Free request</span>
+            <span>Matched to relevant providers</span>
+          </div>
+          <h2 id="quote-title">Tell us what you need.</h2>
+          <p>Send one clear brief. We will help route it to relevant SME service providers.</p>
+          <form
+            class="lead-form js-lead-form"
+            action="https://script.google.com/macros/s/AKfycbyhmVYdJH6wudAYJ42yHcgLG21yODRuXqWFOVzaApE27z_XVpu2lB-OVYfm-To46cFDyg/exec"
+            method="post"
+            data-success="Thanks. Your quote request has been received."
+          >
+            <input type="hidden" name="_subject" value="New quote request from smes.my" />
+            <input type="hidden" name="form_type" value="quote_request" />
+            <label>
+              Service needed
+              <select name="service" required>
+                <option value="">Choose a service</option>
+                <option>Accounting services</option>
+                <option>Company secretary</option>
+                <option>Tax agent</option>
+                <option>Payroll services</option>
+                <option>Digital marketing</option>
+                <option>Website design</option>
+                <option>SME financing</option>
+                <option>HR / recruitment</option>
+                <option>Legal services</option>
+                <option>IT / POS / CRM</option>
+              </select>
+            </label>
+            <label>
+              Location
+              <input name="location" placeholder="Kuala Lumpur, Selangor, Penang..." required />
+            </label>
+            <label>
+              Contact
+              <input name="contact" placeholder="Email or WhatsApp number" required />
+            </label>
+            <label>
+              Budget / urgency
+              <input name="budget" placeholder="Optional: RM budget or when you need it" />
+            </label>
+            <button class="button primary full" type="submit">Send request</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+          <ul class="request-steps" aria-label="What happens after submitting">
+            <li>
+              <strong>1</strong>
+              <span>We review the service category and location.</span>
+            </li>
+            <li>
+              <strong>2</strong>
+              <span>Relevant providers receive a structured brief.</span>
+            </li>
+            <li>
+              <strong>3</strong>
+              <span>You compare replies and choose who to contact.</span>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="trust-strip" aria-label="Directory promises">
+        <div>
+          <strong>Service-first directory</strong>
+          <span>No consumer lifestyle listings.</span>
+        </div>
+        <div>
+          <strong>Malaysia SME focus</strong>
+          <span>Built for B2B services and local discovery.</span>
+        </div>
+        <div>
+          <strong>Quote-ready briefs</strong>
+          <span>Structured requests help providers reply faster.</span>
+        </div>
+      </section>
+
+      <section class="section directory-snapshot" aria-label="Directory snapshot">
+        <div class="snapshot-panel">
+          <div>
+            <p class="eyebrow">How smes.my works</p>
+            <h2>A practical directory for business decisions, not browsing.</h2>
+          </div>
+          <div class="snapshot-grid">
+            <article>
+              <strong>Browse</strong>
+              <span>Compare providers by category, location, fit, response speed, and verification.</span>
+            </article>
+            <article>
+              <strong>Shortlist</strong>
+              <span>Use profile pages, reviews, pricing notes, FAQs, and guide content to reduce uncertainty.</span>
+            </article>
+            <article>
+              <strong>Request</strong>
+              <span>Send one structured brief and route it to relevant providers instead of cold-contacting ten firms.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="categories">
+        <div class="section-heading">
+          <p class="eyebrow">Popular services</p>
+          <h2>Find providers for the work SMEs buy often.</h2>
+          <p>
+            Start from common operating needs, then compare providers by fit, location, language,
+            response time, and verification signals.
+          </p>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
+      <section class="band" id="how-it-works">
+        <div class="section-heading">
+          <p class="eyebrow">Buyer journey</p>
+          <h2>A simpler way for SMEs to choose providers.</h2>
+          <p>
+            The best directories do not only list companies. They help buyers compare, brief, and contact
+            providers with enough structure to create useful leads.
+          </p>
+        </div>
+        <div class="journey-grid">
+          <article>
+            <span class="step-number">1</span>
+            <h3>Find the right category</h3>
+            <p>Start with high-intent services such as accounting, company secretary, payroll, websites, IT, and financing.</p>
+          </article>
+          <article>
+            <span class="step-number">2</span>
+            <h3>Compare provider signals</h3>
+            <p>Show location, industries served, response time, verification, languages, and review snippets.</p>
+          </article>
+          <article>
+            <span class="step-number">3</span>
+            <h3>Send one clean brief</h3>
+            <p>Collect service, location, contact, urgency, and budget, then route the lead to relevant providers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section-heading">
+          <p class="eyebrow">Directory focus</p>
+          <h2>Purpose-built for SME business services.</h2>
+          <p>
+            smes.my focuses on business services for SME owners, managers, and operators. It stays
+            separate from PlanurHome, while smes.com.my remains reserved for corporate email and identity.
+          </p>
+        </div>
+        <div class="positioning-grid">
+          <article>
+            <span class="card-index">01</span>
+            <h3>For SME buyers</h3>
+            <p>Guided category pages, provider comparison, price context, and one simple quote request.</p>
+          </article>
+          <article>
+            <span class="card-index">02</span>
+            <h3>For providers</h3>
+            <p>SEO visibility, complete profiles, qualified enquiries, and optional featured placement.</p>
+          </article>
+          <article>
+            <span class="card-index">03</span>
+            <h3>For search</h3>
+            <p>Service pages, city pages, buying guides, provider profiles, FAQ schema, and clear internal links.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section comparison-section">
+        <div class="section-heading">
+          <p class="eyebrow">Comparison signals</p>
+          <h2>Make provider choices easier to scan.</h2>
+          <p>Each listing should help an SME owner quickly understand fit before sending an enquiry.</p>
+        </div>
+        <div class="comparison-table" role="table" aria-label="Provider comparison signals">
+          <div role="row">
+            <span role="columnheader">Signal</span>
+            <span role="columnheader">Why it matters</span>
+            <span role="columnheader">Shown on profile</span>
+          </div>
+          <div role="row">
+            <span>Verification</span>
+            <span>Reduces risk before first contact.</span>
+            <span>SSM, website, contact, service category</span>
+          </div>
+          <div role="row">
+            <span>Response time</span>
+            <span>Helps urgent buyers pick responsive providers.</span>
+            <span>Same day, under 1 day, 2 days</span>
+          </div>
+          <div role="row">
+            <span>Languages</span>
+            <span>Important for Malaysia SME communication.</span>
+            <span>English, BM, Mandarin, Chinese dialect support</span>
+          </div>
+          <div role="row">
+            <span>Service fit</span>
+            <span>Prevents generic leads going to the wrong vendor.</span>
+            <span>Industry, budget range, location, company size</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="providers">
+        <div class="section-heading">
+          <p class="eyebrow">Featured providers</p>
+          <h2>Compare practical signals before contacting a firm.</h2>
+          <p>Provider profiles highlight category fit, location, languages, response time, verification, and lead readiness.</p>
+        </div>
+        <div class="provider-toolbar" role="search">
+          <input id="providerSearch" type="search" placeholder="Search providers, categories, or locations" />
+          <select id="providerFilter" aria-label="Filter by category">
+            <option value="All">All categories</option>
+          </select>
+        </div>
+        <div class="provider-grid" id="providerGrid"></div>
+      </section>
+
+      <section class="section city-section">
+        <div class="section-heading">
+          <p class="eyebrow">Malaysia coverage</p>
+          <h2>Launch city pages after supply exists.</h2>
+          <p>City pages should be useful comparison pages, not thin SEO pages.</p>
+        </div>
+        <div class="city-grid">
+          <a href="#quote">Kuala Lumpur</a>
+          <a href="#quote">Selangor</a>
+          <a href="#quote">Penang</a>
+          <a href="#quote">Johor Bahru</a>
+          <a href="#quote">Melaka</a>
+          <a href="#quote">Malaysia-wide</a>
+        </div>
+      </section>
+
+      <section class="section seo-section">
+        <div class="section-heading">
+          <p class="eyebrow">SEO engine</p>
+          <h2>Build pages around how SMEs actually search.</h2>
+        </div>
+        <div class="seo-layout">
+          <div>
+            <h3>Priority pages</h3>
+            <ul class="check-list">
+              <li>Accounting services Malaysia</li>
+              <li>Company secretary services Malaysia</li>
+              <li>Payroll services Malaysia</li>
+              <li>Digital marketing agency Malaysia</li>
+              <li>Website design for SME Malaysia</li>
+              <li>SME business loan Malaysia</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Page format</h3>
+            <ul class="check-list">
+              <li>What the service includes</li>
+              <li>Typical price range and buying criteria</li>
+              <li>Provider list and request quote CTA</li>
+              <li>FAQs, breadcrumbs, and LocalBusiness schema</li>
+              <li>Internal links to city and provider pages</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="provider-plans">
+        <div class="section-heading">
+          <p class="eyebrow">For service providers</p>
+          <h2>Get discovered by SMEs looking for business services.</h2>
+        </div>
+        <div class="pricing-grid">
+          <article>
+            <h3>Basic listing</h3>
+            <p class="price">RM0</p>
+            <p>Basic profile to grow supply and create useful category pages.</p>
+          </article>
+          <article class="featured">
+            <h3>Founding Provider</h3>
+            <p class="price">RM99/mo</p>
+            <p>Verified profile, richer content, category visibility, and priority enquiry routing.</p>
+          </article>
+          <article>
+            <h3>Matched enquiries</h3>
+            <p class="price">By category</p>
+            <p>Receive structured requests with service type, location, contact, budget, and urgency.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-cta" id="list-business">
+        <div>
+          <p class="eyebrow">Provider onboarding</p>
+          <h2>List your SME service business.</h2>
+          <p>
+            Early providers can join the founding directory while smes.my validates demand across Malaysia.
+          </p>
+        </div>
+        <form
+          class="lead-form js-lead-form"
+          action="https://script.google.com/macros/s/AKfycbyhmVYdJH6wudAYJ42yHcgLG21yODRuXqWFOVzaApE27z_XVpu2lB-OVYfm-To46cFDyg/exec"
+          method="post"
+          data-success="Thanks. Your listing request has been received."
+        >
+          <input type="hidden" name="_subject" value="New provider listing request from smes.my" />
+          <input type="hidden" name="form_type" value="provider_listing" />
+          <label>
+            Company name
+            <input name="company" required />
+          </label>
+          <label>
+            Main service
+            <input name="main_service" placeholder="Accounting, payroll, website design..." required />
+          </label>
+          <label>
+            Contact
+            <input name="contact" placeholder="Email or WhatsApp number" required />
+          </label>
+          <button class="button primary full" type="submit">Apply for listing</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="assets/smes-secondary-logo.png" alt="商記 SMEs.MY" />
+      <div>
+        <p><strong>smes.my</strong> is an independent Malaysia SME services directory and lead platform.</p>
+        <p>smes.com.my is reserved for corporate email and official company identity.</p>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
