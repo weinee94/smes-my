@@ -37,4 +37,6 @@ Setup:
 9. Deploy, authorize, then copy the Web App URL ending in `/exec`.
 10. If you redeploy Apps Script and receive a new Web App URL, replace both form actions in `index.html` with the new URL.
 
-The script writes submissions into a `Leads` sheet and sends an email notification.
+The script writes quote requests into `Quote Requests`, provider onboarding requests into
+`Provider Listings`, and any unknown form type into `Other Submissions`. It also sends an
+email notification for each submission.
