@@ -1,6 +1,6 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-05-27 18:30 Asia/Singapore
+Last updated: 2026-05-27 18:48 Asia/Singapore
 
 ## Current Objective
 
@@ -65,16 +65,20 @@ Build `SMEs.MY` as an independent Malaysia SME services directory and lead platf
 
 - Site still needs real provider data; current providers are placeholder examples.
 - Service detail pages are English-only for now; homepage supports EN / 中文.
+- Need to prepare Chinese versions for the 5 SEO service pages.
+- Need to create legal/support pages: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`.
 - Needs Vercel deployment verification.
 - Visual polish can continue, but content depth and real listings are the main path out of “half-finished” feel.
 
 ## Next Steps
 
 1. Review the local homepage at `http://127.0.0.1:4173` if the preview server is still running.
-2. Commit and push the current website changes.
-3. Verify Vercel deploys the latest `main` branch.
-4. Confirm `SMEs.MY` branding, EN / 中文 switch, forms, and 5 service pages on the deployed site.
-5. Add first 20-50 real provider profiles.
+2. Add Chinese content/version support for the 5 SEO service pages.
+3. Create `privacy-notice/`, `terms-of-use/`, and `disclaimer/` pages, including Wynne Consultancy Group PLT as administrator where appropriate.
+4. Commit and push the current website changes.
+5. Verify Vercel deploys the latest `main` branch.
+6. Confirm `SMEs.MY` branding, EN / 中文 switch, forms, service pages, and legal pages on the deployed site.
+7. Add first 20-50 real provider profiles.
 
 ## Useful Commands
 

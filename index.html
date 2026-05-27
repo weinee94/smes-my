@@ -77,9 +77,10 @@
             <span data-i18n="heroPillTwo">English, BM, and Chinese-friendly support</span>
           </div>
           <div class="search-box" role="search" aria-label="Search SME services">
-            <input type="search" placeholder="Search accounting, payroll, website design..." data-i18n-placeholder="searchPlaceholder" />
-            <a class="button primary" href="#categories" data-i18n="browseServices">Browse services</a>
+            <input id="siteSearch" type="search" placeholder="Search accounting, payroll, website design..." data-i18n-placeholder="searchPlaceholder" />
+            <button class="button primary" type="button" id="siteSearchButton" data-i18n="searchServices">Search services</button>
           </div>
+          <p class="search-status" id="searchStatus" aria-live="polite"></p>
           <div class="popular-searches" aria-label="Popular searches">
             <a href="/accounting-services-malaysia" data-i18n="serviceAccountingShort">Accounting</a>
             <a href="/company-secretary-services-malaysia" data-i18n="serviceCompanySecShort">Company Secretary</a>
@@ -125,23 +126,23 @@
             <input type="hidden" name="form_type" value="quote_request" />
             <label>
               <span data-i18n="formService">Service needed</span>
-              <select name="service" required>
+              <select name="service" id="quoteService" required>
                 <option value="" data-i18n="chooseService">Choose a service</option>
-                <option data-i18n="serviceAccounting">Accounting services</option>
-                <option data-i18n="serviceCompanySec">Company secretary</option>
-                <option data-i18n="serviceTax">Tax agent</option>
-                <option data-i18n="servicePayroll">Payroll services</option>
-                <option data-i18n="serviceMarketing">Digital marketing</option>
-                <option data-i18n="serviceWebsite">Website design</option>
-                <option data-i18n="serviceFinancing">SME financing</option>
-                <option data-i18n="serviceHr">HR / recruitment</option>
-                <option data-i18n="serviceLegal">Legal services</option>
-                <option data-i18n="serviceIt">IT / POS / CRM</option>
+                <option value="Accounting services" data-i18n="serviceAccounting">Accounting services</option>
+                <option value="Company secretary" data-i18n="serviceCompanySec">Company secretary</option>
+                <option value="Tax agent" data-i18n="serviceTax">Tax agent</option>
+                <option value="Payroll services" data-i18n="servicePayroll">Payroll services</option>
+                <option value="Digital marketing" data-i18n="serviceMarketing">Digital marketing</option>
+                <option value="Website design" data-i18n="serviceWebsite">Website design</option>
+                <option value="SME financing" data-i18n="serviceFinancing">SME financing</option>
+                <option value="HR / recruitment" data-i18n="serviceHr">HR / recruitment</option>
+                <option value="Legal services" data-i18n="serviceLegal">Legal services</option>
+                <option value="IT / POS / CRM" data-i18n="serviceIt">IT / POS / CRM</option>
               </select>
             </label>
             <label>
               <span data-i18n="formLocation">Location</span>
-              <input name="location" placeholder="Kuala Lumpur, Selangor, Penang..." data-i18n-placeholder="locationPlaceholder" required />
+              <input name="location" id="quoteLocation" placeholder="Kuala Lumpur, Selangor, Penang..." data-i18n-placeholder="locationPlaceholder" required />
             </label>
             <label>
               <span data-i18n="formContact">Contact</span>
@@ -333,12 +334,12 @@
           <p data-i18n="coverageText">Start with your location so providers understand where you operate and whether remote support is suitable.</p>
         </div>
         <div class="city-grid">
-          <a href="#quote">Kuala Lumpur</a>
-          <a href="#quote">Selangor</a>
-          <a href="#quote">Penang</a>
-          <a href="#quote">Johor Bahru</a>
-          <a href="#quote">Melaka</a>
-          <a href="#quote">Malaysia-wide</a>
+          <a href="#quote" data-location="Kuala Lumpur">Kuala Lumpur</a>
+          <a href="#quote" data-location="Selangor">Selangor</a>
+          <a href="#quote" data-location="Penang">Penang</a>
+          <a href="#quote" data-location="Johor Bahru">Johor Bahru</a>
+          <a href="#quote" data-location="Melaka">Melaka</a>
+          <a href="#quote" data-location="Malaysia-wide">Malaysia-wide</a>
         </div>
       </section>
 

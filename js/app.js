@@ -14,6 +14,7 @@ const translations = {
     heroPillTwo: "English, BM, and Chinese-friendly support",
     searchPlaceholder: "Search accounting, payroll, website design...",
     browseServices: "Browse services",
+    searchServices: "Search services",
     serviceAccountingShort: "Accounting",
     serviceCompanySecShort: "Company Secretary",
     servicePayrollShort: "Payroll",
@@ -151,6 +152,14 @@ const translations = {
     requiredFields: "Please fill in the required fields, then submit again.",
     endpointMissing: "Google Sheets endpoint is not configured yet.",
     submitFailed: "Submission failed. Please try again later.",
+    searchPrompt: "Type a service, provider, or location to search.",
+    searchSummary: "Showing matches for",
+    searchNoMatch: "No exact match yet. You can still send a quote request and we will route it manually.",
+    viewGuide: "View guide",
+    requestThisService: "Request this service",
+    contactProvider: "Request quote",
+    selectedService: "Selected service",
+    selectedLocation: "Selected location",
   },
   zh: {
     navServices: "服务",
@@ -167,6 +176,7 @@ const translations = {
     heroPillTwo: "支持 English、BM 和中文沟通",
     searchPlaceholder: "搜索会计、Payroll、网站设计...",
     browseServices: "浏览服务",
+    searchServices: "搜索服务",
     serviceAccountingShort: "会计",
     serviceCompanySecShort: "公司秘书",
     servicePayrollShort: "Payroll",
@@ -301,6 +311,14 @@ const translations = {
     requiredFields: "请填写必填资料后再提交。",
     endpointMissing: "Google Sheets endpoint 还没有设置。",
     submitFailed: "提交失败，请稍后再试。",
+    searchPrompt: "输入服务、服务商或地点来搜索。",
+    searchSummary: "正在显示相关结果：",
+    searchNoMatch: "暂时没有完全符合的结果。你仍然可以提交询价，我们会人工配对。",
+    viewGuide: "查看指南",
+    requestThisService: "询价这个服务",
+    contactProvider: "询价",
+    selectedService: "已选择服务",
+    selectedLocation: "已选择地点",
   },
 };
 
@@ -317,6 +335,8 @@ const categories = [
     count: "View guide",
     zhCount: "查看指南",
     url: "/accounting-services-malaysia",
+    formValue: "Accounting services",
+    keywords: ["accounts", "bookkeeping", "audit", "tax", "会计", "账目", "报税"],
   },
   {
     name: "Company Secretary Services Malaysia",
@@ -328,6 +348,8 @@ const categories = [
     count: "View guide",
     zhCount: "查看指南",
     url: "/company-secretary-services-malaysia",
+    formValue: "Company secretary",
+    keywords: ["ssm", "secretarial", "incorporation", "company setup", "公司秘书", "注册公司"],
   },
   {
     name: "Tax Agent Malaysia",
@@ -338,6 +360,8 @@ const categories = [
     zhTags: ["公司税", "SST", "报税"],
     count: "Request quotes",
     zhCount: "询价",
+    formValue: "Tax agent",
+    keywords: ["income tax", "sst", "lhdn", "cp204", "tax filing", "税务", "报税"],
   },
   {
     name: "Payroll Services Malaysia",
@@ -349,6 +373,8 @@ const categories = [
     count: "View guide",
     zhCount: "查看指南",
     url: "/payroll-services-malaysia",
+    formValue: "Payroll services",
+    keywords: ["salary", "epf", "socso", "eis", "pcb", "薪水", "工资"],
   },
   {
     name: "Digital Marketing Agency Malaysia",
@@ -360,6 +386,8 @@ const categories = [
     count: "View guide",
     zhCount: "查看指南",
     url: "/digital-marketing-agency-malaysia",
+    formValue: "Digital marketing",
+    keywords: ["marketing", "seo", "ads", "social media", "广告", "营销", "推广"],
   },
   {
     name: "Website Design Malaysia",
@@ -371,6 +399,8 @@ const categories = [
     count: "View guide",
     zhCount: "查看指南",
     url: "/website-design-services-malaysia",
+    formValue: "Website design",
+    keywords: ["web design", "landing page", "ecommerce", "hosting", "网站", "网页", "电商"],
   },
   {
     name: "SME Business Loan Malaysia",
@@ -381,6 +411,8 @@ const categories = [
     zhTags: ["周转资金", "贷款配对", "Grant"],
     count: "Request quotes",
     zhCount: "询价",
+    formValue: "SME financing",
+    keywords: ["loan", "grant", "financing", "working capital", "贷款", "融资", "资金"],
   },
   {
     name: "HR / Recruitment Services Malaysia",
@@ -391,6 +423,8 @@ const categories = [
     zhTags: ["招聘", "HR 政策", "Onboarding"],
     count: "Request quotes",
     zhCount: "询价",
+    formValue: "HR / recruitment",
+    keywords: ["recruitment", "hiring", "staff", "employment", "招聘", "人事"],
   },
   {
     name: "Legal Services for SME Malaysia",
@@ -401,6 +435,8 @@ const categories = [
     zhTags: ["合约", "雇佣", "咨询"],
     count: "Request quotes",
     zhCount: "询价",
+    formValue: "Legal services",
+    keywords: ["lawyer", "contract", "legal", "licensing", "律师", "法律", "合约"],
   },
   {
     name: "IT / POS / CRM Services Malaysia",
@@ -411,6 +447,8 @@ const categories = [
     zhTags: ["POS", "CRM", "支援"],
     count: "Request quotes",
     zhCount: "询价",
+    formValue: "IT / POS / CRM",
+    keywords: ["software", "system", "cybersecurity", "helpdesk", "电脑", "系统", "软件"],
   },
 ];
 
@@ -501,6 +539,134 @@ const categoryGrid = document.querySelector("#categoryGrid");
 const providerGrid = document.querySelector("#providerGrid");
 const providerFilter = document.querySelector("#providerFilter");
 const providerSearch = document.querySelector("#providerSearch");
+const siteSearch = document.querySelector("#siteSearch");
+const siteSearchButton = document.querySelector("#siteSearchButton");
+const searchStatus = document.querySelector("#searchStatus");
+const quoteService = document.querySelector("#quoteService");
+const quoteLocation = document.querySelector("#quoteLocation");
+
+function categoryLabel(category) {
+  return currentLang === "zh" ? category.zhName : category.name;
+}
+
+function categorySummary(category) {
+  return currentLang === "zh" ? category.zhSummary : category.summary;
+}
+
+function categoryTags(category) {
+  return currentLang === "zh" ? category.zhTags : category.tags;
+}
+
+function categorySearchText(category) {
+  return [
+    category.name,
+    category.zhName,
+    category.summary,
+    category.zhSummary,
+    category.formValue,
+    ...category.tags,
+    ...category.zhTags,
+    ...(category.keywords || []),
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
+function categoryMatchScore(category, query) {
+  if (!query) return 0;
+  const primary = [category.name, category.zhName, category.formValue].join(" ").toLowerCase();
+  const tags = [...category.tags, ...category.zhTags].join(" ").toLowerCase();
+  const summary = [category.summary, category.zhSummary].join(" ").toLowerCase();
+  const keywords = (category.keywords || []).join(" ").toLowerCase();
+
+  if (primary.includes(query)) return 100;
+  if (tags.includes(query)) return 50;
+  if (summary.includes(query)) return 20;
+  if (keywords.includes(query)) return 10;
+  return 0;
+}
+
+function providerSearchText(provider) {
+  return [
+    provider.name,
+    provider.zhName,
+    provider.category,
+    provider.zhCategory,
+    provider.location,
+    provider.zhLocation,
+    provider.summary,
+    provider.zhSummary,
+    provider.languages,
+    provider.response,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
+function scrollToElement(selector) {
+  document.querySelector(selector)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function setQuoteService(service) {
+  if (!quoteService || !service) return;
+  quoteService.value = service;
+  quoteService.dispatchEvent(new Event("change", { bubbles: true }));
+}
+
+function prefillQuote({ service, location } = {}) {
+  setQuoteService(service);
+  if (quoteLocation && location) {
+    quoteLocation.value = location;
+  }
+  const selected = [service && `${t("selectedService")}: ${service}`, location && `${t("selectedLocation")}: ${location}`]
+    .filter(Boolean)
+    .join(" · ");
+  const quoteStatus = document.querySelector("#quote .form-status");
+  if (quoteStatus && selected) {
+    quoteStatus.className = "form-status success";
+    quoteStatus.textContent = selected;
+  }
+}
+
+function quoteForCategory(category, location) {
+  prefillQuote({ service: category?.formValue, location });
+  scrollToElement("#quote");
+}
+
+function applySiteSearch() {
+  const query = siteSearch.value.trim().toLowerCase();
+  if (!query) {
+    searchStatus.textContent = t("searchPrompt");
+    scrollToElement("#categories");
+    return;
+  }
+
+  const matchedCategory = [...categories]
+    .map((category) => ({ category, score: categoryMatchScore(category, query) }))
+    .filter((match) => match.score > 0)
+    .sort((a, b) => b.score - a.score)[0]?.category;
+  if (matchedCategory) {
+    providerFilter.value = matchedCategory.name;
+    providerSearch.value = "";
+    prefillQuote({ service: matchedCategory.formValue });
+  } else {
+    providerFilter.value = "All";
+    providerSearch.value = siteSearch.value.trim();
+  }
+
+  renderCategories(query);
+  renderProviders();
+
+  const providerMatches = providers.filter((provider) => providerSearchText(provider).includes(query)).length;
+  const categoryMatches = categories.filter((category) => categorySearchText(category).includes(query)).length;
+  const visibleProviderMatches = providerGrid.querySelectorAll(".provider-card").length;
+  searchStatus.textContent =
+    providerMatches || categoryMatches || matchedCategory
+      ? `${t("searchSummary")} "${siteSearch.value.trim()}"`
+      : t("searchNoMatch");
+  scrollToElement(visibleProviderMatches ? "#providers" : categoryMatches ? "#categories" : "#quote");
+}
 
 function setupLeadForms() {
   document.querySelectorAll(".js-lead-form").forEach((form) => {
@@ -606,23 +772,45 @@ function setupLanguageSwitch() {
   });
 }
 
-function renderCategories() {
-  categoryGrid.innerHTML = categories
+function renderCategories(searchTerm = "") {
+  const query = searchTerm.trim().toLowerCase();
+  const visibleCategories = query
+    ? categories
+        .filter((category) => categorySearchText(category).includes(query))
+        .sort((a, b) => categoryMatchScore(b, query) - categoryMatchScore(a, query))
+    : categories;
+
+  categoryGrid.innerHTML = visibleCategories
     .map(
       (category) => `
-        <a class="category-card" href="${category.url || "#quote"}">
+        <article class="category-card">
           <div>
-            <h3>${currentLang === "zh" ? category.zhName : category.name}</h3>
-            <p>${currentLang === "zh" ? category.zhSummary : category.summary}</p>
+            <h3>${categoryLabel(category)}</h3>
+            <p>${categorySummary(category)}</p>
           </div>
           <strong class="category-count">${currentLang === "zh" ? category.zhCount : category.count}</strong>
           <div class="category-meta">
-            ${(currentLang === "zh" ? category.zhTags : category.tags).map((tag) => `<span class="pill">${tag}</span>`).join("")}
+            ${categoryTags(category).map((tag) => `<span class="pill">${tag}</span>`).join("")}
           </div>
-        </a>
+          <div class="card-actions">
+            ${
+              category.url
+                ? `<a class="text-link" href="${category.url}">${t("viewGuide")}</a>`
+                : ""
+            }
+            <button class="button secondary small" type="button" data-service="${category.formValue}">${t("requestThisService")}</button>
+          </div>
+        </article>
       `,
     )
-    .join("");
+    .join("") || `<p class="empty-state">${t("searchNoMatch")}</p>`;
+
+  categoryGrid.querySelectorAll("[data-service]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const category = categories.find((item) => item.formValue === button.dataset.service);
+      quoteForCategory(category);
+    });
+  });
 }
 
 function populateProviderFilter() {
@@ -641,8 +829,7 @@ function renderProviders() {
   const query = providerSearch.value.trim().toLowerCase();
   const filtered = providers.filter((provider) => {
     const matchesFilter = filter === "All" || provider.category === filter;
-    const content = `${provider.name} ${provider.category} ${provider.location} ${provider.summary}`.toLowerCase();
-    return matchesFilter && content.includes(query);
+    return matchesFilter && providerSearchText(provider).includes(query);
   });
 
   providerGrid.innerHTML =
@@ -669,10 +856,42 @@ function renderProviders() {
               }</span>
               <span class="pill">${t("canReceiveEnquiries")}</span>
             </div>
+            <button class="button secondary small" type="button" data-provider-service="${provider.category}" data-provider-location="${provider.location}">${t("contactProvider")}</button>
           </article>
         `,
       )
-      .join("") || `<p>${t("noProviderMatch")}</p>`;
+      .join("") || `<p class="empty-state">${t("noProviderMatch")}</p>`;
+
+  providerGrid.querySelectorAll("[data-provider-service]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const category = categories.find((item) => item.name === button.dataset.providerService);
+      quoteForCategory(category, button.dataset.providerLocation);
+    });
+  });
+}
+
+function setupSiteSearch() {
+  siteSearchButton.addEventListener("click", applySiteSearch);
+  siteSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      applySiteSearch();
+    }
+  });
+
+  const initialQuery = new URLSearchParams(window.location.search).get("q");
+  if (initialQuery) {
+    siteSearch.value = initialQuery;
+    window.setTimeout(applySiteSearch, 0);
+  }
+}
+
+function setupLocationShortcuts() {
+  document.querySelectorAll("[data-location]").forEach((link) => {
+    link.addEventListener("click", () => {
+      prefillQuote({ location: link.dataset.location });
+    });
+  });
 }
 
 setupLanguageSwitch();
@@ -681,6 +900,8 @@ renderCategories();
 populateProviderFilter();
 renderProviders();
 setupLeadForms();
+setupSiteSearch();
+setupLocationShortcuts();
 
 providerFilter.addEventListener("change", renderProviders);
 providerSearch.addEventListener("input", renderProviders);

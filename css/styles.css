@@ -281,6 +281,14 @@ h3 {
   background: transparent;
 }
 
+.search-status {
+  min-height: 22px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .popular-searches {
   display: flex;
   flex-wrap: wrap;
@@ -339,6 +347,12 @@ h3 {
 
 .button.secondary {
   background: #fff;
+}
+
+.button.small {
+  min-height: 38px;
+  padding: 8px 12px;
+  font-size: 13px;
 }
 
 .button.full {
@@ -647,6 +661,32 @@ select {
   display: grid;
   align-content: space-between;
   gap: 14px;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.text-link {
+  color: var(--violet-dark);
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--muted);
+  font-weight: 800;
 }
 
 .category-count {
