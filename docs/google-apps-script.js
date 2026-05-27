@@ -1,7 +1,22 @@
-const QUOTE_REQUESTS_SHEET = "Quote Requests";
-const PROVIDER_LISTINGS_SHEET = "Provider Listings";
-const OTHER_SUBMISSIONS_SHEET = "Other Submissions";
 const NOTIFY_EMAIL = "hello@smes.com.my";
+
+const FORM_CONFIG = {
+  quote_request: {
+    sheet: "Quote Requests",
+    headers: ["Timestamp", "Service Needed", "Location", "Contact", "Budget / Urgency", "Subject", "Page URL", "User Agent"],
+    fields: ["service", "location", "contact", "budget", "_subject", "page_url", "user_agent"],
+  },
+  provider_listing: {
+    sheet: "Provider Listings",
+    headers: ["Timestamp", "Company", "Main Service", "Contact", "Subject", "Page URL", "User Agent"],
+    fields: ["company", "main_service", "contact", "_subject", "page_url", "user_agent"],
+  },
+  other: {
+    sheet: "Other Submissions",
+    headers: ["Timestamp", "Form Type", "Service Needed", "Location", "Company", "Main Service", "Contact", "Budget / Urgency", "Subject", "Page URL", "User Agent"],
+    fields: ["form_type", "service", "location", "company", "main_service", "contact", "budget", "_subject", "page_url", "user_agent"],
+  },
+};
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -9,118 +24,27 @@ function doPost(e) {
 
   try {
     const data = e.parameter || {};
-    const target = getSubmissionTarget_(data.form_type);
-    const sheet = getSheet_(target.name, target.headers);
-    const row = target.buildRow(data);
+    const config = FORM_CONFIG[data.form_type] || FORM_CONFIG.other;
+    const sheet = getSheet_(config.sheet, config.headers);
+    const row = [new Date()].concat(config.fields.map((field) => data[field] || ""));
 
     sheet.appendRow(row);
     notify_(data);
 
-    return ContentService.createTextOutput(
-      JSON.stringify({ ok: true }),
-    ).setMimeType(ContentService.MimeType.JSON);
+    return json_({ ok: true });
   } catch (error) {
-    return ContentService.createTextOutput(
-      JSON.stringify({ ok: false, error: error.message }),
-    ).setMimeType(ContentService.MimeType.JSON);
+    return json_({ ok: false, error: error.message });
   } finally {
     lock.releaseLock();
   }
-}
-
-function getSubmissionTarget_(formType) {
-  if (formType === "quote_request") {
-    return {
-      name: QUOTE_REQUESTS_SHEET,
-      headers: [
-        "Timestamp",
-        "Service Needed",
-        "Location",
-        "Contact",
-        "Budget / Urgency",
-        "Subject",
-        "Page URL",
-        "User Agent",
-      ],
-      buildRow: (data) => [
-        new Date(),
-        data.service || "",
-        data.location || "",
-        data.contact || "",
-        data.budget || "",
-        data._subject || "",
-        data.page_url || "",
-        data.user_agent || "",
-      ],
-    };
-  }
-
-  if (formType === "provider_listing") {
-    return {
-      name: PROVIDER_LISTINGS_SHEET,
-      headers: [
-        "Timestamp",
-        "Company",
-        "Main Service",
-        "Contact",
-        "Subject",
-        "Page URL",
-        "User Agent",
-      ],
-      buildRow: (data) => [
-        new Date(),
-        data.company || "",
-        data.main_service || "",
-        data.contact || "",
-        data._subject || "",
-        data.page_url || "",
-        data.user_agent || "",
-      ],
-    };
-  }
-
-  return {
-    name: OTHER_SUBMISSIONS_SHEET,
-    headers: [
-      "Timestamp",
-      "Form Type",
-      "Service Needed",
-      "Location",
-      "Company",
-      "Main Service",
-      "Contact",
-      "Budget / Urgency",
-      "Subject",
-      "Page URL",
-      "User Agent",
-    ],
-    buildRow: (data) => [
-      new Date(),
-      data.form_type || "",
-      data.service || "",
-      data.location || "",
-      data.company || "",
-      data.main_service || "",
-      data.contact || "",
-      data.budget || "",
-      data._subject || "",
-      data.page_url || "",
-      data.user_agent || "",
-    ],
-  };
 }
 
 function getSheet_(sheetName, headers) {
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   let sheet = spreadsheet.getSheetByName(sheetName);
 
-  if (!sheet) {
-    sheet = spreadsheet.insertSheet(sheetName);
-  }
-
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(headers);
-  }
+  if (!sheet) sheet = spreadsheet.insertSheet(sheetName);
+  if (sheet.getLastRow() === 0) sheet.appendRow(headers);
 
   return sheet;
 }
@@ -128,7 +52,6 @@ function getSheet_(sheetName, headers) {
 function notify_(data) {
   if (!NOTIFY_EMAIL) return;
 
-  const subject = data._subject || "New smes.my lead";
   const body = [
     "New smes.my submission",
     "",
@@ -141,7 +64,11 @@ function notify_(data) {
     `Page URL: ${data.page_url || ""}`,
   ].join("\n");
 
-  MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+  MailApp.sendEmail(NOTIFY_EMAIL, data._subject || "New smes.my lead", body);
+}
+
+function json_(value) {
+  return ContentService.createTextOutput(JSON.stringify(value)).setMimeType(ContentService.MimeType.JSON);
 }
 
 function doGet() {
