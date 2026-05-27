@@ -1,10 +1,10 @@
-# smes.my Project Status
+# SMEs.MY Project Status
 
-Last updated: 2026-05-27 end of session Asia/Singapore
+Last updated: 2026-05-27 18:30 Asia/Singapore
 
 ## Current Objective
 
-Build `smes.my` as an independent Malaysia SME services directory and lead platform. Keep it separate from PlanurHome. Keep `smes.com.my` reserved for corporate email / official identity.
+Build `SMEs.MY` as an independent Malaysia SME services directory and lead platform. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
 
 ## Current Repo
 
@@ -12,7 +12,7 @@ Build `smes.my` as an independent Malaysia SME services directory and lead platf
 - GitHub: `https://github.com/weinee94/smes-my.git`
 - Branch: `main`
 - Latest commit: `070a5b0 Add Apps Script version marker`
-- Git state at last check: clean and pushed to `origin/main` before this status update
+- Git state at last check: local working tree has uncommitted website changes
 
 ## Site Structure
 
@@ -22,6 +22,7 @@ Build `smes.my` as an independent Malaysia SME services directory and lead platf
 - `assets/` - 商記 SMEs.MY brand assets
 - `docs/google-apps-script.js` - Google Apps Script backend for lead capture
 - `vercel.json` - clean URL configuration
+- `accounting-services-malaysia/`, `company-secretary-services-malaysia/`, `payroll-services-malaysia/`, `website-design-services-malaysia/`, `digital-marketing-agency-malaysia/` - first SEO service pages
 
 ## Deployment
 
@@ -29,6 +30,7 @@ Build `smes.my` as an independent Malaysia SME services directory and lead platf
 - Vercel should be connected to `weinee94/smes-my`.
 - Static deploy settings: no build command; output directory root / `.`
 - Latest pushed changes include stronger form feedback and shorter Apps Script source.
+- Latest local changes are not yet committed or pushed.
 - Next verification needed: confirm `smes.my` is deploying from this repo and branch.
 
 ## Lead Capture
@@ -52,21 +54,27 @@ Build `smes.my` as an independent Malaysia SME services directory and lead platf
 - Improved frontend form feedback so users see submitting, success, validation, and timeout states.
 - Split Google Sheets lead capture by `form_type`: quote requests and provider listings now land in separate sheets.
 - Shortened Apps Script to stay under the user's paste limit and added a script version marker in repo source.
+- Added first 5 SEO service pages and linked them from the homepage and sitemap.
+- Removed internal/project-planning copy from public pages so visitors see a clearer service-finder experience.
+- Reworked homepage layout, spacing, and responsive behavior.
+- Recolored the site to better match the 商記 SMEs.MY logo: purple brand accents, green primary buttons, pink/gold highlights.
+- Added EN / 中文 language switching on the homepage, including hero, forms, service cards, provider cards, and key sections.
+- Updated public brand display from `smes.my` to `SMEs.MY` while keeping lowercase URLs.
 
 ## Open Issues
 
 - Site still needs real provider data; current providers are placeholder examples.
-- Needs category pages for SEO, starting with accounting, company secretary, payroll, website design, and digital marketing.
+- Service detail pages are English-only for now; homepage supports EN / 中文.
 - Needs Vercel deployment verification.
 - Visual polish can continue, but content depth and real listings are the main path out of “half-finished” feel.
 
 ## Next Steps
 
-1. Verify Vercel is connected to `weinee94/smes-my` on branch `main`.
-2. Confirm deployed site has the latest frontend form feedback after Vercel deployment.
-3. Add first 20-50 real provider profiles.
-4. Create SEO category pages for top 5 services.
-5. Continue UI polish after real content structure is in place.
+1. Review the local homepage at `http://127.0.0.1:4173` if the preview server is still running.
+2. Commit and push the current website changes.
+3. Verify Vercel deploys the latest `main` branch.
+4. Confirm `SMEs.MY` branding, EN / 中文 switch, forms, and 5 service pages on the deployed site.
+5. Add first 20-50 real provider profiles.
 
 ## Useful Commands
 
@@ -75,7 +83,7 @@ cd C:\Users\Wynne\Documents\Codex\smes-my
 git status
 git pull --ff-only
 git add .
-git commit -m "Update smes.my status"
+git commit -m "Update SMEs.MY homepage and SEO pages"
 git push
 ```
 
