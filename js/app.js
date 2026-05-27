@@ -133,6 +133,15 @@ function setupLeadForms() {
   document.querySelectorAll(".js-lead-form").forEach((form) => {
     const status = form.querySelector(".form-status");
 
+    form.addEventListener(
+      "invalid",
+      () => {
+        status.className = "form-status error";
+        status.textContent = "Please fill in the required fields, then submit again.";
+      },
+      true,
+    );
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       status.className = "form-status";
@@ -146,18 +155,25 @@ function setupLeadForms() {
       const button = form.querySelector("button[type='submit']");
       button.disabled = true;
       button.textContent = "Sending...";
-      status.textContent = "";
+      status.textContent = "Submitting your request...";
 
       try {
         const payload = new FormData(form);
         payload.set("page_url", window.location.href);
         payload.set("user_agent", navigator.userAgent);
 
-        await fetch(form.action, {
-          method: "POST",
-          body: payload,
-          mode: "no-cors",
+        const timeout = new Promise((_, reject) => {
+          window.setTimeout(() => reject(new Error("Submission timed out")), 15000);
         });
+
+        await Promise.race([
+          fetch(form.action, {
+            method: "POST",
+            body: payload,
+            mode: "no-cors",
+          }),
+          timeout,
+        ]);
 
         form.reset();
         status.textContent = form.dataset.success || "Thanks. Your request has been received.";

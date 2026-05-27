@@ -306,6 +306,11 @@ h3 {
   color: #fff;
 }
 
+.button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .button.secondary {
   background: #fff;
 }
@@ -421,14 +426,23 @@ h3 {
   color: var(--muted);
   font-size: 14px;
   font-weight: 800;
+  line-height: 1.45;
 }
 
 .form-status.success {
   color: var(--teal-dark);
+  background: #e9f8ec;
+  border: 1px solid #b9e7c1;
+  border-radius: 8px;
+  padding: 10px 12px;
 }
 
 .form-status.error {
+  background: #fff1f5;
+  border: 1px solid #f5b5ca;
+  border-radius: 8px;
   color: #b4234f;
+  padding: 10px 12px;
 }
 
 label {
