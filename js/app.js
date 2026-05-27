@@ -2,68 +2,73 @@ const categories = [
   {
     name: "Accounting Services Malaysia",
     summary: "Monthly accounts, bookkeeping, management reports, and SME compliance support.",
-    tags: ["High intent", "Recurring", "KL/Selangor"],
-    count: "24 providers",
+    tags: ["Bookkeeping", "Reports", "Compliance"],
+    count: "View guide",
+    url: "/accounting-services-malaysia",
   },
   {
     name: "Company Secretary Services Malaysia",
     summary: "SSM filings, annual returns, board resolutions, and company maintenance.",
-    tags: ["Compliance", "B2B", "Retainer"],
-    count: "18 providers",
+    tags: ["SSM", "Annual returns", "Resolutions"],
+    count: "View guide",
+    url: "/company-secretary-services-malaysia",
   },
   {
     name: "Tax Agent Malaysia",
     summary: "Corporate tax, SST, tax planning, and annual filing for SMEs.",
-    tags: ["Seasonal", "Trusted", "Lead-ready"],
-    count: "12 providers",
+    tags: ["Corporate tax", "SST", "Filing"],
+    count: "Request quotes",
   },
   {
     name: "Payroll Services Malaysia",
     summary: "Payroll processing, EPF, SOCSO, EIS, PCB, and HR documentation.",
-    tags: ["Monthly", "HR", "Automation"],
-    count: "15 providers",
+    tags: ["EPF", "SOCSO", "Payslips"],
+    count: "View guide",
+    url: "/payroll-services-malaysia",
   },
   {
     name: "Digital Marketing Agency Malaysia",
     summary: "SEO, paid ads, social media, content, and campaign management.",
-    tags: ["Growth", "Competitive", "High value"],
-    count: "21 providers",
+    tags: ["SEO", "Ads", "Social media"],
+    count: "View guide",
+    url: "/digital-marketing-agency-malaysia",
   },
   {
     name: "Website Design Malaysia",
     summary: "SME websites, landing pages, ecommerce, maintenance, and hosting support.",
-    tags: ["Project", "SME digitalisation", "Quote-based"],
-    count: "19 providers",
+    tags: ["Websites", "Landing pages", "Ecommerce"],
+    count: "View guide",
+    url: "/website-design-services-malaysia",
   },
   {
     name: "SME Business Loan Malaysia",
     summary: "Financing advisory, loan matching, working capital, and grant guidance.",
-    tags: ["Finance", "Urgent", "Qualified leads"],
-    count: "9 providers",
+    tags: ["Working capital", "Loan matching", "Grants"],
+    count: "Request quotes",
   },
   {
     name: "HR / Recruitment Services Malaysia",
     summary: "Hiring, HR policies, contracts, onboarding, and workforce support.",
-    tags: ["People", "SME ops", "Retainer"],
-    count: "11 providers",
+    tags: ["Hiring", "HR policies", "Onboarding"],
+    count: "Request quotes",
   },
   {
     name: "Legal Services for SME Malaysia",
     summary: "Contracts, employment matters, licensing, disputes, and advisory.",
-    tags: ["Trust", "Specialist", "High value"],
-    count: "8 providers",
+    tags: ["Contracts", "Employment", "Advisory"],
+    count: "Request quotes",
   },
   {
     name: "IT / POS / CRM Services Malaysia",
     summary: "Business systems, cybersecurity, POS setup, CRM, support, and integrations.",
-    tags: ["Digital", "Operations", "Vendor match"],
-    count: "16 providers",
+    tags: ["POS", "CRM", "Support"],
+    count: "Request quotes",
   },
 ];
 
 const providers = [
   {
-    name: "KL SME Accounts",
+    name: "Accounting provider",
     category: "Accounting Services Malaysia",
     location: "Kuala Lumpur",
     summary: "Monthly bookkeeping and management accounts for retail, F&B, and service SMEs.",
@@ -73,7 +78,7 @@ const providers = [
     languages: "EN / 中文 / BM",
   },
   {
-    name: "Selangor Corporate Sec",
+    name: "Company secretary provider",
     category: "Company Secretary Services Malaysia",
     location: "Selangor",
     summary: "Company incorporation, annual return filing, and statutory compliance support.",
@@ -83,17 +88,17 @@ const providers = [
     languages: "EN / BM",
   },
   {
-    name: "Penang Growth Studio",
+    name: "Digital marketing provider",
     category: "Digital Marketing Agency Malaysia",
     location: "Penang",
-    summary: "SEO, ads, and content campaigns for local SME lead generation.",
+    summary: "SEO, ads, and content campaigns for local SME enquiries.",
     verified: false,
     rating: "4.5",
     response: "2 days",
     languages: "EN / 中文",
   },
   {
-    name: "PayrollWorks MY",
+    name: "Payroll provider",
     category: "Payroll Services Malaysia",
     location: "Malaysia-wide",
     summary: "Payroll outsourcing with EPF, SOCSO, EIS, and PCB processing.",
@@ -103,7 +108,7 @@ const providers = [
     languages: "EN / BM",
   },
   {
-    name: "SME Web Lab",
+    name: "Website design provider",
     category: "Website Design Malaysia",
     location: "Johor Bahru",
     summary: "Fast SME websites, landing pages, ecommerce setup, and care plans.",
@@ -113,7 +118,7 @@ const providers = [
     languages: "EN / 中文",
   },
   {
-    name: "OpsTech POS",
+    name: "IT / POS / CRM provider",
     category: "IT / POS / CRM Services Malaysia",
     location: "Klang Valley",
     summary: "POS, CRM, helpdesk, and business software implementation for SMEs.",
@@ -179,7 +184,7 @@ function setupLeadForms() {
         status.textContent = form.dataset.success || "Thanks. Your request has been received.";
         status.classList.add("success");
       } catch (error) {
-        status.textContent = "Submission failed. Please try again or contact hello@smes.com.my.";
+        status.textContent = "Submission failed. Please try again later.";
         status.classList.add("error");
       } finally {
         button.disabled = false;
@@ -199,7 +204,7 @@ function renderCategories() {
   categoryGrid.innerHTML = categories
     .map(
       (category) => `
-        <article class="category-card">
+        <a class="category-card" href="${category.url || "#quote"}">
           <div>
             <h3>${category.name}</h3>
             <p>${category.summary}</p>
@@ -208,7 +213,7 @@ function renderCategories() {
           <div class="category-meta">
             ${category.tags.map((tag) => `<span class="pill">${tag}</span>`).join("")}
           </div>
-        </article>
+        </a>
       `,
     )
     .join("");
@@ -242,17 +247,17 @@ function renderProviders() {
                 <h3>${provider.name}</h3>
                 <p>${provider.category}</p>
               </div>
-              ${provider.verified ? `<span class="verified">Verified</span>` : ""}
+              ${provider.verified ? `<span class="verified">Profile checked</span>` : ""}
             </div>
             <p>${provider.summary}</p>
             <div class="provider-signals">
-              <span>Rating ${provider.rating}</span>
+              <span>${provider.location}</span>
               <span>${provider.response}</span>
               <span>${provider.languages}</span>
             </div>
             <div class="provider-meta">
-              <span class="pill">${provider.location}</span>
-              <span class="pill">Accepting leads</span>
+              <span class="pill">${provider.category.replace(" Malaysia", "")}</span>
+              <span class="pill">Can receive enquiries</span>
             </div>
           </article>
         `,
