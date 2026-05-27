@@ -45,12 +45,18 @@
         </span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#categories">Services</a>
-        <a href="#providers">Providers</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#provider-plans">For providers</a>
+        <a href="#categories" data-i18n="navServices">Services</a>
+        <a href="#providers" data-i18n="navProviders">Providers</a>
+        <a href="#how-it-works" data-i18n="navHow">How it works</a>
+        <a href="#provider-plans" data-i18n="navForProviders">For providers</a>
       </nav>
-      <a class="header-action" href="#quote">Request quotes</a>
+      <div class="header-controls">
+        <div class="language-switch" aria-label="Language switch">
+          <button type="button" class="active" data-lang="en">EN</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+        <a class="header-action" href="#quote" data-i18n="requestQuotes">Request quotes</a>
+      </div>
     </header>
 
     <main id="top">
@@ -58,92 +64,94 @@
         <div class="hero-copy">
           <div class="hero-brand">
             <img src="assets/smes-main-logo.png" alt="商記 SMEs.MY" />
-            <span>Find business services in Malaysia</span>
+            <span data-i18n="heroEyebrow">Find business services in Malaysia</span>
           </div>
-          <h1>Find local service providers for your business.</h1>
-          <p class="hero-text">
+          <h1 data-i18n="heroTitle">Find local service providers for your business.</h1>
+          <p class="hero-text" data-i18n="heroText">
             Tell us what service you need, where your business is located, and how providers can
             contact you. smes.my helps Malaysian SMEs find accounting, company secretary, payroll,
             website, marketing, IT, legal, financing, and operations support.
           </p>
           <div class="language-note">
-            <span>For Malaysian SME owners</span>
-            <span>English, BM, and Chinese-friendly support</span>
+            <span data-i18n="heroPillOne">For Malaysian SME owners</span>
+            <span data-i18n="heroPillTwo">English, BM, and Chinese-friendly support</span>
           </div>
           <div class="search-box" role="search" aria-label="Search SME services">
-            <input type="search" placeholder="Search accounting, payroll, website design..." />
-            <a class="button primary" href="#categories">Browse services</a>
+            <input type="search" placeholder="Search accounting, payroll, website design..." data-i18n-placeholder="searchPlaceholder" />
+            <a class="button primary" href="#categories" data-i18n="browseServices">Browse services</a>
           </div>
           <div class="popular-searches" aria-label="Popular searches">
-            <a href="/accounting-services-malaysia">Accounting</a>
-            <a href="/company-secretary-services-malaysia">Company Secretary</a>
-            <a href="/payroll-services-malaysia">Payroll</a>
-            <a href="/website-design-services-malaysia">Website Design</a>
-            <a href="/digital-marketing-agency-malaysia">Digital Marketing</a>
+            <a href="/accounting-services-malaysia" data-i18n="serviceAccountingShort">Accounting</a>
+            <a href="/company-secretary-services-malaysia" data-i18n="serviceCompanySecShort">Company Secretary</a>
+            <a href="/payroll-services-malaysia" data-i18n="servicePayrollShort">Payroll</a>
+            <a href="/website-design-services-malaysia" data-i18n="serviceWebsiteShort">Website Design</a>
+            <a href="/digital-marketing-agency-malaysia" data-i18n="serviceMarketingShort">Digital Marketing</a>
           </div>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#quote">Request quotes</a>
-            <a class="button secondary" href="#list-business">List your business</a>
+            <a class="button primary" href="#quote" data-i18n="requestQuotes">Request quotes</a>
+            <a class="button secondary" href="#list-business" data-i18n="listBusiness">List your business</a>
           </div>
           <dl class="hero-stats" aria-label="Platform focus">
             <div>
               <dt>10+</dt>
-              <dd>Business service types</dd>
+              <dd data-i18n="statCategories">Business service types</dd>
             </div>
             <div>
               <dt>MY</dt>
-              <dd>Local provider search</dd>
+              <dd data-i18n="statLocal">Local provider search</dd>
             </div>
             <div>
               <dt>Free</dt>
-              <dd>Request to compare quotes</dd>
+              <dd data-i18n="statFree">Request to compare quotes</dd>
             </div>
           </dl>
         </div>
         <aside class="quote-panel" id="quote" aria-labelledby="quote-title">
           <div class="panel-header">
-            <span class="match-badge">Free request</span>
-            <span>For Malaysia SMEs</span>
+            <span class="match-badge" data-i18n="freeRequest">Free request</span>
+            <span data-i18n="forMalaysiaSmes">For Malaysia SMEs</span>
           </div>
-          <h2 id="quote-title">Tell us what you need.</h2>
-          <p>Share your service type, location, and contact details. Relevant providers can then reply with options.</p>
+          <h2 id="quote-title" data-i18n="quoteTitle">Tell us what you need.</h2>
+          <p data-i18n="quoteText">Share your service type, location, and contact details. Relevant providers can then reply with options.</p>
           <form
             class="lead-form js-lead-form"
             action="https://script.google.com/macros/s/AKfycbyhmVYdJH6wudAYJ42yHcgLG21yODRuXqWFOVzaApE27z_XVpu2lB-OVYfm-To46cFDyg/exec"
             method="post"
             data-success="Thanks. Your quote request has been received."
+            data-success-en="Thanks. Your quote request has been received."
+            data-success-zh="谢谢，你的询价已经收到。"
           >
             <input type="hidden" name="_subject" value="New quote request from smes.my" />
             <input type="hidden" name="form_type" value="quote_request" />
             <label>
-              Service needed
+              <span data-i18n="formService">Service needed</span>
               <select name="service" required>
-                <option value="">Choose a service</option>
-                <option>Accounting services</option>
-                <option>Company secretary</option>
-                <option>Tax agent</option>
-                <option>Payroll services</option>
-                <option>Digital marketing</option>
-                <option>Website design</option>
-                <option>SME financing</option>
-                <option>HR / recruitment</option>
-                <option>Legal services</option>
-                <option>IT / POS / CRM</option>
+                <option value="" data-i18n="chooseService">Choose a service</option>
+                <option data-i18n="serviceAccounting">Accounting services</option>
+                <option data-i18n="serviceCompanySec">Company secretary</option>
+                <option data-i18n="serviceTax">Tax agent</option>
+                <option data-i18n="servicePayroll">Payroll services</option>
+                <option data-i18n="serviceMarketing">Digital marketing</option>
+                <option data-i18n="serviceWebsite">Website design</option>
+                <option data-i18n="serviceFinancing">SME financing</option>
+                <option data-i18n="serviceHr">HR / recruitment</option>
+                <option data-i18n="serviceLegal">Legal services</option>
+                <option data-i18n="serviceIt">IT / POS / CRM</option>
               </select>
             </label>
             <label>
-              Location
-              <input name="location" placeholder="Kuala Lumpur, Selangor, Penang..." required />
+              <span data-i18n="formLocation">Location</span>
+              <input name="location" placeholder="Kuala Lumpur, Selangor, Penang..." data-i18n-placeholder="locationPlaceholder" required />
             </label>
             <label>
-              Contact
-              <input name="contact" placeholder="Email or WhatsApp number" required />
+              <span data-i18n="formContact">Contact</span>
+              <input name="contact" placeholder="Email or WhatsApp number" data-i18n-placeholder="contactPlaceholder" required />
             </label>
             <label>
-              Budget / urgency
-              <input name="budget" placeholder="Optional: RM budget or when you need it" />
+              <span data-i18n="formBudget">Budget / urgency</span>
+              <input name="budget" placeholder="Optional: RM budget or when you need it" data-i18n-placeholder="budgetPlaceholder" />
             </label>
-            <button class="button primary full" type="submit">Send request</button>
+            <button class="button primary full" type="submit" data-i18n="sendRequest">Send request</button>
             <p class="form-status" aria-live="polite"></p>
           </form>
           <ul class="request-steps" aria-label="What happens after submitting">
@@ -165,37 +173,37 @@
 
       <section class="trust-strip" aria-label="Directory promises">
         <div>
-          <strong>Business services only</strong>
-          <span>Accounting, compliance, payroll, websites, marketing, IT, legal, financing, and operations.</span>
+          <strong data-i18n="trustOneTitle">Business services only</strong>
+          <span data-i18n="trustOneText">Accounting, compliance, payroll, websites, marketing, IT, legal, financing, and operations.</span>
         </div>
         <div>
-          <strong>Malaysia-focused</strong>
-          <span>Search by service type, city, language, and business fit.</span>
+          <strong data-i18n="trustTwoTitle">Malaysia-focused</strong>
+          <span data-i18n="trustTwoText">Search by service type, city, language, and business fit.</span>
         </div>
         <div>
-          <strong>Simple quote requests</strong>
-          <span>Send one request instead of contacting many providers one by one.</span>
+          <strong data-i18n="trustThreeTitle">Simple quote requests</strong>
+          <span data-i18n="trustThreeText">Send one request instead of contacting many providers one by one.</span>
         </div>
       </section>
 
       <section class="section directory-snapshot" aria-label="Directory snapshot">
         <div class="snapshot-panel">
           <div>
-            <p class="eyebrow">How smes.my works</p>
-            <h2>One place to find the services your business needs.</h2>
+            <p class="eyebrow" data-i18n="howEyebrow">How smes.my works</p>
+            <h2 data-i18n="howTitle">One place to find the services your business needs.</h2>
           </div>
           <div class="snapshot-grid">
             <article>
-              <strong>Browse</strong>
-              <span>Start with a service category such as accounting, payroll, website design, or marketing.</span>
+              <strong data-i18n="howBrowseTitle">Browse</strong>
+              <span data-i18n="howBrowseText">Start with a service category such as accounting, payroll, website design, or marketing.</span>
             </article>
             <article>
-              <strong>Compare</strong>
-              <span>Check location, language support, service scope, response time, and business fit.</span>
+              <strong data-i18n="howCompareTitle">Compare</strong>
+              <span data-i18n="howCompareText">Check location, language support, service scope, response time, and business fit.</span>
             </article>
             <article>
-              <strong>Request</strong>
-              <span>Submit your details once and wait for suitable providers to respond.</span>
+              <strong data-i18n="howRequestTitle">Request</strong>
+              <span data-i18n="howRequestText">Submit your details once and wait for suitable providers to respond.</span>
             </article>
           </div>
         </div>
@@ -203,9 +211,9 @@
 
       <section class="section" id="categories">
         <div class="section-heading">
-          <p class="eyebrow">Popular services</p>
-          <h2>Find providers for the work SMEs buy often.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="popularEyebrow">Popular services</p>
+          <h2 data-i18n="popularTitle">Find providers for the work SMEs buy often.</h2>
+          <p data-i18n="popularText">
             Choose a service below to understand what to compare and send a quote request.
           </p>
         </div>
@@ -214,9 +222,9 @@
 
       <section class="band" id="how-it-works">
         <div class="section-heading">
-          <p class="eyebrow">Buyer journey</p>
-          <h2>How to use smes.my.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="journeyEyebrow">Buyer journey</p>
+          <h2 data-i18n="journeyTitle">How to use smes.my.</h2>
+          <p data-i18n="journeyText">
             If you are not sure who to contact, start with your service need. The form helps you
             describe the job clearly so providers can reply with more useful answers.
           </p>
@@ -224,27 +232,27 @@
         <div class="journey-grid">
           <article>
             <span class="step-number">1</span>
-            <h3>Choose a service</h3>
-            <p>Select accounting, company secretary, payroll, website design, digital marketing, IT, legal, financing, or another business service.</p>
+            <h3 data-i18n="journeyOneTitle">Choose a service</h3>
+            <p data-i18n="journeyOneText">Select accounting, company secretary, payroll, website design, digital marketing, IT, legal, financing, or another business service.</p>
           </article>
           <article>
             <span class="step-number">2</span>
-            <h3>Share your details</h3>
-            <p>Tell providers your location, timeline, budget range if available, and how to contact you.</p>
+            <h3 data-i18n="journeyTwoTitle">Share your details</h3>
+            <p data-i18n="journeyTwoText">Tell providers your location, timeline, budget range if available, and how to contact you.</p>
           </article>
           <article>
             <span class="step-number">3</span>
-            <h3>Compare replies</h3>
-            <p>Review the replies you receive, ask follow-up questions, and choose the provider that fits your business.</p>
+            <h3 data-i18n="journeyThreeTitle">Compare replies</h3>
+            <p data-i18n="journeyThreeText">Review the replies you receive, ask follow-up questions, and choose the provider that fits your business.</p>
           </article>
         </div>
       </section>
 
       <section class="band">
         <div class="section-heading">
-          <p class="eyebrow">What you can find</p>
-          <h2>Business services commonly used by Malaysian SMEs.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="findEyebrow">What you can find</p>
+          <h2 data-i18n="findTitle">Business services commonly used by Malaysian SMEs.</h2>
+          <p data-i18n="findText">
             Use smes.my when you need professional help to run, comply, digitise, hire,
             market, or finance your business.
           </p>
@@ -252,67 +260,67 @@
         <div class="positioning-grid">
           <article>
             <span class="card-index">01</span>
-            <h3>Accounting and compliance</h3>
-            <p>Bookkeeping, tax, company secretary, payroll, HR, and legal support.</p>
+            <h3 data-i18n="findOneTitle">Accounting and compliance</h3>
+            <p data-i18n="findOneText">Bookkeeping, tax, company secretary, payroll, HR, and legal support.</p>
           </article>
           <article>
             <span class="card-index">02</span>
-            <h3>Digital and growth</h3>
-            <p>Website design, digital marketing, IT systems, POS, CRM, and automation.</p>
+            <h3 data-i18n="findTwoTitle">Digital and growth</h3>
+            <p data-i18n="findTwoText">Website design, digital marketing, IT systems, POS, CRM, and automation.</p>
           </article>
           <article>
             <span class="card-index">03</span>
-            <h3>Money and operations</h3>
-            <p>Financing, recruitment, logistics, admin support, and other SME operating services.</p>
+            <h3 data-i18n="findThreeTitle">Money and operations</h3>
+            <p data-i18n="findThreeText">Financing, recruitment, logistics, admin support, and other SME operating services.</p>
           </article>
         </div>
       </section>
 
       <section class="section comparison-section">
         <div class="section-heading">
-          <p class="eyebrow">What to compare</p>
-          <h2>Ask the right questions before hiring a provider.</h2>
-          <p>Use these checks when you compare accounting firms, company secretaries, payroll teams, web designers, marketers, IT vendors, and other business service providers.</p>
+          <p class="eyebrow" data-i18n="compareEyebrow">What to compare</p>
+          <h2 data-i18n="compareTitle">Ask the right questions before hiring a provider.</h2>
+          <p data-i18n="compareText">Use these checks when you compare accounting firms, company secretaries, payroll teams, web designers, marketers, IT vendors, and other business service providers.</p>
         </div>
         <div class="comparison-table" role="table" aria-label="Provider comparison checklist">
           <div role="row">
-            <span role="columnheader">Check</span>
-            <span role="columnheader">Why it matters</span>
-            <span role="columnheader">What to ask</span>
+            <span role="columnheader" data-i18n="tableCheck">Check</span>
+            <span role="columnheader" data-i18n="tableWhy">Why it matters</span>
+            <span role="columnheader" data-i18n="tableAsk">What to ask</span>
           </div>
           <div role="row">
-            <span>Company details</span>
-            <span>Helps you know who you are dealing with before sharing documents or payment.</span>
-            <span>Company name, website, registration details, and contact person</span>
+            <span data-i18n="tableCompany">Company details</span>
+            <span data-i18n="tableCompanyWhy">Helps you know who you are dealing with before sharing documents or payment.</span>
+            <span data-i18n="tableCompanyAsk">Company name, website, registration details, and contact person</span>
           </div>
           <div role="row">
-            <span>Response time</span>
-            <span>Important if you have a filing deadline, campaign launch, payroll cycle, or urgent project.</span>
-            <span>How soon can they reply and start work?</span>
+            <span data-i18n="tableResponse">Response time</span>
+            <span data-i18n="tableResponseWhy">Important if you have a filing deadline, campaign launch, payroll cycle, or urgent project.</span>
+            <span data-i18n="tableResponseAsk">How soon can they reply and start work?</span>
           </div>
           <div role="row">
-            <span>Languages</span>
-            <span>Clear communication matters when discussing compliance, pricing, and business documents.</span>
-            <span>English, BM, Mandarin, or Chinese dialect support</span>
+            <span data-i18n="tableLanguages">Languages</span>
+            <span data-i18n="tableLanguagesWhy">Clear communication matters when discussing compliance, pricing, and business documents.</span>
+            <span data-i18n="tableLanguagesAsk">English, BM, Mandarin, or Chinese dialect support</span>
           </div>
           <div role="row">
-            <span>Service scope</span>
-            <span>Prevents misunderstandings about what is included and what costs extra.</span>
-            <span>Monthly scope, one-time fees, location coverage, and support limits</span>
+            <span data-i18n="tableScope">Service scope</span>
+            <span data-i18n="tableScopeWhy">Prevents misunderstandings about what is included and what costs extra.</span>
+            <span data-i18n="tableScopeAsk">Monthly scope, one-time fees, location coverage, and support limits</span>
           </div>
         </div>
       </section>
 
       <section class="section" id="providers">
         <div class="section-heading">
-          <p class="eyebrow">Featured providers</p>
-          <h2>Compare provider details before contacting a firm.</h2>
-          <p>Use the search and category filter to narrow down service type, location, language support, and response time.</p>
+          <p class="eyebrow" data-i18n="providersEyebrow">Featured providers</p>
+          <h2 data-i18n="providersTitle">Compare provider details before contacting a firm.</h2>
+          <p data-i18n="providersText">Use the search and category filter to narrow down service type, location, language support, and response time.</p>
         </div>
         <div class="provider-toolbar" role="search">
-          <input id="providerSearch" type="search" placeholder="Search providers, categories, or locations" />
+          <input id="providerSearch" type="search" placeholder="Search providers, categories, or locations" data-i18n-placeholder="providerSearchPlaceholder" />
           <select id="providerFilter" aria-label="Filter by category">
-            <option value="All">All categories</option>
+            <option value="All" data-i18n="allCategories">All categories</option>
           </select>
         </div>
         <div class="provider-grid" id="providerGrid"></div>
@@ -320,9 +328,9 @@
 
       <section class="section city-section">
         <div class="section-heading">
-          <p class="eyebrow">Malaysia coverage</p>
-          <h2>Find help near your business.</h2>
-          <p>Start with your location so providers understand where you operate and whether remote support is suitable.</p>
+          <p class="eyebrow" data-i18n="coverageEyebrow">Malaysia coverage</p>
+          <h2 data-i18n="coverageTitle">Find help near your business.</h2>
+          <p data-i18n="coverageText">Start with your location so providers understand where you operate and whether remote support is suitable.</p>
         </div>
         <div class="city-grid">
           <a href="#quote">Kuala Lumpur</a>
@@ -336,29 +344,29 @@
 
       <section class="section seo-section">
         <div class="section-heading">
-          <p class="eyebrow">Service guides</p>
-          <h2>Not sure what to ask for? Start with these guides.</h2>
+          <p class="eyebrow" data-i18n="guidesEyebrow">Service guides</p>
+          <h2 data-i18n="guidesTitle">Not sure what to ask for? Start with these guides.</h2>
         </div>
         <div class="seo-layout">
           <div>
-            <h3>Popular services</h3>
+            <h3 data-i18n="guidesPopular">Popular services</h3>
             <ul class="check-list">
-              <li><a href="/accounting-services-malaysia">Accounting services Malaysia</a></li>
-              <li><a href="/company-secretary-services-malaysia">Company secretary services Malaysia</a></li>
-              <li><a href="/payroll-services-malaysia">Payroll services Malaysia</a></li>
-              <li><a href="/digital-marketing-agency-malaysia">Digital marketing agency Malaysia</a></li>
-              <li><a href="/website-design-services-malaysia">Website design for SME Malaysia</a></li>
-              <li>SME business loan Malaysia</li>
+              <li><a href="/accounting-services-malaysia" data-i18n="guideAccounting">Accounting services Malaysia</a></li>
+              <li><a href="/company-secretary-services-malaysia" data-i18n="guideCompanySec">Company secretary services Malaysia</a></li>
+              <li><a href="/payroll-services-malaysia" data-i18n="guidePayroll">Payroll services Malaysia</a></li>
+              <li><a href="/digital-marketing-agency-malaysia" data-i18n="guideMarketing">Digital marketing agency Malaysia</a></li>
+              <li><a href="/website-design-services-malaysia" data-i18n="guideWebsite">Website design for SME Malaysia</a></li>
+              <li data-i18n="guideLoan">SME business loan Malaysia</li>
             </ul>
           </div>
           <div>
-            <h3>Each guide helps you compare</h3>
+            <h3 data-i18n="guidesCompare">Each guide helps you compare</h3>
             <ul class="check-list">
-              <li>What the service includes</li>
-              <li>When your business may need it</li>
-              <li>What to ask providers before hiring</li>
-              <li>Which details to include in your quote request</li>
-              <li>Related services you may also need</li>
+              <li data-i18n="guidesPointOne">What the service includes</li>
+              <li data-i18n="guidesPointTwo">When your business may need it</li>
+              <li data-i18n="guidesPointThree">What to ask providers before hiring</li>
+              <li data-i18n="guidesPointFour">Which details to include in your quote request</li>
+              <li data-i18n="guidesPointFive">Related services you may also need</li>
             </ul>
           </div>
         </div>
@@ -366,33 +374,33 @@
 
       <section class="band" id="provider-plans">
         <div class="section-heading">
-          <p class="eyebrow">For service providers</p>
-          <h2>Get discovered by SMEs looking for business services.</h2>
+          <p class="eyebrow" data-i18n="providerPlansEyebrow">For service providers</p>
+          <h2 data-i18n="providerPlansTitle">Get discovered by SMEs looking for business services.</h2>
         </div>
         <div class="pricing-grid">
           <article>
-            <h3>Basic listing</h3>
+            <h3 data-i18n="planBasicTitle">Basic listing</h3>
             <p class="price">RM0</p>
-            <p>Add your company name, main service, location, and contact details.</p>
+            <p data-i18n="planBasicText">Add your company name, main service, location, and contact details.</p>
           </article>
           <article class="featured">
-            <h3>Verified profile</h3>
-            <p class="price">Coming soon</p>
-            <p>Show more details such as service scope, languages, locations, and business fit.</p>
+            <h3 data-i18n="planVerifiedTitle">Verified profile</h3>
+            <p class="price" data-i18n="comingSoon">Coming soon</p>
+            <p data-i18n="planVerifiedText">Show more details such as service scope, languages, locations, and business fit.</p>
           </article>
           <article>
-            <h3>Customer enquiries</h3>
-            <p class="price">Relevant requests</p>
-            <p>Receive requests from SME owners looking for your type of service.</p>
+            <h3 data-i18n="planEnquiryTitle">Customer enquiries</h3>
+            <p class="price" data-i18n="relevantRequests">Relevant requests</p>
+            <p data-i18n="planEnquiryText">Receive requests from SME owners looking for your type of service.</p>
           </article>
         </div>
       </section>
 
       <section class="section split-cta" id="list-business">
         <div>
-          <p class="eyebrow">For service providers</p>
-          <h2>List your SME service business.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="listEyebrow">For service providers</p>
+          <h2 data-i18n="listTitle">List your SME service business.</h2>
+          <p data-i18n="listText">
             If you provide business services in Malaysia, submit your company details and we will review your listing.
           </p>
         </div>
@@ -401,22 +409,24 @@
           action="https://script.google.com/macros/s/AKfycbyhmVYdJH6wudAYJ42yHcgLG21yODRuXqWFOVzaApE27z_XVpu2lB-OVYfm-To46cFDyg/exec"
           method="post"
           data-success="Thanks. Your listing request has been received."
+          data-success-en="Thanks. Your listing request has been received."
+          data-success-zh="谢谢，你的商家资料已经收到。"
         >
           <input type="hidden" name="_subject" value="New provider listing request from smes.my" />
           <input type="hidden" name="form_type" value="provider_listing" />
           <label>
-            Company name
+            <span data-i18n="companyName">Company name</span>
             <input name="company" required />
           </label>
           <label>
-            Main service
-            <input name="main_service" placeholder="Accounting, payroll, website design..." required />
+            <span data-i18n="mainService">Main service</span>
+            <input name="main_service" placeholder="Accounting, payroll, website design..." data-i18n-placeholder="mainServicePlaceholder" required />
           </label>
           <label>
-            Contact
-            <input name="contact" placeholder="Email or WhatsApp number" required />
+            <span data-i18n="formContact">Contact</span>
+            <input name="contact" placeholder="Email or WhatsApp number" data-i18n-placeholder="contactPlaceholder" required />
           </label>
-          <button class="button primary full" type="submit">Apply for listing</button>
+          <button class="button primary full" type="submit" data-i18n="applyListing">Apply for listing</button>
           <p class="form-status" aria-live="polite"></p>
         </form>
       </section>
@@ -425,8 +435,8 @@
     <footer class="site-footer">
       <img src="assets/smes-secondary-logo.png" alt="商記 SMEs.MY" />
       <div>
-        <p><strong>smes.my</strong> helps Malaysian SMEs find and compare business service providers.</p>
-        <p>Need help choosing a provider? Start with a service category or send a quote request.</p>
+        <p><strong>smes.my</strong> <span data-i18n="footerOne">helps Malaysian SMEs find and compare business service providers.</span></p>
+        <p data-i18n="footerTwo">Need help choosing a provider? Start with a service category or send a quote request.</p>
       </div>
     </footer>
 
