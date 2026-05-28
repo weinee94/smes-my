@@ -24,15 +24,42 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "SMEs.MY",
-        "url": "https://smes.my/",
-        "description": "Find and compare business service providers in Malaysia.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://smes.my/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://smes.my/#organization",
+            "name": "SMEs.MY",
+            "url": "https://smes.my/",
+            "logo": "https://smes.my/assets/smes-main-logo.png",
+            "description": "Malaysia SME services directory and enquiry matching platform.",
+            "areaServed": "MY"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://smes.my/#website",
+            "name": "SMEs.MY",
+            "url": "https://smes.my/",
+            "publisher": { "@id": "https://smes.my/#organization" },
+            "description": "Find and compare business service providers in Malaysia.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://smes.my/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://smes.my/#service-categories",
+            "name": "Malaysia SME service categories",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Accounting services Malaysia", "url": "https://smes.my/accounting-services-malaysia" },
+              { "@type": "ListItem", "position": 2, "name": "Company secretary services Malaysia", "url": "https://smes.my/company-secretary-services-malaysia" },
+              { "@type": "ListItem", "position": 3, "name": "Payroll services Malaysia", "url": "https://smes.my/payroll-services-malaysia" },
+              { "@type": "ListItem", "position": 4, "name": "Website design services Malaysia", "url": "https://smes.my/website-design-services-malaysia" },
+              { "@type": "ListItem", "position": 5, "name": "Digital marketing agency Malaysia", "url": "https://smes.my/digital-marketing-agency-malaysia" }
+            ]
+          }
+        ]
       }
     </script>
   </head>
