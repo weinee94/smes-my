@@ -1,21 +1,21 @@
 const NOTIFY_EMAIL = "hello@smes.com.my";
-const SCRIPT_VERSION = "2026-05-27 split-sheets-v2";
+const SCRIPT_VERSION = "2026-05-28 complete-loop-v3";
 
 const FORM_CONFIG = {
   quote_request: {
     sheet: "Quote Requests",
-    headers: ["Timestamp", "Service Needed", "Location", "Contact", "Budget / Urgency", "Subject", "Page URL", "User Agent"],
-    fields: ["service", "location", "contact", "budget", "_subject", "page_url", "user_agent"],
+    headers: ["Timestamp", "Service Needed", "Location", "Business Type", "Contact", "Budget / Urgency", "Extra Details", "Lead Status", "Matched Providers", "Subject", "Page URL", "User Agent"],
+    fields: ["service", "location", "business_type", "contact", "budget", "details", "lead_status", "matched_providers", "_subject", "page_url", "user_agent"],
   },
   provider_listing: {
     sheet: "Provider Listings",
-    headers: ["Timestamp", "Company", "Main Service", "Contact", "Subject", "Page URL", "User Agent"],
-    fields: ["company", "main_service", "contact", "_subject", "page_url", "user_agent"],
+    headers: ["Timestamp", "Company", "Main Service", "Location", "Website / Profile", "Languages", "Contact", "Service Scope", "Review Status", "Subject", "Page URL", "User Agent"],
+    fields: ["company", "main_service", "location", "website", "languages", "contact", "details", "review_status", "_subject", "page_url", "user_agent"],
   },
   other: {
     sheet: "Other Submissions",
-    headers: ["Timestamp", "Form Type", "Service Needed", "Location", "Company", "Main Service", "Contact", "Budget / Urgency", "Subject", "Page URL", "User Agent"],
-    fields: ["form_type", "service", "location", "company", "main_service", "contact", "budget", "_subject", "page_url", "user_agent"],
+    headers: ["Timestamp", "Form Type", "Service Needed", "Location", "Business Type", "Company", "Main Service", "Website / Profile", "Languages", "Contact", "Budget / Urgency", "Extra Details", "Subject", "Page URL", "User Agent"],
+    fields: ["form_type", "service", "location", "business_type", "company", "main_service", "website", "languages", "contact", "budget", "details", "_subject", "page_url", "user_agent"],
   },
 };
 
@@ -27,6 +27,8 @@ function doPost(e) {
     const data = e.parameter || {};
     const config = FORM_CONFIG[data.form_type] || FORM_CONFIG.other;
     const sheet = getSheet_(config.sheet, config.headers);
+    if (data.form_type === "quote_request" && !data.lead_status) data.lead_status = "new";
+    if (data.form_type === "provider_listing" && !data.review_status) data.review_status = "new";
     const row = [new Date()].concat(config.fields.map((field) => data[field] || ""));
 
     sheet.appendRow(row);
@@ -59,9 +61,14 @@ function notify_(data) {
     `Form type: ${data.form_type || ""}`,
     `Service needed: ${data.service || ""}`,
     `Location: ${data.location || ""}`,
+    `Business type: ${data.business_type || ""}`,
     `Company: ${data.company || ""}`,
     `Main service: ${data.main_service || ""}`,
+    `Website / profile: ${data.website || ""}`,
+    `Languages: ${data.languages || ""}`,
     `Contact: ${data.contact || ""}`,
+    `Budget / urgency: ${data.budget || ""}`,
+    `Details: ${data.details || ""}`,
     `Page URL: ${data.page_url || ""}`,
   ].join("\n");
 

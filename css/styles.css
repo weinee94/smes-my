@@ -413,14 +413,15 @@ h3 {
 }
 
 .quote-panel input,
-.quote-panel select {
+.quote-panel select,
+.quote-panel textarea {
   min-height: 38px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .request-steps {
-  display: none;
+  display: grid;
   gap: 10px;
   padding: 16px 0 0;
   margin: 18px 0 0;
@@ -503,6 +504,13 @@ h3 {
   padding: 10px 12px;
 }
 
+.form-note {
+  margin: -2px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 label {
   display: grid;
   gap: 5px;
@@ -512,7 +520,8 @@ label {
 }
 
 input,
-select {
+select,
+textarea {
   width: 100%;
   min-height: 44px;
   padding: 10px 12px;
@@ -521,6 +530,11 @@ select {
   background: #fff;
   color: var(--ink);
   font: inherit;
+}
+
+textarea {
+  min-height: 92px;
+  resize: vertical;
 }
 
 .section,
@@ -623,7 +637,8 @@ select {
 .category-grid,
 .provider-grid,
 .pricing-grid,
-.positioning-grid {
+.positioning-grid,
+.loop-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
@@ -632,7 +647,8 @@ select {
 .category-card,
 .provider-card,
 .pricing-grid article,
-.positioning-grid article {
+.positioning-grid article,
+.loop-grid article {
   min-height: 170px;
   padding: 18px;
   border: 1px solid var(--line);
@@ -702,9 +718,41 @@ select {
 .category-card p,
 .provider-card p,
 .pricing-grid p,
-.positioning-grid p {
+.positioning-grid p,
+.loop-grid p {
   margin: 0;
   color: var(--muted);
+}
+
+.ops-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--line);
+}
+
+.ops-panel div {
+  display: grid;
+  gap: 5px;
+  padding: 18px;
+  background: #fff;
+}
+
+.ops-panel strong {
+  color: var(--violet-dark);
+}
+
+.ops-panel span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.compact-list {
+  margin-top: 18px;
 }
 
 .category-meta,
@@ -1124,6 +1172,18 @@ select {
   margin: 0;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 8px !important;
+}
+
+.footer-links a {
+  color: var(--violet-dark);
+  font-weight: 800;
+}
+
 .site-footer img {
   width: 96px;
   height: 72px;
@@ -1157,10 +1217,12 @@ select {
   .provider-grid,
   .pricing-grid,
   .positioning-grid,
+  .loop-grid,
   .journey-grid,
   .snapshot-grid,
-    .city-grid,
-    .service-grid {
+  .ops-panel,
+  .city-grid,
+  .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1200,6 +1262,7 @@ select {
   .provider-grid,
   .pricing-grid,
   .positioning-grid,
+  .loop-grid,
   .provider-toolbar,
   .seo-layout,
   .timeline,
@@ -1242,9 +1305,11 @@ select {
   .provider-grid,
   .pricing-grid,
   .positioning-grid,
+  .loop-grid,
   .provider-toolbar,
   .journey-grid,
   .snapshot-grid,
+  .ops-panel,
   .city-grid {
     grid-template-columns: 1fr;
   }

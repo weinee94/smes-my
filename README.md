@@ -10,7 +10,7 @@ Independent Malaysia SME services directory and lead platform.
 - Example provider listings
 - Quote request form
 - Provider onboarding form
-- Pricing model and 30-day execution plan
+- Provider review, enquiry routing, and legal/support pages
 
 ## Deployment
 
@@ -40,3 +40,9 @@ Setup:
 The script writes quote requests into `Quote Requests`, provider onboarding requests into
 `Provider Listings`, and any unknown form type into `Other Submissions`. It also sends an
 email notification for each submission.
+
+Operational fields now support the matching loop:
+
+- Quote requests include service, location, business type, contact, budget / urgency, details, lead status, and matched providers.
+- Provider listings include company, main service, location, website / profile, languages, contact, service scope, and review status.
+- Default statuses are added by Apps Script as `new`; use the Sheet to update follow-up states such as `reviewed`, `matched`, `provider contacted`, `replied`, or `closed`.

@@ -113,7 +113,7 @@
             <span data-i18n="forMalaysiaSmes">For Malaysia SMEs</span>
           </div>
           <h2 id="quote-title" data-i18n="quoteTitle">Tell us what you need.</h2>
-          <p data-i18n="quoteText">Share your service type, location, and contact details. Relevant providers can then reply with options.</p>
+          <p data-i18n="quoteText">Share your service type, location, and contact details. SMEs.MY reviews the request and routes it to relevant providers where suitable.</p>
           <form
             class="lead-form js-lead-form"
             action="https://script.google.com/macros/s/AKfycbyhmVYdJH6wudAYJ42yHcgLG21yODRuXqWFOVzaApE27z_XVpu2lB-OVYfm-To46cFDyg/exec"
@@ -145,6 +145,10 @@
               <input name="location" id="quoteLocation" placeholder="Kuala Lumpur, Selangor, Penang..." data-i18n-placeholder="locationPlaceholder" required />
             </label>
             <label>
+              <span data-i18n="formBusinessType">Business type</span>
+              <input name="business_type" placeholder="Retail, F&B, ecommerce, professional services..." data-i18n-placeholder="businessTypePlaceholder" />
+            </label>
+            <label>
               <span data-i18n="formContact">Contact</span>
               <input name="contact" placeholder="Email or WhatsApp number" data-i18n-placeholder="contactPlaceholder" required />
             </label>
@@ -152,21 +156,26 @@
               <span data-i18n="formBudget">Budget / urgency</span>
               <input name="budget" placeholder="Optional: RM budget or when you need it" data-i18n-placeholder="budgetPlaceholder" />
             </label>
+            <label>
+              <span data-i18n="formDetails">Extra details</span>
+              <textarea name="details" rows="3" placeholder="What problem are you trying to solve? Any deadline, software, document volume, or language preference?" data-i18n-placeholder="detailsPlaceholder"></textarea>
+            </label>
             <button class="button primary full" type="submit" data-i18n="sendRequest">Send request</button>
+            <p class="form-note" data-i18n="quoteConsent">By submitting, you agree that SMEs.MY may review your request and share relevant details with suitable providers so they can respond.</p>
             <p class="form-status" aria-live="polite"></p>
           </form>
           <ul class="request-steps" aria-label="What happens after submitting">
             <li>
               <strong>1</strong>
-              <span>You choose the service and tell us your location.</span>
+              <span data-i18n="afterSubmitOne">We check the service, location, contact method, and urgency.</span>
             </li>
             <li>
               <strong>2</strong>
-              <span>Your request is matched with relevant business service providers.</span>
+              <span data-i18n="afterSubmitTwo">Suitable providers may receive the request details and reply directly.</span>
             </li>
             <li>
               <strong>3</strong>
-              <span>You compare replies and choose who to contact.</span>
+              <span data-i18n="afterSubmitThree">You compare replies, ask follow-up questions, and choose the provider.</span>
             </li>
           </ul>
         </aside>
@@ -184,6 +193,45 @@
         <div>
           <strong data-i18n="trustThreeTitle">Simple quote requests</strong>
           <span data-i18n="trustThreeText">Send one request instead of contacting many providers one by one.</span>
+        </div>
+      </section>
+
+      <section class="section loop-section" id="platform-loop">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="loopEyebrow">Platform loop</p>
+          <h2 data-i18n="loopTitle">A practical matching flow for SMEs and providers.</h2>
+          <p data-i18n="loopText">SMEs.MY starts with clear requests, provider information, and manual review so the directory can improve with real market data.</p>
+        </div>
+        <div class="loop-grid">
+          <article>
+            <span class="card-index">01</span>
+            <h3 data-i18n="loopUserTitle">SME submits a request</h3>
+            <p data-i18n="loopUserText">The buyer shares service type, location, contact, business context, urgency, and any special requirements.</p>
+          </article>
+          <article>
+            <span class="card-index">02</span>
+            <h3 data-i18n="loopAdminTitle">SMEs.MY reviews and routes</h3>
+            <p data-i18n="loopAdminText">Requests are checked for category, city, language, and fit before being routed to relevant providers where suitable.</p>
+          </article>
+          <article>
+            <span class="card-index">03</span>
+            <h3 data-i18n="loopProviderTitle">Providers respond</h3>
+            <p data-i18n="loopProviderText">Providers contact the SME, clarify scope, quote directly, and build trust through useful follow-up.</p>
+          </article>
+        </div>
+        <div class="ops-panel" aria-label="Operational safeguards">
+          <div>
+            <strong data-i18n="opsOneTitle">Provider review</strong>
+            <span data-i18n="opsOneText">Listings should include company name, service scope, location, contact channel, website if available, and language support.</span>
+          </div>
+          <div>
+            <strong data-i18n="opsTwoTitle">Lead tracking</strong>
+            <span data-i18n="opsTwoText">Each request can be tracked as new, reviewed, matched, provider contacted, replied, or closed.</span>
+          </div>
+          <div>
+            <strong data-i18n="opsThreeTitle">Trust boundary</strong>
+            <span data-i18n="opsThreeText">SMEs.MY helps with discovery and matching, while final pricing, engagement, and service delivery remain between buyer and provider.</span>
+          </div>
         </div>
       </section>
 
@@ -402,8 +450,13 @@
           <p class="eyebrow" data-i18n="listEyebrow">For service providers</p>
           <h2 data-i18n="listTitle">List your SME service business.</h2>
           <p data-i18n="listText">
-            If you provide business services in Malaysia, submit your company details and we will review your listing.
+            If you provide business services in Malaysia, submit enough details for review and lead matching.
           </p>
+          <ul class="check-list compact-list">
+            <li data-i18n="providerBenefitOne">Be discoverable by SMEs searching for your service category.</li>
+            <li data-i18n="providerBenefitTwo">Receive relevant enquiry opportunities when there is a fit.</li>
+            <li data-i18n="providerBenefitThree">Build a clearer profile with service scope, locations, and languages.</li>
+          </ul>
         </div>
         <form
           class="lead-form js-lead-form"
@@ -424,10 +477,27 @@
             <input name="main_service" placeholder="Accounting, payroll, website design..." data-i18n-placeholder="mainServicePlaceholder" required />
           </label>
           <label>
+            <span data-i18n="providerLocation">Service location</span>
+            <input name="location" placeholder="Kuala Lumpur, Selangor, Malaysia-wide..." data-i18n-placeholder="providerLocationPlaceholder" required />
+          </label>
+          <label>
+            <span data-i18n="providerWebsite">Website / profile</span>
+            <input name="website" placeholder="Optional website, Facebook, LinkedIn, or company profile URL" data-i18n-placeholder="providerWebsitePlaceholder" />
+          </label>
+          <label>
+            <span data-i18n="providerLanguages">Languages</span>
+            <input name="languages" placeholder="English, BM, Mandarin, Cantonese..." data-i18n-placeholder="providerLanguagesPlaceholder" />
+          </label>
+          <label>
             <span data-i18n="formContact">Contact</span>
             <input name="contact" placeholder="Email or WhatsApp number" data-i18n-placeholder="contactPlaceholder" required />
           </label>
+          <label>
+            <span data-i18n="providerScope">Service scope</span>
+            <textarea name="details" rows="3" placeholder="Who do you serve, what packages do you offer, and what enquiries are suitable?" data-i18n-placeholder="providerScopePlaceholder"></textarea>
+          </label>
           <button class="button primary full" type="submit" data-i18n="applyListing">Apply for listing</button>
+          <p class="form-note" data-i18n="providerConsent">Submitting does not guarantee listing approval. SMEs.MY may contact you to verify details before publishing or routing enquiries.</p>
           <p class="form-status" aria-live="polite"></p>
         </form>
       </section>
@@ -438,6 +508,7 @@
       <div>
         <p><strong>SMEs.MY</strong> <span data-i18n="footerOne">helps Malaysian SMEs find and compare business service providers.</span></p>
         <p data-i18n="footerTwo">Need help choosing a provider? Start with a service category or send a quote request.</p>
+        <p class="footer-links"><a href="/privacy-notice">Privacy Notice</a><a href="/terms-of-use">Terms of Use</a><a href="/disclaimer">Disclaimer</a></p>
       </div>
     </footer>
 
