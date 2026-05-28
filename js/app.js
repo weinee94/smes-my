@@ -2,7 +2,7 @@ const translations = {
   en: {
     navServices: "Services",
     navProviders: "Providers",
-    navHow: "How it works",
+    navHow: "How matching works",
     navForProviders: "For providers",
     requestQuotes: "Request quotes",
     listBusiness: "List your business",
@@ -83,6 +83,7 @@ const translations = {
     opsThreeTitle: "Trust boundary",
     opsThreeText:
       "SMEs.MY helps with discovery and matching, while final pricing, engagement, and service delivery remain between buyer and provider.",
+    learnMatching: "Learn how matching works",
     howEyebrow: "How SMEs.MY works",
     howTitle: "One place to find the services your business needs.",
     howBrowseTitle: "Browse",
@@ -208,7 +209,7 @@ const translations = {
   zh: {
     navServices: "服务",
     navProviders: "服务商",
-    navHow: "怎样使用",
+    navHow: "配对流程",
     navForProviders: "商家加入",
     requestQuotes: "免费询价",
     listBusiness: "提交商家资料",
@@ -281,6 +282,7 @@ const translations = {
     opsTwoText: "每个需求可以记录为 new、reviewed、matched、provider contacted、replied 或 closed。",
     opsThreeTitle: "信任边界",
     opsThreeText: "SMEs.MY 帮助发现和配对，最终报价、聘请和服务交付由买家和服务商决定。",
+    learnMatching: "了解配对流程",
     howEyebrow: "SMEs.MY 怎样帮你",
     howTitle: "一个地方，找到公司常用的服务。",
     howBrowseTitle: "浏览",

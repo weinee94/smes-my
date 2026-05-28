@@ -755,6 +755,13 @@ textarea {
   margin-top: 18px;
 }
 
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
 .category-meta,
 .provider-meta {
   display: flex;
