@@ -22,7 +22,7 @@ Corporate email and official identity can remain on `smes.com.my`; the public di
 
 The current lead forms are wired to this Google Apps Script endpoint:
 
-`https://script.google.com/macros/s/AKfycbyhmVYdJH6wudAYJ42yHcgLG21yODRuXqWFOVzaApE27z_XVpu2lB-OVYfm-To46cFDyg/exec`
+`https://script.google.com/macros/s/AKfycbw66TcCNpD1fXsv0YRV5j9hhzS0LPNd8ojxogAmqQzYkZt0qZkvzOD9aygpl1-xUtkRcw/exec`
 
 Setup:
 
