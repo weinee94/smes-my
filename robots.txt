@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://smes.my/sitemap.xml
+LLMS: https://smes.my/llms.txt
