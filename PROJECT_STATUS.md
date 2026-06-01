@@ -1,6 +1,6 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-05-27 18:48 Asia/Singapore
+Last updated: 2026-06-01 17:45 Asia/Singapore
 
 ## Current Objective
 
@@ -11,8 +11,8 @@ Build `SMEs.MY` as an independent Malaysia SME services directory and lead platf
 - Local path: `C:\Users\Wynne\Documents\Codex\smes-my`
 - GitHub: `https://github.com/weinee94/smes-my.git`
 - Branch: `main`
-- Latest commit: `070a5b0 Add Apps Script version marker`
-- Git state at last check: local working tree has uncommitted website changes
+- Latest commit: `264bdfa Add IndexNow key`
+- Git state at last check: clean
 
 ## Site Structure
 
@@ -29,9 +29,8 @@ Build `SMEs.MY` as an independent Malaysia SME services directory and lead platf
 - GitHub push is working.
 - Vercel should be connected to `weinee94/smes-my`.
 - Static deploy settings: no build command; output directory root / `.`
-- Latest pushed changes include stronger form feedback and shorter Apps Script source.
-- Latest local changes are not yet committed or pushed.
-- Next verification needed: confirm `smes.my` is deploying from this repo and branch.
+- Latest pushed changes include GEO/AI discovery metadata and an IndexNow verification key.
+- Search Console has verified `https://smes.my/`; sitemap submission is successful.
 
 ## Lead Capture
 
@@ -60,6 +59,12 @@ Build `SMEs.MY` as an independent Malaysia SME services directory and lead platf
 - Recolored the site to better match the 商記 SMEs.MY logo: purple brand accents, green primary buttons, pink/gold highlights.
 - Added EN / 中文 language switching on the homepage, including hero, forms, service cards, provider cards, and key sections.
 - Updated public brand display from `smes.my` to `SMEs.MY` while keeping lowercase URLs.
+- Added `llms.txt` and exposed it from `robots.txt` via `LLMS: https://smes.my/llms.txt`.
+- Re-submitted `https://smes.my/sitemap.xml` in Google Search Console on 2026-06-01; Search Console showed same-day read success.
+- Search Console status on 2026-06-01: 2 Google Search clicks, 2 indexed pages, 13 not indexed.
+- Confirmed indexed: homepage and `https://smes.my/payroll-services-malaysia`.
+- Requested indexing for accounting, company secretary, website design, and digital marketing service pages.
+- Added IndexNow key file `https://smes.my/5de411d1-21fb-490e-8c74-bcc229039a59.txt` and submitted a URL batch to IndexNow; API returned HTTP 202.
 
 ## Open Issues
 
@@ -67,18 +72,16 @@ Build `SMEs.MY` as an independent Malaysia SME services directory and lead platf
 - Service detail pages are English-only for now; homepage supports EN / 中文.
 - Need to prepare Chinese versions for the 5 SEO service pages.
 - Need to create legal/support pages: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`.
-- Needs Vercel deployment verification.
+- SEO indexing is in progress; do not treat low traffic as a form/backend issue until Search Console has had time to process indexing requests.
 - Visual polish can continue, but content depth and real listings are the main path out of “half-finished” feel.
 
 ## Next Steps
 
-1. Review the local homepage at `http://127.0.0.1:4173` if the preview server is still running.
-2. Add Chinese content/version support for the 5 SEO service pages.
-3. Create `privacy-notice/`, `terms-of-use/`, and `disclaimer/` pages, including Wynne Consultancy Group PLT as administrator where appropriate.
-4. Commit and push the current website changes.
-5. Verify Vercel deploys the latest `main` branch.
-6. Confirm `SMEs.MY` branding, EN / 中文 switch, forms, service pages, and legal pages on the deployed site.
-7. Add first 20-50 real provider profiles.
+1. Check Search Console again after Google processes the 2026-06-01 indexing requests.
+2. Add first 20-50 real provider profiles; content depth and trust signals are the main growth bottleneck.
+3. Add Chinese content/version support for the 5 SEO service pages.
+4. Continue legal/support page polish if needed: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`.
+5. Build external trust signals: social profiles, credible mentions, provider backlinks, and business directory citations.
 
 ## Useful Commands
 
