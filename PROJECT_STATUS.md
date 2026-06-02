@@ -1,10 +1,10 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-01 17:45 Asia/Singapore
+Last updated: 2026-06-02 Asia/Singapore
 
 ## Current Objective
 
-Build `SMEs.MY` as an independent Malaysia SME services directory and lead platform. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
+Build `SMEs.MY` as an independent Malaysia SME supplier, services, and lead platform. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
 
 ## Current Repo
 
@@ -23,6 +23,7 @@ Build `SMEs.MY` as an independent Malaysia SME services directory and lead platf
 - `docs/google-apps-script.js` - Google Apps Script backend for lead capture
 - `vercel.json` - clean URL configuration
 - `accounting-services-malaysia/`, `company-secretary-services-malaysia/`, `payroll-services-malaysia/`, `website-design-services-malaysia/`, `digital-marketing-agency-malaysia/` - first SEO service pages
+- `packaging-suppliers-malaysia/` - first supplier/category page outside the pure service-provider lane
 
 ## Deployment
 
@@ -65,11 +66,13 @@ Build `SMEs.MY` as an independent Malaysia SME services directory and lead platf
 - Confirmed indexed: homepage and `https://smes.my/payroll-services-malaysia`.
 - Requested indexing for accounting, company secretary, website design, and digital marketing service pages.
 - Added IndexNow key file `https://smes.my/5de411d1-21fb-490e-8c74-bcc229039a59.txt` and submitted a URL batch to IndexNow; API returned HTTP 202.
+- Added `packaging-suppliers-malaysia/` to widen SMEs.MY from pure business services into a supplier + service directory.
+- Updated homepage metadata, JSON-LD, search shortcuts, quote form, category cards, provider cards, sitemap, and `llms.txt` to include packaging suppliers.
 
 ## Open Issues
 
 - Site still needs real provider data; current providers are placeholder examples.
-- Service detail pages are English-only for now; homepage supports EN / 中文.
+- Service and supplier detail pages are English-only for now; homepage supports EN / 中文.
 - Need to prepare Chinese versions for the 5 SEO service pages.
 - Need to create legal/support pages: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`.
 - SEO indexing is in progress; do not treat low traffic as a form/backend issue until Search Console has had time to process indexing requests.
@@ -78,7 +81,7 @@ Build `SMEs.MY` as an independent Malaysia SME services directory and lead platf
 ## Next Steps
 
 1. Check Search Console again after Google processes the 2026-06-01 indexing requests.
-2. Add first 20-50 real provider profiles; content depth and trust signals are the main growth bottleneck.
+2. Add first 20-50 real provider/supplier profiles; content depth and trust signals are the main growth bottleneck.
 3. Add Chinese content/version support for the 5 SEO service pages.
 4. Continue legal/support page polish if needed: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`.
 5. Build external trust signals: social profiles, credible mentions, provider backlinks, and business directory citations.

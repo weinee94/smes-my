@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SMEs.MY | Malaysia SME Services Directory</title>
+    <title>SMEs.MY | Malaysia SME Supplier & Services Directory</title>
     <meta
       name="description"
-      content="Find trusted business service providers for Malaysian SMEs. Compare accounting, company secretary, tax, payroll, digital marketing, IT, legal, financing, and logistics services."
+      content="Find trusted business suppliers and service providers for Malaysian SMEs. Compare packaging suppliers, accounting, company secretary, payroll, digital marketing, IT, financing, and operations support."
     />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="SMEs.MY | Malaysia SME Services Directory" />
+    <meta property="og:title" content="SMEs.MY | Malaysia SME Supplier & Services Directory" />
     <meta
       property="og:description"
-      content="Find and compare business service providers in Malaysia for accounting, company secretary, payroll, websites, marketing, IT, legal, financing, and operations support."
+      content="Find and compare business suppliers and service providers in Malaysia for packaging, accounting, company secretary, payroll, websites, marketing, IT, financing, and operations support."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://smes.my/" />
@@ -31,7 +31,7 @@
             "name": "SMEs.MY",
             "url": "https://smes.my/",
             "logo": "https://smes.my/assets/smes-main-logo.png",
-            "description": "Malaysia SME services directory and enquiry matching platform.",
+            "description": "Malaysia SME supplier, service, and enquiry matching platform.",
             "areaServed": "MY"
           },
           {
@@ -40,7 +40,7 @@
             "name": "SMEs.MY",
             "url": "https://smes.my/",
             "publisher": { "@id": "https://smes.my/#organization" },
-            "description": "Find and compare business service providers in Malaysia.",
+            "description": "Find and compare business suppliers and service providers in Malaysia.",
             "potentialAction": {
               "@type": "SearchAction",
               "target": "https://smes.my/?q={search_term_string}",
@@ -56,7 +56,8 @@
               { "@type": "ListItem", "position": 2, "name": "Company secretary services Malaysia", "url": "https://smes.my/company-secretary-services-malaysia" },
               { "@type": "ListItem", "position": 3, "name": "Payroll services Malaysia", "url": "https://smes.my/payroll-services-malaysia" },
               { "@type": "ListItem", "position": 4, "name": "Website design services Malaysia", "url": "https://smes.my/website-design-services-malaysia" },
-              { "@type": "ListItem", "position": 5, "name": "Digital marketing agency Malaysia", "url": "https://smes.my/digital-marketing-agency-malaysia" }
+              { "@type": "ListItem", "position": 5, "name": "Digital marketing agency Malaysia", "url": "https://smes.my/digital-marketing-agency-malaysia" },
+              { "@type": "ListItem", "position": 6, "name": "Packaging suppliers Malaysia", "url": "https://smes.my/packaging-suppliers-malaysia" }
             ]
           }
         ]
@@ -94,25 +95,26 @@
             <img src="assets/smes-main-logo.png" alt="商記 SMEs.MY" />
             <span data-i18n="heroEyebrow">Find business services in Malaysia</span>
           </div>
-          <h1 data-i18n="heroTitle">Find local service providers for your business.</h1>
+          <h1 data-i18n="heroTitle">Find local suppliers and service providers for your business.</h1>
           <p class="hero-text" data-i18n="heroText">
             Tell us what service you need, where your business is located, and how providers can
-            contact you. SMEs.MY helps Malaysian SMEs find accounting, company secretary, payroll,
-            website, marketing, IT, legal, financing, and operations support.
+            contact you. SMEs.MY helps Malaysian SMEs find packaging suppliers, accounting, company
+            secretary, payroll, website, marketing, IT, financing, and operations support.
           </p>
           <div class="language-note">
             <span data-i18n="heroPillOne">For Malaysian SME owners</span>
             <span data-i18n="heroPillTwo">English, BM, and Chinese-friendly support</span>
           </div>
           <div class="search-box" role="search" aria-label="Search SME services">
-            <input id="siteSearch" type="search" placeholder="Search accounting, payroll, website design..." data-i18n-placeholder="searchPlaceholder" />
-            <button class="button primary" type="button" id="siteSearchButton" data-i18n="searchServices">Search services</button>
+            <input id="siteSearch" type="search" placeholder="Search packaging, accounting, website design..." data-i18n-placeholder="searchPlaceholder" />
+            <button class="button primary" type="button" id="siteSearchButton" data-i18n="searchServices">Search categories</button>
           </div>
           <p class="search-status" id="searchStatus" aria-live="polite"></p>
           <div class="popular-searches" aria-label="Popular searches">
             <a href="/accounting-services-malaysia" data-i18n="serviceAccountingShort">Accounting</a>
             <a href="/company-secretary-services-malaysia" data-i18n="serviceCompanySecShort">Company Secretary</a>
             <a href="/payroll-services-malaysia" data-i18n="servicePayrollShort">Payroll</a>
+            <a href="/packaging-suppliers-malaysia" data-i18n="servicePackagingShort">Packaging</a>
             <a href="/website-design-services-malaysia" data-i18n="serviceWebsiteShort">Website Design</a>
             <a href="/digital-marketing-agency-malaysia" data-i18n="serviceMarketingShort">Digital Marketing</a>
           </div>
@@ -123,7 +125,7 @@
           <dl class="hero-stats" aria-label="Platform focus">
             <div>
               <dt>10+</dt>
-              <dd data-i18n="statCategories">Business service types</dd>
+              <dd data-i18n="statCategories">Supplier and service types</dd>
             </div>
             <div>
               <dt>MY</dt>
@@ -160,6 +162,7 @@
                 <option value="Company secretary" data-i18n="serviceCompanySec">Company secretary</option>
                 <option value="Tax agent" data-i18n="serviceTax">Tax agent</option>
                 <option value="Payroll services" data-i18n="servicePayroll">Payroll services</option>
+                <option value="Packaging suppliers" data-i18n="servicePackaging">Packaging suppliers</option>
                 <option value="Digital marketing" data-i18n="serviceMarketing">Digital marketing</option>
                 <option value="Website design" data-i18n="serviceWebsite">Website design</option>
                 <option value="SME financing" data-i18n="serviceFinancing">SME financing</option>
@@ -292,9 +295,9 @@
       <section class="section" id="categories">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="popularEyebrow">Popular services</p>
-          <h2 data-i18n="popularTitle">Find providers for the work SMEs buy often.</h2>
+          <h2 data-i18n="popularTitle">Find providers and suppliers for what SMEs buy often.</h2>
           <p data-i18n="popularText">
-            Choose a service below to understand what to compare and send a quote request.
+            Choose a category below to understand what to compare and send a quote request.
           </p>
         </div>
         <div class="category-grid" id="categoryGrid"></div>
@@ -312,8 +315,8 @@
         <div class="journey-grid">
           <article>
             <span class="step-number">1</span>
-            <h3 data-i18n="journeyOneTitle">Choose a service</h3>
-            <p data-i18n="journeyOneText">Select accounting, company secretary, payroll, website design, digital marketing, IT, legal, financing, or another business service.</p>
+            <h3 data-i18n="journeyOneTitle">Choose a category</h3>
+            <p data-i18n="journeyOneText">Select packaging, accounting, company secretary, payroll, website design, digital marketing, IT, financing, or another business category.</p>
           </article>
           <article>
             <span class="step-number">2</span>
@@ -331,10 +334,10 @@
       <section class="band">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="findEyebrow">What you can find</p>
-          <h2 data-i18n="findTitle">Business services commonly used by Malaysian SMEs.</h2>
+          <h2 data-i18n="findTitle">Suppliers and services commonly used by Malaysian SMEs.</h2>
           <p data-i18n="findText">
-            Use SMEs.MY when you need professional help to run, comply, digitise, hire,
-            market, or finance your business.
+            Use SMEs.MY when you need suppliers or professional help to package, run, comply,
+            digitise, market, or finance your business.
           </p>
         </div>
         <div class="positioning-grid">
@@ -350,8 +353,8 @@
           </article>
           <article>
             <span class="card-index">03</span>
-            <h3 data-i18n="findThreeTitle">Money and operations</h3>
-            <p data-i18n="findThreeText">Financing, recruitment, logistics, admin support, and other SME operating services.</p>
+            <h3 data-i18n="findThreeTitle">Supplies, money, and operations</h3>
+            <p data-i18n="findThreeText">Packaging, financing, recruitment, logistics, admin support, and other SME operating needs.</p>
           </article>
         </div>
       </section>
@@ -429,11 +432,12 @@
         </div>
         <div class="seo-layout">
           <div>
-            <h3 data-i18n="guidesPopular">Popular services</h3>
+          <h3 data-i18n="guidesPopular">Popular categories</h3>
             <ul class="check-list">
               <li><a href="/accounting-services-malaysia" data-i18n="guideAccounting">Accounting services Malaysia</a></li>
               <li><a href="/company-secretary-services-malaysia" data-i18n="guideCompanySec">Company secretary services Malaysia</a></li>
               <li><a href="/payroll-services-malaysia" data-i18n="guidePayroll">Payroll services Malaysia</a></li>
+              <li><a href="/packaging-suppliers-malaysia" data-i18n="guidePackaging">Packaging suppliers Malaysia</a></li>
               <li><a href="/digital-marketing-agency-malaysia" data-i18n="guideMarketing">Digital marketing agency Malaysia</a></li>
               <li><a href="/website-design-services-malaysia" data-i18n="guideWebsite">Website design for SME Malaysia</a></li>
               <li data-i18n="guideLoan">SME business loan Malaysia</li>

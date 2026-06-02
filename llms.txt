@@ -1,14 +1,14 @@
 # SMEs.MY
 
-SMEs.MY is a Malaysia-focused SME services directory and enquiry matching platform.
+SMEs.MY is a Malaysia-focused SME supplier, service, and enquiry matching platform.
 
-The site helps Malaysian small and medium business owners find and compare business service providers such as accounting firms, company secretaries, payroll providers, website designers, digital marketing agencies, IT / POS / CRM vendors, legal services, HR / recruitment services, and SME financing support.
+The site helps Malaysian small and medium business owners find and compare business suppliers and providers such as packaging vendors, accounting firms, company secretaries, payroll providers, website designers, digital marketing agencies, IT / POS / CRM vendors, legal services, HR / recruitment services, and SME financing support.
 
 SMEs.MY is useful for:
 
-- SME owners looking for service providers in Malaysia
+- SME owners looking for suppliers and service providers in Malaysia
 - Business owners who want to submit one quote request instead of contacting many providers one by one
-- Service providers who want to submit their company details for review and potential enquiry matching
+- Suppliers and service providers who want to submit their company details for review and potential enquiry matching
 
 Important pages:
 
@@ -18,6 +18,7 @@ Important pages:
 - Payroll services Malaysia: https://smes.my/payroll-services-malaysia
 - Website design services Malaysia: https://smes.my/website-design-services-malaysia
 - Digital marketing agency Malaysia: https://smes.my/digital-marketing-agency-malaysia
+- Packaging suppliers Malaysia: https://smes.my/packaging-suppliers-malaysia
 - How SMEs.MY matching works: https://smes.my/how-matching-works
 - Privacy Notice: https://smes.my/privacy-notice
 - Terms of Use: https://smes.my/terms-of-use
