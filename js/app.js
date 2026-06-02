@@ -58,6 +58,10 @@ const translations = {
     afterSubmitOne: "We check the service, location, contact method, and urgency.",
     afterSubmitTwo: "Suitable providers may receive the request details and reply directly.",
     afterSubmitThree: "You compare replies, ask follow-up questions, and choose the provider.",
+    visualEyebrow: "Real buying context",
+    visualTitle: "Compare suppliers with clearer details before you commit.",
+    visualText:
+      "SMEs.MY is designed around practical buying decisions: what you need, where your business is, how soon suppliers can respond, and what details must be clarified before a quote is useful.",
     trustOneTitle: "Business services only",
     trustOneText: "Accounting, compliance, payroll, websites, marketing, IT, legal, financing, and operations.",
     trustTwoTitle: "Malaysia-focused",
@@ -266,6 +270,10 @@ const translations = {
     afterSubmitOne: "我们会查看需求类型、地点、联系方式和紧急程度。",
     afterSubmitTwo: "适合的供应商或服务商可能会收到需求资料，并直接联系你。",
     afterSubmitThree: "你可以比较回复、继续提问，再选择供应商。",
+    visualEyebrow: "真实采购场景",
+    visualTitle: "提交前先把供应商资料比较清楚。",
+    visualText:
+      "SMEs.MY 的流程围绕实际采购决定：你需要什么、公司在哪里、供应商多久能回复，以及报价前哪些资料必须先讲清楚。",
     trustOneTitle: "只做商业需求",
     trustOneText: "包装、会计、合规、Payroll、网站、Marketing、IT、融资和营运支援。",
     trustTwoTitle: "专注马来西亚",
