@@ -386,6 +386,49 @@ h3 {
   font-size: 14px;
 }
 
+.visual-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: clamp(22px, 4vw, 42px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 54px) max(20px, calc((100vw - var(--content)) / 2));
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.visual-feature figure,
+.service-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7f4fb;
+  box-shadow: var(--shadow);
+}
+
+.visual-feature img,
+.service-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-feature figure,
+.service-photo {
+  aspect-ratio: 3 / 2;
+}
+
+.visual-feature h2 {
+  max-width: 12ch;
+}
+
+.visual-feature p:not(.eyebrow) {
+  max-width: 54ch;
+  color: var(--muted);
+  font-size: 17px;
+}
+
 .quote-panel,
 .split-cta form {
   position: relative;
@@ -1044,6 +1087,12 @@ textarea {
   font-weight: 900;
 }
 
+.service-hero-side {
+  display: grid;
+  gap: 16px;
+  align-self: start;
+}
+
 .service-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
@@ -1207,6 +1256,7 @@ textarea {
   }
 
   .hero,
+  .visual-feature,
   .split-cta,
   .seo-layout,
   .trust-strip,
@@ -1255,6 +1305,7 @@ textarea {
   .hero,
   .section,
   .band,
+  .visual-feature,
   .service-hero,
   .service-content {
     padding-left: 18px;
