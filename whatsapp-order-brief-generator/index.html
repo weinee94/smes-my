@@ -37,9 +37,9 @@
           <p class="eyebrow">Free SME tool</p>
           <h1>Reply to messy WhatsApp enquiries faster.</h1>
           <p>
-            Paste a customer message, voice-to-text transcript, or loose notes. The tool checks
-            whether you have enough details to quote, then prepares a short brief and a practical
-            WhatsApp reply.
+            Paste a customer message, voice-to-text transcript, or loose notes. This no-token mode
+            creates a strong prompt you can copy into your own ChatGPT or AI tool. Private AI mode
+            is available only with an access code.
           </p>
           <div class="language-note">
             <span>Built for Malaysia SME sellers</span>
@@ -50,7 +50,7 @@
           <dl>
             <div><dt>Use for</dt><dd>Facebook leads, WhatsApp chats, voice notes</dd></div>
             <div><dt>Output</dt><dd>Order brief, questions, reply, next action</dd></div>
-            <div><dt>Status</dt><dd>Sales workflow MVP, AI-ready later</dd></div>
+            <div><dt>Status</dt><dd>No-token public mode + private AI mode</dd></div>
           </dl>
         </aside>
       </section>
@@ -91,6 +91,15 @@
               <option value="bm">BM-friendly English</option>
             </select>
           </label>
+          <label>
+            <span>Private AI access code (optional)</span>
+            <input
+              id="accessCode"
+              type="password"
+              autocomplete="off"
+              placeholder="Only for owner testing. Leave blank for no-token mode."
+            />
+          </label>
           <div class="example-row" aria-label="Quick examples">
             <button
               type="button"
@@ -121,12 +130,13 @@
             ></textarea>
           </label>
           <div class="tool-actions">
-            <button class="button primary" type="submit">Generate brief</button>
+            <button class="button primary" type="submit">Create copy-paste prompt</button>
+            <button class="button secondary" type="button" id="generateWithAi">Generate with private AI</button>
             <button class="button secondary" type="button" id="clearBrief">Clear</button>
           </div>
           <p class="form-note">
-            This version uses sales rules and industry-specific question sets. The same page flow
-            can later connect to an AI API for stronger understanding.
+            Public mode does not call the SMEs.MY API or spend tokens. Private AI mode requires a
+            server-side OpenAI key plus an access code configured by the site owner.
           </p>
           <p class="form-status" id="briefStatus" aria-live="polite"></p>
         </form>
@@ -135,7 +145,7 @@
           <div class="output-header">
             <div>
               <p class="eyebrow">Generated output</p>
-              <h2>Order brief + WhatsApp reply</h2>
+              <h2>Prompt or AI-generated brief</h2>
             </div>
             <button class="button secondary small" type="button" data-copy-target="allOutput">
               Copy all

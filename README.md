@@ -14,9 +14,30 @@ Independent Malaysia SME services directory and lead platform.
 
 ## Deployment
 
-This is a static site. Deploy the folder to Vercel or any static host.
+This is mostly a static site. Deploy the folder to Vercel so `/api/*` serverless functions work.
 
 Corporate email and official identity can remain on `smes.com.my`; the public directory should use `smes.my`.
+
+## WhatsApp Brief Tool
+
+The page at `/whatsapp-order-brief-generator` defaults to no-token mode. Public visitors receive a
+copy-paste prompt they can use in their own ChatGPT or AI tool, so SMEs.MY does not pay for public
+usage.
+
+Private AI mode calls `/api/whatsapp-brief`, but only when the visitor provides the configured
+access code. Use this for owner testing or future paid/private users.
+
+Required Vercel environment variables for private AI mode:
+
+- `OPENAI_API_KEY` - server-side OpenAI API key. Do not expose this in frontend code.
+- `BRIEF_TOOL_ACCESS_CODE` - private access code required before the API spends tokens.
+
+Optional environment variable:
+
+- `OPENAI_MODEL` - defaults to `gpt-5.4-mini`.
+
+If `BRIEF_TOOL_ACCESS_CODE` is not set, the API refuses private AI requests. After changing
+environment variables in Vercel, redeploy the site and test private AI mode again.
 
 ## Lead Capture With Google Sheets
 

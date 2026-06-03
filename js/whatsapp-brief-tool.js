@@ -2,9 +2,11 @@ const form = document.querySelector("#briefForm");
 const businessContext = document.querySelector("#businessContext");
 const businessType = document.querySelector("#businessType");
 const replyLanguage = document.querySelector("#replyLanguage");
+const accessCode = document.querySelector("#accessCode");
 const customerInput = document.querySelector("#customerInput");
 const briefStatus = document.querySelector("#briefStatus");
 const clearBrief = document.querySelector("#clearBrief");
+const generateWithAi = document.querySelector("#generateWithAi");
 
 const outputIds = {
   readiness: "readinessOutput",
@@ -451,6 +453,82 @@ function generateBrief(rawInput) {
   };
 }
 
+function buildCopyPastePrompt(rawInput) {
+  const cleanInput = normalizeText(rawInput);
+  const categoryKey = detectCategory(cleanInput);
+  const profile = categoryProfiles[categoryKey] || categoryProfiles.general;
+
+  return [
+    "You are a practical sales assistant for a Malaysian SME owner.",
+    "",
+    "Turn the customer enquiry below into:",
+    "1. Quote readiness: say whether it is Ready to quote, Almost ready, Needs details, or Too vague.",
+    "2. Customer needs summary: product/service, quantity/scope, location, timeline, budget, special requirements.",
+    "3. Questions to confirm: ask only the few most important missing details before quoting.",
+    "4. Suggested WhatsApp reply: short, friendly, and directly copyable.",
+    "5. Next action: what the business owner should do next.",
+    "",
+    "Keep the reply practical for Malaysian SME context. Do not invent details. Use RM, WhatsApp, delivery, halal, SSM, or local city context when relevant.",
+    "",
+    `Business / offer: ${businessContext.value.trim() || "Not provided"}`,
+    `Enquiry type: ${profile.label}`,
+    `Reply language: ${replyLanguage.value}`,
+    "",
+    "Customer enquiry:",
+    cleanInput,
+  ].join("\n");
+}
+
+function generatePromptOutput(rawInput) {
+  const prompt = buildCopyPastePrompt(rawInput);
+  return {
+    readiness: "No-token mode\nThis output does not call the SMEs.MY API or spend your tokens.",
+    summary:
+      "Copy the prompt below into your own ChatGPT or AI tool. The visitor pays with their own AI account/session, not SMEs.MY.",
+    questions: "No questions generated on SMEs.MY in no-token mode.",
+    reply: prompt,
+    actions: [
+      "Click Copy on the suggested reply section.",
+      "Paste it into your own ChatGPT or AI tool.",
+      "Copy the AI result back into WhatsApp or your sales tracker.",
+      "Use private AI mode only for owner testing or paid users.",
+    ].join("\n"),
+  };
+}
+
+async function generateBriefWithApi(rawInput) {
+  const response = await fetch("/api/whatsapp-brief", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      businessContext: businessContext.value.trim(),
+      businessType: businessType.value,
+      replyLanguage: replyLanguage.value,
+      accessCode: accessCode.value.trim(),
+      customerInput: rawInput,
+    }),
+  });
+
+  const responseText = await response.text();
+  let data = {};
+  try {
+    data = responseText ? JSON.parse(responseText) : {};
+  } catch (error) {
+    data = {};
+  }
+
+  if (!response.ok) {
+    if (response.status === 404 || response.status === 501) {
+      throw new Error("AI API route is not running in this local static preview. Deploy to Vercel or run with Vercel dev.");
+    }
+    throw new Error(data.error || "AI generation failed. Check the serverless API and OpenAI key setup.");
+  }
+
+  return data;
+}
+
 function setOutput(result) {
   Object.entries(outputIds).forEach(([key, id]) => {
     document.querySelector(`#${id}`).textContent = result[key];
@@ -513,9 +591,54 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  setOutput(generateBrief(input));
+  setOutput(generatePromptOutput(input));
   briefStatus.className = "form-status success";
-  briefStatus.textContent = "Brief generated. Check quote readiness before replying.";
+  briefStatus.textContent = "No-token prompt created. Copy it into your own AI tool.";
+});
+
+generateWithAi.addEventListener("click", () => {
+  const input = customerInput.value.trim();
+
+  if (!input) {
+    briefStatus.className = "form-status error";
+    briefStatus.textContent = "Please paste the customer enquiry first.";
+    return;
+  }
+
+  if (!accessCode.value.trim()) {
+    briefStatus.className = "form-status error";
+    briefStatus.textContent = "Private AI mode needs an access code so public visitors cannot spend your tokens.";
+    return;
+  }
+
+  const button = generateWithAi;
+  button.disabled = true;
+  button.textContent = "Generating with AI...";
+  briefStatus.className = "form-status";
+  briefStatus.textContent = "Sending enquiry to the AI brief API...";
+
+  generateBriefWithApi(input)
+    .then((result) => {
+      setOutput(result);
+      briefStatus.className = "form-status success";
+      briefStatus.textContent = "AI brief generated. Check quote readiness before replying.";
+    })
+    .catch((error) => {
+      setOutput({
+        readiness: "AI API not connected",
+        summary:
+          "This tool needs a server-side OpenAI API key before it can generate useful briefs. Configure OPENAI_API_KEY in Vercel Environment Variables.",
+        questions: "No AI output generated.",
+        reply: "No WhatsApp reply generated because the AI API is not connected.",
+        actions: "Add OPENAI_API_KEY in Vercel, redeploy the site, then test this tool again.",
+      });
+      briefStatus.className = "form-status error";
+      briefStatus.textContent = error.message;
+    })
+    .finally(() => {
+      button.disabled = false;
+      button.textContent = "Generate with private AI";
+    });
 });
 
 clearBrief.addEventListener("click", () => {
