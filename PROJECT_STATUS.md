@@ -1,6 +1,6 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-02 Asia/Singapore
+Last updated: 2026-06-02 Asia/Singapore, end of session
 
 ## Current Objective
 
@@ -11,7 +11,7 @@ Build `SMEs.MY` as an independent Malaysia SME supplier, services, and lead plat
 - Local path: `C:\Users\Wynne\Documents\Codex\smes-my`
 - GitHub: `https://github.com/weinee94/smes-my.git`
 - Branch: `main`
-- Latest commit: `264bdfa Add IndexNow key`
+- Latest commit: `b2af7c4 Improve SMEs.MY visual system`
 - Git state at last check: clean
 
 ## Site Structure
@@ -31,6 +31,7 @@ Build `SMEs.MY` as an independent Malaysia SME supplier, services, and lead plat
 - Vercel should be connected to `weinee94/smes-my`.
 - Static deploy settings: no build command; output directory root / `.`
 - Latest pushed changes include GEO/AI discovery metadata and an IndexNow verification key.
+- Latest pushed changes are live on `https://smes.my/`; homepage and CSS returned 200 after the `b2af7c4` push.
 - Search Console has verified `https://smes.my/`; sitemap submission is successful.
 
 ## Lead Capture
@@ -68,22 +69,31 @@ Build `SMEs.MY` as an independent Malaysia SME supplier, services, and lead plat
 - Added IndexNow key file `https://smes.my/5de411d1-21fb-490e-8c74-bcc229039a59.txt` and submitted a URL batch to IndexNow; API returned HTTP 202.
 - Added `packaging-suppliers-malaysia/` to widen SMEs.MY from pure business services into a supplier + service directory.
 - Updated homepage metadata, JSON-LD, search shortcuts, quote form, category cards, provider cards, sitemap, and `llms.txt` to include packaging suppliers.
+- Added generated, compressed website photography for the homepage supplier comparison section and packaging supplier page:
+  - `assets/sme-supplier-comparison.jpg`
+  - `assets/packaging-suppliers-malaysia.jpg`
+- Created reusable Codex skill `design-taste-audit` at `C:\Users\Wynne\.codex\skills\design-taste-audit`; validation passed with `Skill is valid!`.
+- Used `design-taste-audit` to improve SMEs.MY visual quality: calmer color system, stronger first viewport hierarchy, more consistent cards/buttons/forms, improved visual feature section, sticky-header scroll padding, and mobile layout fixes.
+- Commits pushed after the IndexNow work:
+  - `fba580c Add packaging supplier category`
+  - `cf3eb93 Add SME directory photography`
+  - `b2af7c4 Improve SMEs.MY visual system`
 
 ## Open Issues
 
 - Site still needs real provider data; current providers are placeholder examples.
 - Service and supplier detail pages are English-only for now; homepage supports EN / 中文.
 - Need to prepare Chinese versions for the 5 SEO service pages.
-- Need to create legal/support pages: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`.
+- Legal/support pages exist: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`; continue polishing if needed.
 - SEO indexing is in progress; do not treat low traffic as a form/backend issue until Search Console has had time to process indexing requests.
-- Visual polish can continue, but content depth and real listings are the main path out of “half-finished” feel.
+- Visual polish is improved; content depth and real listings are now the main path out of “half-finished” feel.
 
 ## Next Steps
 
 1. Check Search Console again after Google processes the 2026-06-01 indexing requests.
 2. Add first 20-50 real provider/supplier profiles; content depth and trust signals are the main growth bottleneck.
-3. Add Chinese content/version support for the 5 SEO service pages.
-4. Continue legal/support page polish if needed: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`.
+3. Add Chinese content/version support for the 5 SEO service pages and `packaging-suppliers-malaysia/`.
+4. Continue legal/support page polish if needed.
 5. Build external trust signals: social profiles, credible mentions, provider backlinks, and business directory citations.
 
 ## Useful Commands

@@ -1261,6 +1261,130 @@ textarea {
   font-size: 18px;
 }
 
+.tool-main {
+  background: var(--bg);
+}
+
+.tool-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: clamp(28px, 5vw, 56px);
+  padding: clamp(44px, 7vw, 76px) max(20px, calc((100vw - var(--content)) / 2));
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 14% 20%, rgba(201, 148, 37, 0.14), transparent 28%),
+    linear-gradient(180deg, #fbfcf8 0%, #f2f5ee 100%);
+}
+
+.tool-hero p {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.tool-workspace {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
+  gap: 24px;
+  padding: 34px max(20px, calc((100vw - var(--content)) / 2)) 46px;
+  align-items: start;
+}
+
+.tool-input-panel,
+.tool-output-panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.tool-input-panel {
+  display: grid;
+  gap: 15px;
+  padding: 22px;
+}
+
+.tool-input-panel textarea {
+  min-height: 260px;
+  resize: vertical;
+}
+
+.tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-output-panel {
+  padding: 22px;
+}
+
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.output-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.output-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.output-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 15px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.output-card-title h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.output-card-title button {
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--teal-dark);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.output-content {
+  min-height: 82px;
+  padding: 15px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.whatsapp-reply {
+  background: #f7fbf0;
+}
+
+.tool-guide-section {
+  padding-top: 12px;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
@@ -1311,7 +1435,9 @@ textarea {
   .trust-strip,
   .snapshot-panel,
   .service-hero,
-  .service-content {
+  .service-content,
+  .tool-hero,
+  .tool-workspace {
     grid-template-columns: 1fr;
   }
 
@@ -1384,13 +1510,17 @@ textarea {
   .band,
   .visual-feature,
   .service-hero,
-  .service-content {
+  .service-content,
+  .tool-hero,
+  .tool-workspace {
     padding-left: 18px;
     padding-right: 18px;
   }
 
   .hero-copy,
   .quote-panel,
+  .tool-input-panel,
+  .tool-output-panel,
   .visual-feature,
   .hero-actions,
   .hero-stats,
@@ -1427,9 +1557,19 @@ textarea {
   }
 
   .quote-panel,
+  .tool-input-panel,
+  .tool-output-panel,
   .split-cta form {
     width: 100%;
     padding: 18px;
+  }
+
+  .output-header {
+    display: grid;
+  }
+
+  .tool-actions {
+    display: grid;
   }
 
   .hero-copy {
