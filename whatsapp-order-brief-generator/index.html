@@ -35,10 +35,11 @@
       <section class="tool-hero">
         <div>
           <p class="eyebrow">Free SME tool</p>
-          <h1>Turn messy WhatsApp enquiries into a clear order brief.</h1>
+          <h1>Reply to messy WhatsApp enquiries faster.</h1>
           <p>
-            Paste a customer message, voice-to-text transcript, or loose notes. This MVP organizes
-            the enquiry into customer needs, questions to confirm, a WhatsApp reply, and next steps.
+            Paste a customer message, voice-to-text transcript, or loose notes. The tool checks
+            whether you have enough details to quote, then prepares a short brief and a practical
+            WhatsApp reply.
           </p>
           <div class="language-note">
             <span>Built for Malaysia SME sellers</span>
@@ -49,7 +50,7 @@
           <dl>
             <div><dt>Use for</dt><dd>Facebook leads, WhatsApp chats, voice notes</dd></div>
             <div><dt>Output</dt><dd>Order brief, questions, reply, next action</dd></div>
-            <div><dt>Status</dt><dd>Rule-based MVP, AI-ready later</dd></div>
+            <div><dt>Status</dt><dd>Sales workflow MVP, AI-ready later</dd></div>
           </dl>
         </aside>
       </section>
@@ -61,12 +62,26 @@
             <span>Paste customer message</span>
           </div>
           <label>
-            <span>Your business / service (optional)</span>
+            <span>Your business / offer</span>
             <input
               id="businessContext"
               type="text"
-              placeholder="Example: custom cake shop, packaging supplier, web design service"
+              placeholder="Example: custom paper bag supplier, cafe catering, web design service"
             />
+          </label>
+          <label>
+            <span>Customer enquiry type</span>
+            <select id="businessType">
+              <option value="auto">Auto-detect from message</option>
+              <option value="packaging">Packaging / printing</option>
+              <option value="fnb">F&B / catering / cake</option>
+              <option value="beauty">Beauty / wellness service</option>
+              <option value="home">Home / repair / on-site service</option>
+              <option value="professional">Accounting / secretary / professional service</option>
+              <option value="digital">Website / marketing / design</option>
+              <option value="retail">Retail / ecommerce order</option>
+              <option value="general">General enquiry</option>
+            </select>
           </label>
           <label>
             <span>Reply language</span>
@@ -76,6 +91,26 @@
               <option value="bm">BM-friendly English</option>
             </select>
           </label>
+          <div class="example-row" aria-label="Quick examples">
+            <button
+              type="button"
+              data-example="Hi boss, I need 300 custom paper bags for my cafe in PJ. Can print logo? Need before next Friday. Around RM1k budget. Please WhatsApp price."
+            >
+              Packaging example
+            </button>
+            <button
+              type="button"
+              data-example="Hi, can you do catering for 40 pax office lunch in KL next Thursday? Budget around RM25 per pax. Need halal food and delivery."
+            >
+              Catering example
+            </button>
+            <button
+              type="button"
+              data-example="Hello, I need a website for my tuition centre. Want enquiry form and WhatsApp button. How much and how long?"
+            >
+              Website example
+            </button>
+          </div>
           <label>
             <span>Customer enquiry / voice transcript / loose notes</span>
             <textarea
@@ -90,8 +125,8 @@
             <button class="button secondary" type="button" id="clearBrief">Clear</button>
           </div>
           <p class="form-note">
-            Current version uses basic rules only. It is structured so an AI API can replace the
-            generator later without changing the page flow.
+            This version uses sales rules and industry-specific question sets. The same page flow
+            can later connect to an AI API for stronger understanding.
           </p>
           <p class="form-status" id="briefStatus" aria-live="polite"></p>
         </form>
@@ -108,6 +143,16 @@
           </div>
 
           <div class="output-stack" id="allOutput">
+            <article class="output-card">
+              <div class="output-card-title">
+                <h3>报价准备度</h3>
+                <button type="button" data-copy-target="readinessOutput">Copy</button>
+              </div>
+              <div class="output-content readiness-output" id="readinessOutput">
+                Paste a customer enquiry and click Generate brief.
+              </div>
+            </article>
+
             <article class="output-card">
               <div class="output-card-title">
                 <h3>客户需求摘要</h3>
