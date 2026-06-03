@@ -2,7 +2,6 @@ const translations = {
   en: {
     navServices: "Services",
     navProviders: "Providers",
-    navTools: "Tools",
     navHow: "How matching works",
     navForProviders: "For providers",
     requestQuotes: "Request quotes",
@@ -165,14 +164,6 @@ const translations = {
     guidesPointThree: "What to ask providers before hiring",
     guidesPointFour: "Which details to include in your quote request",
     guidesPointFive: "Related services you may also need",
-    toolsEyebrow: "Free SME tools",
-    toolsTitle: "Turn messy enquiries into clearer next steps.",
-    toolsText:
-      "Use lightweight tools to reply faster, collect better details, and test common SME workflows before choosing software.",
-    whatsappToolTitle: "WhatsApp order brief generator",
-    whatsappToolText:
-      "Paste customer chats, voice transcripts, or loose notes and get a structured brief plus a copy-ready WhatsApp reply.",
-    openTool: "Open tool",
     providerPlansEyebrow: "For service providers",
     providerPlansTitle: "Get discovered by SMEs looking for business services.",
     planBasicTitle: "Basic listing",
@@ -225,7 +216,6 @@ const translations = {
   zh: {
     navServices: "分类",
     navProviders: "供应商",
-    navTools: "工具",
     navHow: "配对流程",
     navForProviders: "商家加入",
     requestQuotes: "免费询价",
@@ -377,14 +367,6 @@ const translations = {
     guidesPointThree: "聘请前应该问什么",
     guidesPointFour: "询价时应该提供哪些资料",
     guidesPointFive: "可能也需要的相关服务",
-    toolsEyebrow: "免费 SME 工具",
-    toolsTitle: "把零散询问整理成清楚下一步。",
-    toolsText:
-      "用简单工具更快回复客户、收集资料，也测试 SME 常见工作流程是否值得产品化。",
-    whatsappToolTitle: "WhatsApp 订单 Brief 生成器",
-    whatsappToolText:
-      "贴上客户聊天、语音转文字或零散 notes，整理成结构化 brief 和可直接复制的 WhatsApp 回复。",
-    openTool: "打开工具",
     providerPlansEyebrow: "给服务商",
     providerPlansTitle: "让正在找服务的 SME 发现你。",
     planBasicTitle: "免费 listing",
