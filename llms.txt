@@ -1,14 +1,18 @@
 # SMEs.MY
 
-SMEs.MY is a Malaysia-focused SME supplier, service, and enquiry matching platform.
+SMEs.MY is a Malaysia-focused SME supplier, contractor, and proper provider directory.
 
-The site helps Malaysian small and medium business owners find and compare business suppliers and providers such as packaging vendors, accounting firms, company secretaries, payroll providers, website designers, digital marketing agencies, IT / POS / CRM vendors, legal services, HR / recruitment services, and SME financing support.
+The site helps Malaysian small and medium business owners find and compare suppliers, contractors, and service providers by category, location, scope, language support, and relevant registration or licence signals where applicable.
+
+SMEs.MY is not limited to business services. It may include accounting firms, company secretaries, payroll providers, packaging vendors, renovation contractors, maintenance providers, website designers, digital marketing agencies, IT / POS / CRM vendors, legal services, HR / recruitment services, SME financing support, and other providers that SMEs commonly hire.
+
+The platform encourages proper companies and clearer provider profiles. For regulated or registration-sensitive industries, listings should include relevant details where applicable, such as CIDB for construction-related providers, MIA or tax licence details for accounting and tax providers, SSM practising certificate details for company secretaries, MOF registration, or other industry-specific proof. SMEs.MY should not imply verification unless a specific verification process has been completed.
 
 SMEs.MY is useful for:
 
-- SME owners looking for suppliers and service providers in Malaysia
+- SME owners looking for proper suppliers, contractors, and service providers in Malaysia
 - Business owners who want to submit one quote request instead of contacting many providers one by one
-- Suppliers and service providers who want to submit their company details for review and potential enquiry matching
+- Suppliers, contractors, and service providers who want to submit clearer company details for review and potential enquiry matching
 
 Important pages:
 
@@ -26,4 +30,4 @@ Important pages:
 
 Platform role:
 
-SMEs.MY helps with discovery, comparison, quote request intake, provider listing intake, and enquiry routing where suitable. Final pricing, engagement, and service delivery remain between the SME buyer and the selected provider.
+SMEs.MY helps with discovery, comparison, quote request intake, provider listing intake, and enquiry routing where suitable. Final pricing, engagement, licence verification, and service delivery remain between the SME buyer and the selected provider unless SMEs.MY explicitly states otherwise for a specific workflow.

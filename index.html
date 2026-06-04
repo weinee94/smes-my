@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SMEs.MY | Malaysia SME Supplier & Services Directory</title>
+    <title>SMEs.MY | Malaysia SME Supplier & Proper Provider Directory</title>
     <meta
       name="description"
-      content="Find trusted business suppliers and service providers for Malaysian SMEs. Compare packaging suppliers, accounting, company secretary, payroll, digital marketing, IT, financing, and operations support."
+      content="Find proper suppliers, contractors, and service providers for Malaysian SMEs. Compare business details, service scope, location, language support, and relevant registration or licence signals."
     />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="SMEs.MY | Malaysia SME Supplier & Services Directory" />
+    <meta property="og:title" content="SMEs.MY | Malaysia SME Supplier & Proper Provider Directory" />
     <meta
       property="og:description"
-      content="Find and compare business suppliers and service providers in Malaysia for packaging, accounting, company secretary, payroll, websites, marketing, IT, financing, and operations support."
+      content="Find and compare proper SME suppliers, contractors, and service providers in Malaysia by category, location, scope, and relevant registration or licence signals."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://smes.my/" />
@@ -20,7 +20,7 @@
     <meta name="google-site-verification" content="YWhLNJ5ppmP6iVM1TtWI2A_oAtgTkEDpOZLH_PVG16I" />
     <link rel="canonical" href="https://smes.my/" />
     <link rel="icon" href="/assets/smes-site-icon.png" type="image/png" />
-    <link rel="stylesheet" href="css/styles.css?v=20260604-cleanup" />
+    <link rel="stylesheet" href="css/styles.css?v=20260604-proper-providers" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -31,7 +31,7 @@
             "name": "SMEs.MY",
             "url": "https://smes.my/",
             "logo": "https://smes.my/assets/smes-main-logo.png",
-            "description": "Malaysia SME supplier, service, and enquiry matching platform.",
+            "description": "Malaysia SME supplier, contractor, and proper provider directory.",
             "areaServed": "MY"
           },
           {
@@ -40,7 +40,7 @@
             "name": "SMEs.MY",
             "url": "https://smes.my/",
             "publisher": { "@id": "https://smes.my/#organization" },
-            "description": "Find and compare business suppliers and service providers in Malaysia.",
+            "description": "Find and compare proper suppliers, contractors, and service providers in Malaysia.",
             "potentialAction": {
               "@type": "SearchAction",
               "target": "https://smes.my/?q={search_term_string}",
@@ -50,7 +50,7 @@
           {
             "@type": "ItemList",
             "@id": "https://smes.my/#service-categories",
-            "name": "Malaysia SME service categories",
+            "name": "Malaysia SME supplier and provider categories",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Accounting services Malaysia", "url": "https://smes.my/accounting-services-malaysia" },
               { "@type": "ListItem", "position": 2, "name": "Company secretary services Malaysia", "url": "https://smes.my/company-secretary-services-malaysia" },
@@ -70,7 +70,7 @@
         <img src="assets/smes-site-icon.png" alt="" />
         <span>
           <strong>SMEs.MY</strong>
-          <small>商記 SME service finder</small>
+          <small>商記 proper provider finder</small>
         </span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
@@ -93,20 +93,20 @@
         <div class="hero-copy">
           <div class="hero-brand">
             <img src="assets/smes-main-logo.png" alt="商記 SMEs.MY" />
-            <span data-i18n="heroEyebrow">Find business services in Malaysia</span>
+            <span data-i18n="heroEyebrow">Find proper providers in Malaysia</span>
           </div>
-          <h1 data-i18n="heroTitle">Find local suppliers and service providers for your business.</h1>
+          <h1 data-i18n="heroTitle">Find proper suppliers, contractors, and service providers.</h1>
           <p class="hero-text" data-i18n="heroText">
-            Tell us what service you need, where your business is located, and how providers can
-            contact you. SMEs.MY helps Malaysian SMEs find packaging suppliers, accounting, company
-            secretary, payroll, website, marketing, IT, financing, and operations support.
+            Tell us what your business needs, where you are located, and which details matter.
+            SMEs.MY helps Malaysian SMEs compare suppliers and providers by scope, location,
+            language, and relevant registration or licence signals.
           </p>
           <div class="language-note">
             <span data-i18n="heroPillOne">For Malaysian SME owners</span>
             <span data-i18n="heroPillTwo">English, BM, and Chinese-friendly support</span>
           </div>
-          <div class="search-box" role="search" aria-label="Search SME services">
-            <input id="siteSearch" type="search" placeholder="Search packaging, accounting, website design..." data-i18n-placeholder="searchPlaceholder" />
+          <div class="search-box" role="search" aria-label="Search SME suppliers and providers">
+            <input id="siteSearch" type="search" placeholder="Search accounting, renovation, packaging..." data-i18n-placeholder="searchPlaceholder" />
             <button class="button primary" type="button" id="siteSearchButton" data-i18n="searchServices">Search categories</button>
           </div>
           <p class="search-status" id="searchStatus" aria-live="polite"></p>
@@ -115,6 +115,7 @@
             <a href="/company-secretary-services-malaysia" data-i18n="serviceCompanySecShort">Company Secretary</a>
             <a href="/payroll-services-malaysia" data-i18n="servicePayrollShort">Payroll</a>
             <a href="/packaging-suppliers-malaysia" data-i18n="servicePackagingShort">Packaging</a>
+            <a href="#quote" data-i18n="serviceRenovationShort">Renovation</a>
             <a href="/website-design-services-malaysia" data-i18n="serviceWebsiteShort">Website Design</a>
             <a href="/digital-marketing-agency-malaysia" data-i18n="serviceMarketingShort">Digital Marketing</a>
           </div>
@@ -148,6 +149,7 @@
                 <option value="Tax agent" data-i18n="serviceTax">Tax agent</option>
                 <option value="Payroll services" data-i18n="servicePayroll">Payroll services</option>
                 <option value="Packaging suppliers" data-i18n="servicePackaging">Packaging suppliers</option>
+                <option value="Renovation contractors" data-i18n="serviceRenovation">Renovation contractors</option>
                 <option value="Digital marketing" data-i18n="serviceMarketing">Digital marketing</option>
                 <option value="Website design" data-i18n="serviceWebsite">Website design</option>
                 <option value="SME financing" data-i18n="serviceFinancing">SME financing</option>
@@ -191,8 +193,8 @@
 
       <section class="trust-strip" aria-label="Directory promises">
         <div>
-          <strong data-i18n="trustOneTitle">Business services only</strong>
-          <span data-i18n="trustOneText">Accounting, compliance, payroll, websites, marketing, IT, legal, financing, and operations.</span>
+          <strong data-i18n="trustOneTitle">Proper providers first</strong>
+          <span data-i18n="trustOneText">Compare scope, company details, registration signals, and suitability before contacting.</span>
         </div>
         <div>
           <strong data-i18n="trustTwoTitle">Malaysia-focused</strong>
@@ -207,10 +209,11 @@
       <section class="marketplace-preview" aria-label="SMEs.MY directory preview">
         <div class="preview-copy">
           <p class="eyebrow" data-i18n="previewEyebrow">Directory in progress</p>
-          <h2 data-i18n="previewTitle">A cleaner way to compare SME suppliers before you contact them.</h2>
+          <h2 data-i18n="previewTitle">A cleaner way to compare SME vendors before you contact them.</h2>
           <p data-i18n="previewText">
             SMEs.MY is being built around structured profiles: what the company does, where it
-            serves, which languages it supports, and what kind of enquiries are suitable.
+            serves, which languages it supports, and which registration or licence details may
+            matter for that industry.
           </p>
           <div class="preview-actions">
             <a class="button primary" href="#categories" data-i18n="browseServices">Browse services</a>
@@ -226,21 +229,21 @@
             <div class="provider-mark">AC</div>
             <div>
               <h3 data-i18n="sampleAccountingTitle">Accounting & tax support</h3>
-              <p data-i18n="sampleAccountingText">Kuala Lumpur · English / BM / 中文 · Monthly accounts, tax filing, SST</p>
+              <p data-i18n="sampleAccountingText">Kuala Lumpur · English / BM / 中文 · MIA / tax licence details where applicable</p>
             </div>
-            <span data-i18n="profileChecked">Profile checked</span>
+            <span data-i18n="profileChecked">Details listed</span>
           </article>
           <article>
-            <div class="provider-mark">PK</div>
+            <div class="provider-mark">RC</div>
             <div>
-              <h3 data-i18n="samplePackagingTitle">Packaging supplier</h3>
-              <p data-i18n="samplePackagingText">Selangor · Custom boxes, labels, food packaging, low MOQ enquiries</p>
+              <h3 data-i18n="sampleRenovationTitle">Renovation contractor</h3>
+              <p data-i18n="sampleRenovationText">Selangor · CIDB details where applicable · Residential / commercial scope</p>
             </div>
             <span data-i18n="canReceiveEnquiries">Can receive enquiries</span>
           </article>
           <div class="listing-meta">
             <strong data-i18n="previewSignalTitle">What makes a listing useful</strong>
-            <span data-i18n="previewSignalText">Scope, location, languages, response channel, and proof that the company is still active.</span>
+            <span data-i18n="previewSignalText">Scope, location, languages, response channel, registration/licence details where applicable, and proof the company is active.</span>
           </div>
         </div>
       </section>
@@ -248,7 +251,7 @@
       <section class="section" id="categories">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="popularEyebrow">Popular services</p>
-          <h2 data-i18n="popularTitle">Find providers and suppliers for what SMEs buy often.</h2>
+          <h2 data-i18n="popularTitle">Find proper providers for what SMEs buy often.</h2>
           <p data-i18n="popularText">
             Choose a category below to understand what to compare and send a quote request.
           </p>
@@ -260,7 +263,7 @@
         <div class="section-heading">
           <p class="eyebrow" data-i18n="compareEyebrow">What to compare</p>
           <h2 data-i18n="compareTitle">Ask the right questions before hiring a provider.</h2>
-          <p data-i18n="compareText">Use these checks when you compare accounting firms, company secretaries, payroll teams, web designers, marketers, IT vendors, and other business service providers.</p>
+          <p data-i18n="compareText">Use these checks when you compare accountants, company secretaries, contractors, suppliers, IT vendors, agencies, and other SME providers.</p>
         </div>
         <div class="comparison-table" role="table" aria-label="Provider comparison checklist">
           <div role="row">
@@ -272,6 +275,11 @@
             <span data-i18n="tableCompany">Company details</span>
             <span data-i18n="tableCompanyWhy">Helps you know who you are dealing with before sharing documents or payment.</span>
             <span data-i18n="tableCompanyAsk">Company name, website, registration details, and contact person</span>
+          </div>
+          <div role="row">
+            <span data-i18n="tableRegistration">Registration / licence</span>
+            <span data-i18n="tableRegistrationWhy">Some industries have specific registration, licence, membership, or practising certificate requirements.</span>
+            <span data-i18n="tableRegistrationAsk">Ask for relevant details, such as CIDB, MIA, SSM practising certificate, MOF, or other industry-specific proof where applicable.</span>
           </div>
           <div role="row">
             <span data-i18n="tableResponse">Response time</span>
@@ -356,7 +364,7 @@
       <section class="band compact-provider-band" id="provider-plans">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="providerPlansEyebrow">For service providers</p>
-          <h2 data-i18n="providerPlansTitle">Get discovered by SMEs looking for business services.</h2>
+          <h2 data-i18n="providerPlansTitle">Get discovered as a proper SME provider.</h2>
           <p data-i18n="providerPlansText">Early listings are useful only if they help buyers compare. Submit enough detail for a real profile, not just a company name.</p>
         </div>
         <div class="pricing-grid">
@@ -383,7 +391,8 @@
           <p class="eyebrow" data-i18n="listEyebrow">For service providers</p>
           <h2 data-i18n="listTitle">List your SME service business.</h2>
           <p data-i18n="listText">
-            If you provide business services in Malaysia, submit enough details for review and lead matching.
+            If your company serves Malaysian SMEs, submit enough details for a useful profile.
+            SMEs.MY is for proper providers, not anonymous or unclear listings.
           </p>
           <ul class="check-list compact-list">
             <li data-i18n="providerBenefitOne">Be discoverable by SMEs searching for your service category.</li>
@@ -439,12 +448,12 @@
     <footer class="site-footer">
       <img src="assets/smes-secondary-logo.png" alt="商記 SMEs.MY" />
       <div>
-        <p><strong>SMEs.MY</strong> <span data-i18n="footerOne">helps Malaysian SMEs find and compare business service providers.</span></p>
+        <p><strong>SMEs.MY</strong> <span data-i18n="footerOne">helps Malaysian SMEs find and compare proper suppliers, contractors, and service providers.</span></p>
         <p data-i18n="footerTwo">Need help choosing a provider? Start with a service category or send a quote request.</p>
         <p class="footer-links"><a href="/how-matching-works">How matching works</a><a href="/privacy-notice">Privacy Notice</a><a href="/terms-of-use">Terms of Use</a><a href="/disclaimer">Disclaimer</a></p>
       </div>
     </footer>
 
-    <script src="js/app.js?v=20260604-cleanup"></script>
+    <script src="js/app.js?v=20260604-proper-providers"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 # smes.my
 
-Independent Malaysia SME services directory and lead platform.
+Independent Malaysia SME supplier, contractor, and proper provider directory.
 
 ## MVP scope
 
