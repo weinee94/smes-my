@@ -1,6 +1,6 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-02 Asia/Singapore, end of session
+Last updated: 2026-06-04 Asia/Singapore, homepage cleanup session
 
 ## Current Objective
 
@@ -87,13 +87,18 @@ Build `SMEs.MY` as an independent Malaysia SME supplier, services, and lead plat
 - Legal/support pages exist: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`; continue polishing if needed.
 - SEO indexing is in progress; do not treat low traffic as a form/backend issue until Search Console has had time to process indexing requests.
 - Visual polish is improved; content depth and real listings are now the main path out of “half-finished” feel.
+- On 2026-06-04, user said the website still felt messy, so the next step changed from adding provider candidates to cleaning the homepage structure first.
+- Simplified homepage flow: removed duplicated explanatory sections, removed decorative visual band, reduced hero CTA noise, shortened the quote form, and added CSS/JS cache-busting query strings.
+- Verified local homepage at `http://127.0.0.1:4173/` in desktop and mobile viewports; first screen renders, mobile text does not overlap, and the quote-form placeholder no longer uses stale cached copy.
+- After review, user clarified the cleaned page felt too plain and lacked design/product signal. Added a marketplace-style directory preview with sample provider cards and reframed provider signup as early/founding listings with clearer benefits.
+- Business assumption clarified: merchants are unlikely to register naturally from a cold empty directory. The site needs seeded profiles, visible category pages, SEO value, and a specific early-listing offer before provider signup is realistic.
 
 ## Next Steps
 
 1. Check Search Console again after Google processes the 2026-06-01 indexing requests.
-2. Add first 20-50 real provider/supplier profiles; content depth and trust signals are the main growth bottleneck.
-3. Add Chinese content/version support for the 5 SEO service pages and `packaging-suppliers-malaysia/`.
-4. Continue legal/support page polish if needed.
+2. Review the cleaner homepage with the new directory-preview section and decide whether it now has enough product/design signal.
+3. Add or seed the first 20-50 real provider/supplier profiles once the homepage feels credible enough to show merchants.
+4. Add Chinese content/version support for the 5 SEO service pages and `packaging-suppliers-malaysia/`.
 5. Build external trust signals: social profiles, credible mentions, provider backlinks, and business directory citations.
 
 ## Useful Commands

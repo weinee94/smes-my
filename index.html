@@ -20,7 +20,7 @@
     <meta name="google-site-verification" content="YWhLNJ5ppmP6iVM1TtWI2A_oAtgTkEDpOZLH_PVG16I" />
     <link rel="canonical" href="https://smes.my/" />
     <link rel="icon" href="/assets/smes-site-icon.png" type="image/png" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css?v=20260604-cleanup" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -118,24 +118,9 @@
             <a href="/website-design-services-malaysia" data-i18n="serviceWebsiteShort">Website Design</a>
             <a href="/digital-marketing-agency-malaysia" data-i18n="serviceMarketingShort">Digital Marketing</a>
           </div>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#quote" data-i18n="requestQuotes">Request quotes</a>
+          <div class="hero-actions" aria-label="Secondary action">
             <a class="button secondary" href="#list-business" data-i18n="listBusiness">List your business</a>
           </div>
-          <dl class="hero-stats" aria-label="Platform focus">
-            <div>
-              <dt>10+</dt>
-              <dd data-i18n="statCategories">Supplier and service types</dd>
-            </div>
-            <div>
-              <dt>MY</dt>
-              <dd data-i18n="statLocal">Local provider search</dd>
-            </div>
-            <div>
-              <dt>Free</dt>
-              <dd data-i18n="statFree">Request to compare quotes</dd>
-            </div>
-          </dl>
         </div>
         <aside class="quote-panel" id="quote" aria-labelledby="quote-title">
           <div class="panel-header">
@@ -176,20 +161,12 @@
               <input name="location" id="quoteLocation" placeholder="Kuala Lumpur, Selangor, Penang..." data-i18n-placeholder="locationPlaceholder" required />
             </label>
             <label>
-              <span data-i18n="formBusinessType">Business type</span>
-              <input name="business_type" placeholder="Retail, F&B, ecommerce, professional services..." data-i18n-placeholder="businessTypePlaceholder" />
-            </label>
-            <label>
               <span data-i18n="formContact">Contact</span>
               <input name="contact" placeholder="Email or WhatsApp number" data-i18n-placeholder="contactPlaceholder" required />
             </label>
             <label>
-              <span data-i18n="formBudget">Budget / urgency</span>
-              <input name="budget" placeholder="Optional: RM budget or when you need it" data-i18n-placeholder="budgetPlaceholder" />
-            </label>
-            <label>
               <span data-i18n="formDetails">Extra details</span>
-              <textarea name="details" rows="3" placeholder="What problem are you trying to solve? Any deadline, software, document volume, or language preference?" data-i18n-placeholder="detailsPlaceholder"></textarea>
+              <textarea name="details" rows="2" placeholder="What do you need help with? Any deadline, budget, or language preference?" data-i18n-placeholder="detailsPlaceholder"></textarea>
             </label>
             <button class="button primary full" type="submit" data-i18n="sendRequest">Send request</button>
             <p class="form-note" data-i18n="quoteConsent">By submitting, you agree that SMEs.MY may review your request and share relevant details with suitable providers so they can respond.</p>
@@ -212,21 +189,6 @@
         </aside>
       </section>
 
-      <section class="visual-feature" aria-label="SME supplier comparison preview">
-        <figure>
-          <img src="/assets/sme-supplier-comparison.jpg" alt="SME owner comparing supplier quotations, product samples, and packaging options" loading="lazy" />
-        </figure>
-        <div>
-          <p class="eyebrow" data-i18n="visualEyebrow">Real buying context</p>
-          <h2 data-i18n="visualTitle">Compare suppliers with clearer details before you commit.</h2>
-          <p data-i18n="visualText">
-            SMEs.MY is designed around practical buying decisions: what you need, where your
-            business is, how soon suppliers can respond, and what details must be clarified before
-            a quote is useful.
-          </p>
-        </div>
-      </section>
-
       <section class="trust-strip" aria-label="Directory promises">
         <div>
           <strong data-i18n="trustOneTitle">Business services only</strong>
@@ -242,67 +204,43 @@
         </div>
       </section>
 
-      <section class="section loop-section" id="platform-loop">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="loopEyebrow">Platform loop</p>
-          <h2 data-i18n="loopTitle">A practical matching flow for SMEs and providers.</h2>
-          <p data-i18n="loopText">SMEs.MY starts with clear requests, provider information, and manual review so the directory can improve with real market data.</p>
+      <section class="marketplace-preview" aria-label="SMEs.MY directory preview">
+        <div class="preview-copy">
+          <p class="eyebrow" data-i18n="previewEyebrow">Directory in progress</p>
+          <h2 data-i18n="previewTitle">A cleaner way to compare SME suppliers before you contact them.</h2>
+          <p data-i18n="previewText">
+            SMEs.MY is being built around structured profiles: what the company does, where it
+            serves, which languages it supports, and what kind of enquiries are suitable.
+          </p>
+          <div class="preview-actions">
+            <a class="button primary" href="#categories" data-i18n="browseServices">Browse services</a>
+            <a class="button secondary" href="#provider-plans" data-i18n="whyList">Why list here?</a>
+          </div>
         </div>
-        <div class="loop-grid">
+        <div class="listing-preview-card" aria-label="Sample provider card">
+          <div class="listing-window-bar">
+            <span></span><span></span><span></span>
+            <strong data-i18n="sampleDirectory">Sample directory view</strong>
+          </div>
           <article>
-            <span class="card-index">01</span>
-            <h3 data-i18n="loopUserTitle">SME submits a request</h3>
-            <p data-i18n="loopUserText">The buyer shares service type, location, contact, business context, urgency, and any special requirements.</p>
+            <div class="provider-mark">AC</div>
+            <div>
+              <h3 data-i18n="sampleAccountingTitle">Accounting & tax support</h3>
+              <p data-i18n="sampleAccountingText">Kuala Lumpur · English / BM / 中文 · Monthly accounts, tax filing, SST</p>
+            </div>
+            <span data-i18n="profileChecked">Profile checked</span>
           </article>
           <article>
-            <span class="card-index">02</span>
-            <h3 data-i18n="loopAdminTitle">SMEs.MY reviews and routes</h3>
-            <p data-i18n="loopAdminText">Requests are checked for category, city, language, and fit before being routed to relevant providers where suitable.</p>
+            <div class="provider-mark">PK</div>
+            <div>
+              <h3 data-i18n="samplePackagingTitle">Packaging supplier</h3>
+              <p data-i18n="samplePackagingText">Selangor · Custom boxes, labels, food packaging, low MOQ enquiries</p>
+            </div>
+            <span data-i18n="canReceiveEnquiries">Can receive enquiries</span>
           </article>
-          <article>
-            <span class="card-index">03</span>
-            <h3 data-i18n="loopProviderTitle">Providers respond</h3>
-            <p data-i18n="loopProviderText">Providers contact the SME, clarify scope, quote directly, and build trust through useful follow-up.</p>
-          </article>
-        </div>
-        <div class="ops-panel" aria-label="Operational safeguards">
-          <div>
-            <strong data-i18n="opsOneTitle">Provider review</strong>
-            <span data-i18n="opsOneText">Listings should include company name, service scope, location, contact channel, website if available, and language support.</span>
-          </div>
-          <div>
-            <strong data-i18n="opsTwoTitle">Lead tracking</strong>
-            <span data-i18n="opsTwoText">Each request can be tracked as new, reviewed, matched, provider contacted, replied, or closed.</span>
-          </div>
-          <div>
-            <strong data-i18n="opsThreeTitle">Trust boundary</strong>
-            <span data-i18n="opsThreeText">SMEs.MY helps with discovery and matching, while final pricing, engagement, and service delivery remain between buyer and provider.</span>
-          </div>
-        </div>
-        <div class="section-actions">
-          <a class="button secondary" href="/how-matching-works" data-i18n="learnMatching">Learn how matching works</a>
-        </div>
-      </section>
-
-      <section class="section directory-snapshot" aria-label="Directory snapshot">
-        <div class="snapshot-panel">
-          <div>
-            <p class="eyebrow" data-i18n="howEyebrow">How SMEs.MY works</p>
-            <h2 data-i18n="howTitle">One place to find the services your business needs.</h2>
-          </div>
-          <div class="snapshot-grid">
-            <article>
-              <strong data-i18n="howBrowseTitle">Browse</strong>
-              <span data-i18n="howBrowseText">Start with a service category such as accounting, payroll, website design, or marketing.</span>
-            </article>
-            <article>
-              <strong data-i18n="howCompareTitle">Compare</strong>
-              <span data-i18n="howCompareText">Check location, language support, service scope, response time, and business fit.</span>
-            </article>
-            <article>
-              <strong data-i18n="howRequestTitle">Request</strong>
-              <span data-i18n="howRequestText">Submit your details once and wait for suitable providers to respond.</span>
-            </article>
+          <div class="listing-meta">
+            <strong data-i18n="previewSignalTitle">What makes a listing useful</strong>
+            <span data-i18n="previewSignalText">Scope, location, languages, response channel, and proof that the company is still active.</span>
           </div>
         </div>
       </section>
@@ -316,62 +254,6 @@
           </p>
         </div>
         <div class="category-grid" id="categoryGrid"></div>
-      </section>
-
-      <section class="band" id="how-it-works">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="journeyEyebrow">Buyer journey</p>
-          <h2 data-i18n="journeyTitle">How to use SMEs.MY.</h2>
-          <p data-i18n="journeyText">
-            If you are not sure who to contact, start with your service need. The form helps you
-            describe the job clearly so providers can reply with more useful answers.
-          </p>
-        </div>
-        <div class="journey-grid">
-          <article>
-            <span class="step-number">1</span>
-            <h3 data-i18n="journeyOneTitle">Choose a category</h3>
-            <p data-i18n="journeyOneText">Select packaging, accounting, company secretary, payroll, website design, digital marketing, IT, financing, or another business category.</p>
-          </article>
-          <article>
-            <span class="step-number">2</span>
-            <h3 data-i18n="journeyTwoTitle">Share your details</h3>
-            <p data-i18n="journeyTwoText">Tell providers your location, timeline, budget range if available, and how to contact you.</p>
-          </article>
-          <article>
-            <span class="step-number">3</span>
-            <h3 data-i18n="journeyThreeTitle">Compare replies</h3>
-            <p data-i18n="journeyThreeText">Review the replies you receive, ask follow-up questions, and choose the provider that fits your business.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="band">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="findEyebrow">What you can find</p>
-          <h2 data-i18n="findTitle">Suppliers and services commonly used by Malaysian SMEs.</h2>
-          <p data-i18n="findText">
-            Use SMEs.MY when you need suppliers or professional help to package, run, comply,
-            digitise, market, or finance your business.
-          </p>
-        </div>
-        <div class="positioning-grid">
-          <article>
-            <span class="card-index">01</span>
-            <h3 data-i18n="findOneTitle">Accounting and compliance</h3>
-            <p data-i18n="findOneText">Bookkeeping, tax, company secretary, payroll, HR, and legal support.</p>
-          </article>
-          <article>
-            <span class="card-index">02</span>
-            <h3 data-i18n="findTwoTitle">Digital and growth</h3>
-            <p data-i18n="findTwoText">Website design, digital marketing, IT systems, POS, CRM, and automation.</p>
-          </article>
-          <article>
-            <span class="card-index">03</span>
-            <h3 data-i18n="findThreeTitle">Supplies, money, and operations</h3>
-            <p data-i18n="findThreeText">Packaging, financing, recruitment, logistics, admin support, and other SME operating needs.</p>
-          </article>
-        </div>
       </section>
 
       <section class="section comparison-section">
@@ -471,10 +353,11 @@
         </div>
       </section>
 
-      <section class="band" id="provider-plans">
+      <section class="band compact-provider-band" id="provider-plans">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="providerPlansEyebrow">For service providers</p>
           <h2 data-i18n="providerPlansTitle">Get discovered by SMEs looking for business services.</h2>
+          <p data-i18n="providerPlansText">Early listings are useful only if they help buyers compare. Submit enough detail for a real profile, not just a company name.</p>
         </div>
         <div class="pricing-grid">
           <article>
@@ -562,6 +445,6 @@
       </div>
     </footer>
 
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=20260604-cleanup"></script>
   </body>
 </html>
