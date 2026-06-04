@@ -4,7 +4,7 @@ Last updated: 2026-06-04 Asia/Singapore, homepage cleanup session
 
 ## Current Objective
 
-Build `SMEs.MY` as an independent Malaysia SME supplier, contractor, and proper provider directory. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
+Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and service provider directory. SME use cases remain important, but the platform should also serve mass-market buyers, homeowners, consumers, and businesses looking for proper providers. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
 
 ## Current Repo
 
@@ -93,6 +93,7 @@ Build `SMEs.MY` as an independent Malaysia SME supplier, contractor, and proper 
 - After review, user clarified the cleaned page felt too plain and lacked design/product signal. Added a marketplace-style directory preview with sample provider cards and reframed provider signup as early/founding listings with clearer benefits.
 - Business assumption clarified: merchants are unlikely to register naturally from a cold empty directory. The site needs seeded profiles, visible category pages, SEO value, and a specific early-listing offer before provider signup is realistic.
 - Positioning clarified on 2026-06-04: SMEs.MY should not be limited to "business services". It should encourage proper companies across SME supplier/provider categories, including registration-sensitive fields such as renovation contractors with CIDB details where applicable, accountants/tax providers with MIA or tax licence details where applicable, and company secretaries with SSM practising certificate details where applicable.
+- Positioning refined again on 2026-06-04: SMEs.MY should not claim to serve only SMEs. SME scenarios are a strong starting point, but mass-market buyers, homeowners, consumers, and ordinary business buyers can also use the platform to find proper providers.
 - Avoid overclaiming verification. Use wording like "registration/licence details where applicable" and "proper provider signals" unless SMEs.MY has actually verified a provider through a documented process.
 
 ## Next Steps

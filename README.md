@@ -1,6 +1,6 @@
 # smes.my
 
-Independent Malaysia SME supplier, contractor, and proper provider directory.
+Independent Malaysia proper supplier, contractor, and service provider directory.
 
 ## MVP scope
 
