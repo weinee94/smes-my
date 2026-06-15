@@ -20,3 +20,26 @@ test("URBANRENO seed profile is invoice-backed without verification overclaim", 
   assert.doesNotMatch(publicContent, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider/i);
   assert.doesNotMatch(publicContent, /bank account|account no|account number|maybank|cimb|public bank/i);
 });
+
+test("seed provider uses site display casing and does not publish direct contact details", () => {
+  const app = read("js/app.js");
+  const guide = read("electrical-wiring-contractors-malaysia/index.html");
+
+  assert.match(app, /name:\s*"Urbanreno"/);
+  assert.match(guide, /Seed profile draft: Urbanreno/);
+  assert.match(guide, /Invoice header[\s\S]*URBANRENO/);
+  assert.match(guide, /Business name[\s\S]*URBAN RENO EMPIRE/);
+
+  assert.doesNotMatch(guide, /urbanrenoempire@gmail\.com/i);
+  assert.doesNotMatch(guide, /017-3999639/);
+  assert.match(guide, /Request through SMEs\.MY/i);
+});
+
+test("public site stays English-first until category pages have full bilingual support", () => {
+  const home = read("index.html");
+  const app = read("js/app.js");
+
+  assert.doesNotMatch(home, /class="language-switch"/);
+  assert.match(app, /let currentLang = "en";/);
+  assert.doesNotMatch(app, /localStorage\.getItem\("smesLang"\)/);
+});
