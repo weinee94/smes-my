@@ -1,6 +1,6 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-04 Asia/Singapore, positioning and homepage cleanup session
+Last updated: 2026-06-15 18:43 Asia/Singapore, provider seed/profile boundary and strategy pause
 
 ## Current Objective
 
@@ -78,11 +78,18 @@ Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and serv
   - `fba580c Add packaging supplier category`
   - `cf3eb93 Add SME directory photography`
   - `b2af7c4 Improve SMEs.MY visual system`
+- On 2026-06-15, added the first invoice-backed seed provider/category structure for electrical wiring contractors, then tightened the public boundary:
+  - `electrical-wiring-contractors-malaysia/` exists as a category page and seed profile test surface.
+  - Urbanreno is displayed in readable casing while invoice-source names remain preserved in source fields.
+  - Direct email/phone from invoice are withheld from the public seed profile; buyer action routes through SMEs.MY.
+  - Homepage provider area now presents `Profile formats`, `Sample format`, and `Invoice-backed seed` instead of implying live/verified providers.
+  - Homepage language switch was removed for now; the public site is English-first until category pages have full bilingual coverage.
+  - Added `tests/provider-content.test.mjs` to guard against verification overclaiming, public direct-contact leakage, and accidental half-bilingual UI.
 
 ## Open Issues
 
-- Site still needs real provider data; current providers are placeholder examples.
-- Service and supplier detail pages are English-only for now; homepage supports EN / 中文.
+- Site still needs real provider data; current public provider cards are sample formats plus one invoice-backed seed record, not a mature provider marketplace.
+- Service and supplier detail pages are English-only for now; homepage is intentionally English-first until bilingual coverage can be done consistently.
 - Need to prepare Chinese versions for the 5 SEO service pages.
 - Legal/support pages exist: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`; continue polishing if needed.
 - SEO indexing is in progress; do not treat low traffic as a form/backend issue until Search Console has had time to process indexing requests.
@@ -95,14 +102,17 @@ Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and serv
 - Positioning clarified on 2026-06-04: SMEs.MY should not be limited to "business services". It should encourage proper companies across SME supplier/provider categories, including registration-sensitive fields such as renovation contractors with CIDB details where applicable, accountants/tax providers with MIA or tax licence details where applicable, and company secretaries with SSM practising certificate details where applicable.
 - Positioning refined again on 2026-06-04: SMEs.MY should not claim to serve only SMEs. SME scenarios are a strong starting point, but mass-market buyers, homeowners, consumers, and ordinary business buyers can also use the platform to find proper providers.
 - Avoid overclaiming verification. Use wording like "registration/licence details where applicable" and "proper provider signals" unless SMEs.MY has actually verified a provider through a documented process.
+- Do not let available renovation/electrical invoices pull `smes.my` into a home-renovation domain. Renovation-related contractors can fit only as SME/business-premises suppliers or service providers where relevant.
+- User is not interested in building more SME tools right now and does not want to sell time. Preserve the broader possibility of SMEs.MY empowering SMEs, but only revisit when there is a scalable, non-time-selling model or new knowledge worth considering.
+- Public group links are not recommended. If request routing is tested later, use a controlled provider-pool/status workflow in Google Sheets instead of public WhatsApp/FB groups.
 
 ## Next Steps
 
-1. Check Search Console again after Google processes the 2026-06-01 indexing requests.
-2. Review the proper-provider homepage direction and commit/push if acceptable.
-3. Add or seed the first 20-50 real provider/supplier/contractor profiles once the homepage feels credible enough to show providers and buyers.
-4. Add Chinese content/version support for the 5 SEO service pages and `packaging-suppliers-malaysia/`.
-5. Build external trust signals: social profiles, credible mentions, provider backlinks, and business directory citations.
+1. Pause new tool concepts unless they clearly empower SMEs without selling Wynne's time or spending anonymous/public AI tokens.
+2. Keep SMEs.MY positioned as a Malaysia SME supplier and service provider directory, not a renovation site.
+3. If continuing, focus on SEO and request-intake pages that match SME procurement scenarios, then use real requests to decide which provider pools deserve attention.
+4. If provider routing is tested, add provider-pool status fields to Google Sheets instead of creating public groups.
+5. Commit/push the current cleanup only after review.
 
 ## Useful Commands
 
