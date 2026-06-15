@@ -13,7 +13,7 @@ const translations = {
       "Tell us what you need, where you are located, and which details matter. SMEs.MY helps Malaysian buyers and businesses compare suppliers and providers by scope, location, language, and relevant registration or licence signals.",
     heroPillOne: "For Malaysian buyers and businesses",
     heroPillTwo: "English, BM, and Chinese-friendly support",
-    searchPlaceholder: "Search accounting, renovation, packaging...",
+    searchPlaceholder: "Search accounting, wiring, packaging...",
     browseServices: "Browse services",
     searchServices: "Search categories",
     serviceAccountingShort: "Accounting",
@@ -21,6 +21,7 @@ const translations = {
     servicePayrollShort: "Payroll",
     servicePackagingShort: "Packaging",
     serviceRenovationShort: "Renovation",
+    serviceElectricalShort: "Electrical & Wiring",
     serviceWebsiteShort: "Website Design",
     serviceMarketingShort: "Digital Marketing",
     statCategories: "Supplier and service types",
@@ -38,6 +39,7 @@ const translations = {
     servicePayroll: "Payroll services",
     servicePackaging: "Packaging suppliers",
     serviceRenovation: "Renovation contractors",
+    serviceElectrical: "Electrical / wiring contractors",
     serviceMarketing: "Digital marketing",
     serviceWebsite: "Website design",
     serviceFinancing: "SME financing",
@@ -157,9 +159,9 @@ const translations = {
     tableScope: "Service scope",
     tableScopeWhy: "Prevents misunderstandings about what is included and what costs extra.",
     tableScopeAsk: "Monthly scope, one-time fees, location coverage, and support limits",
-    providersEyebrow: "Featured providers",
-    providersTitle: "Compare provider details before contacting a firm.",
-    providersText: "Use the search and category filter to narrow down service type, location, language support, and response time.",
+    providersEyebrow: "Provider profiles",
+    providersTitle: "Compare available provider information before contacting a firm.",
+    providersText: "Some profiles are invoice-backed seed listings used to structure directory data. Check the source notes, scope, location, contact details, and verification status before appointing anyone.",
     providerSearchPlaceholder: "Search providers, categories, or locations",
     allCategories: "All categories",
     coverageEyebrow: "Malaysia coverage",
@@ -172,6 +174,7 @@ const translations = {
     guideCompanySec: "Company secretary services Malaysia",
     guidePayroll: "Payroll services Malaysia",
     guidePackaging: "Packaging suppliers Malaysia",
+    guideElectrical: "Electrical wiring contractors Malaysia",
     guideMarketing: "Digital marketing agency Malaysia",
     guideWebsite: "Website design for SME Malaysia",
     guideLoan: "SME business loan Malaysia",
@@ -217,6 +220,7 @@ const translations = {
     footerOne: "helps Malaysian buyers and businesses find and compare proper suppliers, contractors, and service providers.",
     footerTwo: "Need help choosing a provider? Start with a service category or send a quote request.",
     profileChecked: "Details listed",
+    invoiceBacked: "Invoice-backed information",
     canReceiveEnquiries: "Can receive enquiries",
     noProviderMatch: "No providers match this search yet.",
     submitting: "Submitting your request...",
@@ -247,7 +251,7 @@ const translations = {
       "告诉我们你需要什么、在哪里、哪些细节重要。SMEs.MY 帮马来西亚买家和企业按服务范围、地点、语言，以及相关注册或执照信号来比较供应商和服务商。",
     heroPillOne: "给马来西亚买家和企业",
     heroPillTwo: "支持 English、BM 和中文沟通",
-    searchPlaceholder: "搜索会计、装修、包装...",
+    searchPlaceholder: "搜索会计、电工、包装...",
     browseServices: "浏览服务",
     searchServices: "搜索分类",
     serviceAccountingShort: "会计",
@@ -255,6 +259,7 @@ const translations = {
     servicePayrollShort: "Payroll",
     servicePackagingShort: "包装",
     serviceRenovationShort: "装修",
+    serviceElectricalShort: "电工 / 拉电",
     serviceWebsiteShort: "网站设计",
     serviceMarketingShort: "Digital Marketing",
     statCategories: "供应商和服务分类",
@@ -272,6 +277,7 @@ const translations = {
     servicePayroll: "Payroll 服务",
     servicePackaging: "包装供应商",
     serviceRenovation: "装修承包商",
+    serviceElectrical: "电工 / 拉电承包商",
     serviceMarketing: "Digital Marketing",
     serviceWebsite: "网站设计",
     serviceFinancing: "SME 融资",
@@ -379,9 +385,9 @@ const translations = {
     tableScope: "服务范围",
     tableScopeWhy: "避免误会哪些包含在内，哪些需要另外收费。",
     tableScopeAsk: "月费范围、一次性费用、服务地区和支援限制",
-    providersEyebrow: "推荐供应商",
-    providersTitle: "联系前先比较供应商资料。",
-    providersText: "用搜索和分类筛选需求类型、地点、语言和回复速度。",
+    providersEyebrow: "服务商资料",
+    providersTitle: "联系公司前，先比较目前可见的服务商资料。",
+    providersText: "部分资料是 invoice-backed seed listing，用来建立 directory 结构。聘请前请查看资料来源、服务范围、地点、联系方式和验证状态。",
     providerSearchPlaceholder: "搜索供应商、分类或地点",
     allCategories: "全部分类",
     coverageEyebrow: "马来西亚覆盖",
@@ -394,6 +400,7 @@ const translations = {
     guideCompanySec: "马来西亚公司秘书服务",
     guidePayroll: "马来西亚 Payroll 服务",
     guidePackaging: "马来西亚包装供应商",
+    guideElectrical: "马来西亚电工与拉电承包商",
     guideMarketing: "马来西亚 Digital Marketing 公司",
     guideWebsite: "SME 网站设计服务",
     guideLoan: "马来西亚 SME 商业贷款",
@@ -436,6 +443,7 @@ const translations = {
     footerOne: "帮助马来西亚买家和企业寻找和比较正规供应商、承包商和服务商。",
     footerTwo: "需要帮忙选择服务商？先从服务分类开始，或提交询价。",
     profileChecked: "资料已列明",
+    invoiceBacked: "Invoice-backed 资料",
     canReceiveEnquiries: "可接收询价",
     noProviderMatch: "暂时没有符合这个搜索的服务商。",
     submitting: "正在提交你的需求...",
@@ -532,6 +540,19 @@ const categories = [
     zhCount: "询价",
     formValue: "Renovation contractors",
     keywords: ["renovation", "contractor", "cidb", "fit out", "maintenance", "装修", "承包商", "维修"],
+  },
+  {
+    name: "Electrical Wiring Contractors Malaysia",
+    zhName: "马来西亚电工与拉电承包商",
+    summary: "Electrical wiring, power points, DB routing, switches, lighting, and renovation-related electrical works.",
+    zhSummary: "电工拉线、电位、DB 走线、开关、灯位和装修相关电工工程。",
+    tags: ["Wiring", "Power points", "DB routing"],
+    zhTags: ["拉电", "电位", "DB 走线"],
+    count: "View guide",
+    zhCount: "查看指南",
+    url: "/electrical-wiring-contractors-malaysia",
+    formValue: "Electrical / wiring contractors",
+    keywords: ["electrical", "wiring", "power point", "socket", "switch", "lighting", "aircond point", "电工", "拉电", "电位", "插座"],
   },
   {
     name: "Digital Marketing Agency Malaysia",
@@ -677,6 +698,25 @@ const providers = [
     languages: "EN / 中文 / BM",
   },
   {
+    name: "URBANRENO",
+    zhName: "URBANRENO",
+    category: "Electrical Wiring Contractors Malaysia",
+    zhCategory: "马来西亚电工与拉电承包商",
+    location: "Subang Jaya, Selangor",
+    summary:
+      "Invoice-backed seed profile for URBAN RENO EMPIRE. Visible invoice scope includes dedicated power points, concealed/internal wiring from DB, socket points, LED/light switch routing, aircond power points, coring, floor protection, and site clearing.",
+    zhSummary:
+      "Invoice-backed seed profile，发票显示公司名为 URBAN RENO EMPIRE。可见服务范围包括专用电位、从 DB 做 concealed/internal wiring、插座点、LED/灯开关走线、冷气电位、开孔、地面保护和清场。",
+    verified: false,
+    sourceLabel: "invoiceBacked",
+    verificationNote: "Details not yet independently verified by SMEs.MY",
+    zhVerificationNote: "资料尚未由 SMEs.MY 独立验证",
+    response: "Contact shown",
+    zhResponse: "有列联系方式",
+    languages: "Not shown",
+    detailsUrl: "/electrical-wiring-contractors-malaysia#urbanreno",
+  },
+  {
     name: "Website design provider",
     zhName: "网站设计服务商",
     category: "Website Design Malaysia",
@@ -766,6 +806,9 @@ function providerSearchText(provider) {
     provider.zhLocation,
     provider.summary,
     provider.zhSummary,
+    provider.sourceLabel && t(provider.sourceLabel),
+    provider.verificationNote,
+    provider.zhVerificationNote,
     provider.languages,
     provider.response,
   ]
@@ -1013,20 +1056,33 @@ function renderProviders() {
                 <p>${currentLang === "zh" ? provider.zhCategory : provider.category}</p>
               </div>
               ${provider.verified ? `<span class="verified">${t("profileChecked")}</span>` : ""}
+              ${provider.sourceLabel ? `<span class="verified muted-badge">${t(provider.sourceLabel)}</span>` : ""}
             </div>
             <p>${currentLang === "zh" ? provider.zhSummary : provider.summary}</p>
             <div class="provider-signals">
               <span>${currentLang === "zh" ? provider.zhLocation || provider.location : provider.location}</span>
-              <span>${provider.response}</span>
+              <span>${currentLang === "zh" ? provider.zhResponse || provider.response : provider.response}</span>
               <span>${provider.languages}</span>
             </div>
+            ${
+              provider.verificationNote
+                ? `<p class="provider-note">${currentLang === "zh" ? provider.zhVerificationNote || provider.verificationNote : provider.verificationNote}</p>`
+                : ""
+            }
             <div class="provider-meta">
               <span class="pill">${
                 currentLang === "zh" ? provider.zhCategory.replace("马来西亚", "").trim() : provider.category.replace(" Malaysia", "")
               }</span>
               <span class="pill">${t("canReceiveEnquiries")}</span>
             </div>
-            <button class="button secondary small" type="button" data-provider-service="${provider.category}" data-provider-location="${provider.location}">${t("contactProvider")}</button>
+            <div class="card-actions">
+              ${
+                provider.detailsUrl
+                  ? `<a class="text-link" href="${provider.detailsUrl}">${t("viewGuide")}</a>`
+                  : ""
+              }
+              <button class="button secondary small" type="button" data-provider-service="${provider.category}" data-provider-location="${provider.location}">${t("contactProvider")}</button>
+            </div>
           </article>
         `,
       )

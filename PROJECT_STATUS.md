@@ -1,6 +1,6 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-04 Asia/Singapore, homepage cleanup session
+Last updated: 2026-06-04 Asia/Singapore, positioning and homepage cleanup session
 
 ## Current Objective
 
@@ -12,7 +12,7 @@ Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and serv
 - GitHub: `https://github.com/weinee94/smes-my.git`
 - Branch: `main`
 - Latest commit: `b2af7c4 Improve SMEs.MY visual system`
-- Git state at last check: clean
+- Git state at last check: dirty; current positioning/homepage changes are local and not committed or pushed yet.
 
 ## Site Structure
 
@@ -99,8 +99,8 @@ Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and serv
 ## Next Steps
 
 1. Check Search Console again after Google processes the 2026-06-01 indexing requests.
-2. Review the cleaner homepage with the new directory-preview section and decide whether it now has enough product/design signal.
-3. Add or seed the first 20-50 real provider/supplier profiles once the homepage feels credible enough to show merchants.
+2. Review the proper-provider homepage direction and commit/push if acceptable.
+3. Add or seed the first 20-50 real provider/supplier/contractor profiles once the homepage feels credible enough to show providers and buyers.
 4. Add Chinese content/version support for the 5 SEO service pages and `packaging-suppliers-malaysia/`.
 5. Build external trust signals: social profiles, credible mentions, provider backlinks, and business directory citations.
 

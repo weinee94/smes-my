@@ -7,7 +7,7 @@ Independent Malaysia proper supplier, contractor, and service provider directory
 - SEO-first homepage
 - Brand assets based on the existing 商記 SMEs.MY identity
 - Launch service categories
-- Example provider listings
+- Example and invoice-backed seed provider listings
 - Quote request form
 - Provider onboarding form
 - Provider review, enquiry routing, and legal/support pages

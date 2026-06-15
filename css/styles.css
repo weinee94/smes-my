@@ -1029,6 +1029,19 @@ textarea {
   white-space: nowrap;
 }
 
+.muted-badge {
+  background: #f2f6ef;
+  color: var(--teal-dark);
+}
+
+.provider-note {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fbfcf8;
+  font-size: 13px;
+}
+
 .provider-signals {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
