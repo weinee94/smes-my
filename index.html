@@ -20,7 +20,7 @@
     <meta name="google-site-verification" content="YWhLNJ5ppmP6iVM1TtWI2A_oAtgTkEDpOZLH_PVG16I" />
     <link rel="canonical" href="https://smes.my/" />
     <link rel="icon" href="/assets/smes-site-icon.png" type="image/png" />
-    <link rel="stylesheet" href="css/styles.css?v=20260615-directory-cleanup" />
+    <link rel="stylesheet" href="css/styles.css?v=20260620-reference-direction" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -87,7 +87,7 @@
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
+        <div class="hero-showcase">
           <div class="hero-brand">
             <img src="assets/smes-main-logo.png" alt="商記 SMEs.MY" />
             <span data-i18n="heroEyebrow">Find proper providers in Malaysia</span>
@@ -98,10 +98,6 @@
             SMEs.MY helps Malaysian buyers and businesses compare suppliers and providers by scope, location,
             language, and relevant registration or licence signals.
           </p>
-          <div class="language-note">
-            <span data-i18n="heroPillOne">For Malaysian buyers and businesses</span>
-            <span data-i18n="heroPillTwo">English, BM, and Chinese-friendly support</span>
-          </div>
           <div class="search-box" role="search" aria-label="Search SME suppliers and providers">
             <input id="siteSearch" type="search" placeholder="Search accounting, wiring, packaging..." data-i18n-placeholder="searchPlaceholder" />
             <button class="button primary" type="button" id="siteSearchButton" data-i18n="searchServices">Search categories</button>
@@ -112,16 +108,24 @@
             <a href="/company-secretary-services-malaysia" data-i18n="serviceCompanySecShort">Company Secretary</a>
             <a href="/payroll-services-malaysia" data-i18n="servicePayrollShort">Payroll</a>
             <a href="/packaging-suppliers-malaysia" data-i18n="servicePackagingShort">Packaging</a>
-            <a href="#quote" data-i18n="serviceRenovationShort">Renovation</a>
             <a href="/electrical-wiring-contractors-malaysia" data-i18n="serviceElectricalShort">Electrical & Wiring</a>
             <a href="/website-design-services-malaysia" data-i18n="serviceWebsiteShort">Website Design</a>
-            <a href="/digital-marketing-agency-malaysia" data-i18n="serviceMarketingShort">Digital Marketing</a>
           </div>
-          <div class="hero-actions" aria-label="Secondary action">
-            <a class="button secondary" href="#list-business" data-i18n="listBusiness">List your business</a>
+          <div class="directory-visual" aria-hidden="true">
+            <span class="network-line line-one"></span>
+            <span class="network-line line-two"></span>
+            <span class="network-line line-three"></span>
+            <span class="directory-node node-one"></span>
+            <span class="directory-node node-two"></span>
+            <span class="directory-node node-three"></span>
+            <span class="directory-node node-four"></span>
+            <span class="directory-cube cube-large"></span>
+            <span class="directory-cube cube-mid"></span>
+            <span class="directory-cube cube-small"></span>
+            <span class="directory-stack"></span>
           </div>
         </div>
-        <aside class="quote-panel" id="quote" aria-labelledby="quote-title">
+        <aside class="quote-panel compact-quote" id="quote" aria-labelledby="quote-title">
           <div class="panel-header">
             <span class="match-badge" data-i18n="freeRequest">Free request</span>
             <span data-i18n="forMalaysiaSmes">For Malaysia buyers</span>
@@ -190,6 +194,17 @@
         </aside>
       </section>
 
+      <section class="section category-band" id="categories">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="popularEyebrow">Popular services</p>
+          <h2 data-i18n="popularTitle">Find proper providers for what SMEs buy often.</h2>
+          <p data-i18n="popularText">
+            Choose a category below to understand what to compare and send a quote request.
+          </p>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
       <section class="trust-strip" aria-label="Directory promises">
         <div>
           <strong data-i18n="trustOneTitle">Proper providers first</strong>
@@ -245,17 +260,6 @@
             <span data-i18n="previewSignalText">Scope, location, languages, response channel, registration/licence details where applicable, and proof the company is active.</span>
           </div>
         </div>
-      </section>
-
-      <section class="section" id="categories">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="popularEyebrow">Popular services</p>
-          <h2 data-i18n="popularTitle">Find proper providers for what SMEs buy often.</h2>
-          <p data-i18n="popularText">
-            Choose a category below to understand what to compare and send a quote request.
-          </p>
-        </div>
-        <div class="category-grid" id="categoryGrid"></div>
       </section>
 
       <section class="section comparison-section">
@@ -454,6 +458,6 @@
       </div>
     </footer>
 
-    <script src="js/app.js?v=20260615-directory-cleanup"></script>
+    <script src="js/app.js?v=20260620-reference-direction"></script>
   </body>
 </html>

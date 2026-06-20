@@ -469,6 +469,7 @@ let currentLang = "en";
 const categories = [
   {
     name: "Accounting Services Malaysia",
+    icon: "calculator",
     zhName: "马来西亚会计服务",
     summary: "Monthly accounts, bookkeeping, management reports, and SME compliance support.",
     zhSummary: "月结账目、bookkeeping、管理报表和 SME 合规支援。",
@@ -482,6 +483,7 @@ const categories = [
   },
   {
     name: "Company Secretary Services Malaysia",
+    icon: "building",
     zhName: "马来西亚公司秘书服务",
     summary: "SSM filings, annual returns, board resolutions, and company maintenance.",
     zhSummary: "SSM 文件、annual return、董事决议和公司合规维护。",
@@ -495,6 +497,7 @@ const categories = [
   },
   {
     name: "Tax Agent Malaysia",
+    icon: "scale",
     zhName: "马来西亚税务代理",
     summary: "Corporate tax, SST, tax planning, and annual filing for SMEs.",
     zhSummary: "公司税、SST、税务规划和 SME 年度报税。",
@@ -507,6 +510,7 @@ const categories = [
   },
   {
     name: "Payroll Services Malaysia",
+    icon: "wallet",
     zhName: "马来西亚 Payroll 服务",
     summary: "Payroll processing, EPF, SOCSO, EIS, PCB, and HR documentation.",
     zhSummary: "薪资计算、EPF、SOCSO、EIS、PCB 和 HR 文件。",
@@ -520,6 +524,7 @@ const categories = [
   },
   {
     name: "Packaging Suppliers Malaysia",
+    icon: "box",
     zhName: "马来西亚包装供应商",
     summary: "Carton boxes, paper bags, food packaging, labels, stickers, mailers, and custom print packaging.",
     zhSummary: "纸箱、纸袋、食品包装、标签、贴纸、快递袋和客制化印刷包装。",
@@ -533,6 +538,7 @@ const categories = [
   },
   {
     name: "Renovation Contractors Malaysia",
+    icon: "tools",
     zhName: "马来西亚装修承包商",
     summary: "Renovation, repair, fit-out, and maintenance providers with CIDB or other relevant details where applicable.",
     zhSummary: "装修、维修、fit-out 和维护服务商；适用时应列明 CIDB 或其他相关资料。",
@@ -545,6 +551,7 @@ const categories = [
   },
   {
     name: "Electrical Wiring Contractors Malaysia",
+    icon: "bolt",
     zhName: "马来西亚电工与拉电承包商",
     summary: "Electrical wiring, power points, DB routing, switches, lighting, and renovation-related electrical works.",
     zhSummary: "电工拉线、电位、DB 走线、开关、灯位和装修相关电工工程。",
@@ -558,6 +565,7 @@ const categories = [
   },
   {
     name: "Digital Marketing Agency Malaysia",
+    icon: "megaphone",
     zhName: "马来西亚 Digital Marketing 公司",
     summary: "SEO, paid ads, social media, content, and campaign management.",
     zhSummary: "SEO、广告投放、社交媒体、内容和 campaign 管理。",
@@ -571,6 +579,7 @@ const categories = [
   },
   {
     name: "Website Design Malaysia",
+    icon: "laptop",
     zhName: "马来西亚网站设计",
     summary: "SME websites, landing pages, ecommerce, maintenance, and hosting support.",
     zhSummary: "SME 网站、landing page、电商、维护和 hosting 支援。",
@@ -584,6 +593,7 @@ const categories = [
   },
   {
     name: "SME Business Loan Malaysia",
+    icon: "coins",
     zhName: "马来西亚 SME 商业贷款",
     summary: "Financing advisory, loan matching, working capital, and grant guidance.",
     zhSummary: "融资咨询、贷款配对、周转资金和 grant 指南。",
@@ -596,6 +606,7 @@ const categories = [
   },
   {
     name: "HR / Recruitment Services Malaysia",
+    icon: "users",
     zhName: "马来西亚 HR / 招聘服务",
     summary: "Hiring, HR policies, contracts, onboarding, and workforce support.",
     zhSummary: "招聘、HR 政策、合约、onboarding 和员工支援。",
@@ -608,6 +619,7 @@ const categories = [
   },
   {
     name: "Legal Services for SME Malaysia",
+    icon: "scale",
     zhName: "马来西亚 SME 法律服务",
     summary: "Contracts, employment matters, licensing, disputes, and advisory.",
     zhSummary: "合约、劳资事项、执照、纠纷和法律咨询。",
@@ -620,6 +632,7 @@ const categories = [
   },
   {
     name: "IT / POS / CRM Services Malaysia",
+    icon: "monitor",
     zhName: "马来西亚 IT / POS / CRM 服务",
     summary: "Business systems, cybersecurity, POS setup, CRM, support, and integrations.",
     zhSummary: "商业系统、网络安全、POS 设置、CRM、支援和整合。",
@@ -1020,6 +1033,7 @@ function renderCategories(searchTerm = "") {
     .map(
       (category) => `
         <article class="category-card">
+          <span class="category-icon" data-icon="${category.icon}" aria-hidden="true">${categoryIcon(category.icon)}</span>
           <div>
             <h3>${categoryLabel(category)}</h3>
             <p>${categorySummary(category)}</p>
@@ -1047,6 +1061,25 @@ function renderCategories(searchTerm = "") {
       quoteForCategory(category);
     });
   });
+}
+
+function categoryIcon(icon) {
+  const icons = {
+    calculator: "▤",
+    building: "▣",
+    scale: "⚖",
+    wallet: "$",
+    box: "◈",
+    tools: "✕",
+    bolt: "ϟ",
+    megaphone: "◢",
+    laptop: "▱",
+    coins: "◎",
+    users: "●●",
+    monitor: "▰",
+  };
+
+  return icons[icon] || "•";
 }
 
 function populateProviderFilter() {

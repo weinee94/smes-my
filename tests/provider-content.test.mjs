@@ -43,3 +43,20 @@ test("public site stays English-first until category pages have full bilingual s
   assert.match(app, /let currentLang = "en";/);
   assert.doesNotMatch(app, /localStorage\.getItem\("smesLang"\)/);
 });
+
+test("homepage applies marketplace reference without changing logo assets", () => {
+  const home = read("index.html");
+  const styles = read("css/styles.css");
+  const app = read("js/app.js");
+
+  assert.match(home, /assets\/smes-main-logo\.png/);
+  assert.match(home, /assets\/smes-site-icon\.png/);
+  assert.match(home, /class="directory-visual"/);
+  assert.match(home, /class="quote-panel compact-quote"/);
+  assert.match(styles, /--brand-blue:\s*#073c86/);
+  assert.match(styles, /\.directory-cube/);
+  assert.match(app, /icon:\s*"calculator"/);
+  assert.match(app, /icon:\s*"building"/);
+
+  assert.doesNotMatch(home + styles + app, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider/i);
+});
