@@ -41,6 +41,26 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://smes.my/johor-bahru-suppliers-services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/pll-packaging-sdn-bhd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/csy-electric-sdn-bhd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/cg-corporate-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
     <loc>https://smes.my/how-matching-works</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -1,18 +1,20 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-15 18:43 Asia/Singapore, provider seed/profile boundary and strategy pause
+Last updated: 2026-06-22 11:30 Asia/Singapore, Johor Bahru area content seed
 
 ## Current Objective
 
 Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and service provider directory. SME use cases remain important, but the platform should also serve mass-market buyers, homeowners, consumers, and businesses looking for proper providers. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
+
+Current content-growth direction: do not wait for Wei Nee to manually provide provider names. Start from practical area/category combinations, beginning with Johor Bahru, and turn public company websites into structured public-source research pages and later profile-completion queues.
 
 ## Current Repo
 
 - Local path: `C:\Users\Wynne\Documents\Codex\smes-my`
 - GitHub: `https://github.com/weinee94/smes-my.git`
 - Branch: `main`
-- Latest commit: `b2af7c4 Improve SMEs.MY visual system`
-- Git state at last check: dirty; current positioning/homepage changes are local and not committed or pushed yet.
+- Latest local commit at this check: `804b6b9 Refactor styles and HTML structure for improved visual consistency; add icons to categories and update tests for homepage elements`
+- Git state at last check: dirty; Johor Bahru area page and related index/sitemap/llms/test/status updates are local and not committed or pushed yet.
 
 ## Site Structure
 
@@ -80,15 +82,31 @@ Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and serv
   - `b2af7c4 Improve SMEs.MY visual system`
 - On 2026-06-15, added the first invoice-backed seed provider/category structure for electrical wiring contractors, then tightened the public boundary:
   - `electrical-wiring-contractors-malaysia/` exists as a category page and seed profile test surface.
-  - Urbanreno is displayed in readable casing while invoice-source names remain preserved in source fields.
+  - Invoice-backed seed now uses formal business-name presentation: `URBAN RENO EMPIRE` as display name, with `URBANRENO` retained only as the invoice header/source alias.
   - Direct email/phone from invoice are withheld from the public seed profile; buyer action routes through SMEs.MY.
   - Homepage provider area now presents `Profile formats`, `Sample format`, and `Invoice-backed seed` instead of implying live/verified providers.
   - Homepage language switch was removed for now; the public site is English-first until category pages have full bilingual coverage.
   - Added `tests/provider-content.test.mjs` to guard against verification overclaiming, public direct-contact leakage, and accidental half-bilingual UI.
+- On 2026-06-22, added the first Johor Bahru area content seed:
+  - New static page: `johor-bahru-suppliers-services/`.
+  - Page covers JB-area public-source research signals for packaging suppliers, electrical/M&E contractors, company secretary, payroll, accounting, and compliance providers.
+  - Public-source examples include PLL Packaging, Khoo Packaging, Smart Pack, CSY Electric, JUTA M&E, C&G Corporate Services, DTL, TJW Group, and YCS Accounting.
+  - The page explicitly avoids presenting these companies as independently checked SMEs.MY listings; it is a research queue and comparison guide.
+  - Homepage city link, homepage service guide list, `sitemap.xml`, and `llms.txt` now link to the JB area page.
+  - Tightened old electrical page wording from `SMEs.MY-verified` phrasing to `independently checked SMEs.MY listing`.
+  - Added test coverage for the JB page and broadened overclaim guards to catch `SMEs.MY-verified`.
+- On 2026-06-22, converted the first JB public-source examples into individual profiles:
+  - `providers/pll-packaging-sdn-bhd/`
+  - `providers/csy-electric-sdn-bhd/`
+  - `providers/cg-corporate-services/`
+  - Added `Public-source profile` as a homepage provider-card label.
+  - Added the three profiles to homepage provider data, JB area page links, `sitemap.xml`, `llms.txt`, and tests.
+  - Each page avoids publishing copied phone/email details and keeps the status as public-source / not independently checked.
 
 ## Open Issues
 
 - Site still needs real provider data; current public provider cards are sample formats plus one invoice-backed seed record, not a mature provider marketplace.
+- Johor Bahru page now has the first three public-source individual profiles, but the directory is still early. The next step is to build enough profile volume and then use the profiles for provider-claim outreach.
 - Service and supplier detail pages are English-only for now; homepage is intentionally English-first until bilingual coverage can be done consistently.
 - Need to prepare Chinese versions for the 5 SEO service pages.
 - Legal/support pages exist: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`; continue polishing if needed.
@@ -108,11 +126,11 @@ Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and serv
 
 ## Next Steps
 
-1. Pause new tool concepts unless they clearly empower SMEs without selling Wynne's time or spending anonymous/public AI tokens.
-2. Keep SMEs.MY positioned as a Malaysia SME supplier and service provider directory, not a renovation site.
-3. If continuing, focus on SEO and request-intake pages that match SME procurement scenarios, then use real requests to decide which provider pools deserve attention.
-4. If provider routing is tested, add provider-pool status fields to Google Sheets instead of creating public groups.
-5. Commit/push the current cleanup only after review.
+1. Review the new `johor-bahru-suppliers-services/` page locally, then decide whether to commit and push.
+2. Add another 7 JB public-source profiles so the first outreach batch has 10 companies, prioritising packaging, electrical/M&E, payroll/accounting, and company secretary.
+3. Draft a provider-claim outreach message and offer: free correction, optional RM99-RM199 founding claimed profile.
+4. For each profile, keep status as public-source until independent checks or provider claim exists; do not imply SMEs.MY verification.
+5. If provider routing is tested, add provider-pool status fields to Google Sheets instead of creating public groups.
 
 ## Useful Commands
 
