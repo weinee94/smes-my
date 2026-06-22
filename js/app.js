@@ -159,9 +159,10 @@ const translations = {
     tableScope: "Service scope",
     tableScopeWhy: "Prevents misunderstandings about what is included and what costs extra.",
     tableScopeAsk: "Monthly scope, one-time fees, location coverage, and support limits",
-    providersEyebrow: "Profile formats",
-    providersTitle: "Compare provider signals before requesting quotes.",
-    providersText: "These cards show how SMEs.MY structures provider information. Sample cards are not live listings. Invoice-backed seed records are early records and direct contact details may be withheld until the provider claims or confirms the profile.",
+    providersEyebrow: "Provider records",
+    providersTitle: "Browse real public-source profiles before sample formats.",
+    providersText:
+      "SMEs.MY shows public-source and invoice-backed records first. Sample formats are kept only as examples for categories where public profiles are still being built.",
     providerSearchPlaceholder: "Search providers, categories, or locations",
     allCategories: "All categories",
     coverageEyebrow: "Malaysia coverage",
@@ -387,9 +388,10 @@ const translations = {
     tableScope: "服务范围",
     tableScopeWhy: "避免误会哪些包含在内，哪些需要另外收费。",
     tableScopeAsk: "月费范围、一次性费用、服务地区和支援限制",
-    providersEyebrow: "Profile 样式",
-    providersTitle: "询价前，先比较服务商信号。",
-    providersText: "这些卡片展示 SMEs.MY 如何整理服务商资料。Sample card 不是正式商家 listing。Invoice-backed seed record 是早期资料，直接联系方式可先保留，等服务商 claim 或确认 profile 后再公开。",
+    providersEyebrow: "供应商记录",
+    providersTitle: "先看真实公开来源 profile，再看 sample 格式。",
+    providersText:
+      "SMEs.MY 会先显示 public-source 和 invoice-backed 记录。Sample format 只保留给还在补真实 profile 的分类参考。",
     providerSearchPlaceholder: "搜索供应商、分类或地点",
     allCategories: "全部分类",
     coverageEyebrow: "马来西亚覆盖",
@@ -1152,13 +1154,25 @@ function populateProviderFilter() {
   });
 }
 
+function providerSortRank(provider) {
+  const sourceRank = {
+    publicSource: 0,
+    invoiceBacked: 1,
+    sampleProfile: 9,
+  };
+
+  return sourceRank[provider.sourceLabel] ?? 4;
+}
+
 function renderProviders() {
   const filter = providerFilter.value;
   const query = providerSearch.value.trim().toLowerCase();
-  const filtered = providers.filter((provider) => {
-    const matchesFilter = filter === "All" || provider.category === filter;
-    return matchesFilter && providerSearchText(provider).includes(query);
-  });
+  const filtered = providers
+    .filter((provider) => {
+      const matchesFilter = filter === "All" || provider.category === filter;
+      return matchesFilter && providerSearchText(provider).includes(query);
+    })
+    .sort((a, b) => providerSortRank(a) - providerSortRank(b) || a.name.localeCompare(b.name));
 
   providerGrid.innerHTML =
     filtered

@@ -102,6 +102,11 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
   - Added `Public-source profile` as a homepage provider-card label.
   - Added the three profiles to homepage provider data, JB area page links, `sitemap.xml`, `llms.txt`, and tests.
   - Each page avoids publishing copied phone/email details and keeps the status as public-source / not independently checked.
+- On 2026-06-22, corrected the homepage provider browsing hierarchy:
+  - Provider section now says `Provider records` instead of `Profile formats`.
+  - Public-source and invoice-backed records are sorted before sample-format cards.
+  - Sample formats remain only as fallback examples for categories that do not yet have public profiles.
+  - Added regression coverage so sample profiles do not drift back ahead of real records.
 
 ## Open Issues
 

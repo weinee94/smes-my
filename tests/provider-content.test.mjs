@@ -112,3 +112,17 @@ test("first Johor Bahru public-source profiles are linked and labelled correctly
 
   assert.doesNotMatch(publicProfileContent, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider|SMEs\.MY-verified/i);
 });
+
+test("homepage puts real provider records before sample formats", () => {
+  const home = read("index.html");
+  const app = read("js/app.js");
+
+  assert.match(home, /Provider records/);
+  assert.match(home, /public-source and invoice-backed records first/i);
+  assert.match(app, /providersTitle:\s*"Browse real public-source profiles before sample formats\."/);
+  assert.match(app, /function providerSortRank\(provider\)/);
+  assert.match(app, /publicSource:\s*0/);
+  assert.match(app, /invoiceBacked:\s*1/);
+  assert.match(app, /sampleProfile:\s*9/);
+  assert.match(app, /\.sort\(\(a, b\) => providerSortRank\(a\) - providerSortRank\(b\)/);
+});
