@@ -111,11 +111,16 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
   - Removed unclear `Not confirmed` / `Not shown on invoice` signal text.
   - Provider cards now show labelled signals such as `Area`, `Source`, `Access`, and `Open item`.
   - Public-source and invoice-backed cards use `Needs direct check` for missing confirmation instead of unexplained internal status wording.
+- On 2026-06-22, fixed public copy leakage from internal profile-building terminology:
+  - Homepage provider section now uses buyer-facing copy: compare service scope, location, source notes, and details to confirm before enquiry.
+  - Provider-card labels now show `Source listed`, `Invoice source noted`, and `Example profile` instead of internal source-type wording.
+  - JB area page, individual provider pages, electrical contractor page, and `llms.txt` no longer expose `public-source`, `sample format(s)`, or `invoice-backed seed` wording.
+  - Added regression coverage to keep internal profile-building terms out of public-facing pages.
 
 ## Open Issues
 
-- Site still needs real provider data; current public provider cards are sample formats plus one invoice-backed seed record, not a mature provider marketplace.
-- Johor Bahru page now has the first three public-source individual profiles, but the directory is still early. The next step is to build enough profile volume and then use the profiles for provider-claim outreach.
+- Site still needs real provider volume; current public provider cards include early example profiles plus one invoice-source record, not a mature provider marketplace.
+- Johor Bahru page now has the first three source-listed individual profiles, but the directory is still early. The next step is to build enough profile volume and then use the profiles for provider-claim outreach.
 - Service and supplier detail pages are English-only for now; homepage is intentionally English-first until bilingual coverage can be done consistently.
 - Need to prepare Chinese versions for the 5 SEO service pages.
 - Legal/support pages exist: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`; continue polishing if needed.

@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
-test("URBANRENO seed profile is invoice-backed without verification overclaim", () => {
+test("URBANRENO source profile avoids verification overclaim", () => {
   const home = read("index.html") + read("js/app.js");
   const guide = read("electrical-wiring-contractors-malaysia/index.html");
   const publicContent = `${home}\n${guide}`;
@@ -12,8 +12,9 @@ test("URBANRENO seed profile is invoice-backed without verification overclaim", 
   assert.match(publicContent, /URBANRENO/);
   assert.match(publicContent, /URBAN RENO EMPIRE/);
   assert.match(publicContent, /PG0541595-V/);
-  assert.match(publicContent, /invoice-backed provider information/i);
-  assert.match(publicContent, /details not yet independently verified by SMEs\.MY/i);
+  assert.match(publicContent, /Profile based on an invoice record/i);
+  assert.match(publicContent, /Invoice source noted/i);
+  assert.match(publicContent, /details still need buyer/i);
   assert.match(publicContent, /dedicated power points/i);
   assert.match(publicContent, /concealed\/internal wiring from DB/i);
 
@@ -26,7 +27,7 @@ test("seed provider uses formal business name and does not publish direct contac
   const guide = read("electrical-wiring-contractors-malaysia/index.html");
 
   assert.match(app, /name:\s*"Urban Reno Empire"/);
-  assert.match(guide, /Invoice-backed seed: Urban Reno Empire/);
+  assert.match(guide, /<h2>Urban Reno Empire<\/h2>/);
   assert.match(guide, /Invoice header[\s\S]*URBANRENO/);
   assert.match(guide, /Business name[\s\S]*URBAN RENO EMPIRE/);
   assert.match(app, /detailsUrl:\s*"\/electrical-wiring-contractors-malaysia#urban-reno-empire"/);
@@ -62,21 +63,21 @@ test("homepage applies marketplace reference without changing logo assets", () =
   assert.doesNotMatch(home + styles + app, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider|SMEs\.MY-verified/i);
 });
 
-test("Johor Bahru area page adds public-source content without verification overclaim", () => {
+test("Johor Bahru area page adds provider shortlist content without verification overclaim", () => {
   const page = read("johor-bahru-suppliers-services/index.html");
   const sitemap = read("sitemap.xml");
   const llms = read("llms.txt");
   const home = read("index.html");
 
-  assert.match(page, /Johor Bahru supplier research/);
-  assert.match(page, /Public-source research, not independently checked listings/);
+  assert.match(page, /Johor Bahru provider shortlist/);
+  assert.match(page, /Source listed, needs buyer check/);
   assert.match(page, /PLL Packaging Sdn Bhd/);
   assert.match(page, /CSY Electric Sdn\. Bhd\./);
   assert.match(page, /C&amp;G Corporate Services/);
   assert.match(page, /DTL Accounting Firm/);
   assert.match(page, /TJW Group/);
   assert.match(page, /YCS Accounting/);
-  assert.match(page, /Do not treat public website claims as SMEs\.MY verification/);
+  assert.match(page, /A listed source note is not the same as SMEs\.MY verification/);
 
   assert.match(sitemap, /https:\/\/smes\.my\/johor-bahru-suppliers-services/);
   assert.match(llms, /Johor Bahru suppliers and services/);
@@ -86,7 +87,7 @@ test("Johor Bahru area page adds public-source content without verification over
   assert.doesNotMatch(page, /ProfilePage|Review Snippet|review stars/i);
 });
 
-test("first Johor Bahru public-source profiles are linked and labelled correctly", () => {
+test("first Johor Bahru provider profiles are linked and labelled correctly", () => {
   const app = read("js/app.js");
   const area = read("johor-bahru-suppliers-services/index.html");
   const sitemap = read("sitemap.xml");
@@ -96,30 +97,30 @@ test("first Johor Bahru public-source profiles are linked and labelled correctly
   const cg = read("providers/cg-corporate-services/index.html");
   const publicProfileContent = `${app}\n${area}\n${sitemap}\n${llms}\n${pll}\n${csy}\n${cg}`;
 
-  assert.match(app, /publicSource:\s*"Public-source profile"/);
+  assert.match(app, /publicSource:\s*"Source listed"/);
   assert.match(app, /name:\s*"PLL Packaging Sdn Bhd"/);
   assert.match(app, /name:\s*"CSY Electric Sdn\. Bhd\."/);
   assert.match(app, /name:\s*"C&G Corporate Services"/);
   assert.match(area, /\/providers\/pll-packaging-sdn-bhd/);
   assert.match(area, /\/providers\/csy-electric-sdn-bhd/);
   assert.match(area, /\/providers\/cg-corporate-services/);
-  assert.match(pll, /Public-source profile, not independently checked/);
-  assert.match(csy, /needs independent evidence check/i);
+  assert.match(pll, /Source listed, needs buyer check/);
+  assert.match(csy, /needs buyer check/i);
   assert.match(cg, /Licensed secretary evidence/i);
   assert.match(cg, /fee\/package details/i);
   assert.match(sitemap, /https:\/\/smes\.my\/providers\/pll-packaging-sdn-bhd/);
-  assert.match(llms, /C&G Corporate Services public-source profile/);
+  assert.match(llms, /C&G Corporate Services provider profile/);
 
   assert.doesNotMatch(publicProfileContent, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider|SMEs\.MY-verified/i);
 });
 
-test("homepage puts real provider records before sample formats", () => {
+test("homepage puts source-listed provider records before example profiles", () => {
   const home = read("index.html");
   const app = read("js/app.js");
 
-  assert.match(home, /Provider records/);
-  assert.match(home, /public-source and invoice-backed records first/i);
-  assert.match(app, /providersTitle:\s*"Browse real public-source profiles before sample formats\."/);
+  assert.match(home, /Provider profiles/);
+  assert.match(home, /service scope, location, source notes/i);
+  assert.match(app, /providersTitle:\s*"Compare suppliers and service providers by what matters before you enquire\."/);
   assert.match(app, /function providerSortRank\(provider\)/);
   assert.match(app, /publicSource:\s*0/);
   assert.match(app, /invoiceBacked:\s*1/);
@@ -136,4 +137,21 @@ test("provider cards use user-facing signal labels instead of unclear status tex
   assert.match(app, /Needs direct check/);
   assert.doesNotMatch(app, /Not confirmed|Not shown on invoice/);
   assert.match(styles, /\.provider-signals small/);
+});
+
+test("public-facing pages do not expose internal profile-build wording", () => {
+  const publicFiles = [
+    "index.html",
+    "johor-bahru-suppliers-services/index.html",
+    "electrical-wiring-contractors-malaysia/index.html",
+    "providers/pll-packaging-sdn-bhd/index.html",
+    "providers/csy-electric-sdn-bhd/index.html",
+    "providers/cg-corporate-services/index.html",
+    "llms.txt",
+  ];
+  const publicContent = publicFiles.map((file) => read(file)).join("\n");
+
+  assert.doesNotMatch(publicContent, /public-source|sample formats?|invoice-backed seed/i);
+  assert.doesNotMatch(publicContent, /Browse real public-source profiles before sample formats/i);
+  assert.doesNotMatch(publicContent, /Not confirmed|Not shown on invoice/);
 });
