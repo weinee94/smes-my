@@ -747,7 +747,8 @@ const providers = [
     zhVerificationNote: "Public-source profile；尚未由 SMEs.MY 独立核对。",
     rating: "Source",
     response: "Official site",
-    languages: "Not confirmed",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
     detailsUrl: "/providers/pll-packaging-sdn-bhd",
   },
   {
@@ -766,7 +767,8 @@ const providers = [
     zhVerificationNote: "Public-source profile；执照和注册相关说法还需要独立核对。",
     rating: "Source",
     response: "Official site",
-    languages: "Not confirmed",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
     detailsUrl: "/providers/csy-electric-sdn-bhd",
   },
   {
@@ -785,12 +787,13 @@ const providers = [
     zhVerificationNote: "Public-source profile；公司秘书执照和配套范围还需要独立核对。",
     rating: "Source",
     response: "Official site",
-    languages: "Not confirmed",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
     detailsUrl: "/providers/cg-corporate-services",
   },
   {
-    name: "URBAN RENO EMPIRE",
-    zhName: "URBAN RENO EMPIRE",
+    name: "Urban Reno Empire",
+    zhName: "Urban Reno Empire",
     category: "Electrical Wiring Contractors Malaysia",
     zhCategory: "马来西亚电工与拉电承包商",
     location: "Subang Jaya, Selangor",
@@ -804,7 +807,8 @@ const providers = [
     zhVerificationNote: "资料尚未由 SMEs.MY 独立验证",
     response: "Request through SMEs.MY",
     zhResponse: "通过 SMEs.MY 询价",
-    languages: "Not shown on invoice",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
     detailsUrl: "/electrical-wiring-contractors-malaysia#urban-reno-empire",
   },
   {
@@ -1164,6 +1168,35 @@ function providerSortRank(provider) {
   return sourceRank[provider.sourceLabel] ?? 4;
 }
 
+function providerSignalItems(provider) {
+  const isZh = currentLang === "zh";
+  const location = isZh ? provider.zhLocation || provider.location : provider.location;
+  const response = isZh ? provider.zhResponse || provider.response : provider.response;
+  const languages = isZh ? provider.zhLanguages || provider.languages : provider.languages;
+
+  if (provider.sourceLabel === "publicSource") {
+    return [
+      { label: isZh ? "地区" : "Area", value: location },
+      { label: isZh ? "来源" : "Source", value: response },
+      { label: isZh ? "待补" : "Open item", value: languages },
+    ];
+  }
+
+  if (provider.sourceLabel === "invoiceBacked") {
+    return [
+      { label: isZh ? "地区" : "Area", value: location },
+      { label: isZh ? "询价" : "Access", value: response },
+      { label: isZh ? "待补" : "Open item", value: languages },
+    ];
+  }
+
+  return [
+    { label: isZh ? "地区" : "Area", value: location },
+    { label: isZh ? "示例" : "Example", value: response },
+    { label: isZh ? "语言" : "Languages", value: languages },
+  ];
+}
+
 function renderProviders() {
   const filter = providerFilter.value;
   const query = providerSearch.value.trim().toLowerCase();
@@ -1189,9 +1222,16 @@ function renderProviders() {
             </div>
             <p>${currentLang === "zh" ? provider.zhSummary : provider.summary}</p>
             <div class="provider-signals">
-              <span>${currentLang === "zh" ? provider.zhLocation || provider.location : provider.location}</span>
-              <span>${currentLang === "zh" ? provider.zhResponse || provider.response : provider.response}</span>
-              <span>${provider.languages}</span>
+              ${providerSignalItems(provider)
+                .map(
+                  (signal) => `
+                    <span>
+                      <small>${signal.label}</small>
+                      ${signal.value}
+                    </span>
+                  `,
+                )
+                .join("")}
             </div>
             ${
               provider.verificationNote

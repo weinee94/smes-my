@@ -82,7 +82,7 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
   - `b2af7c4 Improve SMEs.MY visual system`
 - On 2026-06-15, added the first invoice-backed seed provider/category structure for electrical wiring contractors, then tightened the public boundary:
   - `electrical-wiring-contractors-malaysia/` exists as a category page and seed profile test surface.
-  - Invoice-backed seed now uses formal business-name presentation: `URBAN RENO EMPIRE` as display name, with `URBANRENO` retained only as the invoice header/source alias.
+  - Invoice-backed seed now uses professional display casing: `Urban Reno Empire` as display name, with `URBAN RENO EMPIRE` and `URBANRENO` retained only as source/invoice fields.
   - Direct email/phone from invoice are withheld from the public seed profile; buyer action routes through SMEs.MY.
   - Homepage provider area now presents `Profile formats`, `Sample format`, and `Invoice-backed seed` instead of implying live/verified providers.
   - Homepage language switch was removed for now; the public site is English-first until category pages have full bilingual coverage.
@@ -107,6 +107,10 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
   - Public-source and invoice-backed records are sorted before sample-format cards.
   - Sample formats remain only as fallback examples for categories that do not yet have public profiles.
   - Added regression coverage so sample profiles do not drift back ahead of real records.
+- On 2026-06-22, improved provider-card readability:
+  - Removed unclear `Not confirmed` / `Not shown on invoice` signal text.
+  - Provider cards now show labelled signals such as `Area`, `Source`, `Access`, and `Open item`.
+  - Public-source and invoice-backed cards use `Needs direct check` for missing confirmation instead of unexplained internal status wording.
 
 ## Open Issues
 

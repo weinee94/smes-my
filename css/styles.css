@@ -1266,15 +1266,24 @@ textarea {
 
 .provider-signals span {
   display: grid;
-  place-items: center;
+  align-content: center;
+  gap: 3px;
   min-height: 44px;
-  padding: 8px;
+  padding: 9px 10px;
   border-radius: var(--radius);
   background: #f2f6ef;
   color: var(--teal-dark);
   font-size: 12px;
   font-weight: 900;
-  text-align: center;
+  text-align: left;
+}
+
+.provider-signals small {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .journey-grid {

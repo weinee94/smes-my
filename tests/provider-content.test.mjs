@@ -25,8 +25,8 @@ test("seed provider uses formal business name and does not publish direct contac
   const app = read("js/app.js");
   const guide = read("electrical-wiring-contractors-malaysia/index.html");
 
-  assert.match(app, /name:\s*"URBAN RENO EMPIRE"/);
-  assert.match(guide, /Invoice-backed seed: URBAN RENO EMPIRE/);
+  assert.match(app, /name:\s*"Urban Reno Empire"/);
+  assert.match(guide, /Invoice-backed seed: Urban Reno Empire/);
   assert.match(guide, /Invoice header[\s\S]*URBANRENO/);
   assert.match(guide, /Business name[\s\S]*URBAN RENO EMPIRE/);
   assert.match(app, /detailsUrl:\s*"\/electrical-wiring-contractors-malaysia#urban-reno-empire"/);
@@ -125,4 +125,15 @@ test("homepage puts real provider records before sample formats", () => {
   assert.match(app, /invoiceBacked:\s*1/);
   assert.match(app, /sampleProfile:\s*9/);
   assert.match(app, /\.sort\(\(a, b\) => providerSortRank\(a\) - providerSortRank\(b\)/);
+});
+
+test("provider cards use user-facing signal labels instead of unclear status text", () => {
+  const app = read("js/app.js");
+  const styles = read("css/styles.css");
+
+  assert.match(app, /function providerSignalItems\(provider\)/);
+  assert.match(app, /Open item/);
+  assert.match(app, /Needs direct check/);
+  assert.doesNotMatch(app, /Not confirmed|Not shown on invoice/);
+  assert.match(styles, /\.provider-signals small/);
 });
