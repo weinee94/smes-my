@@ -116,10 +116,14 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
   - Provider-card labels now show `Source listed`, `Invoice source noted`, and `Example profile` instead of internal source-type wording.
   - JB area page, individual provider pages, electrical contractor page, and `llms.txt` no longer expose `public-source`, `sample format(s)`, or `invoice-backed seed` wording.
   - Added regression coverage to keep internal profile-building terms out of public-facing pages.
+- On 2026-06-22, tightened the homepage provider grid so it no longer defaults to example profiles:
+  - `sampleProfile` entries can remain as internal fallback data, but `renderProviders()` excludes them from the public provider grid.
+  - Empty categories/searches now show a quote-routing message instead of fake-looking provider cards.
+  - Added regression coverage so example profiles do not reappear as visible provider records.
 
 ## Open Issues
 
-- Site still needs real provider volume; current public provider cards include early example profiles plus one invoice-source record, not a mature provider marketplace.
+- Site still needs real provider volume; current public provider grid now shows only source-listed/invoice-source records, not example profiles.
 - Johor Bahru page now has the first three source-listed individual profiles, but the directory is still early. The next step is to build enough profile volume and then use the profiles for provider-claim outreach.
 - Service and supplier detail pages are English-only for now; homepage is intentionally English-first until bilingual coverage can be done consistently.
 - Need to prepare Chinese versions for the 5 SEO service pages.

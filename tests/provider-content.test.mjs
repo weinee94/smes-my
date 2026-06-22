@@ -114,7 +114,7 @@ test("first Johor Bahru provider profiles are linked and labelled correctly", ()
   assert.doesNotMatch(publicProfileContent, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider|SMEs\.MY-verified/i);
 });
 
-test("homepage puts source-listed provider records before example profiles", () => {
+test("homepage shows source-listed provider records instead of example profiles", () => {
   const home = read("index.html");
   const app = read("js/app.js");
 
@@ -122,10 +122,14 @@ test("homepage puts source-listed provider records before example profiles", () 
   assert.match(home, /service scope, location, source notes/i);
   assert.match(app, /providersTitle:\s*"Compare suppliers and service providers by what matters before you enquire\."/);
   assert.match(app, /function providerSortRank\(provider\)/);
+  assert.match(app, /function isVisibleProviderRecord\(provider\)/);
+  assert.match(app, /provider\.sourceLabel !== "sampleProfile"/);
   assert.match(app, /publicSource:\s*0/);
   assert.match(app, /invoiceBacked:\s*1/);
   assert.match(app, /sampleProfile:\s*9/);
+  assert.match(app, /isVisibleProviderRecord\(provider\) && matchesFilter && providerSearchText\(provider\)\.includes\(query\)/);
   assert.match(app, /\.sort\(\(a, b\) => providerSortRank\(a\) - providerSortRank\(b\)/);
+  assert.match(app, /No listed provider records match yet/);
 });
 
 test("provider cards use user-facing signal labels instead of unclear status text", () => {

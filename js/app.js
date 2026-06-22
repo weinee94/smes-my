@@ -225,7 +225,7 @@ const translations = {
     publicSource: "Source listed",
     sampleProfile: "Example profile",
     canReceiveEnquiries: "Request through SMEs.MY",
-    noProviderMatch: "No providers match this search yet.",
+    noProviderMatch: "No listed provider records match yet. Send a quote request and SMEs.MY can route it manually.",
     submitting: "Submitting your request...",
     sending: "Sending...",
     requiredFields: "Please fill in the required fields, then submit again.",
@@ -451,7 +451,7 @@ const translations = {
     publicSource: "资料来源已列明",
     sampleProfile: "示例资料卡",
     canReceiveEnquiries: "通过 SMEs.MY 询价",
-    noProviderMatch: "暂时没有符合这个搜索的服务商。",
+    noProviderMatch: "暂时没有符合这个搜索的正式供应商资料。你仍然可以提交询价，让 SMEs.MY 人工协助分类。",
     submitting: "正在提交你的需求...",
     sending: "提交中...",
     requiredFields: "请填写必填资料后再提交。",
@@ -972,7 +972,7 @@ function applySiteSearch() {
   renderCategories(query);
   renderProviders();
 
-  const providerMatches = providers.filter((provider) => providerSearchText(provider).includes(query)).length;
+  const providerMatches = providers.filter((provider) => isVisibleProviderRecord(provider) && providerSearchText(provider).includes(query)).length;
   const categoryMatches = categories.filter((category) => categorySearchText(category).includes(query)).length;
   const visibleProviderMatches = providerGrid.querySelectorAll(".provider-card").length;
   searchStatus.textContent =
@@ -1168,6 +1168,10 @@ function providerSortRank(provider) {
   return sourceRank[provider.sourceLabel] ?? 4;
 }
 
+function isVisibleProviderRecord(provider) {
+  return provider.sourceLabel !== "sampleProfile";
+}
+
 function providerSignalItems(provider) {
   const isZh = currentLang === "zh";
   const location = isZh ? provider.zhLocation || provider.location : provider.location;
@@ -1203,7 +1207,7 @@ function renderProviders() {
   const filtered = providers
     .filter((provider) => {
       const matchesFilter = filter === "All" || provider.category === filter;
-      return matchesFilter && providerSearchText(provider).includes(query);
+      return isVisibleProviderRecord(provider) && matchesFilter && providerSearchText(provider).includes(query);
     })
     .sort((a, b) => providerSortRank(a) - providerSortRank(b) || a.name.localeCompare(b.name));
 
