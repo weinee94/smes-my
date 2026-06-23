@@ -189,6 +189,17 @@ test("homepage exposes a Facebook-ready social preview image", () => {
   assert.equal(existsSync(new URL("../assets/smes-social-preview.png", import.meta.url)), true);
 });
 
+test("Chinese entry link is styled as a language entry pill", () => {
+  const home = read("index.html");
+  const styles = read("css/styles.css");
+
+  assert.match(home, /<div class="header-controls">[\s\S]*class="language-entry"/);
+  assert.match(home, />中文入口<\/a>/);
+  assert.match(styles, /\.language-entry/);
+  assert.match(styles, /\.language-entry::before/);
+  assert.doesNotMatch(styles, /@media \(max-width: 640px\)[\s\S]*\.language-entry\s*\{[\s\S]*display:\s*none/);
+});
+
 test("Chinese entry is national and does not mix Selangor records into a Johor page", () => {
   const zh = read("zh/index.html");
 

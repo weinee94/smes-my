@@ -124,6 +124,34 @@ label {
   color: var(--brand-blue);
 }
 
+.language-entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 5px 10px;
+  border: 1px solid rgba(7, 60, 134, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, var(--brand-blue-soft) 100%);
+  color: var(--brand-blue);
+  box-shadow: 0 8px 18px rgba(7, 60, 134, 0.06);
+  white-space: nowrap;
+}
+
+.language-entry::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(198, 151, 62, 0.16);
+}
+
+.language-entry:hover {
+  border-color: rgba(7, 60, 134, 0.36);
+  background: #fff;
+}
+
 .header-controls {
   display: inline-flex;
   align-items: center;
