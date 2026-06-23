@@ -42,6 +42,8 @@ test("public site stays English-first until category pages have full bilingual s
   const app = read("js/app.js");
 
   assert.doesNotMatch(home, /class="language-switch"/);
+  assert.match(home, /href="\/zh\/"/);
+  assert.match(read("zh/index.html"), /新山找靠谱供应商与服务商/);
   assert.match(app, /let currentLang = "en";/);
   assert.doesNotMatch(app, /localStorage\.getItem\("smesLang"\)/);
 });
@@ -151,6 +153,64 @@ test("Johor Bahru provider batch reaches ten source-listed profiles", () => {
 
   assert.doesNotMatch(publicProfileContent, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider|SMEs\.MY-verified/i);
   assert.doesNotMatch(publicProfileContent, /public-source|sample formats?|invoice-backed seed/i);
+});
+
+test("provider filters show visible result feedback", () => {
+  const home = read("index.html");
+  const app = read("js/app.js");
+  const styles = read("css/styles.css");
+
+  assert.match(home, /id="providerStatus"/);
+  assert.match(home, /aria-live="polite"/);
+  assert.match(app, /const providerStatus = document\.querySelector\("#providerStatus"\)/);
+  assert.match(app, /providerStatus\.textContent/);
+  assert.match(app, /providerResultSummary/);
+  assert.match(app, /filters active/);
+  assert.match(styles, /\.provider-status/);
+});
+
+test("Mandarin language signal is visible and filterable", () => {
+  const app = read("js/app.js");
+
+  assert.match(app, /name:\s*"Urban Reno Empire"[\s\S]*languageTags:\s*\["Mandarin"\]/);
+  assert.match(app, /languages:\s*"Mandarin"/);
+  assert.match(app, /zhLanguages:\s*"华语"/);
+  assert.match(app, /name:\s*"L & Co PLT"[\s\S]*languageTags:\s*\["English", "Mandarin", "Malay"\]/);
+  assert.match(app, /name:\s*"Yi Syun Renovation & Construction"[\s\S]*languageTags:\s*\["English", "Mandarin"\]/);
+});
+
+test("Johor Bahru source-listed records expand beyond the first ten across categories", () => {
+  const app = read("js/app.js");
+  const area = read("johor-bahru-suppliers-services/index.html");
+  const sitemap = read("sitemap.xml");
+  const llms = read("llms.txt");
+  const zh = read("zh/index.html");
+  const publicContent = `${app}\n${area}\n${sitemap}\n${llms}\n${zh}`;
+
+  [
+    "NEW Packaging Sdn Bhd",
+    "Sunny Packaging Industries Sdn Bhd",
+    "WEHENG (M) Sdn Bhd",
+    "L & Co PLT",
+    "Yi Syun Renovation & Construction",
+  ].forEach((providerName) => {
+    assert.match(publicContent, new RegExp(providerName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  });
+
+  [
+    "/providers/new-packaging-sdn-bhd",
+    "/providers/sunny-packaging-industries-sdn-bhd",
+    "/providers/weheng-m-sdn-bhd",
+    "/providers/l-and-co-plt",
+    "/providers/yi-syun-renovation-construction",
+  ].forEach((path) => {
+    assert.match(publicContent, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  });
+
+  assert.match(app, /sourceUrl:\s*"https:\/\/www\.newpackaging\.com\.my\/"/);
+  assert.match(app, /sourceUrl:\s*"https:\/\/landco\.my\/accounting-and-booking-keeping-services\/"/);
+  assert.match(app, /sourceUrl:\s*"https:\/\/www\.yisyunrenovation\.com\.my\/"/);
+  assert.doesNotMatch(publicContent, /public-source|sample formats?|invoice-backed seed/i);
 });
 
 test("homepage shows source-listed provider records without bundled example providers", () => {

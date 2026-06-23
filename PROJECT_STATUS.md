@@ -1,12 +1,14 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-23 10:31 Asia/Singapore, mature homepage cleanup
+Last updated: 2026-06-23 11:23 Asia/Singapore, filter feedback, Chinese entry, JB provider batch to fifteen
 
 ## Current Objective
 
 Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and service provider directory. SME use cases remain important, but the platform should also serve mass-market buyers, homeowners, consumers, and businesses looking for proper providers. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
 
 Current content-growth direction: do not wait for Wei Nee to manually provide provider names. Start from practical area/category combinations, beginning with Johor Bahru, and turn public company websites into source-listed provider profiles with buyer-facing trust filters: entity type, language, and category-specific proof to check.
+
+Chinese strategy: do not bring back a half-bilingual homepage toggle until the whole site can support it cleanly. Use a dedicated Chinese entry page plus provider-level language signals first, especially for Johor Bahru buyers and Mandarin-capable providers.
 
 ## Current Repo
 
@@ -132,14 +134,35 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
   - Homepage category browsing and provider filter options now use only categories that have visible provider records.
   - Removed `Directory in progress`, `Coming soon`, `while SMEs.MY builds`, and sample-profile wording from the public homepage bundle.
   - Added regression coverage so placeholder provider names, sample profile labels, and MVP/pitch-deck wording do not return.
+- On 2026-06-23, added the next 7 Johor Bahru source-listed provider profiles locally, bringing the first batch to 10 records before outreach:
+  - `providers/khoo-packaging-industries/`
+  - `providers/smart-pack-industries-m-sdn-bhd/`
+  - `providers/as-packaging-industries-sdn-bhd/`
+  - `providers/juta-me-sdn-bhd/`
+  - `providers/dtl-accounting-firm/`
+  - `providers/tjw-group/`
+  - `providers/ycs-accounting/`
+  - Updated the homepage provider data, Johor Bahru area page links, `sitemap.xml`, `llms.txt`, and regression tests.
+  - All seven remain source-listed / needs buyer check; language, licence/proof, MOQ, fee/package scope, and delivery terms are not treated as SMEs.MY verification.
+- On 2026-06-23, fixed filter usability and restored Chinese market support in a cleaner way:
+  - Homepage provider filters now show a visible result summary, including shown/total provider count and active filter count, so users can tell the filter responded.
+  - Added dedicated Chinese entry page `zh/` instead of restoring the old half-bilingual homepage switch.
+  - Marked Urban Reno Empire as Mandarin-capable based on user-provided knowledge while keeping proof/entity checks separate.
+  - Added 5 more source-listed Johor/JB provider profiles, bringing the local provider batch to 15 records:
+    - `providers/new-packaging-sdn-bhd/`
+    - `providers/sunny-packaging-industries-sdn-bhd/`
+    - `providers/weheng-m-sdn-bhd/`
+    - `providers/l-and-co-plt/`
+    - `providers/yi-syun-renovation-construction/`
+  - Updated homepage provider data, JB area page, Chinese entry page, `sitemap.xml`, `llms.txt`, and tests.
 
 ## Open Issues
 
-- Site still needs real provider volume; current public provider grid and category browsing now show only source-listed/invoice-source records, not example profiles or empty categories.
-- Trust filters are v1 only: language remains `Needs direct check` unless visible source or provider submission supports it, and proof status is buyer-check guidance rather than SMEs.MY verification.
-- Johor Bahru page now has the first three source-listed individual profiles, but the directory is still early. The next step is to build enough profile volume and then use the profiles for provider-claim outreach.
-- Service and supplier detail pages are English-only for now; homepage is intentionally English-first until bilingual coverage can be done consistently.
-- Need to prepare Chinese versions for the 5 SEO service pages.
+- Site now has 15 local source-listed/invoice-source provider records in the first JB batch, but these changes are not pushed or live until Wei Nee reviews and confirms.
+- Trust filters are v1 only: language is source- or user-informed where available, and proof status is buyer-check guidance rather than SMEs.MY verification.
+- Johor Bahru page now links all 15 source-listed/invoice-source profiles, but the directory is still early. The next step is to use this volume for provider-claim outreach.
+- Chinese support now has a dedicated `zh/` entry page and provider-level Mandarin signals, but the full service/category pages are not yet fully bilingual.
+- Need to decide whether to build Chinese versions for the highest-money SEO pages first: Johor Bahru area, packaging, renovation/electrical, accounting/company secretary.
 - Legal/support pages exist: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`; continue polishing if needed.
 - SEO indexing is in progress; do not treat low traffic as a form/backend issue until Search Console has had time to process indexing requests.
 - Visual polish is improved; content depth and real listings are now the main path out of “half-finished” feel.
@@ -157,10 +180,10 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
 
 ## Next Steps
 
-1. Review the cleaned homepage locally, then decide whether to commit and push.
-2. Add another 7 JB source-listed profiles so the first outreach batch has 10 companies, prioritising categories that should appear publicly only after they have real records.
-3. Draft a provider-claim outreach message and offer around profile correction plus entity/language/proof fields, with optional RM99-RM199 founding claimed profile.
-4. For each profile, keep language and proof as buyer-check fields until source evidence or provider claim exists; do not imply SMEs.MY verification.
+1. Review the 15 local JB provider profiles, filter behavior, and `zh/` entry page, then decide whether to commit/push/deploy.
+2. If approved, draft a provider-claim outreach message and offer around profile correction plus entity/language/proof fields, with optional RM99-RM199 founding claimed profile.
+3. Prioritize Chinese page expansion only where it helps money-near categories: JB area, renovation/electrical, accounting/company secretary, packaging.
+4. For each profile, keep language and proof as buyer-check fields until source evidence, user knowledge, or provider claim supports it; do not imply SMEs.MY verification.
 5. If provider routing is tested, add provider-pool status fields to Google Sheets instead of creating public groups.
 
 ## Useful Commands

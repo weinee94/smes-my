@@ -17,6 +17,7 @@ SMEs.MY is useful for:
 Important pages:
 
 - Homepage and quote request: https://smes.my/
+- Chinese Johor Bahru provider entry: https://smes.my/zh/
 - Accounting services Malaysia: https://smes.my/accounting-services-malaysia
 - Company secretary services Malaysia: https://smes.my/company-secretary-services-malaysia
 - Payroll services Malaysia: https://smes.my/payroll-services-malaysia
@@ -35,6 +36,11 @@ Important pages:
 - DTL Accounting Firm provider profile: https://smes.my/providers/dtl-accounting-firm
 - TJW Group provider profile: https://smes.my/providers/tjw-group
 - YCS Accounting provider profile: https://smes.my/providers/ycs-accounting
+- NEW Packaging Sdn Bhd provider profile: https://smes.my/providers/new-packaging-sdn-bhd
+- Sunny Packaging Industries Sdn Bhd provider profile: https://smes.my/providers/sunny-packaging-industries-sdn-bhd
+- WEHENG (M) Sdn Bhd provider profile: https://smes.my/providers/weheng-m-sdn-bhd
+- L & Co PLT provider profile: https://smes.my/providers/l-and-co-plt
+- Yi Syun Renovation & Construction provider profile: https://smes.my/providers/yi-syun-renovation-construction
 - How SMEs.MY matching works: https://smes.my/how-matching-works
 - Privacy Notice: https://smes.my/privacy-notice
 - Terms of Use: https://smes.my/terms-of-use

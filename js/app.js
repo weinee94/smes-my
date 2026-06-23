@@ -173,6 +173,8 @@ const translations = {
     sourceListedFilter: "Source listed",
     buyerCheckFilter: "Needs buyer check",
     invoiceSourceFilter: "Invoice source noted",
+    providerResultSummary: "Showing {shown} of {total} provider profiles",
+    providerFiltersActive: "{count} filters active",
     coverageEyebrow: "Malaysia coverage",
     coverageTitle: "Find help near your business.",
     coverageText: "Start with your location so providers understand where you operate and whether remote support is suitable.",
@@ -415,6 +417,8 @@ const translations = {
     sourceListedFilter: "资料来源已列明",
     buyerCheckFilter: "需买家确认",
     invoiceSourceFilter: "Invoice 资料已记录",
+    providerResultSummary: "显示 {shown} / {total} 个供应商资料",
+    providerFiltersActive: "已启用 {count} 个筛选",
     coverageEyebrow: "马来西亚覆盖",
     coverageTitle: "找你公司附近的支援。",
     coverageText: "先填写地点，让服务商了解你的公司在哪里，以及是否适合远程支援。",
@@ -926,13 +930,143 @@ const providers = [
     detailsUrl: "/providers/ycs-accounting",
   },
   {
+    name: "NEW Packaging Sdn Bhd",
+    zhName: "NEW Packaging Sdn Bhd",
+    category: "Packaging Suppliers Malaysia",
+    zhCategory: "马来西亚包装供应商",
+    location: "Pontian / Johor branches",
+    entityType: "Sdn. Bhd.",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Business registration and product terms need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows company registration number, food packaging products, branch signals, and delivery claims; buyers should still confirm stock, MOQ, delivery area, and quote terms.",
+    summary:
+      "Profile based on the provider's public website. Visible scope includes plastic bags, plastic lunch boxes, polystyrene lunch boxes, tissue, household cleaning products, food packaging, and courier/delivery service signals.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见产品包括 plastic bag、plastic lunch box、polystyrene lunch box、tissue、household cleaning product、食品包装，以及 courier/delivery 服务信号。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; registration, product, delivery, and current contact details still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；注册、产品、配送和当前联系细节仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    sourceUrl: "https://www.newpackaging.com.my/",
+    detailsUrl: "/providers/new-packaging-sdn-bhd",
+  },
+  {
+    name: "Sunny Packaging Industries Sdn Bhd",
+    zhName: "Sunny Packaging Industries Sdn Bhd",
+    category: "Packaging Suppliers Malaysia",
+    zhCategory: "马来西亚包装供应商",
+    location: "Skudai, Johor Bahru",
+    entityType: "Sdn. Bhd.",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Manufacturing scope and delivery terms need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows Johor base and LDPE/HDPE/polybag positioning; buyers should confirm order quantity, material spec, lead time, delivery, and certification evidence.",
+    summary:
+      "Profile based on the provider's public website. Visible positioning includes LDPE and HDPE plastic bags, polybags, and diverse plastic packaging needs from a Skudai, Johor location.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见定位包括 LDPE / HDPE plastic bags、polybags 和塑料包装需求，地点信号为 Skudai, Johor。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; product specs, MOQ, and business details still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；产品规格、MOQ 和商业细节仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    sourceUrl: "https://www.sunny-packaging.com/",
+    detailsUrl: "/providers/sunny-packaging-industries-sdn-bhd",
+  },
+  {
+    name: "WEHENG (M) Sdn Bhd",
+    zhName: "WEHENG (M) Sdn Bhd",
+    category: "Packaging Suppliers Malaysia",
+    zhCategory: "马来西亚包装供应商",
+    location: "Johor Bahru / Skudai signal",
+    entityType: "Sdn. Bhd.",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Wholesale packaging scope needs buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows wholesale packaging materials and supply positioning; buyers should confirm stock, minimum order, delivery route, and product-grade fit.",
+    summary:
+      "Profile based on the provider's public website. Visible scope includes bubble wrap, pallet stretch film, PE foam roll, OPP tape, packaging tape, and packaging materials supply.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见范围包括 bubble wrap、pallet stretch film、PE foam roll、OPP tape、packaging tape 和包装材料供应。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; stock, MOQ, delivery, and product fit still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；库存、MOQ、配送和产品适配仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    sourceUrl: "https://www.wehengpackagingsupplies.com.my/",
+    detailsUrl: "/providers/weheng-m-sdn-bhd",
+  },
+  {
+    name: "L & Co PLT",
+    zhName: "L & Co PLT",
+    category: "Accounting Services Malaysia",
+    zhCategory: "马来西亚会计服务",
+    location: "Johor Bahru / Ulu Tiram / Iskandar Puteri",
+    entityType: "PLT / firm details need check",
+    languageTags: ["English", "Mandarin", "Malay"],
+    proofStatus: "Accountancy firm registration and engagement scope need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows AF number, Johor office locations, Chinese/English site options, and multilingual accounting support; buyers should confirm named practitioner and exact service scope.",
+    summary:
+      "Profile based on the provider's public website. Visible service lines include accounting and bookkeeping, audit, taxation, payroll-related content, business registration resources, and multilingual support in English, Chinese (Mandarin), and Malay.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见服务包括 accounting/bookkeeping、audit、taxation、payroll 相关内容、business registration 资料，并列明 English、Chinese (Mandarin) 和 Malay 多语言沟通。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; AF number, professional responsibility, package scope, and fees still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；AF number、专业责任、配套范围和收费仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "English / Mandarin / Malay",
+    zhLanguages: "英文 / 华语 / 马来文",
+    sourceUrl: "https://landco.my/accounting-and-booking-keeping-services/",
+    detailsUrl: "/providers/l-and-co-plt",
+  },
+  {
+    name: "Yi Syun Renovation & Construction",
+    zhName: "Yi Syun Renovation & Construction",
+    category: "Renovation Contractors Malaysia",
+    zhCategory: "马来西亚装修承包商",
+    location: "Johor Bahru, Johor",
+    entityType: "Check SSM record",
+    languageTags: ["English", "Mandarin"],
+    proofStatus: "Contractor registration, warranty, and project scope need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website has EN and Chinese language links and shows home/commercial renovation, electrical and wiring, full house renovation, and custom carpentry scope.",
+    summary:
+      "Profile based on the provider's public website. Visible scope includes home and commercial renovation in Johor Bahru, electrical and wiring services, full house renovation, and custom carpentry.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见 EN / 中文入口，服务范围包括新山住家与商业装修、电工拉线、全屋装修和 custom carpentry。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; registration, project photos, quote scope, warranty, and safety responsibility still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；注册、项目照片、报价范围、保修和安全责任仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "English / Mandarin",
+    zhLanguages: "英文 / 华语",
+    sourceUrl: "https://www.yisyunrenovation.com.my/",
+    detailsUrl: "/providers/yi-syun-renovation-construction",
+  },
+  {
     name: "Urban Reno Empire",
     zhName: "Urban Reno Empire",
     category: "Electrical Wiring Contractors Malaysia",
     zhCategory: "马来西亚电工与拉电承包商",
     location: "Subang Jaya, Selangor",
     entityType: "Sole proprietorship",
-    languageTags: ["Needs direct check"],
+    languageTags: ["Mandarin"],
     proofStatus: "Invoice source noted; business details need buyer check",
     proofTags: ["invoiceSource", "buyerCheck"],
     proofNote: "Registration-style ID is visible on invoice, but current SSM and relevant electrical registration details still need buyer confirmation.",
@@ -946,8 +1080,8 @@ const providers = [
     zhVerificationNote: "Invoice 资料已记录；细节仍需买家确认。",
     response: "Request through SMEs.MY",
     zhResponse: "通过 SMEs.MY 询价",
-    languages: "Needs direct check",
-    zhLanguages: "待人工核对",
+    languages: "Mandarin",
+    zhLanguages: "华语",
     detailsUrl: "/electrical-wiring-contractors-malaysia#urban-reno-empire",
   },
 ];
@@ -959,6 +1093,7 @@ const providerEntityFilter = document.querySelector("#providerEntityFilter");
 const providerLanguageFilter = document.querySelector("#providerLanguageFilter");
 const providerProofFilter = document.querySelector("#providerProofFilter");
 const providerSearch = document.querySelector("#providerSearch");
+const providerStatus = document.querySelector("#providerStatus");
 const siteSearch = document.querySelector("#siteSearch");
 const siteSearchButton = document.querySelector("#siteSearchButton");
 const searchStatus = document.querySelector("#searchStatus");
@@ -1331,6 +1466,14 @@ function providerSignalItems(provider) {
   ];
 }
 
+function providerResultSummary(shown, total, activeFilterCount) {
+  const summary = t("providerResultSummary").replace("{shown}", shown).replace("{total}", total);
+  if (!activeFilterCount) {
+    return summary;
+  }
+  return `${summary} · ${t("providerFiltersActive").replace("{count}", activeFilterCount)}`;
+}
+
 function renderProviders() {
   const filter = providerFilter.value;
   const query = providerSearch.value.trim().toLowerCase();
@@ -1350,6 +1493,16 @@ function renderProviders() {
       );
     })
     .sort((a, b) => providerSortRank(a) - providerSortRank(b) || a.name.localeCompare(b.name));
+  const visibleTotal = providers.filter(isVisibleProviderRecord).length;
+  const activeFilterCount = [
+    filter !== "All",
+    query.length > 0,
+    trustFilters.entity !== "All",
+    trustFilters.language !== "All",
+    trustFilters.proof !== "All",
+  ].filter(Boolean).length;
+
+  providerStatus.textContent = providerResultSummary(filtered.length, visibleTotal, activeFilterCount);
 
   providerGrid.innerHTML =
     filtered

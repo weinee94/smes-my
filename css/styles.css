@@ -1219,7 +1219,15 @@ textarea {
   display: grid;
   grid-template-columns: minmax(220px, 2fr) repeat(4, minmax(140px, 1fr));
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.provider-status {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
 }
 
 .provider-card {

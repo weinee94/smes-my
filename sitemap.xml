@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://smes.my/zh/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+  </url>
+  <url>
     <loc>https://smes.my/accounting-services-malaysia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -92,6 +97,31 @@
   </url>
   <url>
     <loc>https://smes.my/providers/ycs-accounting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/new-packaging-sdn-bhd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/sunny-packaging-industries-sdn-bhd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/weheng-m-sdn-bhd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/l-and-co-plt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/yi-syun-renovation-construction</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
