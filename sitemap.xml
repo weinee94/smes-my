@@ -61,6 +61,41 @@
     <priority>0.72</priority>
   </url>
   <url>
+    <loc>https://smes.my/providers/khoo-packaging-industries</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/smart-pack-industries-m-sdn-bhd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/as-packaging-industries-sdn-bhd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/juta-me-sdn-bhd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/dtl-accounting-firm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/tjw-group</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://smes.my/providers/ycs-accounting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
     <loc>https://smes.my/how-matching-works</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

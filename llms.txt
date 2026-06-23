@@ -28,6 +28,13 @@ Important pages:
 - PLL Packaging Sdn Bhd provider profile: https://smes.my/providers/pll-packaging-sdn-bhd
 - CSY Electric Sdn. Bhd. provider profile: https://smes.my/providers/csy-electric-sdn-bhd
 - C&G Corporate Services provider profile: https://smes.my/providers/cg-corporate-services
+- Khoo Packaging Industries provider profile: https://smes.my/providers/khoo-packaging-industries
+- Smart Pack Industries (M) Sdn Bhd provider profile: https://smes.my/providers/smart-pack-industries-m-sdn-bhd
+- A.S. Packaging Industries Sdn Bhd provider profile: https://smes.my/providers/as-packaging-industries-sdn-bhd
+- JUTA M&E Sdn Bhd provider profile: https://smes.my/providers/juta-me-sdn-bhd
+- DTL Accounting Firm provider profile: https://smes.my/providers/dtl-accounting-firm
+- TJW Group provider profile: https://smes.my/providers/tjw-group
+- YCS Accounting provider profile: https://smes.my/providers/ycs-accounting
 - How SMEs.MY matching works: https://smes.my/how-matching-works
 - Privacy Notice: https://smes.my/privacy-notice
 - Terms of Use: https://smes.my/terms-of-use
