@@ -114,7 +114,46 @@ test("first Johor Bahru provider profiles are linked and labelled correctly", ()
   assert.doesNotMatch(publicProfileContent, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider|SMEs\.MY-verified/i);
 });
 
-test("homepage shows source-listed provider records instead of example profiles", () => {
+test("Johor Bahru provider batch reaches ten source-listed profiles", () => {
+  const app = read("js/app.js");
+  const area = read("johor-bahru-suppliers-services/index.html");
+  const sitemap = read("sitemap.xml");
+  const llms = read("llms.txt");
+  const newProfilePaths = [
+    "providers/khoo-packaging-industries/index.html",
+    "providers/smart-pack-industries-m-sdn-bhd/index.html",
+    "providers/as-packaging-industries-sdn-bhd/index.html",
+    "providers/juta-me-sdn-bhd/index.html",
+    "providers/dtl-accounting-firm/index.html",
+    "providers/tjw-group/index.html",
+    "providers/ycs-accounting/index.html",
+  ];
+  const publicProfileContent = [app, area, sitemap, llms, ...newProfilePaths.map(read)].join("\n");
+
+  [
+    "Khoo Packaging Industries",
+    "Smart Pack Industries (M) Sdn Bhd",
+    "A.S. Packaging Industries Sdn Bhd",
+    "JUTA M&E Sdn Bhd",
+    "DTL Accounting Firm",
+    "TJW Group",
+    "YCS Accounting",
+  ].forEach((providerName) => {
+    assert.match(publicProfileContent, new RegExp(providerName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  });
+
+  newProfilePaths.forEach((profilePath) => {
+    const slug = profilePath.replace("providers/", "").replace("/index.html", "");
+    assert.match(area, new RegExp(`/providers/${slug}`));
+    assert.match(sitemap, new RegExp(`https://smes\\.my/providers/${slug}`));
+    assert.match(llms, new RegExp(`/providers/${slug}`));
+  });
+
+  assert.doesNotMatch(publicProfileContent, /is verified by SMEs\.MY|verified provider|SMEs\.MY verified provider|SMEs\.MY-verified/i);
+  assert.doesNotMatch(publicProfileContent, /public-source|sample formats?|invoice-backed seed/i);
+});
+
+test("homepage shows source-listed provider records without bundled example providers", () => {
   const home = read("index.html");
   const app = read("js/app.js");
 
@@ -122,14 +161,14 @@ test("homepage shows source-listed provider records instead of example profiles"
   assert.match(home, /service scope, location, source notes/i);
   assert.match(app, /providersTitle:\s*"Compare suppliers and service providers by what matters before you enquire\."/);
   assert.match(app, /function providerSortRank\(provider\)/);
-  assert.match(app, /function isVisibleProviderRecord\(provider\)/);
-  assert.match(app, /provider\.sourceLabel !== "sampleProfile"/);
+  assert.match(app, /function liveCategories\(\)/);
   assert.match(app, /publicSource:\s*0/);
   assert.match(app, /invoiceBacked:\s*1/);
-  assert.match(app, /sampleProfile:\s*9/);
-  assert.match(app, /isVisibleProviderRecord\(provider\) && matchesFilter && providerSearchText\(provider\)\.includes\(query\)/);
+  assert.match(app, /liveCategories\(\)\.forEach\(\(category\)/);
+  assert.match(app, /matchesProviderTrustFilters\(provider, trustFilters\)/);
   assert.match(app, /\.sort\(\(a, b\) => providerSortRank\(a\) - providerSortRank\(b\)/);
   assert.match(app, /No listed provider records match yet/);
+  assert.doesNotMatch(home + app, /sampleProfile|Example profile only|Accounting provider|Company secretary provider|Digital marketing provider|Payroll provider|Website design provider|IT \/ POS \/ CRM provider/i);
 });
 
 test("provider cards use user-facing signal labels instead of unclear status text", () => {
@@ -137,10 +176,42 @@ test("provider cards use user-facing signal labels instead of unclear status tex
   const styles = read("css/styles.css");
 
   assert.match(app, /function providerSignalItems\(provider\)/);
-  assert.match(app, /Open item/);
+  assert.match(app, /Entity/);
+  assert.match(app, /Language/);
+  assert.match(app, /Proof/);
   assert.match(app, /Needs direct check/);
   assert.doesNotMatch(app, /Not confirmed|Not shown on invoice/);
   assert.match(styles, /\.provider-signals small/);
+});
+
+test("homepage adds buyer trust filters and provider proof fields", () => {
+  const home = read("index.html");
+  const app = read("js/app.js");
+
+  assert.match(home, /id="providerEntityFilter"/);
+  assert.match(home, /id="providerLanguageFilter"/);
+  assert.match(home, /id="providerProofFilter"/);
+  assert.match(home, /name="entity_type"/);
+  assert.match(home, /name="proof_details"/);
+
+  assert.match(app, /providerEntityFilter/);
+  assert.match(app, /providerLanguageFilter/);
+  assert.match(app, /providerProofFilter/);
+  assert.match(app, /entityType:\s*"Sdn\. Bhd\."/);
+  assert.match(app, /languageTags:\s*\["Needs direct check"\]/);
+  assert.match(app, /proofStatus:\s*"Licence\/registration claims need buyer check"/);
+  assert.match(app, /function matchesProviderTrustFilters\(provider, filters\)/);
+  assert.match(app, /industryProofGuide\(provider\.category\)/);
+  assert.match(app, /Entity \/ registration type/);
+  assert.match(app, /Industry proof buyers may ask for/);
+});
+
+test("public homepage avoids MVP and pitch-deck wording", () => {
+  const publicBundle = read("index.html") + read("js/app.js");
+
+  assert.doesNotMatch(publicBundle, /Directory in progress|Sample directory view|Coming soon|while SMEs\.MY builds/i);
+  assert.doesNotMatch(publicBundle, /We check the service|Suitable providers may receive|What to compare/i);
+  assert.doesNotMatch(publicBundle, /MVP|minimal viable/i);
 });
 
 test("public-facing pages do not expose internal profile-build wording", () => {

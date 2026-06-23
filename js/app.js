@@ -59,8 +59,8 @@ const translations = {
     sendRequest: "Send request",
     quoteConsent:
       "By submitting, you agree that SMEs.MY may review your request and share relevant details with suitable providers so they can respond.",
-    afterSubmitOne: "We check the service, location, contact method, and urgency.",
-    afterSubmitTwo: "Suitable providers may receive the request details and reply directly.",
+    afterSubmitOne: "Request received with service, location, contact method, and urgency.",
+    afterSubmitTwo: "Relevant provider routing happens only where there is a fit.",
     afterSubmitThree: "You compare replies, ask follow-up questions, and choose the provider.",
     visualEyebrow: "Real buying context",
     visualTitle: "Compare suppliers with clearer details before you commit.",
@@ -72,18 +72,18 @@ const translations = {
     trustTwoText: "Search by service type, city, language, and business fit.",
     trustThreeTitle: "Simple quote requests",
     trustThreeText: "Send one request instead of contacting many providers one by one.",
-    previewEyebrow: "Directory in progress",
-    previewTitle: "A cleaner way to compare SME vendors before you contact them.",
+    previewEyebrow: "Provider records",
+    previewTitle: "Compare provider records before you contact them.",
     previewText:
-      "SMEs.MY is being built around structured profiles: what the company does, where it serves, which languages it supports, and which registration or licence details may matter for that industry.",
-    sampleDirectory: "Sample directory view",
-    sampleAccountingTitle: "Accounting & tax support",
-    sampleAccountingText: "Kuala Lumpur · English / BM / 中文 · MIA / tax licence details where applicable",
-    sampleRenovationTitle: "Renovation contractor",
-    sampleRenovationText: "Selangor · CIDB details where applicable · Residential / commercial scope",
-    previewSignalTitle: "What makes a listing useful",
+      "SMEs.MY structures provider records around what the company does, where it serves, which languages it supports, and which registration or licence details may matter for that industry.",
+    directoryRecordLabel: "Provider record view",
+    accountingProofTitle: "Accounting & tax support",
+    accountingProofText: "Kuala Lumpur · language and MIA / tax licence details where applicable",
+    contractorProofTitle: "Contractor profile",
+    contractorProofText: "Selangor · CIDB details where applicable · residential / commercial scope",
+    previewSignalTitle: "Profile signals",
     previewSignalText: "Scope, location, languages, response channel, registration/licence details where applicable, and proof the company is active.",
-    loopEyebrow: "Platform loop",
+    loopEyebrow: "Request routing",
     loopTitle: "A practical matching flow for SMEs and providers.",
     loopText:
       "SMEs.MY starts with clear requests, provider information, and manual review so the directory can improve with real market data.",
@@ -115,7 +115,7 @@ const translations = {
     howRequestText: "Submit your details once and wait for suitable providers to respond.",
     popularEyebrow: "Popular services",
     popularTitle: "Find proper providers for what SMEs buy often.",
-    popularText: "Choose a category below to understand what to compare and send a quote request.",
+    popularText: "Choose a live category or send a request with your location, scope, and contact details.",
     journeyEyebrow: "Buyer journey",
     journeyTitle: "How to use SMEs.MY.",
     journeyText:
@@ -136,7 +136,7 @@ const translations = {
     findTwoText: "Website design, digital marketing, IT systems, POS, CRM, and automation.",
     findThreeTitle: "Supplies, money, and operations",
     findThreeText: "Packaging, financing, recruitment, logistics, admin support, and other SME operating needs.",
-    compareEyebrow: "What to compare",
+    compareEyebrow: "Trust filters",
     compareTitle: "Ask the right questions before hiring a provider.",
     compareText:
       "Use these checks when you compare accountants, company secretaries, contractors, suppliers, IT vendors, agencies, and other SME providers.",
@@ -165,6 +165,14 @@ const translations = {
       "Check each profile for service scope, location, source notes, and what still needs to be confirmed before you request quotes.",
     providerSearchPlaceholder: "Search providers, categories, or locations",
     allCategories: "All categories",
+    allEntityTypes: "All entity types",
+    entityNeedsCheck: "Check SSM record",
+    allLanguages: "All languages",
+    languageNeedsCheck: "Needs direct check",
+    allProofStatus: "All proof status",
+    sourceListedFilter: "Source listed",
+    buyerCheckFilter: "Needs buyer check",
+    invoiceSourceFilter: "Invoice source noted",
     coverageEyebrow: "Malaysia coverage",
     coverageTitle: "Find help near your business.",
     coverageText: "Start with your location so providers understand where you operate and whether remote support is suitable.",
@@ -190,9 +198,9 @@ const translations = {
     providerPlansText:
       "Early listings are useful only if they help buyers compare. Submit enough detail for a real profile, not just a company name.",
     planBasicTitle: "Founding listing",
-    planBasicText: "Early eligible listings are free while SMEs.MY builds the first useful category pages.",
+    planBasicText: "Eligible provider records can start free when the company submits enough useful buyer-facing details.",
     planVerifiedTitle: "Claimed profile",
-    comingSoon: "Coming soon",
+    claimIntake: "Claim intake",
     planVerifiedText: "Claim and improve a profile with approved contact channels, service scope, languages, locations, and business fit.",
     planEnquiryTitle: "Customer enquiries",
     relevantRequests: "Relevant requests",
@@ -211,10 +219,16 @@ const translations = {
     providerLocationPlaceholder: "Kuala Lumpur, Selangor, Malaysia-wide...",
     providerWebsite: "Website / profile",
     providerWebsitePlaceholder: "Optional website, Facebook, LinkedIn, or company profile URL",
+    providerEntityType: "Entity / registration type",
+    entityTypePlaceholder: "Choose if known",
+    entityOther: "Other / not sure",
     providerLanguages: "Languages",
     providerLanguagesPlaceholder: "English, BM, Mandarin, Cantonese...",
     providerScope: "Service scope",
     providerScopePlaceholder: "Who do you serve, what packages do you offer, and what enquiries are suitable?",
+    providerProofDetails: "Industry proof buyers may ask for",
+    providerProofPlaceholder:
+      "Examples: SSM record, CIDB, ST, MIA, SSM practising certificate, tax agent approval, certification, or other proof where applicable.",
     providerConsent:
       "Submitting does not guarantee listing approval. SMEs.MY may contact you to verify details before publishing or routing enquiries.",
     applyListing: "Apply for listing",
@@ -223,7 +237,6 @@ const translations = {
     profileChecked: "Details listed",
     invoiceBacked: "Invoice source noted",
     publicSource: "Source listed",
-    sampleProfile: "Example profile",
     canReceiveEnquiries: "Request through SMEs.MY",
     noProviderMatch: "No listed provider records match yet. Send a quote request and SMEs.MY can route it manually.",
     submitting: "Submitting your request...",
@@ -315,14 +328,14 @@ const translations = {
     previewEyebrow: "目录建设中",
     previewTitle: "在联系服务商前，先用更清楚的资料做比较。",
     previewText: "SMEs.MY 会围绕结构化资料建设：公司做什么、服务哪里、支持什么语言，以及这个行业可能需要哪些注册或执照资料。",
-    sampleDirectory: "目录样式预览",
-    sampleAccountingTitle: "会计与税务支持",
-    sampleAccountingText: "Kuala Lumpur · English / BM / 中文 · MIA / 税务执照资料如适用",
-    sampleRenovationTitle: "装修承包商",
-    sampleRenovationText: "Selangor · CIDB 资料如适用 · 住宅 / 商业工程范围",
+    directoryRecordLabel: "供应商资料视图",
+    accountingProofTitle: "会计与税务支持",
+    accountingProofText: "Kuala Lumpur · 语言和 MIA / 税务执照资料如适用",
+    contractorProofTitle: "承包商资料",
+    contractorProofText: "Selangor · CIDB 资料如适用 · 住宅 / 商业工程范围",
     previewSignalTitle: "什么 listing 才有用",
     previewSignalText: "服务范围、地点、语言、回复渠道、相关注册/执照资料，以及公司仍在营业的信号。",
-    loopEyebrow: "平台闭环",
+    loopEyebrow: "询价分发",
     loopTitle: "让 SME 和供应商可以实际对接的流程。",
     loopText: "SMEs.MY 先从清楚的需求、供应商资料和人工审核开始，用真实市场资料慢慢完善 directory。",
     loopUserTitle: "SME 提交需求",
@@ -348,7 +361,7 @@ const translations = {
     howRequestText: "一次提交资料，等待适合的供应商回复。",
     popularEyebrow: "热门分类",
     popularTitle: "寻找 SME 常用的正规供应商和服务商。",
-    popularText: "选择一个分类，了解要比较什么，也可以直接提交询价。",
+    popularText: "选择已有资料的分类，或直接提交地点、范围和联系方式。",
     journeyEyebrow: "使用流程",
     journeyTitle: "怎样使用 SMEs.MY。",
     journeyText: "如果你不确定该找谁，先从需求分类开始。表格会帮你把需求讲清楚，让供应商更容易回复有用的答案。",
@@ -394,6 +407,14 @@ const translations = {
       "每张资料卡会整理服务范围、地区、资料来源和还需要确认的重点，帮助你更清楚地提交询价。",
     providerSearchPlaceholder: "搜索供应商、分类或地点",
     allCategories: "全部分类",
+    allEntityTypes: "全部注册类型",
+    entityNeedsCheck: "需查 SSM 记录",
+    allLanguages: "全部语言",
+    languageNeedsCheck: "待确认语言",
+    allProofStatus: "全部证据状态",
+    sourceListedFilter: "资料来源已列明",
+    buyerCheckFilter: "需买家确认",
+    invoiceSourceFilter: "Invoice 资料已记录",
     coverageEyebrow: "马来西亚覆盖",
     coverageTitle: "找你公司附近的支援。",
     coverageText: "先填写地点，让服务商了解你的公司在哪里，以及是否适合远程支援。",
@@ -418,9 +439,9 @@ const translations = {
     providerPlansTitle: "让 SME 以正规服务商的方式发现你。",
     providerPlansText: "早期 listing 必须帮助买家比较。请提交足够资料做成真实 profile，不只是公司名称。",
     planBasicTitle: "早期免费收录",
-    planBasicText: "SMEs.MY 建设第一批有用分类页期间，符合条件的早期 listing 免费。",
+    planBasicText: "公司提交足够有用的买家资料后，符合条件的早期资料可免费收录。",
     planVerifiedTitle: "Claimed profile",
-    comingSoon: "即将推出",
+    claimIntake: "开放认领",
     planVerifiedText: "Claim 并完善 profile，可加入已确认的联系渠道、服务范围、语言、地区和适合客户类型。",
     planEnquiryTitle: "客户询价",
     relevantRequests: "相关需求",
@@ -438,10 +459,15 @@ const translations = {
     providerLocationPlaceholder: "Kuala Lumpur, Selangor, 全马服务...",
     providerWebsite: "网站 / Profile",
     providerWebsitePlaceholder: "可选：网站、Facebook、LinkedIn 或公司资料链接",
+    providerEntityType: "注册类型 / 公司形式",
+    entityTypePlaceholder: "知道的话请选择",
+    entityOther: "其他 / 不确定",
     providerLanguages: "沟通语言",
     providerLanguagesPlaceholder: "English、BM、Mandarin、Cantonese...",
     providerScope: "服务范围",
     providerScopePlaceholder: "你服务什么客户、有什么配套、适合接什么询价？",
+    providerProofDetails: "买家可能会询问的行业证明",
+    providerProofPlaceholder: "例如 SSM、CIDB、ST、MIA、SSM practising certificate、tax agent approval、certification 或其他适用证明。",
     providerConsent: "提交不代表一定会刊登。SMEs.MY 可能先联系你确认资料，再发布或转发询价。",
     applyListing: "申请加入",
     footerOne: "帮助马来西亚买家和企业寻找和比较正规供应商、承包商和服务商。",
@@ -449,7 +475,6 @@ const translations = {
     profileChecked: "资料已列明",
     invoiceBacked: "Invoice 资料已记录",
     publicSource: "资料来源已列明",
-    sampleProfile: "示例资料卡",
     canReceiveEnquiries: "通过 SMEs.MY 询价",
     noProviderMatch: "暂时没有符合这个搜索的正式供应商资料。你仍然可以提交询价，让 SMEs.MY 人工协助分类。",
     submitting: "正在提交你的需求...",
@@ -651,92 +676,16 @@ const categories = [
 
 const providers = [
   {
-    name: "Accounting provider",
-    zhName: "会计服务商",
-    category: "Accounting Services Malaysia",
-    zhCategory: "马来西亚会计服务",
-    location: "Kuala Lumpur",
-    summary: "Monthly bookkeeping and management accounts for retail, F&B, and service SMEs.",
-    zhSummary: "为零售、餐饮和服务业 SME 处理月度 bookkeeping 和管理账目。",
-    verified: true,
-    sourceLabel: "sampleProfile",
-    verificationNote: "Example profile only; not a live provider listing.",
-    zhVerificationNote: "示例资料卡，不是正式商家资料。",
-    rating: "4.8",
-    response: "< 1 day",
-    languages: "EN / 中文 / BM",
-  },
-  {
-    name: "Company secretary provider",
-    zhName: "公司秘书服务商",
-    category: "Company Secretary Services Malaysia",
-    zhCategory: "马来西亚公司秘书服务",
-    location: "Selangor",
-    summary: "Company incorporation, annual return filing, and statutory compliance support.",
-    zhSummary: "提供公司注册、annual return 和公司合规支援。",
-    verified: true,
-    sourceLabel: "sampleProfile",
-    verificationNote: "Example profile only; not a live provider listing.",
-    zhVerificationNote: "示例资料卡，不是正式商家资料。",
-    rating: "4.7",
-    response: "Same day",
-    languages: "EN / BM",
-  },
-  {
-    name: "Digital marketing provider",
-    zhName: "Digital Marketing 服务商",
-    category: "Digital Marketing Agency Malaysia",
-    zhCategory: "马来西亚 Digital Marketing 公司",
-    location: "Penang",
-    summary: "SEO, ads, and content campaigns for local SME enquiries.",
-    zhSummary: "为本地 SME 做 SEO、广告和内容 campaign，帮助获得询问。",
-    verified: false,
-    sourceLabel: "sampleProfile",
-    verificationNote: "Example profile only; not a live provider listing.",
-    zhVerificationNote: "示例资料卡，不是正式商家资料。",
-    rating: "4.5",
-    response: "2 days",
-    languages: "EN / 中文",
-  },
-  {
-    name: "Payroll provider",
-    zhName: "Payroll 服务商",
-    category: "Payroll Services Malaysia",
-    zhCategory: "马来西亚 Payroll 服务",
-    location: "Malaysia-wide",
-    zhLocation: "全马服务",
-    summary: "Payroll outsourcing with EPF, SOCSO, EIS, and PCB processing.",
-    zhSummary: "Payroll 外包，包含 EPF、SOCSO、EIS 和 PCB 处理。",
-    verified: true,
-    sourceLabel: "sampleProfile",
-    verificationNote: "Example profile only; not a live provider listing.",
-    zhVerificationNote: "示例资料卡，不是正式商家资料。",
-    rating: "4.9",
-    response: "< 1 day",
-    languages: "EN / BM",
-  },
-  {
-    name: "Packaging supplier",
-    zhName: "包装供应商",
-    category: "Packaging Suppliers Malaysia",
-    zhCategory: "马来西亚包装供应商",
-    location: "Selangor",
-    summary: "Carton boxes, paper bags, labels, stickers, and ecommerce mailers for retail, F&B, and online sellers.",
-    zhSummary: "为零售、餐饮和电商提供纸箱、纸袋、标签、贴纸和快递包装。",
-    verified: false,
-    sourceLabel: "sampleProfile",
-    verificationNote: "Example profile only; not a live provider listing.",
-    zhVerificationNote: "示例资料卡，不是正式商家资料。",
-    rating: "4.6",
-    response: "2 days",
-    languages: "EN / 中文 / BM",
-  },
-  {
     name: "PLL Packaging Sdn Bhd",
     zhName: "PLL Packaging Sdn Bhd",
     category: "Packaging Suppliers Malaysia",
     zhCategory: "马来西亚包装供应商",
     location: "Kempas, Johor Bahru",
+    entityType: "Sdn. Bhd.",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Business details and product claims need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "SSM company record, product or certification evidence, MOQ, delivery area, and quote process.",
     summary:
       "Profile based on the provider's public website. Visible products include heavy duty cartons, boxes, slip sheets, paper pallets, food packaging, offset printing, and honeycomb paperboard.",
     zhSummary:
@@ -757,6 +706,11 @@ const providers = [
     category: "Electrical Wiring Contractors Malaysia",
     zhCategory: "马来西亚电工与拉电承包商",
     location: "Skudai, Johor Bahru",
+    entityType: "Sdn. Bhd.",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Licence/registration claims need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Suruhanjaya Tenaga, TNB, CIDB, and other electrical/M&E registration claims should be checked directly where relevant.",
     summary:
       "Profile based on the provider's public website. Visible scope includes electrical wiring, power points, CCTV, alarm, autogate, Ethernet, telephone, and equipment installation.",
     zhSummary:
@@ -777,6 +731,11 @@ const providers = [
     category: "Company Secretary Services Malaysia",
     zhCategory: "马来西亚公司秘书服务",
     location: "Taman Molek, Johor Bahru",
+    entityType: "Check SSM record",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Secretary licence and package scope need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "SSM practising certificate or named company secretary details may be relevant before appointment.",
     summary:
       "Profile based on the provider's public website. Visible service lines include incorporation, company secretarial services, nominee director, virtual business address, co-working space, and payroll services.",
     zhSummary:
@@ -792,11 +751,191 @@ const providers = [
     detailsUrl: "/providers/cg-corporate-services",
   },
   {
+    name: "Khoo Packaging Industries",
+    zhName: "Khoo Packaging Industries",
+    category: "Packaging Suppliers Malaysia",
+    zhCategory: "马来西亚包装供应商",
+    location: "Gelang Patah, Johor",
+    entityType: "Check SSM record",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Business registration and packaging terms need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows packaging products and a registration-style number; MOQ, delivery terms, and business registration should be checked before purchase.",
+    summary:
+      "Profile based on the provider's public website. Visible products include EPE foam, carton boxes, plastic bags, bubble roll, stretch film, and custom protective packaging.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见产品包括 EPE foam、纸箱、plastic bags、bubble roll、stretch film 和定制保护包装。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; registration, MOQ, delivery area, and custom terms still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；注册资料、MOQ、delivery area 和定制条款仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    detailsUrl: "/providers/khoo-packaging-industries",
+  },
+  {
+    name: "Smart Pack Industries (M) Sdn Bhd",
+    zhName: "Smart Pack Industries (M) Sdn Bhd",
+    category: "Packaging Suppliers Malaysia",
+    zhCategory: "马来西亚包装供应商",
+    location: "Senai, Johor",
+    entityType: "Sdn. Bhd.",
+    languageTags: ["Needs direct check"],
+    proofStatus: "ISO and product claims need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows registration number and ISO 9001:2015 claim; certificate scope, MOQ, lead time, and delivery terms still need confirmation.",
+    summary:
+      "Profile based on the provider's public website. Visible products include corrugated cartons, offset printing products, paper pallets, food and beverage packaging, edge board, and packaging solutions.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见产品包括 corrugated cartons、offset printing products、paper pallets、food and beverage packaging、edge board 和 packaging solutions。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; ISO evidence, MOQ, delivery, and quote process still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；ISO 证据、MOQ、delivery 和询价流程仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    detailsUrl: "/providers/smart-pack-industries-m-sdn-bhd",
+  },
+  {
+    name: "A.S. Packaging Industries Sdn Bhd",
+    zhName: "A.S. Packaging Industries Sdn Bhd",
+    category: "Packaging Suppliers Malaysia",
+    zhCategory: "马来西亚包装供应商",
+    location: "Mount Austin, Johor Bahru",
+    entityType: "Sdn. Bhd.",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Business details and product claims need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows registration number, protective packaging positioning, and product lines; buyer should still confirm fit, MOQ, lead time, and delivery.",
+    summary:
+      "Profile based on the provider's public website. Visible scope includes one-stop packaging solutions, customised protective packaging, foam, carton, pallet, bag packaging, PP sheet, wooden pallets/crates, and protection packaging.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见范围包括 one-stop packaging solutions、定制保护包装、foam、carton、pallet、bag packaging、PP sheet、wooden pallets/crates 和 protection packaging。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; registration, MOQ, quality evidence, and delivery terms still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；注册资料、MOQ、quality evidence 和 delivery terms 仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    detailsUrl: "/providers/as-packaging-industries-sdn-bhd",
+  },
+  {
+    name: "JUTA M&E Sdn Bhd",
+    zhName: "JUTA M&E Sdn Bhd",
+    category: "Electrical Wiring Contractors Malaysia",
+    zhCategory: "马来西亚电工与拉电承包商",
+    location: "Johor Bahru, Johor",
+    entityType: "Sdn. Bhd.",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Electrical/M&E registration claims need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows M&E service scope; buyers should confirm competent-person, ST, CIDB, insurance, and site-safety responsibility where relevant.",
+    summary:
+      "Profile based on the provider's public website. Visible service scope includes control panel fabrication, factory maintenance, electrical control, scaffolding rental, energy saving solutions, and industrial automation.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见服务包括 control panel fabrication、factory maintenance、electrical control、scaffolding rental、energy saving solutions 和 industrial automation。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; licence evidence, project fit, warranty, and response channel still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；执照证据、项目适配、warranty 和回复渠道仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    detailsUrl: "/providers/juta-me-sdn-bhd",
+  },
+  {
+    name: "DTL Accounting Firm",
+    zhName: "DTL Accounting Firm",
+    category: "Accounting Services Malaysia",
+    zhCategory: "马来西亚会计服务",
+    location: "Johor Bahru, Johor",
+    entityType: "PLT / firm details need check",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Professional licence and package scope need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website shows accounting, tax, audit, company secretary, and payroll service lines; buyers should confirm named professional licences and engagement scope.",
+    summary:
+      "Profile based on the provider's public website. Visible service lines include company incorporation, accounting and GST/SST, company secretary, payroll and management, income tax, audit, and unaudited compilation reports.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见服务包括 company incorporation、accounting and GST/SST、company secretary、payroll and management、income tax、audit 和 unaudited compilation reports。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; professional licence, fee scope, and responsible practitioner details still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；专业执照、收费范围和负责 practitioner 仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    detailsUrl: "/providers/dtl-accounting-firm",
+  },
+  {
+    name: "TJW Group",
+    zhName: "TJW Group",
+    category: "Accounting Services Malaysia",
+    zhCategory: "马来西亚会计服务",
+    location: "Johor Bahru, Johor",
+    entityType: "Firm details need check",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Auditor, tax agent, and secretary licence details need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website says approved company auditors, income tax agents, and licensed company secretaries are under one roof; buyers should confirm named practitioners and current licence status.",
+    summary:
+      "Profile based on the provider's public website. Visible service lines include accounting and bookkeeping, tax, audit and attestation, corporate secretarial services, payroll and human resource management, and business setup support.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见服务包括 accounting and bookkeeping、tax、audit and attestation、corporate secretarial services、payroll and HR management、business setup support。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; named licence evidence, current practitioner details, and package scope still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；执照证据、当前 practitioner 和配套范围仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    detailsUrl: "/providers/tjw-group",
+  },
+  {
+    name: "YCS Accounting",
+    zhName: "YCS Accounting",
+    category: "Accounting Services Malaysia",
+    zhCategory: "马来西亚会计服务",
+    location: "Johor Bahru / Malaysia and Singapore",
+    entityType: "Firm details need check",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Professional licence and cross-border scope need buyer check",
+    proofTags: ["sourceListed", "buyerCheck"],
+    proofNote: "Public website lists one-stop accounting, bookkeeping, payroll, auditing, tax, SST, and company secretarial services; buyers should confirm Malaysia scope and responsible practitioners.",
+    summary:
+      "Profile based on the provider's public website. Visible service lines include accounting, payroll, auditing and assurance, income tax, corporate secretarial services, incorporation, SST, virtual office, and consulting.",
+    zhSummary:
+      "资料根据供应商官网整理。官网可见服务包括 accounting、payroll、auditing and assurance、income tax、corporate secretarial services、incorporation、SST、virtual office 和 consulting。",
+    verified: false,
+    sourceLabel: "publicSource",
+    verificationNote: "Source listed; Malaysia scope, named licence evidence, and fee or package details still need buyer checks.",
+    zhVerificationNote: "资料来源已列明；马来西亚服务范围、执照证据和收费/配套细节仍需买家确认。",
+    rating: "Source",
+    response: "Official site",
+    languages: "Needs direct check",
+    zhLanguages: "待人工核对",
+    detailsUrl: "/providers/ycs-accounting",
+  },
+  {
     name: "Urban Reno Empire",
     zhName: "Urban Reno Empire",
     category: "Electrical Wiring Contractors Malaysia",
     zhCategory: "马来西亚电工与拉电承包商",
     location: "Subang Jaya, Selangor",
+    entityType: "Sole proprietorship",
+    languageTags: ["Needs direct check"],
+    proofStatus: "Invoice source noted; business details need buyer check",
+    proofTags: ["invoiceSource", "buyerCheck"],
+    proofNote: "Registration-style ID is visible on invoice, but current SSM and relevant electrical registration details still need buyer confirmation.",
     summary:
       "Profile based on an invoice record. Visible invoice scope includes dedicated power points, concealed/internal wiring from DB, socket points, LED/light switch routing, aircond power points, coring, floor protection, and site clearing.",
     zhSummary:
@@ -811,44 +950,14 @@ const providers = [
     zhLanguages: "待人工核对",
     detailsUrl: "/electrical-wiring-contractors-malaysia#urban-reno-empire",
   },
-  {
-    name: "Website design provider",
-    zhName: "网站设计服务商",
-    category: "Website Design Malaysia",
-    zhCategory: "马来西亚网站设计",
-    location: "Johor Bahru",
-    summary: "Fast SME websites, landing pages, ecommerce setup, and care plans.",
-    zhSummary: "为 SME 制作网站、landing page、电商设置和维护配套。",
-    verified: false,
-    sourceLabel: "sampleProfile",
-    verificationNote: "Example profile only; not a live provider listing.",
-    zhVerificationNote: "示例资料卡，不是正式商家资料。",
-    rating: "4.6",
-    response: "2 days",
-    languages: "EN / 中文",
-  },
-  {
-    name: "IT / POS / CRM provider",
-    zhName: "IT / POS / CRM 服务商",
-    category: "IT / POS / CRM Services Malaysia",
-    zhCategory: "马来西亚 IT / POS / CRM 服务",
-    location: "Klang Valley",
-    zhLocation: "巴生谷",
-    summary: "POS, CRM, helpdesk, and business software implementation for SMEs.",
-    zhSummary: "为 SME 实施 POS、CRM、helpdesk 和商业软件。",
-    verified: true,
-    sourceLabel: "sampleProfile",
-    verificationNote: "Example profile only; not a live provider listing.",
-    zhVerificationNote: "示例资料卡，不是正式商家资料。",
-    rating: "4.8",
-    response: "< 1 day",
-    languages: "EN / BM",
-  },
 ];
 
 const categoryGrid = document.querySelector("#categoryGrid");
 const providerGrid = document.querySelector("#providerGrid");
 const providerFilter = document.querySelector("#providerFilter");
+const providerEntityFilter = document.querySelector("#providerEntityFilter");
+const providerLanguageFilter = document.querySelector("#providerLanguageFilter");
+const providerProofFilter = document.querySelector("#providerProofFilter");
 const providerSearch = document.querySelector("#providerSearch");
 const siteSearch = document.querySelector("#siteSearch");
 const siteSearchButton = document.querySelector("#siteSearchButton");
@@ -908,6 +1017,11 @@ function providerSearchText(provider) {
     provider.summary,
     provider.zhSummary,
     provider.sourceLabel && t(provider.sourceLabel),
+    provider.entityType,
+    provider.languageTags,
+    provider.proofStatus,
+    provider.proofNote,
+    provider.proofTags,
     provider.verificationNote,
     provider.zhVerificationNote,
     provider.languages,
@@ -916,6 +1030,13 @@ function providerSearchText(provider) {
     .filter(Boolean)
     .join(" ")
     .toLowerCase();
+}
+
+function liveCategories() {
+  const visibleProviderCategories = new Set(
+    providers.filter(isVisibleProviderRecord).map((provider) => provider.category),
+  );
+  return categories.filter((category) => visibleProviderCategories.has(category.name));
 }
 
 function scrollToElement(selector) {
@@ -956,7 +1077,7 @@ function applySiteSearch() {
     return;
   }
 
-  const matchedCategory = [...categories]
+  const matchedCategory = [...liveCategories()]
     .map((category) => ({ category, score: categoryMatchScore(category, query) }))
     .filter((match) => match.score > 0)
     .sort((a, b) => b.score - a.score)[0]?.category;
@@ -973,7 +1094,7 @@ function applySiteSearch() {
   renderProviders();
 
   const providerMatches = providers.filter((provider) => isVisibleProviderRecord(provider) && providerSearchText(provider).includes(query)).length;
-  const categoryMatches = categories.filter((category) => categorySearchText(category).includes(query)).length;
+  const categoryMatches = liveCategories().filter((category) => categorySearchText(category).includes(query)).length;
   const visibleProviderMatches = providerGrid.querySelectorAll(".provider-card").length;
   searchStatus.textContent =
     providerMatches || categoryMatches || matchedCategory
@@ -1088,11 +1209,12 @@ function setupLanguageSwitch() {
 
 function renderCategories(searchTerm = "") {
   const query = searchTerm.trim().toLowerCase();
+  const sourceCategories = liveCategories();
   const visibleCategories = query
-    ? categories
+    ? sourceCategories
         .filter((category) => categorySearchText(category).includes(query))
         .sort((a, b) => categoryMatchScore(b, query) - categoryMatchScore(a, query))
-    : categories;
+    : sourceCategories;
 
   categoryGrid.innerHTML = visibleCategories
     .map(
@@ -1149,7 +1271,7 @@ function categoryIcon(icon) {
 
 function populateProviderFilter() {
   providerFilter.innerHTML = `<option value="All">${t("allCategories")}</option>`;
-  categories.forEach((category) => {
+  liveCategories().forEach((category) => {
     const option = document.createElement("option");
     option.value = category.name;
     option.textContent =
@@ -1162,52 +1284,70 @@ function providerSortRank(provider) {
   const sourceRank = {
     publicSource: 0,
     invoiceBacked: 1,
-    sampleProfile: 9,
   };
 
   return sourceRank[provider.sourceLabel] ?? 4;
 }
 
 function isVisibleProviderRecord(provider) {
-  return provider.sourceLabel !== "sampleProfile";
+  return Boolean(provider.sourceLabel);
+}
+
+function formatLanguageTags(provider) {
+  const tags = provider.languageTags || [];
+  return tags.length ? tags.join(" / ") : "Needs direct check";
+}
+
+function industryProofGuide(category) {
+  if (/accounting|tax/i.test(category)) {
+    return "MIA membership or tax agent approval may apply";
+  }
+  if (/company secretary/i.test(category)) {
+    return "SSM practising certificate may apply";
+  }
+  if (/electrical|wiring|contractor/i.test(category)) {
+    return "ST, competent person, or CIDB proof may apply";
+  }
+  if (/packaging/i.test(category)) {
+    return "SSM record, product evidence, MOQ, and delivery terms";
+  }
+  return "Industry proof depends on category";
+}
+
+function matchesProviderTrustFilters(provider, filters) {
+  const entityMatch = filters.entity === "All" || provider.entityType === filters.entity;
+  const languageMatch = filters.language === "All" || (provider.languageTags || []).includes(filters.language);
+  const proofMatch = filters.proof === "All" || (provider.proofTags || []).includes(filters.proof);
+  return entityMatch && languageMatch && proofMatch;
 }
 
 function providerSignalItems(provider) {
   const isZh = currentLang === "zh";
-  const location = isZh ? provider.zhLocation || provider.location : provider.location;
-  const response = isZh ? provider.zhResponse || provider.response : provider.response;
-  const languages = isZh ? provider.zhLanguages || provider.languages : provider.languages;
-
-  if (provider.sourceLabel === "publicSource") {
-    return [
-      { label: isZh ? "地区" : "Area", value: location },
-      { label: isZh ? "来源" : "Source", value: response },
-      { label: isZh ? "待补" : "Open item", value: languages },
-    ];
-  }
-
-  if (provider.sourceLabel === "invoiceBacked") {
-    return [
-      { label: isZh ? "地区" : "Area", value: location },
-      { label: isZh ? "询价" : "Access", value: response },
-      { label: isZh ? "待补" : "Open item", value: languages },
-    ];
-  }
 
   return [
-    { label: isZh ? "地区" : "Area", value: location },
-    { label: isZh ? "示例" : "Example", value: response },
-    { label: isZh ? "语言" : "Languages", value: languages },
+    { label: isZh ? "注册类型" : "Entity", value: provider.entityType || "Check SSM record" },
+    { label: isZh ? "语言" : "Language", value: formatLanguageTags(provider) },
+    { label: isZh ? "证明" : "Proof", value: provider.proofStatus || industryProofGuide(provider.category) },
   ];
 }
 
 function renderProviders() {
   const filter = providerFilter.value;
   const query = providerSearch.value.trim().toLowerCase();
+  const trustFilters = {
+    entity: providerEntityFilter.value,
+    language: providerLanguageFilter.value,
+    proof: providerProofFilter.value,
+  };
   const filtered = providers
     .filter((provider) => {
       const matchesFilter = filter === "All" || provider.category === filter;
-      return isVisibleProviderRecord(provider) && matchesFilter && providerSearchText(provider).includes(query);
+      return (
+        isVisibleProviderRecord(provider) &&
+        matchesFilter &&
+        matchesProviderTrustFilters(provider, trustFilters) &&
+        providerSearchText(provider).includes(query)
+      );
     })
     .sort((a, b) => providerSortRank(a) - providerSortRank(b) || a.name.localeCompare(b.name));
 
@@ -1239,7 +1379,7 @@ function renderProviders() {
             </div>
             ${
               provider.verificationNote
-                ? `<p class="provider-note">${currentLang === "zh" ? provider.zhVerificationNote || provider.verificationNote : provider.verificationNote}</p>`
+                ? `<p class="provider-note">${currentLang === "zh" ? provider.zhVerificationNote || provider.verificationNote : provider.verificationNote} ${provider.proofNote ? `<span>${provider.proofNote}</span>` : ""}</p>`
                 : ""
             }
             <div class="provider-meta">
@@ -1308,4 +1448,7 @@ setupSiteSearch();
 setupLocationShortcuts();
 
 providerFilter.addEventListener("change", renderProviders);
+providerEntityFilter.addEventListener("change", renderProviders);
+providerLanguageFilter.addEventListener("change", renderProviders);
+providerProofFilter.addEventListener("change", renderProviders);
 providerSearch.addEventListener("input", renderProviders);

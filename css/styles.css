@@ -1217,7 +1217,7 @@ textarea {
 
 .provider-toolbar {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 240px;
+  grid-template-columns: minmax(220px, 2fr) repeat(4, minmax(140px, 1fr));
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -1256,6 +1256,13 @@ textarea {
   border-radius: var(--radius);
   background: #fbfcf8;
   font-size: 13px;
+}
+
+.provider-note span {
+  display: block;
+  margin-top: 5px;
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .provider-signals {
@@ -1701,6 +1708,10 @@ textarea {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .provider-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .comparison-table > div {
     grid-template-columns: 1fr;
   }
@@ -1781,6 +1792,10 @@ textarea {
   .category-grid {
     width: 100%;
     max-width: 100%;
+  }
+
+  .provider-toolbar {
+    grid-template-columns: 1fr;
   }
 
   .hero-actions {

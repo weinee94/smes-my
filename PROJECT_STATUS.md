@@ -1,12 +1,12 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-22 11:30 Asia/Singapore, Johor Bahru area content seed
+Last updated: 2026-06-23 10:31 Asia/Singapore, mature homepage cleanup
 
 ## Current Objective
 
 Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and service provider directory. SME use cases remain important, but the platform should also serve mass-market buyers, homeowners, consumers, and businesses looking for proper providers. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
 
-Current content-growth direction: do not wait for Wei Nee to manually provide provider names. Start from practical area/category combinations, beginning with Johor Bahru, and turn public company websites into structured public-source research pages and later profile-completion queues.
+Current content-growth direction: do not wait for Wei Nee to manually provide provider names. Start from practical area/category combinations, beginning with Johor Bahru, and turn public company websites into source-listed provider profiles with buyer-facing trust filters: entity type, language, and category-specific proof to check.
 
 ## Current Repo
 
@@ -120,10 +120,23 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
   - `sampleProfile` entries can remain as internal fallback data, but `renderProviders()` excludes them from the public provider grid.
   - Empty categories/searches now show a quote-routing message instead of fake-looking provider cards.
   - Added regression coverage so example profiles do not reappear as visible provider records.
+- On 2026-06-23, added trust-filtered provider discovery v1:
+  - Homepage provider grid now supports buyer filters for category, entity type, language, and proof status.
+  - Provider cards now show `Entity`, `Language`, and `Proof` signals instead of generic area/source/open-item signals.
+  - Source-listed profiles now carry `entityType`, `languageTags`, `proofStatus`, `proofTags`, and `proofNote` fields without implying verification.
+  - Provider listing form now asks for entity / registration type and industry proof buyers may ask for, so providers have a reason to claim and improve listings.
+  - Added regression coverage for the trust filters, provider proof fields, and no-overclaim boundary.
+- On 2026-06-23, cleaned the homepage away from MVP / pitch-deck presentation:
+  - Removed bundled fake provider records such as generic accounting/payroll/website/IT providers from `js/app.js`; the public provider dataset now contains only source-listed or invoice-source records.
+  - Removed the homepage sample-preview block and long request-step / comparison-table explanation sections.
+  - Homepage category browsing and provider filter options now use only categories that have visible provider records.
+  - Removed `Directory in progress`, `Coming soon`, `while SMEs.MY builds`, and sample-profile wording from the public homepage bundle.
+  - Added regression coverage so placeholder provider names, sample profile labels, and MVP/pitch-deck wording do not return.
 
 ## Open Issues
 
-- Site still needs real provider volume; current public provider grid now shows only source-listed/invoice-source records, not example profiles.
+- Site still needs real provider volume; current public provider grid and category browsing now show only source-listed/invoice-source records, not example profiles or empty categories.
+- Trust filters are v1 only: language remains `Needs direct check` unless visible source or provider submission supports it, and proof status is buyer-check guidance rather than SMEs.MY verification.
 - Johor Bahru page now has the first three source-listed individual profiles, but the directory is still early. The next step is to build enough profile volume and then use the profiles for provider-claim outreach.
 - Service and supplier detail pages are English-only for now; homepage is intentionally English-first until bilingual coverage can be done consistently.
 - Need to prepare Chinese versions for the 5 SEO service pages.
@@ -144,10 +157,10 @@ Current content-growth direction: do not wait for Wei Nee to manually provide pr
 
 ## Next Steps
 
-1. Review the new `johor-bahru-suppliers-services/` page locally, then decide whether to commit and push.
-2. Add another 7 JB public-source profiles so the first outreach batch has 10 companies, prioritising packaging, electrical/M&E, payroll/accounting, and company secretary.
-3. Draft a provider-claim outreach message and offer: free correction, optional RM99-RM199 founding claimed profile.
-4. For each profile, keep status as public-source until independent checks or provider claim exists; do not imply SMEs.MY verification.
+1. Review the cleaned homepage locally, then decide whether to commit and push.
+2. Add another 7 JB source-listed profiles so the first outreach batch has 10 companies, prioritising categories that should appear publicly only after they have real records.
+3. Draft a provider-claim outreach message and offer around profile correction plus entity/language/proof fields, with optional RM99-RM199 founding claimed profile.
+4. For each profile, keep language and proof as buyer-check fields until source evidence or provider claim exists; do not imply SMEs.MY verification.
 5. If provider routing is tested, add provider-pool status fields to Google Sheets instead of creating public groups.
 
 ## Useful Commands

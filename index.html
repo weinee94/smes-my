@@ -178,20 +178,6 @@
             <p class="form-note" data-i18n="quoteConsent">By submitting, you agree that SMEs.MY may review your request and share relevant details with suitable providers so they can respond.</p>
             <p class="form-status" aria-live="polite"></p>
           </form>
-          <ul class="request-steps" aria-label="What happens after submitting">
-            <li>
-              <strong>1</strong>
-              <span data-i18n="afterSubmitOne">We check the service, location, contact method, and urgency.</span>
-            </li>
-            <li>
-              <strong>2</strong>
-              <span data-i18n="afterSubmitTwo">Suitable providers may receive the request details and reply directly.</span>
-            </li>
-            <li>
-              <strong>3</strong>
-              <span data-i18n="afterSubmitThree">You compare replies, ask follow-up questions, and choose the provider.</span>
-            </li>
-          </ul>
         </aside>
       </section>
 
@@ -200,7 +186,7 @@
           <p class="eyebrow" data-i18n="popularEyebrow">Popular services</p>
           <h2 data-i18n="popularTitle">Find proper providers for what SMEs buy often.</h2>
           <p data-i18n="popularText">
-            Choose a category below to understand what to compare and send a quote request.
+            Choose a live category or send a request with your location, scope, and contact details.
           </p>
         </div>
         <div class="category-grid" id="categoryGrid"></div>
@@ -221,88 +207,6 @@
         </div>
       </section>
 
-      <section class="marketplace-preview" aria-label="SMEs.MY directory preview">
-        <div class="preview-copy">
-          <p class="eyebrow" data-i18n="previewEyebrow">Directory in progress</p>
-          <h2 data-i18n="previewTitle">A cleaner way to compare SME vendors before you contact them.</h2>
-          <p data-i18n="previewText">
-            SMEs.MY is being built around structured profiles: what the company does, where it
-            serves, which languages it supports, and which registration or licence details may
-            matter for that industry.
-          </p>
-          <div class="preview-actions">
-            <a class="button primary" href="#categories" data-i18n="browseServices">Browse services</a>
-            <a class="button secondary" href="#provider-plans" data-i18n="whyList">Why list here?</a>
-          </div>
-        </div>
-        <div class="listing-preview-card" aria-label="Sample provider card">
-          <div class="listing-window-bar">
-            <span></span><span></span><span></span>
-            <strong data-i18n="sampleDirectory">Sample directory view</strong>
-          </div>
-          <article>
-            <div class="provider-mark">AC</div>
-            <div>
-              <h3 data-i18n="sampleAccountingTitle">Accounting & tax support</h3>
-              <p data-i18n="sampleAccountingText">Kuala Lumpur · English / BM / 中文 · MIA / tax licence details where applicable</p>
-            </div>
-            <span data-i18n="profileChecked">Details listed</span>
-          </article>
-          <article>
-            <div class="provider-mark">RC</div>
-            <div>
-              <h3 data-i18n="sampleRenovationTitle">Renovation contractor</h3>
-              <p data-i18n="sampleRenovationText">Selangor · CIDB details where applicable · Residential / commercial scope</p>
-            </div>
-            <span data-i18n="canReceiveEnquiries">Request through SMEs.MY</span>
-          </article>
-          <div class="listing-meta">
-            <strong data-i18n="previewSignalTitle">What makes a listing useful</strong>
-            <span data-i18n="previewSignalText">Scope, location, languages, response channel, registration/licence details where applicable, and proof the company is active.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section comparison-section">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="compareEyebrow">What to compare</p>
-          <h2 data-i18n="compareTitle">Ask the right questions before hiring a provider.</h2>
-          <p data-i18n="compareText">Use these checks when you compare accountants, company secretaries, contractors, suppliers, IT vendors, agencies, and other SME providers.</p>
-        </div>
-        <div class="comparison-table" role="table" aria-label="Provider comparison checklist">
-          <div role="row">
-            <span role="columnheader" data-i18n="tableCheck">Check</span>
-            <span role="columnheader" data-i18n="tableWhy">Why it matters</span>
-            <span role="columnheader" data-i18n="tableAsk">What to ask</span>
-          </div>
-          <div role="row">
-            <span data-i18n="tableCompany">Company details</span>
-            <span data-i18n="tableCompanyWhy">Helps you know who you are dealing with before sharing documents or payment.</span>
-            <span data-i18n="tableCompanyAsk">Company name, website, registration details, and contact person</span>
-          </div>
-          <div role="row">
-            <span data-i18n="tableRegistration">Registration / licence</span>
-            <span data-i18n="tableRegistrationWhy">Some industries have specific registration, licence, membership, or practising certificate requirements.</span>
-            <span data-i18n="tableRegistrationAsk">Ask for relevant details, such as CIDB, MIA, SSM practising certificate, MOF, or other industry-specific proof where applicable.</span>
-          </div>
-          <div role="row">
-            <span data-i18n="tableResponse">Response time</span>
-            <span data-i18n="tableResponseWhy">Important if you have a filing deadline, campaign launch, payroll cycle, or urgent project.</span>
-            <span data-i18n="tableResponseAsk">How soon can they reply and start work?</span>
-          </div>
-          <div role="row">
-            <span data-i18n="tableLanguages">Languages</span>
-            <span data-i18n="tableLanguagesWhy">Clear communication matters when discussing compliance, pricing, and business documents.</span>
-            <span data-i18n="tableLanguagesAsk">English, BM, Mandarin, or Chinese dialect support</span>
-          </div>
-          <div role="row">
-            <span data-i18n="tableScope">Service scope</span>
-            <span data-i18n="tableScopeWhy">Prevents misunderstandings about what is included and what costs extra.</span>
-            <span data-i18n="tableScopeAsk">Monthly scope, one-time fees, location coverage, and support limits</span>
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="providers">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="providersEyebrow">Provider profiles</p>
@@ -313,6 +217,27 @@
           <input id="providerSearch" type="search" placeholder="Search providers, categories, or locations" data-i18n-placeholder="providerSearchPlaceholder" />
           <select id="providerFilter" aria-label="Filter by category">
             <option value="All" data-i18n="allCategories">All categories</option>
+          </select>
+          <select id="providerEntityFilter" aria-label="Filter by entity type">
+            <option value="All" data-i18n="allEntityTypes">All entity types</option>
+            <option value="Sdn. Bhd.">Sdn. Bhd.</option>
+            <option value="Sole proprietorship">Sole proprietorship</option>
+            <option value="Partnership / LLP">Partnership / LLP</option>
+            <option value="Check SSM record" data-i18n="entityNeedsCheck">Check SSM record</option>
+          </select>
+          <select id="providerLanguageFilter" aria-label="Filter by language">
+            <option value="All" data-i18n="allLanguages">All languages</option>
+            <option value="English">English</option>
+            <option value="BM">BM</option>
+            <option value="Mandarin">Mandarin</option>
+            <option value="Cantonese">Cantonese</option>
+            <option value="Needs direct check" data-i18n="languageNeedsCheck">Needs direct check</option>
+          </select>
+          <select id="providerProofFilter" aria-label="Filter by proof status">
+            <option value="All" data-i18n="allProofStatus">All proof status</option>
+            <option value="sourceListed" data-i18n="sourceListedFilter">Source listed</option>
+            <option value="buyerCheck" data-i18n="buyerCheckFilter">Needs buyer check</option>
+            <option value="invoiceSource" data-i18n="invoiceSourceFilter">Invoice source noted</option>
           </select>
         </div>
         <div class="provider-grid" id="providerGrid"></div>
@@ -381,7 +306,7 @@
           </article>
           <article class="featured">
             <h3 data-i18n="planVerifiedTitle">Claimed profile</h3>
-            <p class="price" data-i18n="comingSoon">Coming soon</p>
+            <p class="price" data-i18n="claimIntake">Claim intake</p>
             <p data-i18n="planVerifiedText">Claim and improve a profile with approved contact channels, service scope, languages, locations, and business fit.</p>
           </article>
           <article>
@@ -433,6 +358,16 @@
             <input name="website" placeholder="Optional website, Facebook, LinkedIn, or company profile URL" data-i18n-placeholder="providerWebsitePlaceholder" />
           </label>
           <label>
+            <span data-i18n="providerEntityType">Entity / registration type</span>
+            <select name="entity_type">
+              <option value="" data-i18n="entityTypePlaceholder">Choose if known</option>
+              <option value="Sdn. Bhd.">Sdn. Bhd.</option>
+              <option value="Sole proprietorship">Sole proprietorship</option>
+              <option value="Partnership / LLP">Partnership / LLP</option>
+              <option value="Other / not sure" data-i18n="entityOther">Other / not sure</option>
+            </select>
+          </label>
+          <label>
             <span data-i18n="providerLanguages">Languages</span>
             <input name="languages" placeholder="English, BM, Mandarin, Cantonese..." data-i18n-placeholder="providerLanguagesPlaceholder" />
           </label>
@@ -443,6 +378,10 @@
           <label>
             <span data-i18n="providerScope">Service scope</span>
             <textarea name="details" rows="3" placeholder="Who do you serve, what packages do you offer, and what enquiries are suitable?" data-i18n-placeholder="providerScopePlaceholder"></textarea>
+          </label>
+          <label>
+            <span data-i18n="providerProofDetails">Industry proof buyers may ask for</span>
+            <textarea name="proof_details" rows="3" placeholder="Examples: SSM record, CIDB, ST, MIA, SSM practising certificate, tax agent approval, certification, or other proof where applicable." data-i18n-placeholder="providerProofPlaceholder"></textarea>
           </label>
           <button class="button primary full" type="submit" data-i18n="applyListing">Apply for listing</button>
           <p class="form-note" data-i18n="providerConsent">Submitting does not guarantee listing approval. SMEs.MY may contact you to verify details before publishing or routing enquiries.</p>
