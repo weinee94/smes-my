@@ -15,8 +15,8 @@ Chinese strategy: do not bring back a half-bilingual homepage toggle until the w
 - Local path: `C:\Users\Wynne\Documents\Codex\smes-my`
 - GitHub: `https://github.com/weinee94/smes-my.git`
 - Branch: `main`
-- Latest local commit at this check: `804b6b9 Refactor styles and HTML structure for improved visual consistency; add icons to categories and update tests for homepage elements`
-- Git state at last check: dirty; Johor Bahru area page and related index/sitemap/llms/test/status updates are local and not committed or pushed yet.
+- Latest local commit at this check: `1e5831c Add new provider profiles and enhance language support`
+- Git state at end-session check: `main` is aligned with `origin/main`; working tree was clean before this handoff status update. Deployment was not re-verified in this closeout.
 
 ## Site Structure
 
@@ -155,10 +155,21 @@ Chinese strategy: do not bring back a half-bilingual homepage toggle until the w
     - `providers/l-and-co-plt/`
     - `providers/yi-syun-renovation-construction/`
   - Updated homepage provider data, JB area page, Chinese entry page, `sitemap.xml`, `llms.txt`, and tests.
+- On 2026-06-23, connected the Facebook Page / provider claim path:
+  - Wei Nee selected the Facebook pinned post positioning: `找 Vendor 前，先查一查商记`, with a clear `sourced information` / not-yet-SSM-verified boundary.
+  - Website provider intake now says `Claim or list your business profile` instead of only listing a business.
+  - The provider form now submits `claim_intent=claim_or_list_profile`.
+  - `docs/google-apps-script.js` v4 now preserves claim intent, entity / registration type, and industry proof details in the Provider Listings sheet source code.
+  - Apps Script source is updated in repo only; the live Google Apps Script deployment still needs manual redeploy before those new fields are guaranteed in the live sheet.
+- On 2026-06-23, corrected the Chinese / Facebook preview path:
+  - Added `assets/smes-social-preview.png` and homepage OG/Twitter metadata so Facebook has a proper large preview image instead of only text.
+  - Reframed `/zh/` from a Johor Bahru page into a national Chinese vendor entry, because FB Chinese content can point to an English-first site without implying the Chinese page is only for JB.
+  - Urban Reno Empire remains a Subang Jaya, Selangor invoice-source record and now carries user-supplied language support: English / Malay / Mandarin.
+  - `llms.txt` now labels `/zh/` as a Chinese vendor entry, not a Chinese Johor Bahru provider entry.
 
 ## Open Issues
 
-- Site now has 15 local source-listed/invoice-source provider records in the first JB batch, but these changes are not pushed or live until Wei Nee reviews and confirms.
+- Site now has 15 source-listed/invoice-source provider records in the first JB batch in the committed repo. Live Vercel deployment was not re-verified during closeout.
 - Trust filters are v1 only: language is source- or user-informed where available, and proof status is buyer-check guidance rather than SMEs.MY verification.
 - Johor Bahru page now links all 15 source-listed/invoice-source profiles, but the directory is still early. The next step is to use this volume for provider-claim outreach.
 - Chinese support now has a dedicated `zh/` entry page and provider-level Mandarin signals, but the full service/category pages are not yet fully bilingual.
@@ -180,11 +191,13 @@ Chinese strategy: do not bring back a half-bilingual homepage toggle until the w
 
 ## Next Steps
 
-1. Review the 15 local JB provider profiles, filter behavior, and `zh/` entry page, then decide whether to commit/push/deploy.
-2. If approved, draft a provider-claim outreach message and offer around profile correction plus entity/language/proof fields, with optional RM99-RM199 founding claimed profile.
-3. Prioritize Chinese page expansion only where it helps money-near categories: JB area, renovation/electrical, accounting/company secretary, packaging.
-4. For each profile, keep language and proof as buyer-check fields until source evidence, user knowledge, or provider claim supports it; do not imply SMEs.MY verification.
-5. If provider routing is tested, add provider-pool status fields to Google Sheets instead of creating public groups.
+1. Review the 15 JB provider profiles, filter behavior, and `zh/` entry page on local or deployed preview, then verify live deployment state.
+2. Redeploy the Google Apps Script from `docs/google-apps-script.js` so Provider Listings captures claim intent, entity type, and proof details.
+3. If approved, use the selected Facebook pinned post and the `Facebook Page Launch Pack` in Obsidian to launch the Page, then route Claim / Update Profile traffic to `https://www.smes.my/#list-business`; after deployment, refresh the Facebook Sharing Debugger so the new OG title/image is recrawled.
+4. Draft a provider-claim outreach message and offer around profile correction plus entity/language/proof fields, with optional RM99-RM199 founding claimed profile.
+5. Prioritize Chinese page expansion only where it helps money-near categories: JB area, renovation/electrical, accounting/company secretary, packaging.
+6. For each profile, keep language and proof as buyer-check fields until source evidence, user knowledge, or provider claim supports it; do not imply SMEs.MY verification.
+7. If provider routing is tested, add provider-pool status fields to Google Sheets instead of creating public groups.
 
 ## Useful Commands
 

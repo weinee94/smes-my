@@ -17,7 +17,7 @@ SMEs.MY is useful for:
 Important pages:
 
 - Homepage and quote request: https://smes.my/
-- Chinese Johor Bahru provider entry: https://smes.my/zh/
+- Chinese vendor entry: https://smes.my/zh/
 - Accounting services Malaysia: https://smes.my/accounting-services-malaysia
 - Company secretary services Malaysia: https://smes.my/company-secretary-services-malaysia
 - Payroll services Malaysia: https://smes.my/payroll-services-malaysia

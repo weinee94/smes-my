@@ -9,13 +9,20 @@
       content="Find proper suppliers, contractors, and service providers in Malaysia. Compare business details, service scope, location, language support, and relevant registration or licence signals."
     />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="SMEs.MY | Malaysia SME Supplier & Proper Provider Directory" />
+    <meta property="og:title" content="SMEs.MY 商記 | Malaysia Vendor & Supplier Directory" />
     <meta
       property="og:description"
-      content="Find and compare proper SME suppliers, contractors, and service providers in Malaysia by category, location, scope, and relevant registration or licence signals."
+      content="Find Malaysian vendors, suppliers, contractors, and service providers with source-listed business records, invoice or quotation signals, and buyer-check notes."
     />
+    <meta property="og:image" content="https://smes.my/assets/smes-social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://smes.my/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SMEs.MY 商記 | Malaysia Vendor & Supplier Directory" />
+    <meta name="twitter:description" content="Find vendors and suppliers with source-listed business records and buyer-check notes." />
+    <meta name="twitter:image" content="https://smes.my/assets/smes-social-preview.png" />
     <meta name="theme-color" content="#14312b" />
     <meta name="google-site-verification" content="YWhLNJ5ppmP6iVM1TtWI2A_oAtgTkEDpOZLH_PVG16I" />
     <link rel="canonical" href="https://smes.my/" />
@@ -322,7 +329,7 @@
       <section class="section split-cta" id="list-business">
         <div>
           <p class="eyebrow" data-i18n="listEyebrow">For service providers</p>
-          <h2 data-i18n="listTitle">List your SME service business.</h2>
+          <h2 data-i18n="listTitle">Claim or list your business profile.</h2>
           <p data-i18n="listText">
             If your company serves Malaysian buyers or businesses, submit enough details for a useful profile.
             SMEs.MY is for proper providers, not anonymous or unclear listings.
@@ -341,8 +348,9 @@
           data-success-en="Thanks. Your listing request has been received."
           data-success-zh="谢谢，你的商家资料已经收到。"
         >
-          <input type="hidden" name="_subject" value="New provider listing request from SMEs.MY" />
+          <input type="hidden" name="_subject" value="New provider claim or listing request from SMEs.MY" />
           <input type="hidden" name="form_type" value="provider_listing" />
+          <input type="hidden" name="claim_intent" value="claim_or_list_profile" />
           <label>
             <span data-i18n="companyName">Company name</span>
             <input name="company" required />
@@ -385,7 +393,7 @@
             <span data-i18n="providerProofDetails">Industry proof buyers may ask for</span>
             <textarea name="proof_details" rows="3" placeholder="Examples: SSM record, CIDB, ST, MIA, SSM practising certificate, tax agent approval, certification, or other proof where applicable." data-i18n-placeholder="providerProofPlaceholder"></textarea>
           </label>
-          <button class="button primary full" type="submit" data-i18n="applyListing">Apply for listing</button>
+          <button class="button primary full" type="submit" data-i18n="applyListing">Claim / submit profile</button>
           <p class="form-note" data-i18n="providerConsent">Submitting does not guarantee listing approval. SMEs.MY may contact you to verify details before publishing or routing enquiries.</p>
           <p class="form-status" aria-live="polite"></p>
         </form>

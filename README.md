@@ -44,5 +44,6 @@ email notification for each submission.
 Operational fields now support the matching loop:
 
 - Quote requests include service, location, business type, contact, budget / urgency, details, lead status, and matched providers.
-- Provider listings include company, main service, location, website / profile, languages, contact, service scope, and review status.
+- Provider listings include claim intent, company, main service, location, website / profile, entity / registration type, languages, contact, service scope, industry proof details, and review status.
+- Claim intake fields to preserve for profile review: claim intent, entity / registration type, industry proof details.
 - Default statuses are added by Apps Script as `new`; use the Sheet to update follow-up states such as `reviewed`, `matched`, `provider contacted`, `replied`, or `closed`.

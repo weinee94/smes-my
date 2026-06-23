@@ -1,5 +1,5 @@
 const NOTIFY_EMAIL = "hello@smes.com.my";
-const SCRIPT_VERSION = "2026-05-28 complete-loop-v3";
+const SCRIPT_VERSION = "2026-06-23 provider-claim-v4";
 
 const FORM_CONFIG = {
   quote_request: {
@@ -9,13 +9,13 @@ const FORM_CONFIG = {
   },
   provider_listing: {
     sheet: "Provider Listings",
-    headers: ["Timestamp", "Company", "Main Service", "Location", "Website / Profile", "Languages", "Contact", "Service Scope", "Review Status", "Subject", "Page URL", "User Agent"],
-    fields: ["company", "main_service", "location", "website", "languages", "contact", "details", "review_status", "_subject", "page_url", "user_agent"],
+    headers: ["Timestamp", "Claim Intent", "Company", "Main Service", "Location", "Website / Profile", "Entity / Registration Type", "Languages", "Contact", "Service Scope", "Industry Proof Details", "Review Status", "Subject", "Page URL", "User Agent"],
+    fields: ["claim_intent", "company", "main_service", "location", "website", "entity_type", "languages", "contact", "details", "proof_details", "review_status", "_subject", "page_url", "user_agent"],
   },
   other: {
     sheet: "Other Submissions",
-    headers: ["Timestamp", "Form Type", "Service Needed", "Location", "Business Type", "Company", "Main Service", "Website / Profile", "Languages", "Contact", "Budget / Urgency", "Extra Details", "Subject", "Page URL", "User Agent"],
-    fields: ["form_type", "service", "location", "business_type", "company", "main_service", "website", "languages", "contact", "budget", "details", "_subject", "page_url", "user_agent"],
+    headers: ["Timestamp", "Form Type", "Claim Intent", "Service Needed", "Location", "Business Type", "Company", "Main Service", "Website / Profile", "Entity / Registration Type", "Languages", "Contact", "Budget / Urgency", "Extra Details", "Industry Proof Details", "Subject", "Page URL", "User Agent"],
+    fields: ["form_type", "claim_intent", "service", "location", "business_type", "company", "main_service", "website", "entity_type", "languages", "contact", "budget", "details", "proof_details", "_subject", "page_url", "user_agent"],
   },
 };
 
@@ -59,16 +59,19 @@ function notify_(data) {
     "New smes.my submission",
     "",
     `Form type: ${data.form_type || ""}`,
+    `Claim intent: ${data.claim_intent || ""}`,
     `Service needed: ${data.service || ""}`,
     `Location: ${data.location || ""}`,
     `Business type: ${data.business_type || ""}`,
     `Company: ${data.company || ""}`,
     `Main service: ${data.main_service || ""}`,
     `Website / profile: ${data.website || ""}`,
+    `Entity / registration type: ${data.entity_type || ""}`,
     `Languages: ${data.languages || ""}`,
     `Contact: ${data.contact || ""}`,
     `Budget / urgency: ${data.budget || ""}`,
     `Details: ${data.details || ""}`,
+    `Industry proof details: ${data.proof_details || ""}`,
     `Page URL: ${data.page_url || ""}`,
   ].join("\n");
 

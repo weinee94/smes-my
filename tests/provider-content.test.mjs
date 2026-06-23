@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 import assert from "node:assert/strict";
 
@@ -43,7 +43,8 @@ test("public site stays English-first until category pages have full bilingual s
 
   assert.doesNotMatch(home, /class="language-switch"/);
   assert.match(home, /href="\/zh\/"/);
-  assert.match(read("zh/index.html"), /新山找靠谱供应商与服务商/);
+  assert.match(read("zh/index.html"), /马来西亚找 Vendor/);
+  assert.doesNotMatch(read("zh/index.html"), /<title>新山供应商与服务商/);
   assert.match(app, /let currentLang = "en";/);
   assert.doesNotMatch(app, /localStorage\.getItem\("smesLang"\)/);
 });
@@ -172,11 +173,32 @@ test("provider filters show visible result feedback", () => {
 test("Mandarin language signal is visible and filterable", () => {
   const app = read("js/app.js");
 
-  assert.match(app, /name:\s*"Urban Reno Empire"[\s\S]*languageTags:\s*\["Mandarin"\]/);
-  assert.match(app, /languages:\s*"Mandarin"/);
-  assert.match(app, /zhLanguages:\s*"华语"/);
+  assert.match(app, /name:\s*"Urban Reno Empire"[\s\S]*languageTags:\s*\["English", "Malay", "Mandarin"\]/);
+  assert.match(app, /name:\s*"Urban Reno Empire"[\s\S]*languages:\s*"English \/ Malay \/ Mandarin"/);
+  assert.match(app, /name:\s*"Urban Reno Empire"[\s\S]*zhLanguages:\s*"英文 \/ 马来文 \/ 华语"/);
   assert.match(app, /name:\s*"L & Co PLT"[\s\S]*languageTags:\s*\["English", "Mandarin", "Malay"\]/);
   assert.match(app, /name:\s*"Yi Syun Renovation & Construction"[\s\S]*languageTags:\s*\["English", "Mandarin"\]/);
+});
+
+test("homepage exposes a Facebook-ready social preview image", () => {
+  const home = read("index.html");
+
+  assert.match(home, /property="og:title" content="SMEs\.MY 商記 \| Malaysia Vendor & Supplier Directory"/);
+  assert.match(home, /property="og:image" content="https:\/\/smes\.my\/assets\/smes-social-preview\.png"/);
+  assert.match(home, /name="twitter:card" content="summary_large_image"/);
+  assert.equal(existsSync(new URL("../assets/smes-social-preview.png", import.meta.url)), true);
+});
+
+test("Chinese entry is national and does not mix Selangor records into a Johor page", () => {
+  const zh = read("zh/index.html");
+
+  assert.match(zh, /马来西亚找 Vendor/);
+  assert.match(zh, /全马可用/);
+  assert.match(zh, /Selangor/);
+  assert.match(zh, /Urban Reno Empire/);
+  assert.doesNotMatch(zh, /优先地区[\s\S]*Johor Bahru, Skudai, Senai/);
+  assert.doesNotMatch(zh, /提交新山询价/);
+  assert.doesNotMatch(zh, /新增新山\/柔佛来源记录/);
 });
 
 test("Johor Bahru source-listed records expand beyond the first ten across categories", () => {
@@ -264,6 +286,28 @@ test("homepage adds buyer trust filters and provider proof fields", () => {
   assert.match(app, /industryProofGuide\(provider\.category\)/);
   assert.match(app, /Entity \/ registration type/);
   assert.match(app, /Industry proof buyers may ask for/);
+});
+
+test("provider claim intake captures profile correction and proof fields", () => {
+  const home = read("index.html");
+  const app = read("js/app.js");
+  const script = read("docs/google-apps-script.js");
+  const readme = read("README.md");
+
+  assert.match(home, /Claim or list your business profile/);
+  assert.match(home, /name="claim_intent"\s+value="claim_or_list_profile"/);
+  assert.match(home, /New provider claim or listing request from SMEs\.MY/);
+  assert.match(app, /Claim or list your business profile/);
+  assert.match(app, /Claim \/ submit profile/);
+  assert.match(app, /认领或提交商家资料/);
+
+  assert.match(script, /"Claim Intent"/);
+  assert.match(script, /"Entity \/ Registration Type"/);
+  assert.match(script, /"Industry Proof Details"/);
+  assert.match(script, /"claim_intent"/);
+  assert.match(script, /"entity_type"/);
+  assert.match(script, /"proof_details"/);
+  assert.match(readme, /claim intent, entity \/ registration type, industry proof details/i);
 });
 
 test("public homepage avoids MVP and pitch-deck wording", () => {
