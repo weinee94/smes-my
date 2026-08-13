@@ -1,225 +1,62 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-06-23 11:23 Asia/Singapore, filter feedback, Chinese entry, JB provider batch to fifteen
+Last updated: 2026-08-13 Asia/Singapore
 
-## Current Objective
+## Current Direction
 
-Build `SMEs.MY` as an independent Malaysia proper supplier, contractor, and service provider directory. SME use cases remain important, but the platform should also serve mass-market buyers, homeowners, consumers, and businesses looking for proper providers. Keep the public brand display as `SMEs.MY`; keep URLs/canonical links on the lowercase `smes.my` domain.
+SMEs.MY is being reset as a practical operating lab for Malaysian small businesses.
 
-Current content-growth direction: do not wait for Wei Nee to manually provide provider names. Start from practical area/category combinations, beginning with Johor Bahru, and turn public company websites into source-listed provider profiles with buyer-facing trust filters: entity type, language, and category-specific proof to check.
+Its purpose is to help owners turn scattered customer enquiries, service information, prices, FAQs, proof, and follow-up work into clearer reusable operating assets. It is not another generic AI chatbot, WhatsApp CRM, or supplier directory.
 
-Chinese strategy: do not bring back a half-bilingual homepage toggle until the whole site can support it cleanly. Use a dedicated Chinese entry page plus provider-level language signals first, especially for Johor Bahru buyers and Mandarin-capable providers.
+The first product lane is the `Business Sales Kit`: a structured package that turns what a business already knows into service descriptions, price or package explanations, FAQs, proof, customer-information requirements, quotation context, and follow-up sequences.
 
-## Current Repo
+## Reset Decision
 
-- Local path: `C:\Users\Wynne\Documents\Codex\smes-my`
-- GitHub: `https://github.com/weinee94/smes-my.git`
-- Branch: `main`
-- Latest local commit at this check: `1e5831c Add new provider profiles and enhance language support`
-- Git state at end-session check: `main` is aligned with `origin/main`; working tree was clean before this handoff status update. Deployment was not re-verified in this closeout.
+- Reset approved by Wei Nee on 2026-08-13.
+- The old provider directory and listing product has been removed from active repository files.
+- Removed scope includes provider profiles, category and location pages, quote and listing forms, provider claim flows, Google Apps Script lead capture, directory tests, directory SEO files, directory imagery, and directory-specific legal pages.
+- Old directory content is recoverable only through Git history; it is not retained as an active archive.
+- The three core SMEs.MY logo/icon assets and `docs/tool-app-ideas.md` remain for the new direction.
 
-## Site Structure
+## Current Public Surface
 
-- `index.html` - static homepage
-- `css/styles.css` - site styling
-- `js/app.js` - categories, provider cards, filtering, Google Sheets form submit
-- `assets/` - 商記 SMEs.MY brand assets
-- `docs/google-apps-script.js` - Google Apps Script backend for lead capture
-- `vercel.json` - clean URL configuration
-- `accounting-services-malaysia/`, `company-secretary-services-malaysia/`, `payroll-services-malaysia/`, `website-design-services-malaysia/`, `digital-marketing-agency-malaysia/` - first SEO service pages
-- `packaging-suppliers-malaysia/` - first supplier/category page outside the pure service-provider lane
+- One static Chinese-first reset homepage.
+- Positioning: `把散乱的生意资料，整理成可以使用的系统。`
+- Focus areas: customer enquiries, sales information, and follow-up actions.
+- No forms, accounts, AI demo, pricing, testimonials, directory search, or provider data.
+- The reset homepage is local-only until Wei Nee separately approves deployment.
 
-## Deployment
+## External Systems
 
-- GitHub push is working.
-- Vercel should be connected to `weinee94/smes-my`.
-- Static deploy settings: no build command; output directory root / `.`
-- Latest pushed changes include GEO/AI discovery metadata and an IndexNow verification key.
-- Latest pushed changes are live on `https://smes.my/`; homepage and CSS returned 200 after the `b2af7c4` push.
-- Search Console has verified `https://smes.my/`; sitemap submission is successful.
+This reset did not change or delete data in:
 
-## Lead Capture
+- Google Sheets
+- Google Apps Script deployments
+- Vercel projects or production deployment
+- DNS or business email
+- Search Console or indexing tools
+- Facebook or other social accounts
 
-- Method: Google Sheets + Google Apps Script
-- Current endpoint is configured in both forms in `index.html`.
-- Apps Script source is in `docs/google-apps-script.js`.
-- Quote request submissions have been verified entering the `Quote Requests` sheet.
-- Provider listing submissions have been verified entering the `Provider Listings` sheet.
-- The older `Leads` sheet may still contain earlier test submissions.
+These systems must be reviewed separately if the reset is later deployed publicly.
 
-## Completed Recently
+## Next Product Decision
 
-- Moved active project to `C:\Users\Wynne\Documents\Codex\smes-my`.
-- Initialized Git and pushed to existing GitHub repo.
-- Resolved remote history conflict with existing initial static site.
-- Removed public-facing MVP / internal planning language.
-- Improved homepage toward real directory platform positioning.
-- Added provider comparison signals, request flow, categories, city coverage, and provider onboarding.
-- Added Google Sheets lead form integration.
-- Improved frontend form feedback so users see submitting, success, validation, and timeout states.
-- Split Google Sheets lead capture by `form_type`: quote requests and provider listings now land in separate sheets.
-- Shortened Apps Script to stay under the user's paste limit and added a script version marker in repo source.
-- Added first 5 SEO service pages and linked them from the homepage and sitemap.
-- Removed internal/project-planning copy from public pages so visitors see a clearer service-finder experience.
-- Reworked homepage layout, spacing, and responsive behavior.
-- Recolored the site to better match the 商記 SMEs.MY logo: purple brand accents, green primary buttons, pink/gold highlights.
-- Added EN / 中文 language switching on the homepage, including hero, forms, service cards, provider cards, and key sections.
-- Updated public brand display from `smes.my` to `SMEs.MY` while keeping lowercase URLs.
-- Added `llms.txt` and exposed it from `robots.txt` via `LLMS: https://smes.my/llms.txt`.
-- Re-submitted `https://smes.my/sitemap.xml` in Google Search Console on 2026-06-01; Search Console showed same-day read success.
-- Search Console status on 2026-06-01: 2 Google Search clicks, 2 indexed pages, 13 not indexed.
-- Confirmed indexed: homepage and `https://smes.my/payroll-services-malaysia`.
-- Requested indexing for accounting, company secretary, website design, and digital marketing service pages.
-- Added IndexNow key file `https://smes.my/5de411d1-21fb-490e-8c74-bcc229039a59.txt` and submitted a URL batch to IndexNow; API returned HTTP 202.
-- Added `packaging-suppliers-malaysia/` to widen SMEs.MY from pure business services into a supplier + service directory.
-- Updated homepage metadata, JSON-LD, search shortcuts, quote form, category cards, provider cards, sitemap, and `llms.txt` to include packaging suppliers.
-- Added generated, compressed website photography for the homepage supplier comparison section and packaging supplier page:
-  - `assets/sme-supplier-comparison.jpg`
-  - `assets/packaging-suppliers-malaysia.jpg`
-- Created reusable Codex skill `design-taste-audit` at `C:\Users\Wynne\.codex\skills\design-taste-audit`; validation passed with `Skill is valid!`.
-- Used `design-taste-audit` to improve SMEs.MY visual quality: calmer color system, stronger first viewport hierarchy, more consistent cards/buttons/forms, improved visual feature section, sticky-header scroll padding, and mobile layout fixes.
-- Commits pushed after the IndexNow work:
-  - `fba580c Add packaging supplier category`
-  - `cf3eb93 Add SME directory photography`
-  - `b2af7c4 Improve SMEs.MY visual system`
-- On 2026-06-15, added the first invoice-backed seed provider/category structure for electrical wiring contractors, then tightened the public boundary:
-  - `electrical-wiring-contractors-malaysia/` exists as a category page and seed profile test surface.
-  - Invoice-backed seed now uses professional display casing: `Urban Reno Empire` as display name, with `URBAN RENO EMPIRE` and `URBANRENO` retained only as source/invoice fields.
-  - Direct email/phone from invoice are withheld from the public seed profile; buyer action routes through SMEs.MY.
-  - Homepage provider area now presents `Profile formats`, `Sample format`, and `Invoice-backed seed` instead of implying live/verified providers.
-  - Homepage language switch was removed for now; the public site is English-first until category pages have full bilingual coverage.
-  - Added `tests/provider-content.test.mjs` to guard against verification overclaiming, public direct-contact leakage, and accidental half-bilingual UI.
-- On 2026-06-22, added the first Johor Bahru area content seed:
-  - New static page: `johor-bahru-suppliers-services/`.
-  - Page covers JB-area public-source research signals for packaging suppliers, electrical/M&E contractors, company secretary, payroll, accounting, and compliance providers.
-  - Public-source examples include PLL Packaging, Khoo Packaging, Smart Pack, CSY Electric, JUTA M&E, C&G Corporate Services, DTL, TJW Group, and YCS Accounting.
-  - The page explicitly avoids presenting these companies as independently checked SMEs.MY listings; it is a research queue and comparison guide.
-  - Homepage city link, homepage service guide list, `sitemap.xml`, and `llms.txt` now link to the JB area page.
-  - Tightened old electrical page wording from `SMEs.MY-verified` phrasing to `independently checked SMEs.MY listing`.
-  - Added test coverage for the JB page and broadened overclaim guards to catch `SMEs.MY-verified`.
-- On 2026-06-22, converted the first JB public-source examples into individual profiles:
-  - `providers/pll-packaging-sdn-bhd/`
-  - `providers/csy-electric-sdn-bhd/`
-  - `providers/cg-corporate-services/`
-  - Added `Public-source profile` as a homepage provider-card label.
-  - Added the three profiles to homepage provider data, JB area page links, `sitemap.xml`, `llms.txt`, and tests.
-  - Each page avoids publishing copied phone/email details and keeps the status as public-source / not independently checked.
-- On 2026-06-22, corrected the homepage provider browsing hierarchy:
-  - Provider section now says `Provider records` instead of `Profile formats`.
-  - Public-source and invoice-backed records are sorted before sample-format cards.
-  - Sample formats remain only as fallback examples for categories that do not yet have public profiles.
-  - Added regression coverage so sample profiles do not drift back ahead of real records.
-- On 2026-06-22, improved provider-card readability:
-  - Removed unclear `Not confirmed` / `Not shown on invoice` signal text.
-  - Provider cards now show labelled signals such as `Area`, `Source`, `Access`, and `Open item`.
-  - Public-source and invoice-backed cards use `Needs direct check` for missing confirmation instead of unexplained internal status wording.
-- On 2026-06-22, fixed public copy leakage from internal profile-building terminology:
-  - Homepage provider section now uses buyer-facing copy: compare service scope, location, source notes, and details to confirm before enquiry.
-  - Provider-card labels now show `Source listed`, `Invoice source noted`, and `Example profile` instead of internal source-type wording.
-  - JB area page, individual provider pages, electrical contractor page, and `llms.txt` no longer expose `public-source`, `sample format(s)`, or `invoice-backed seed` wording.
-  - Added regression coverage to keep internal profile-building terms out of public-facing pages.
-- On 2026-06-22, tightened the homepage provider grid so it no longer defaults to example profiles:
-  - `sampleProfile` entries can remain as internal fallback data, but `renderProviders()` excludes them from the public provider grid.
-  - Empty categories/searches now show a quote-routing message instead of fake-looking provider cards.
-  - Added regression coverage so example profiles do not reappear as visible provider records.
-- On 2026-06-23, added trust-filtered provider discovery v1:
-  - Homepage provider grid now supports buyer filters for category, entity type, language, and proof status.
-  - Provider cards now show `Entity`, `Language`, and `Proof` signals instead of generic area/source/open-item signals.
-  - Source-listed profiles now carry `entityType`, `languageTags`, `proofStatus`, `proofTags`, and `proofNote` fields without implying verification.
-  - Provider listing form now asks for entity / registration type and industry proof buyers may ask for, so providers have a reason to claim and improve listings.
-  - Added regression coverage for the trust filters, provider proof fields, and no-overclaim boundary.
-- On 2026-06-23, cleaned the homepage away from MVP / pitch-deck presentation:
-  - Removed bundled fake provider records such as generic accounting/payroll/website/IT providers from `js/app.js`; the public provider dataset now contains only source-listed or invoice-source records.
-  - Removed the homepage sample-preview block and long request-step / comparison-table explanation sections.
-  - Homepage category browsing and provider filter options now use only categories that have visible provider records.
-  - Removed `Directory in progress`, `Coming soon`, `while SMEs.MY builds`, and sample-profile wording from the public homepage bundle.
-  - Added regression coverage so placeholder provider names, sample profile labels, and MVP/pitch-deck wording do not return.
-- On 2026-06-23, added the next 7 Johor Bahru source-listed provider profiles locally, bringing the first batch to 10 records before outreach:
-  - `providers/khoo-packaging-industries/`
-  - `providers/smart-pack-industries-m-sdn-bhd/`
-  - `providers/as-packaging-industries-sdn-bhd/`
-  - `providers/juta-me-sdn-bhd/`
-  - `providers/dtl-accounting-firm/`
-  - `providers/tjw-group/`
-  - `providers/ycs-accounting/`
-  - Updated the homepage provider data, Johor Bahru area page links, `sitemap.xml`, `llms.txt`, and regression tests.
-  - All seven remain source-listed / needs buyer check; language, licence/proof, MOQ, fee/package scope, and delivery terms are not treated as SMEs.MY verification.
-- On 2026-06-23, fixed filter usability and restored Chinese market support in a cleaner way:
-  - Homepage provider filters now show a visible result summary, including shown/total provider count and active filter count, so users can tell the filter responded.
-  - Added dedicated Chinese entry page `zh/` instead of restoring the old half-bilingual homepage switch.
-  - Marked Urban Reno Empire as Mandarin-capable based on user-provided knowledge while keeping proof/entity checks separate.
-  - Added 5 more source-listed Johor/JB provider profiles, bringing the local provider batch to 15 records:
-    - `providers/new-packaging-sdn-bhd/`
-    - `providers/sunny-packaging-industries-sdn-bhd/`
-    - `providers/weheng-m-sdn-bhd/`
-    - `providers/l-and-co-plt/`
-    - `providers/yi-syun-renovation-construction/`
-  - Updated homepage provider data, JB area page, Chinese entry page, `sitemap.xml`, `llms.txt`, and tests.
-- On 2026-06-23, connected the Facebook Page / provider claim path:
-  - Wei Nee selected the Facebook pinned post positioning: `找 Vendor 前，先查一查商记`, with a clear `sourced information` / not-yet-SSM-verified boundary.
-  - Website provider intake now says `Claim or list your business profile` instead of only listing a business.
-  - The provider form now submits `claim_intent=claim_or_list_profile`.
-  - `docs/google-apps-script.js` v4 now preserves claim intent, entity / registration type, and industry proof details in the Provider Listings sheet source code.
-  - Apps Script source is updated in repo only; the live Google Apps Script deployment still needs manual redeploy before those new fields are guaranteed in the live sheet.
-- On 2026-06-23, corrected the Chinese / Facebook preview path:
-  - Added `assets/smes-social-preview.png` and homepage OG/Twitter metadata so Facebook has a proper large preview image instead of only text.
-  - Reframed `/zh/` from a Johor Bahru page into a national Chinese vendor entry, because FB Chinese content can point to an English-first site without implying the Chinese page is only for JB.
-  - Urban Reno Empire remains a Subang Jaya, Selangor invoice-source record and now carries user-supplied language support: English / Malay / Mandarin.
-  - `llms.txt` now labels `/zh/` as a Chinese vendor entry, not a Chinese Johor Bahru provider entry.
+Before building the full product, validate one specific Business Sales Kit buyer and problem:
 
-## Open Issues
+1. Identify a real Malaysian small business whose customer information is scattered.
+2. Gather the actual service, pricing, FAQ, proof, quotation, and follow-up inputs.
+3. Produce one complete kit manually and observe whether it reduces repeated explanation or missed follow-up.
+4. Only then decide which parts deserve a reusable workflow, paid package, or software layer.
 
-- Site now has 15 source-listed/invoice-source provider records in the first JB batch in the committed repo. Live Vercel deployment was not re-verified during closeout.
-- Trust filters are v1 only: language is source- or user-informed where available, and proof status is buyer-check guidance rather than SMEs.MY verification.
-- Johor Bahru page now links all 15 source-listed/invoice-source profiles, but the directory is still early. The next step is to use this volume for provider-claim outreach.
-- Chinese support now has a dedicated `zh/` entry page and provider-level Mandarin signals, but the full service/category pages are not yet fully bilingual.
-- Need to decide whether to build Chinese versions for the highest-money SEO pages first: Johor Bahru area, packaging, renovation/electrical, accounting/company secretary.
-- Legal/support pages exist: `privacy-notice/`, `terms-of-use/`, and `disclaimer/`; continue polishing if needed.
-- SEO indexing is in progress; do not treat low traffic as a form/backend issue until Search Console has had time to process indexing requests.
-- Visual polish is improved; content depth and real listings are now the main path out of “half-finished” feel.
-- On 2026-06-04, user said the website still felt messy, so the next step changed from adding provider candidates to cleaning the homepage structure first.
-- Simplified homepage flow: removed duplicated explanatory sections, removed decorative visual band, reduced hero CTA noise, shortened the quote form, and added CSS/JS cache-busting query strings.
-- Verified local homepage at `http://127.0.0.1:4173/` in desktop and mobile viewports; first screen renders, mobile text does not overlap, and the quote-form placeholder no longer uses stale cached copy.
-- After review, user clarified the cleaned page felt too plain and lacked design/product signal. Added a marketplace-style directory preview with sample provider cards and reframed provider signup as early/founding listings with clearer benefits.
-- Business assumption clarified: merchants are unlikely to register naturally from a cold empty directory. The site needs seeded profiles, visible category pages, SEO value, and a specific early-listing offer before provider signup is realistic.
-- Positioning clarified on 2026-06-04: SMEs.MY should not be limited to "business services". It should encourage proper companies across SME supplier/provider categories, including registration-sensitive fields such as renovation contractors with CIDB details where applicable, accountants/tax providers with MIA or tax licence details where applicable, and company secretaries with SSM practising certificate details where applicable.
-- Positioning refined again on 2026-06-04: SMEs.MY should not claim to serve only SMEs. SME scenarios are a strong starting point, but mass-market buyers, homeowners, consumers, and ordinary business buyers can also use the platform to find proper providers.
-- Avoid overclaiming verification. Use wording like "registration/licence details where applicable" and "proper provider signals" unless SMEs.MY has actually verified a provider through a documented process.
-- Do not let available renovation/electrical invoices pull `smes.my` into a home-renovation domain. Renovation-related contractors can fit only as SME/business-premises suppliers or service providers where relevant.
-- User is not interested in building more SME tools right now and does not want to sell time. Preserve the broader possibility of SMEs.MY empowering SMEs, but only revisit when there is a scalable, non-time-selling model or new knowledge worth considering.
-- Public group links are not recommended. If request routing is tested later, use a controlled provider-pool/status workflow in Google Sheets instead of public WhatsApp/FB groups.
+## Personal Website Boundary
 
-## Next Steps
+Wei Nee's personal professional website is a separate project and will use a separate domain. It will not be hosted under SMEs.MY or share this repository's identity, content, or deployment.
 
-1. Review the 15 JB provider profiles, filter behavior, and `zh/` entry page on local or deployed preview, then verify live deployment state.
-2. Redeploy the Google Apps Script from `docs/google-apps-script.js` so Provider Listings captures claim intent, entity type, and proof details.
-3. If approved, use the selected Facebook pinned post and the `Facebook Page Launch Pack` in Obsidian to launch the Page, then route Claim / Update Profile traffic to `https://www.smes.my/#list-business`; after deployment, refresh the Facebook Sharing Debugger so the new OG title/image is recrawled.
-4. Draft a provider-claim outreach message and offer around profile correction plus entity/language/proof fields, with optional RM99-RM199 founding claimed profile.
-5. Prioritize Chinese page expansion only where it helps money-near categories: JB area, renovation/electrical, accounting/company secretary, packaging.
-6. For each profile, keep language and proof as buyer-check fields until source evidence, user knowledge, or provider claim supports it; do not imply SMEs.MY verification.
-7. If provider routing is tested, add provider-pool status fields to Google Sheets instead of creating public groups.
+## Local Verification
 
-## Useful Commands
-
-```bash
-cd C:\Users\Wynne\Documents\Codex\smes-my
-git status
-git pull --ff-only
-git add .
-git commit -m "Update SMEs.MY homepage and SEO pages"
-git push
+```powershell
+node --test tests/reset-site.test.mjs
+python -m http.server 4173
 ```
 
-## Resume Instruction
-
-In a new Codex conversation, say:
-
-```text
-继续 smes.my，请读取 PROJECT_STATUS.md。
-```
-
-For end-of-session wrap-up, say:
-
-```text
-收尾，更新 PROJECT_STATUS.md。
-```
+The current work is prepared on an isolated local branch. Do not push or deploy without Wei Nee's confirmation.

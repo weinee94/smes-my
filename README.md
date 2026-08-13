@@ -1,49 +1,32 @@
-# smes.my
+# SMEs.MY
 
-Independent Malaysia proper supplier, contractor, and service provider directory.
+SMEs.MY is being rebuilt as a practical operating lab for Malaysian small businesses.
 
-## MVP scope
+The current public reset page introduces the new direction: turning scattered customer enquiries, sales information, prices, FAQs, proof, and follow-up work into clearer reusable systems.
 
-- SEO-first homepage
-- Brand assets based on the existing 商記 SMEs.MY identity
-- Launch service categories
-- Example and invoice-backed seed provider listings
-- Quote request form
-- Provider onboarding form
-- Provider review, enquiry routing, and legal/support pages
+## Current scope
+
+- Static reset homepage
+- Chinese-first positioning with necessary English business terms
+- No provider directory, matching, listing claim, lead form, AI demo, or account system
+- No personal Wei Nee website content
+
+## Local preview
+
+From the repository root:
+
+```powershell
+python -m http.server 4173
+```
+
+Open `http://127.0.0.1:4173/`.
+
+## Verification
+
+```powershell
+node --test tests/reset-site.test.mjs
+```
 
 ## Deployment
 
-This is a static site. Deploy the folder to Vercel or any static host.
-
-Corporate email and official identity can remain on `smes.com.my`; the public directory should use `smes.my`.
-
-## Lead Capture With Google Sheets
-
-The current lead forms are wired to this Google Apps Script endpoint:
-
-`https://script.google.com/macros/s/AKfycbw66TcCNpD1fXsv0YRV5j9hhzS0LPNd8ojxogAmqQzYkZt0qZkvzOD9aygpl1-xUtkRcw/exec`
-
-Setup:
-
-1. Create a Google Sheet named `smes.my Leads`.
-2. In the Sheet, open `Extensions` -> `Apps Script`.
-3. Paste the contents of `docs/google-apps-script.js` into the Apps Script editor.
-4. Change `NOTIFY_EMAIL` if needed.
-5. Click `Deploy` -> `New deployment`.
-6. Choose type `Web app`.
-7. Set `Execute as` to `Me`.
-8. Set `Who has access` to `Anyone`.
-9. Deploy, authorize, then copy the Web App URL ending in `/exec`.
-10. If you redeploy Apps Script and receive a new Web App URL, replace both form actions in `index.html` with the new URL.
-
-The script writes quote requests into `Quote Requests`, provider onboarding requests into
-`Provider Listings`, and any unknown form type into `Other Submissions`. It also sends an
-email notification for each submission.
-
-Operational fields now support the matching loop:
-
-- Quote requests include service, location, business type, contact, budget / urgency, details, lead status, and matched providers.
-- Provider listings include claim intent, company, main service, location, website / profile, entity / registration type, languages, contact, service scope, industry proof details, and review status.
-- Claim intake fields to preserve for profile review: claim intent, entity / registration type, industry proof details.
-- Default statuses are added by Apps Script as `new`; use the Sheet to update follow-up states such as `reviewed`, `matched`, `provider contacted`, `replied`, or `closed`.
+The repository remains configured as a static Vercel site. Deployment is not part of the reset unless Wei Nee confirms it separately.
