@@ -4,3 +4,4 @@ Thumbs.db
 *.log
 preview-*.png
 smes-my-*.png
+.worktrees/
