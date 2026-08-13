@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = { noMarginTop?: boolean } & HTMLAttributes<"footer">;
+const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class:list={["app-layout", { "mt-auto": !noMarginTop }, className]}
+  {...attrs}
+>
+  <div
+    class="border-border text-muted-foreground flex flex-col gap-2 border-t py-7 text-sm sm:flex-row sm:justify-between"
+  >
+    <span>SMEs.MY · 由 Wei Nee 主理的马来西亚小生意运营实验室</span>
+    <span>© {currentYear}</span>
+  </div>
+</footer>

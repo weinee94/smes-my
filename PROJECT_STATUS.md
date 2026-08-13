@@ -26,11 +26,11 @@ Provider listings, directories, supplier databases, claim flows, provider record
 ## Current Repository State
 
 - The old directory implementation was removed from active files on 2026-08-13.
-- The current static reset page is local and not the final first-phase website.
-- No deployment, DNS, email, Google Sheets, Apps Script, Search Console or social-account change is included yet.
+- The first editorial Astro website is implemented locally and ready for production verification.
+- The platform homepage lives at `/`; Wei Nee's professional page lives at `/weineetan`.
+- The first release includes 经营笔记, 匿名化案例, 实验室, About / How I Work and Now / Contact.
+- Existing DNS points `smes.my` to Vercel; production deployment is connected to the GitHub repository.
 
-## Next Implementation
+## Next Step
 
-Use the already-created editorial personal-site prototype as a visual and technical starting point, then rebuild it under the SMEs.MY identity and information architecture defined by `SMES_MY_POSITIONING.md`.
-
-The result must live in this repository and use `smes.my`; the temporary separate personal-site repository is not a second long-term product.
+Publish the verified first release, confirm both `/` and `/weineetan` on the live domain, then maintain the site only when a real note, case or experiment is worth preserving.

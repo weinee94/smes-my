@@ -1,0 +1,164 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
+import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
+import IconSearch from "@/assets/icons/IconSearch.svg";
+import IconMoon from "@/assets/icons/IconMoon.svg";
+import IconX from "@/assets/icons/IconX.svg";
+import LinkButton from "./LinkButton.astro";
+import { stripBase, stripLocale } from "@/utils/withBase";
+import { useTranslations } from "@/i18n";
+import config from "@/config";
+
+const { site, features } = config;
+const locale = Astro.currentLocale ?? site.lang;
+const t = useTranslations(locale);
+const relativePath = stripBase(Astro.url.pathname);
+const currentPath = stripLocale(relativePath.replace(/\/$/, "") || "/", locale);
+const isActive = (path: string) =>
+  currentPath === path || currentPath.startsWith(`${path}/`);
+---
+
+<a
+  id="skip-to-content"
+  href="#main-content"
+  class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 focus:top-4"
+>
+  {t.a11y.skipToContent}
+</a>
+
+<header class="app-layout">
+  <div
+    class="border-border flex items-center justify-between border-b py-5 sm:py-7"
+  >
+    <a
+      href={getRelativeLocaleUrl(locale, "")}
+      class="flex items-baseline gap-3"
+    >
+      <span
+        class="editorial-title text-2xl font-semibold tracking-tight sm:text-3xl"
+        >{site.title}</span
+      >
+      <span class="text-muted-foreground hidden text-xs sm:inline"
+        >由 Wei Nee 主理</span
+      >
+    </a>
+    <nav id="nav-menu" class="flex items-center">
+      <button
+        id="menu-btn"
+        class="focus-outline p-2 sm:hidden"
+        aria-label={t.a11y.openMenu}
+        aria-expanded="false"
+        data-label-open={t.a11y.openMenu}
+        data-label-close={t.a11y.closeMenu}
+      >
+        <IconX id="close-icon" class="hidden" />
+        <IconMenuDeep id="menu-icon" />
+      </button>
+      <ul
+        id="menu-items"
+        class="bg-background border-border absolute top-16 right-5 z-40 hidden w-40 border p-3 shadow-sm sm:static sm:flex sm:w-auto sm:items-center sm:gap-5 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none"
+      >
+        <li>
+          <a
+            class:list={[
+              "block px-2 py-2",
+              {
+                "text-accent underline underline-offset-8": isActive("/posts"),
+              },
+            ]}
+            href={getRelativeLocaleUrl(locale, "posts")}>经营笔记</a
+          >
+        </li>
+        <li>
+          <a
+            class:list={[
+              "block px-2 py-2",
+              {
+                "text-accent underline underline-offset-8": isActive("/cases"),
+              },
+            ]}
+            href={getRelativeLocaleUrl(locale, "cases")}>案例</a
+          >
+        </li>
+        <li>
+          <a
+            class:list={[
+              "block px-2 py-2",
+              { "text-accent underline underline-offset-8": isActive("/lab") },
+            ]}
+            href={getRelativeLocaleUrl(locale, "lab")}>实验室</a
+          >
+        </li>
+        <li>
+          <a
+            class:list={[
+              "block px-2 py-2",
+              {
+                "text-accent underline underline-offset-8":
+                  isActive("/weineetan"),
+              },
+            ]}
+            href={getRelativeLocaleUrl(locale, "weineetan")}>Wei Nee</a
+          >
+        </li>
+        {
+          features.search !== false && (
+            <li>
+              <LinkButton
+                class="focus-outline relative block size-10"
+                href={getRelativeLocaleUrl(locale, "search")}
+                aria-label={t.nav.search}
+              >
+                <IconSearch class="absolute top-1/2 left-1/2 size-5 -translate-x-1/2 -translate-y-1/2" />
+              </LinkButton>
+            </li>
+          )
+        }
+        {
+          features.lightAndDarkMode && (
+            <li>
+              <button
+                id="theme-btn"
+                class="focus-outline relative size-10"
+                title={t.a11y.toggleTheme}
+                aria-label="auto"
+                aria-live="polite"
+              >
+                <IconMoon class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 transition-all dark:scale-0" />
+                <IconSunHigh class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 transition-all dark:scale-100" />
+              </button>
+            </li>
+          )
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function setupHeader() {
+    const button = document.querySelector<HTMLButtonElement>("#menu-btn");
+    const menu = document.querySelector("#menu-items");
+    const menuIcon = document.querySelector("#menu-icon");
+    const closeIcon = document.querySelector("#close-icon");
+    if (!button || !menu || !menuIcon || !closeIcon || button.dataset.ready)
+      return;
+    button.dataset.ready = "true";
+    button.addEventListener("click", () => {
+      const isOpen = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!isOpen));
+      button.setAttribute(
+        "aria-label",
+        isOpen
+          ? (button.dataset.labelOpen ?? "")
+          : (button.dataset.labelClose ?? "")
+      );
+      menu.classList.toggle("hidden");
+      menuIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    });
+  }
+  setupHeader();
+  document.addEventListener("astro:after-swap", setupHeader);
+</script>

@@ -8,6 +8,30 @@ The single source of truth for this project's direction is [`SMES_MY_POSITIONING
 
 ## Current state
 
-The old provider-directory product has been retired. The repository currently contains a temporary static reset page while the first editorial SMEs.MY website is prepared.
+The first editorial version of SMEs.MY is implemented as an Astro site.
 
-No production deployment is authorized by this repository state alone.
+Core routes:
+
+- `/` — SMEs.MY platform homepage
+- `/posts` — 经营笔记
+- `/cases` — 匿名化实战案例
+- `/lab` — 实验室
+- `/weineetan` — Wei Nee 的个人专业页
+- `/now` — 目前关注与联系方式
+
+## Local development
+
+```powershell
+corepack pnpm install
+corepack pnpm dev
+```
+
+Before publishing:
+
+```powershell
+corepack pnpm test
+corepack pnpm lint
+corepack pnpm build
+```
+
+Production is hosted by Vercel and deployed from the GitHub `main` branch.
