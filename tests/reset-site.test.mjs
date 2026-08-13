@@ -69,14 +69,20 @@ test("reset homepage does not expose the retired directory product", () => {
   assert.doesNotMatch(bundle, /provider-card|provider-grid|quote-form/i);
 });
 
-test("only approved legacy assets remain", () => {
+test("only approved brand assets remain", () => {
   for (const path of [
     "assets/smes-main-logo.png",
     "assets/smes-secondary-logo.png",
     "assets/smes-site-icon.png",
-    "docs/tool-app-ideas.md",
+    "SMES_MY_POSITIONING.md",
     "vercel.json",
   ]) {
     assert.equal(existsSync(join(root, path)), true, `${path} should be preserved`);
   }
+
+  assert.equal(
+    existsSync(join(root, "docs/tool-app-ideas.md")),
+    false,
+    "speculative tool parking lot should be retired"
+  );
 });
