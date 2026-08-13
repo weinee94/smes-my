@@ -1,7 +1,8 @@
 ---
 title: "当曝光来到以后，营运接得住吗？"
 description: "把一次自然关注放回完整的商业链路，检查需求、承接能力与顾客体验。"
-pubDatetime: 2026-08-12T09:00:00+08:00
+pubDatetime: 2026-08-13T09:00:00+08:00
+eventPeriod: "2026 年 8 月上旬"
 featured: true
 tags: ["案例", "商业运营", "项目协调"]
 draft: false

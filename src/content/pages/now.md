@@ -12,3 +12,5 @@ _更新于 2026 年 8 月_
 3. 通过 Business Sales Kit 实验，观察小生意是否真正需要把服务、价格、FAQ、proof 与 follow-up 整理成可重复使用的资产。
 
 没有 demand evidence 的想法不会被包装成产品。这个页面只记录眼下真正投入时间的方向。
+
+专业合作或工作机会：<weineetan@smes.com.my>

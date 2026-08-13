@@ -12,6 +12,8 @@ const posts = defineCollection({
       author: z.string().default(config.site.author),
       pubDatetime: z.date(),
       modDatetime: z.date().optional().nullable(),
+      eventDate: z.date().optional(),
+      eventPeriod: z.string().min(1).optional(),
       title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
@@ -21,6 +23,13 @@ const posts = defineCollection({
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
       timezone: z.string().optional(),
+    }).superRefine((data, ctx) => {
+      if (Boolean(data.eventDate) === Boolean(data.eventPeriod)) {
+        ctx.addIssue({
+          code: "custom",
+          message: "Provide exactly one of eventDate or eventPeriod",
+        });
+      }
     }),
 });
 

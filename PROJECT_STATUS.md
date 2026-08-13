@@ -31,7 +31,9 @@ Provider listings, directories, supplier databases, claim flows, provider record
 - The first release includes 经营笔记, 匿名化案例, 实验室, About / How I Work and Now / Contact.
 - Production is hosted on Vercel and deploys from the GitHub `main` branch.
 - Live verification passed for `/`, `/weineetan`, `/cases`, `/lab` and `/now`; the retired `/providers` route returns 404.
+- The evidence-led content update adds separate event dates/periods, a private candidate inventory in the existing Obsidian Dashboard, and cross-experience public evidence from work, project operations, personal renovation records, product strategy, and SMEs.MY itself.
+- Public contact email is `weineetan@smes.com.my`.
 
 ## Next Step
 
-Maintain the site only when a real note, case or experiment is worth preserving. Do not add filler pages or revive directory features without new evidence.
+Complete production verification for the evidence-led update, then maintain the site only when a real note, case or experiment is worth preserving. Do not add filler pages or revive directory features without new evidence.

@@ -2,6 +2,7 @@
 title: "从零散记录到可见的执行状态"
 description: "把散落在信息、文件和表格里的工作，整理成能看见责任与下一步的轻量系统。"
 pubDatetime: 2026-08-13T09:00:00+08:00
+eventPeriod: "2026 年 7 月 13 日至 8 月 3 日"
 featured: true
 tags: ["案例", "商业运营", "流程"]
 draft: false

@@ -69,6 +69,8 @@ const {
   pubDatetime,
   modDatetime,
   timezone,
+  eventDate,
+  eventPeriod,
   tags,
   hideEditPost,
 } = post.data;
@@ -121,7 +123,7 @@ const ogImage = ogImageUrl
     </h1>
 
     <div class="my-2 flex items-center gap-2">
-      <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
+      <Datetime {pubDatetime} {timezone} {eventDate} {eventPeriod} size="lg" />
       <span
         aria-hidden="true"
         class:list={[
