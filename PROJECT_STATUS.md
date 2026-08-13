@@ -16,6 +16,7 @@ That document supersedes every earlier personal-domain, provider-directory, SEO-
 - Core claim: `把散乱的生意资料、流程和行动，整理成可以真正使用的系统。`
 - Professional frame: `Commercial × Business Operations`; `Business Operator / System Builder`.
 - First-phase sections: Home, 经营笔记, 实战案例, 实验室, 关于 Wei Nee, Now / Contact.
+- Personal professional page route: `smes.my/weineetan`; the root `smes.my` remains the platform homepage.
 - Maintenance model: low-frequency, evidence-led, small but durable.
 
 ## Permanently Retired Unless New Evidence Exists

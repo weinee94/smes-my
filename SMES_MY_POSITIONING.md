@@ -115,6 +115,8 @@ Career Evidence Register 是 private source。网站只使用其中约 5–10% �
 
 介绍商业与运营背景、工作方式、专业定位、如何看问题，以及为什么建立 SMEs.MY。
 
+固定公开路径为 **`smes.my/weineetan`**。这是 Wei Nee 的个人专业主页；`smes.my` 根路径仍然是 SMEs.MY 平台首页。
+
 重点展示 **How I Work**：
 
 - 先弄清问题，再增加工具
