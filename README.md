@@ -1,32 +1,13 @@
 # SMEs.MY
 
-SMEs.MY is being rebuilt as a practical operating lab for Malaysian small businesses.
+**由 Wei Nee 主理的马来西亚小生意运营实验室。**
 
-The current public reset page introduces the new direction: turning scattered customer enquiries, sales information, prices, FAQs, proof, and follow-up work into clearer reusable systems.
+把散乱的生意资料、流程和行动，整理成可以真正使用的系统。
 
-## Current scope
+The single source of truth for this project's direction is [`SMES_MY_POSITIONING.md`](SMES_MY_POSITIONING.md).
 
-- Static reset homepage
-- Chinese-first positioning with necessary English business terms
-- No provider directory, matching, listing claim, lead form, AI demo, or account system
-- No personal Wei Nee website content
+## Current state
 
-## Local preview
+The old provider-directory product has been retired. The repository currently contains a temporary static reset page while the first editorial SMEs.MY website is prepared.
 
-From the repository root:
-
-```powershell
-python -m http.server 4173
-```
-
-Open `http://127.0.0.1:4173/`.
-
-## Verification
-
-```powershell
-node --test tests/reset-site.test.mjs
-```
-
-## Deployment
-
-The repository remains configured as a static Vercel site. Deployment is not part of the reset unless Wei Nee confirms it separately.
+No production deployment is authorized by this repository state alone.

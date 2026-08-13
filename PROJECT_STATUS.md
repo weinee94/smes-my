@@ -2,61 +2,34 @@
 
 Last updated: 2026-08-13 Asia/Singapore
 
-## Current Direction
+## Authority
 
-SMEs.MY is being reset as a practical operating lab for Malaysian small businesses.
+All future product, content, design and development decisions must follow [`SMES_MY_POSITIONING.md`](SMES_MY_POSITIONING.md).
 
-Its purpose is to help owners turn scattered customer enquiries, service information, prices, FAQs, proof, and follow-up work into clearer reusable operating assets. It is not another generic AI chatbot, WhatsApp CRM, or supplier directory.
+That document supersedes every earlier personal-domain, provider-directory, SEO-portal and traditional-portfolio direction.
 
-The first product lane is the `Business Sales Kit`: a structured package that turns what a business already knows into service descriptions, price or package explanations, FAQs, proof, customer-information requirements, quotation context, and follow-up sequences.
+## Confirmed Direction
 
-## Reset Decision
+- The only primary domain is `smes.my`; no personal-name domain will be purchased or built.
+- SMEs.MY is both Wei Nee's long-term professional asset and a platform that may grow into real products or services.
+- Brand position: `由 Wei Nee 主理的马来西亚小生意运营实验室`.
+- Core claim: `把散乱的生意资料、流程和行动，整理成可以真正使用的系统。`
+- Professional frame: `Commercial × Business Operations`; `Business Operator / System Builder`.
+- First-phase sections: Home, 经营笔记, 实战案例, 实验室, 关于 Wei Nee, Now / Contact.
+- Maintenance model: low-frequency, evidence-led, small but durable.
 
-- Reset approved by Wei Nee on 2026-08-13.
-- The old provider directory and listing product has been removed from active repository files.
-- Removed scope includes provider profiles, category and location pages, quote and listing forms, provider claim flows, Google Apps Script lead capture, directory tests, directory SEO files, directory imagery, and directory-specific legal pages.
-- Old directory content is recoverable only through Git history; it is not retained as an active archive.
-- The three core SMEs.MY logo/icon assets and `docs/tool-app-ideas.md` remain for the new direction.
+## Permanently Retired Unless New Evidence Exists
 
-## Current Public Surface
+Provider listings, directories, supplier databases, claim flows, provider records, mass SEO landing pages, SME news aggregation, free AI-tool portals, filler tools, automated article volume and traditional resume-style portfolio design.
 
-- One static Chinese-first reset homepage.
-- Positioning: `把散乱的生意资料，整理成可以使用的系统。`
-- Focus areas: customer enquiries, sales information, and follow-up actions.
-- No forms, accounts, AI demo, pricing, testimonials, directory search, or provider data.
-- The reset homepage is local-only until Wei Nee separately approves deployment.
+## Current Repository State
 
-## External Systems
+- The old directory implementation was removed from active files on 2026-08-13.
+- The current static reset page is local and not the final first-phase website.
+- No deployment, DNS, email, Google Sheets, Apps Script, Search Console or social-account change is included yet.
 
-This reset did not change or delete data in:
+## Next Implementation
 
-- Google Sheets
-- Google Apps Script deployments
-- Vercel projects or production deployment
-- DNS or business email
-- Search Console or indexing tools
-- Facebook or other social accounts
+Use the already-created editorial personal-site prototype as a visual and technical starting point, then rebuild it under the SMEs.MY identity and information architecture defined by `SMES_MY_POSITIONING.md`.
 
-These systems must be reviewed separately if the reset is later deployed publicly.
-
-## Next Product Decision
-
-Before building the full product, validate one specific Business Sales Kit buyer and problem:
-
-1. Identify a real Malaysian small business whose customer information is scattered.
-2. Gather the actual service, pricing, FAQ, proof, quotation, and follow-up inputs.
-3. Produce one complete kit manually and observe whether it reduces repeated explanation or missed follow-up.
-4. Only then decide which parts deserve a reusable workflow, paid package, or software layer.
-
-## Personal Website Boundary
-
-Wei Nee's personal professional website is a separate project and will use a separate domain. It will not be hosted under SMEs.MY or share this repository's identity, content, or deployment.
-
-## Local Verification
-
-```powershell
-node --test tests/reset-site.test.mjs
-python -m http.server 4173
-```
-
-The current work is prepared on an isolated local branch. Do not push or deploy without Wei Nee's confirmation.
+The result must live in this repository and use `smes.my`; the temporary separate personal-site repository is not a second long-term product.
