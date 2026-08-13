@@ -1,414 +1,70 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SMEs.MY | Malaysia SME Supplier & Proper Provider Directory</title>
-    <meta
-      name="description"
-      content="Find proper suppliers, contractors, and service providers in Malaysia. Compare business details, service scope, location, language support, and relevant registration or licence signals."
-    />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="SMEs.MY 商記 | Malaysia Vendor & Supplier Directory" />
-    <meta
-      property="og:description"
-      content="Find Malaysian vendors, suppliers, contractors, and service providers with source-listed business records, invoice or quotation signals, and buyer-check notes."
-    />
-    <meta property="og:image" content="https://smes.my/assets/smes-social-preview.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://smes.my/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SMEs.MY 商記 | Malaysia Vendor & Supplier Directory" />
-    <meta name="twitter:description" content="Find vendors and suppliers with source-listed business records and buyer-check notes." />
-    <meta name="twitter:image" content="https://smes.my/assets/smes-social-preview.png" />
-    <meta name="theme-color" content="#14312b" />
-    <meta name="google-site-verification" content="YWhLNJ5ppmP6iVM1TtWI2A_oAtgTkEDpOZLH_PVG16I" />
-    <link rel="canonical" href="https://smes.my/" />
-    <link rel="icon" href="/assets/smes-site-icon.png" type="image/png" />
-    <link rel="stylesheet" href="css/styles.css?v=20260620-reference-direction" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://smes.my/#organization",
-            "name": "SMEs.MY",
-            "url": "https://smes.my/",
-            "logo": "https://smes.my/assets/smes-main-logo.png",
-            "description": "Malaysia SME supplier, contractor, and proper provider directory.",
-            "areaServed": "MY"
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://smes.my/#website",
-            "name": "SMEs.MY",
-            "url": "https://smes.my/",
-            "publisher": { "@id": "https://smes.my/#organization" },
-            "description": "Find and compare proper suppliers, contractors, and service providers in Malaysia.",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://smes.my/?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          },
-          {
-            "@type": "ItemList",
-            "@id": "https://smes.my/#service-categories",
-            "name": "Malaysia SME supplier and provider categories",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Accounting services Malaysia", "url": "https://smes.my/accounting-services-malaysia" },
-              { "@type": "ListItem", "position": 2, "name": "Company secretary services Malaysia", "url": "https://smes.my/company-secretary-services-malaysia" },
-              { "@type": "ListItem", "position": 3, "name": "Payroll services Malaysia", "url": "https://smes.my/payroll-services-malaysia" },
-              { "@type": "ListItem", "position": 4, "name": "Website design services Malaysia", "url": "https://smes.my/website-design-services-malaysia" },
-              { "@type": "ListItem", "position": 5, "name": "Digital marketing agency Malaysia", "url": "https://smes.my/digital-marketing-agency-malaysia" },
-              { "@type": "ListItem", "position": 6, "name": "Packaging suppliers Malaysia", "url": "https://smes.my/packaging-suppliers-malaysia" },
-              { "@type": "ListItem", "position": 7, "name": "Electrical wiring contractors Malaysia", "url": "https://smes.my/electrical-wiring-contractors-malaysia" },
-              { "@type": "ListItem", "position": 8, "name": "Johor Bahru suppliers and services", "url": "https://smes.my/johor-bahru-suppliers-services" }
-            ]
-          }
-        ]
-      }
-    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMEs.MY — 把散乱的生意资料，整理成可以使用的系统</title>
+    <meta name="description" content="SMEs.MY 正在重新整理：帮助马来西亚小生意把客户询问、销售资料与跟进动作变成清楚、可重复使用的经营系统。">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#f4f0e8">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SMEs.MY — 小生意经营系统">
+    <meta property="og:description" content="把散乱的客户询问、销售资料与跟进动作，整理成可以使用的系统。">
+    <meta property="og:url" content="https://smes.my/">
+    <link rel="canonical" href="https://smes.my/">
+    <link rel="icon" href="/assets/smes-site-icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="SMEs.MY home">
-        <img src="assets/smes-site-icon.png" alt="" />
-        <span>
-          <strong>SMEs.MY</strong>
-          <small>商記 proper provider finder</small>
-        </span>
+      <a class="brand" href="/" aria-label="SMEs.MY 首页">
+        <img src="/assets/smes-main-logo.png" alt="" width="48" height="48">
+        <span>SMEs.MY</span>
       </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#categories" data-i18n="navServices">Services</a>
-        <a href="#providers" data-i18n="navProviders">Providers</a>
-        <a href="/how-matching-works" data-i18n="navHow">How matching works</a>
-        <a href="#provider-plans" data-i18n="navForProviders">For providers</a>
-      </nav>
-      <div class="header-controls">
-        <a class="language-entry" href="/zh/">中文入口</a>
-        <a class="header-action" href="#quote" data-i18n="requestQuotes">Request quotes</a>
-      </div>
+      <span class="status">正在重新整理</span>
     </header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="hero-showcase">
-          <div class="hero-brand">
-            <img src="assets/smes-main-logo.png" alt="商記 SMEs.MY" />
-            <span data-i18n="heroEyebrow">Find proper providers in Malaysia</span>
-          </div>
-          <h1 data-i18n="heroTitle">Find proper suppliers, contractors, and service providers.</h1>
-          <p class="hero-text" data-i18n="heroText">
-            Tell us what your business needs, where you are located, and which details matter.
-            SMEs.MY helps Malaysian buyers and businesses compare suppliers and providers by scope, location,
-            language, and relevant registration or licence signals.
-          </p>
-          <div class="search-box" role="search" aria-label="Search SME suppliers and providers">
-            <input id="siteSearch" type="search" placeholder="Search accounting, wiring, packaging..." data-i18n-placeholder="searchPlaceholder" />
-            <button class="button primary" type="button" id="siteSearchButton" data-i18n="searchServices">Search categories</button>
-          </div>
-          <p class="search-status" id="searchStatus" aria-live="polite"></p>
-          <div class="popular-searches" aria-label="Popular searches">
-            <a href="/accounting-services-malaysia" data-i18n="serviceAccountingShort">Accounting</a>
-            <a href="/company-secretary-services-malaysia" data-i18n="serviceCompanySecShort">Company Secretary</a>
-            <a href="/payroll-services-malaysia" data-i18n="servicePayrollShort">Payroll</a>
-            <a href="/packaging-suppliers-malaysia" data-i18n="servicePackagingShort">Packaging</a>
-            <a href="/electrical-wiring-contractors-malaysia" data-i18n="serviceElectricalShort">Electrical & Wiring</a>
-            <a href="/website-design-services-malaysia" data-i18n="serviceWebsiteShort">Website Design</a>
-          </div>
-          <div class="directory-visual" aria-hidden="true">
-            <span class="network-line line-one"></span>
-            <span class="network-line line-two"></span>
-            <span class="network-line line-three"></span>
-            <span class="directory-node node-one"></span>
-            <span class="directory-node node-two"></span>
-            <span class="directory-node node-three"></span>
-            <span class="directory-node node-four"></span>
-            <span class="directory-cube cube-large"></span>
-            <span class="directory-cube cube-mid"></span>
-            <span class="directory-cube cube-small"></span>
-            <span class="directory-stack"></span>
-          </div>
-        </div>
-        <aside class="quote-panel compact-quote" id="quote" aria-labelledby="quote-title">
-          <div class="panel-header">
-            <span class="match-badge" data-i18n="freeRequest">Free request</span>
-            <span data-i18n="forMalaysiaSmes">For Malaysia buyers</span>
-          </div>
-          <h2 id="quote-title" data-i18n="quoteTitle">Tell us what you need.</h2>
-          <p data-i18n="quoteText">Share your service type, location, and contact details. SMEs.MY reviews the request and routes it to relevant providers where suitable.</p>
-          <form
-            class="lead-form js-lead-form"
-            action="https://script.google.com/macros/s/AKfycbw66TcCNpD1fXsv0YRV5j9hhzS0LPNd8ojxogAmqQzYkZt0qZkvzOD9aygpl1-xUtkRcw/exec"
-            method="post"
-            data-success="Thanks. Your quote request has been received."
-            data-success-en="Thanks. Your quote request has been received."
-            data-success-zh="谢谢，你的询价已经收到。"
-          >
-            <input type="hidden" name="_subject" value="New quote request from SMEs.MY" />
-            <input type="hidden" name="form_type" value="quote_request" />
-            <label>
-              <span data-i18n="formService">Service needed</span>
-              <select name="service" id="quoteService" required>
-                <option value="" data-i18n="chooseService">Choose a service</option>
-                <option value="Accounting services" data-i18n="serviceAccounting">Accounting services</option>
-                <option value="Company secretary" data-i18n="serviceCompanySec">Company secretary</option>
-                <option value="Tax agent" data-i18n="serviceTax">Tax agent</option>
-                <option value="Payroll services" data-i18n="servicePayroll">Payroll services</option>
-                <option value="Packaging suppliers" data-i18n="servicePackaging">Packaging suppliers</option>
-                <option value="Renovation contractors" data-i18n="serviceRenovation">Renovation contractors</option>
-                <option value="Electrical / wiring contractors" data-i18n="serviceElectrical">Electrical / wiring contractors</option>
-                <option value="Digital marketing" data-i18n="serviceMarketing">Digital marketing</option>
-                <option value="Website design" data-i18n="serviceWebsite">Website design</option>
-                <option value="SME financing" data-i18n="serviceFinancing">SME financing</option>
-                <option value="HR / recruitment" data-i18n="serviceHr">HR / recruitment</option>
-                <option value="Legal services" data-i18n="serviceLegal">Legal services</option>
-                <option value="IT / POS / CRM" data-i18n="serviceIt">IT / POS / CRM</option>
-              </select>
-            </label>
-            <label>
-              <span data-i18n="formLocation">Location</span>
-              <input name="location" id="quoteLocation" placeholder="Kuala Lumpur, Selangor, Penang..." data-i18n-placeholder="locationPlaceholder" required />
-            </label>
-            <label>
-              <span data-i18n="formContact">Contact</span>
-              <input name="contact" placeholder="Email or WhatsApp number" data-i18n-placeholder="contactPlaceholder" required />
-            </label>
-            <label>
-              <span data-i18n="formDetails">Extra details</span>
-              <textarea name="details" rows="2" placeholder="What do you need help with? Any deadline, budget, or language preference?" data-i18n-placeholder="detailsPlaceholder"></textarea>
-            </label>
-            <button class="button primary full" type="submit" data-i18n="sendRequest">Send request</button>
-            <p class="form-note" data-i18n="quoteConsent">By submitting, you agree that SMEs.MY may review your request and share relevant details with suitable providers so they can respond.</p>
-            <p class="form-status" aria-live="polite"></p>
-          </form>
-        </aside>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Malaysia SME Operating Lab</p>
+        <h1 id="hero-title">把散乱的生意资料，<br>整理成可以使用的系统。</h1>
+        <p class="intro">很多小生意不是没有经验，而是经验散在 WhatsApp、价目表、旧文件和老板的脑里。SMEs.MY 正在重新建立，帮助这些资料变成更清楚、可重复使用的经营资产。</p>
       </section>
 
-      <section class="section category-band" id="categories">
+      <section class="focus" aria-labelledby="focus-title">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="popularEyebrow">Popular services</p>
-          <h2 data-i18n="popularTitle">Find proper providers for what SMEs buy often.</h2>
-          <p data-i18n="popularText">
-            Choose a live category or send a request with your location, scope, and contact details.
-          </p>
+          <p class="eyebrow">目前聚焦</p>
+          <h2 id="focus-title">先把最常漏掉的三件事整理好</h2>
         </div>
-        <div class="category-grid" id="categoryGrid"></div>
-      </section>
-
-      <section class="trust-strip" aria-label="Directory promises">
-        <div>
-          <strong data-i18n="trustOneTitle">Proper providers first</strong>
-          <span data-i18n="trustOneText">Compare scope, company details, registration signals, and suitability before contacting.</span>
-        </div>
-        <div>
-          <strong data-i18n="trustTwoTitle">Malaysia-focused</strong>
-          <span data-i18n="trustTwoText">Search by service type, city, language, and business fit.</span>
-        </div>
-        <div>
-          <strong data-i18n="trustThreeTitle">Simple quote requests</strong>
-          <span data-i18n="trustThreeText">Send one request instead of contacting many providers one by one.</span>
-        </div>
-      </section>
-
-      <section class="section" id="providers">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="providersEyebrow">Provider profiles</p>
-          <h2 data-i18n="providersTitle">Compare suppliers and service providers by what matters before you enquire.</h2>
-          <p data-i18n="providersText">Check each profile for service scope, location, source notes, and what still needs to be confirmed before you request quotes.</p>
-        </div>
-        <div class="provider-toolbar" role="search">
-          <input id="providerSearch" type="search" placeholder="Search providers, categories, or locations" data-i18n-placeholder="providerSearchPlaceholder" />
-          <select id="providerFilter" aria-label="Filter by category">
-            <option value="All" data-i18n="allCategories">All categories</option>
-          </select>
-          <select id="providerEntityFilter" aria-label="Filter by entity type">
-            <option value="All" data-i18n="allEntityTypes">All entity types</option>
-            <option value="Sdn. Bhd.">Sdn. Bhd.</option>
-            <option value="Sole proprietorship">Sole proprietorship</option>
-            <option value="Partnership / LLP">Partnership / LLP</option>
-            <option value="Check SSM record" data-i18n="entityNeedsCheck">Check SSM record</option>
-          </select>
-          <select id="providerLanguageFilter" aria-label="Filter by language">
-            <option value="All" data-i18n="allLanguages">All languages</option>
-            <option value="English">English</option>
-            <option value="BM">BM</option>
-            <option value="Mandarin">Mandarin</option>
-            <option value="Cantonese">Cantonese</option>
-            <option value="Needs direct check" data-i18n="languageNeedsCheck">Needs direct check</option>
-          </select>
-          <select id="providerProofFilter" aria-label="Filter by proof status">
-            <option value="All" data-i18n="allProofStatus">All proof status</option>
-            <option value="sourceListed" data-i18n="sourceListedFilter">Source listed</option>
-            <option value="buyerCheck" data-i18n="buyerCheckFilter">Needs buyer check</option>
-            <option value="invoiceSource" data-i18n="invoiceSourceFilter">Invoice source noted</option>
-          </select>
-        </div>
-        <p class="provider-status" id="providerStatus" aria-live="polite"></p>
-        <div class="provider-grid" id="providerGrid"></div>
-      </section>
-
-      <section class="section city-section">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="coverageEyebrow">Malaysia coverage</p>
-          <h2 data-i18n="coverageTitle">Find help near your business.</h2>
-          <p data-i18n="coverageText">Start with your location so providers understand where you operate and whether remote support is suitable.</p>
-        </div>
-        <div class="city-grid">
-          <a href="#quote" data-location="Kuala Lumpur">Kuala Lumpur</a>
-          <a href="#quote" data-location="Selangor">Selangor</a>
-          <a href="#quote" data-location="Penang">Penang</a>
-          <a href="/johor-bahru-suppliers-services" data-location="Johor Bahru">Johor Bahru</a>
-          <a href="#quote" data-location="Melaka">Melaka</a>
-          <a href="#quote" data-location="Malaysia-wide">Malaysia-wide</a>
-        </div>
-      </section>
-
-      <section class="section seo-section">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="guidesEyebrow">Service guides</p>
-          <h2 data-i18n="guidesTitle">Not sure what to ask for? Start with these guides.</h2>
-        </div>
-        <div class="seo-layout">
-          <div>
-          <h3 data-i18n="guidesPopular">Popular categories</h3>
-            <ul class="check-list">
-              <li><a href="/accounting-services-malaysia" data-i18n="guideAccounting">Accounting services Malaysia</a></li>
-              <li><a href="/company-secretary-services-malaysia" data-i18n="guideCompanySec">Company secretary services Malaysia</a></li>
-              <li><a href="/payroll-services-malaysia" data-i18n="guidePayroll">Payroll services Malaysia</a></li>
-              <li><a href="/packaging-suppliers-malaysia" data-i18n="guidePackaging">Packaging suppliers Malaysia</a></li>
-              <li><a href="/electrical-wiring-contractors-malaysia" data-i18n="guideElectrical">Electrical wiring contractors Malaysia</a></li>
-              <li><a href="/johor-bahru-suppliers-services">Johor Bahru suppliers and services</a></li>
-              <li><a href="/digital-marketing-agency-malaysia" data-i18n="guideMarketing">Digital marketing agency Malaysia</a></li>
-              <li><a href="/website-design-services-malaysia" data-i18n="guideWebsite">Website design for SME Malaysia</a></li>
-              <li data-i18n="guideLoan">SME business loan Malaysia</li>
-            </ul>
-          </div>
-          <div>
-            <h3 data-i18n="guidesCompare">Each guide helps you compare</h3>
-            <ul class="check-list">
-              <li data-i18n="guidesPointOne">What the service includes</li>
-              <li data-i18n="guidesPointTwo">When your business may need it</li>
-              <li data-i18n="guidesPointThree">What to ask providers before hiring</li>
-              <li data-i18n="guidesPointFour">Which details to include in your quote request</li>
-              <li data-i18n="guidesPointFive">Related services you may also need</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="band compact-provider-band" id="provider-plans">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="providerPlansEyebrow">For service providers</p>
-          <h2 data-i18n="providerPlansTitle">Get discovered as a proper SME provider.</h2>
-          <p data-i18n="providerPlansText">Early listings are useful only if they help buyers compare. Submit enough detail for a real profile, not just a company name.</p>
-        </div>
-        <div class="pricing-grid">
+        <div class="focus-grid">
           <article>
-            <h3 data-i18n="planBasicTitle">Basic listing</h3>
-            <p class="price">RM0</p>
-            <p data-i18n="planBasicText">Add your company name, main service, location, and contact details.</p>
-          </article>
-          <article class="featured">
-            <h3 data-i18n="planVerifiedTitle">Claimed profile</h3>
-            <p class="price" data-i18n="claimIntake">Claim intake</p>
-            <p data-i18n="planVerifiedText">Claim and improve a profile with approved contact channels, service scope, languages, locations, and business fit.</p>
+            <span>01</span>
+            <h3>客户询问</h3>
+            <p>客户到底在问什么、还缺什么资料、下一句该怎么回复。</p>
           </article>
           <article>
-            <h3 data-i18n="planEnquiryTitle">Customer enquiries</h3>
-            <p class="price" data-i18n="relevantRequests">Relevant requests</p>
-            <p data-i18n="planEnquiryText">Receive requests from buyers looking for your type of service.</p>
+            <span>02</span>
+            <h3>销售资料</h3>
+            <p>把服务、价格、流程、FAQ 与可信证明整理成随时能用的说明。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>跟进动作</h3>
+            <p>让报价、待确认事项和后续联系不再只靠记忆。</p>
           </article>
         </div>
       </section>
 
-      <section class="section split-cta" id="list-business">
-        <div>
-          <p class="eyebrow" data-i18n="listEyebrow">For service providers</p>
-          <h2 data-i18n="listTitle">Claim or list your business profile.</h2>
-          <p data-i18n="listText">
-            If your company serves Malaysian buyers or businesses, submit enough details for a useful profile.
-            SMEs.MY is for proper providers, not anonymous or unclear listings.
-          </p>
-          <ul class="check-list compact-list">
-            <li data-i18n="providerBenefitOne">Be discoverable by SMEs searching for your service category.</li>
-            <li data-i18n="providerBenefitTwo">Receive relevant enquiry opportunities when there is a fit.</li>
-            <li data-i18n="providerBenefitThree">Build a clearer profile with service scope, locations, and languages.</li>
-          </ul>
-        </div>
-        <form
-          class="lead-form js-lead-form"
-          action="https://script.google.com/macros/s/AKfycbw66TcCNpD1fXsv0YRV5j9hhzS0LPNd8ojxogAmqQzYkZt0qZkvzOD9aygpl1-xUtkRcw/exec"
-          method="post"
-          data-success="Thanks. Your listing request has been received."
-          data-success-en="Thanks. Your listing request has been received."
-          data-success-zh="谢谢，你的商家资料已经收到。"
-        >
-          <input type="hidden" name="_subject" value="New provider claim or listing request from SMEs.MY" />
-          <input type="hidden" name="form_type" value="provider_listing" />
-          <input type="hidden" name="claim_intent" value="claim_or_list_profile" />
-          <label>
-            <span data-i18n="companyName">Company name</span>
-            <input name="company" required />
-          </label>
-          <label>
-            <span data-i18n="mainService">Main service</span>
-            <input name="main_service" placeholder="Accounting, payroll, website design..." data-i18n-placeholder="mainServicePlaceholder" required />
-          </label>
-          <label>
-            <span data-i18n="providerLocation">Service location</span>
-            <input name="location" placeholder="Kuala Lumpur, Selangor, Malaysia-wide..." data-i18n-placeholder="providerLocationPlaceholder" required />
-          </label>
-          <label>
-            <span data-i18n="providerWebsite">Website / profile</span>
-            <input name="website" placeholder="Optional website, Facebook, LinkedIn, or company profile URL" data-i18n-placeholder="providerWebsitePlaceholder" />
-          </label>
-          <label>
-            <span data-i18n="providerEntityType">Entity / registration type</span>
-            <select name="entity_type">
-              <option value="" data-i18n="entityTypePlaceholder">Choose if known</option>
-              <option value="Sdn. Bhd.">Sdn. Bhd.</option>
-              <option value="Sole proprietorship">Sole proprietorship</option>
-              <option value="Partnership / LLP">Partnership / LLP</option>
-              <option value="Other / not sure" data-i18n="entityOther">Other / not sure</option>
-            </select>
-          </label>
-          <label>
-            <span data-i18n="providerLanguages">Languages</span>
-            <input name="languages" placeholder="English, BM, Mandarin, Cantonese..." data-i18n-placeholder="providerLanguagesPlaceholder" />
-          </label>
-          <label>
-            <span data-i18n="formContact">Contact</span>
-            <input name="contact" placeholder="Email or WhatsApp number" data-i18n-placeholder="contactPlaceholder" required />
-          </label>
-          <label>
-            <span data-i18n="providerScope">Service scope</span>
-            <textarea name="details" rows="3" placeholder="Who do you serve, what packages do you offer, and what enquiries are suitable?" data-i18n-placeholder="providerScopePlaceholder"></textarea>
-          </label>
-          <label>
-            <span data-i18n="providerProofDetails">Industry proof buyers may ask for</span>
-            <textarea name="proof_details" rows="3" placeholder="Examples: SSM record, CIDB, ST, MIA, SSM practising certificate, tax agent approval, certification, or other proof where applicable." data-i18n-placeholder="providerProofPlaceholder"></textarea>
-          </label>
-          <button class="button primary full" type="submit" data-i18n="applyListing">Claim / submit profile</button>
-          <p class="form-note" data-i18n="providerConsent">Submitting does not guarantee listing approval. SMEs.MY may contact you to verify details before publishing or routing enquiries.</p>
-          <p class="form-status" aria-live="polite"></p>
-        </form>
+      <section class="rebuild" aria-labelledby="rebuild-title">
+        <p class="eyebrow">What is changing</p>
+        <h2 id="rebuild-title">从“收集更多资料”，转向“让资料真正能被使用”。</h2>
+        <p>第一阶段会围绕 Business Sales Kit 展开：把一家生意已经知道的东西，整理成客户看得懂、团队拿得起、下一次不用重做的资产。</p>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <img src="assets/smes-secondary-logo.png" alt="商記 SMEs.MY" />
-      <div>
-        <p><strong>SMEs.MY</strong> <span data-i18n="footerOne">helps Malaysian buyers and businesses find and compare proper suppliers, contractors, and service providers.</span></p>
-        <p data-i18n="footerTwo">Need help choosing a provider? Start with a service category or send a quote request.</p>
-        <p class="footer-links"><a href="/how-matching-works">How matching works</a><a href="/privacy-notice">Privacy Notice</a><a href="/terms-of-use">Terms of Use</a><a href="/disclaimer">Disclaimer</a></p>
-      </div>
+    <footer>
+      <p>SMEs.MY · 为马来西亚小生意整理更清楚的经营方式</p>
+      <p>New direction in progress · 2026</p>
     </footer>
-
-    <script src="js/app.js?v=20260620-reference-direction"></script>
   </body>
 </html>
