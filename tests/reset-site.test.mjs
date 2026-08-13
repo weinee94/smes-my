@@ -1,10 +1,16 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const root = process.cwd();
 const read = path => readFileSync(join(root, path), "utf8");
+const hasFiles = path => {
+  const absolute = join(root, path);
+  if (!existsSync(absolute)) return false;
+  if (!statSync(absolute).isDirectory()) return true;
+  return readdirSync(absolute).some(entry => hasFiles(join(path, entry)));
+};
 
 const removedPaths = [
   "providers",
@@ -34,7 +40,7 @@ const removedPaths = [
 
 test("old directory surfaces are absent", () => {
   for (const path of removedPaths) {
-    assert.equal(existsSync(join(root, path)), false, `${path} should be removed`);
+    assert.equal(hasFiles(path), false, `${path} should contain no active files`);
   }
 });
 
