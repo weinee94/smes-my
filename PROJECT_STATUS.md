@@ -26,11 +26,12 @@ Provider listings, directories, supplier databases, claim flows, provider record
 ## Current Repository State
 
 - The old directory implementation was removed from active files on 2026-08-13.
-- The first editorial Astro website is implemented locally and ready for production verification.
+- The first editorial Astro website was deployed to production on 2026-08-13.
 - The platform homepage lives at `/`; Wei Nee's professional page lives at `/weineetan`.
 - The first release includes 经营笔记, 匿名化案例, 实验室, About / How I Work and Now / Contact.
-- Existing DNS points `smes.my` to Vercel; production deployment is connected to the GitHub repository.
+- Production is hosted on Vercel and deploys from the GitHub `main` branch.
+- Live verification passed for `/`, `/weineetan`, `/cases`, `/lab` and `/now`; the retired `/providers` route returns 404.
 
 ## Next Step
 
-Publish the verified first release, confirm both `/` and `/weineetan` on the live domain, then maintain the site only when a real note, case or experiment is worth preserving.
+Maintain the site only when a real note, case or experiment is worth preserving. Do not add filler pages or revive directory features without new evidence.
