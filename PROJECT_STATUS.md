@@ -33,10 +33,11 @@ Provider listings, directories, supplier databases, claim flows, provider record
 - The unvalidated Lab and Now pages were removed from the public site on 2026-08-14.
 - Current public verification targets are `/`, `/posts`, `/cases`, `/weineetan` and `/contact`; the retired `/providers`, `/lab` and `/now` routes must return 404 after deployment.
 - The evidence-led content update was deployed and verified on 2026-08-13. It adds separate event dates/periods, a private candidate inventory in the existing Obsidian Dashboard, and cross-experience public evidence from work, project operations, personal renovation records, product strategy, and SMEs.MY itself.
+- The Malaysian-Chinese voice rewrite was deployed and verified on 2026-08-14. Commit `9c2de46` updates the homepage and `/weineetan`, keeps four concrete public pieces, hides four abstract drafts, adds Contact, and removes the public Lab and Now routes.
 - Public contact email is `weineetan@smes.com.my`.
 
 ## Next Step
 
-Wei Nee approved `docs/SMES_MY_VOICE.md` on 2026-08-14 as the writing authority. The local copy now follows that guide: it uses short Malaysian Chinese, keeps only statements supported by real events, and removes the old consultant-style summaries.
+Wei Nee approved `docs/SMES_MY_VOICE.md` on 2026-08-14 as the writing authority. The deployed copy now follows that guide: it uses short Malaysian Chinese, keeps only statements supported by real events, and removes the old consultant-style summaries.
 
 Four abstract posts are hidden until there are enough facts to rewrite them. The four public pieces are about separating project balances, deciding which renovation record is current, arranging dependent trades, and closing the old SMEs.MY directory. Keep the original goal: quietly reveal real professional value through concrete work. Do not turn the site into an SME teaching account, template library, service funnel or revived directory.
