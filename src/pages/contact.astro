@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<Layout title="联系 | SMEs.MY" description="联系 SMEs.MY 与 Wei Nee。">
+  <Header />
+  <main id="main-content" class="app-layout py-14 sm:py-20">
+    <p class="text-accent text-sm font-semibold">CONTACT</p>
+    <h1 class="editorial-title mt-3 text-4xl font-semibold sm:text-5xl">
+      联系
+    </h1>
+    <p class="text-muted-foreground mt-6 max-w-xl text-lg leading-8">
+      有具体的工作或合作想聊，可以 email 我：
+      <a
+        class="text-foreground underline underline-offset-4"
+        href="mailto:weineetan@smes.com.my">weineetan@smes.com.my</a
+      >。
+    </p>
+  </main>
+  <Footer />
+</Layout>

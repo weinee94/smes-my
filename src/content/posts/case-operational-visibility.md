@@ -5,7 +5,7 @@ pubDatetime: 2026-08-13T09:00:00+08:00
 eventPeriod: "2026 年 7 月 13 日至 8 月 3 日"
 featured: true
 tags: ["案例", "商业运营", "流程"]
-draft: false
+draft: true
 ---
 
 ## 情境

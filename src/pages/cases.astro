@@ -13,7 +13,7 @@ const cases = getSortedPosts(await getCollection("posts")).filter(post =>
 
 <Layout
   title="实战案例 | SMEs.MY"
-  description="经过匿名化处理的商业运营、流程与执行案例。"
+  description="几个可以公开的工作记录。名字和敏感资料已经拿掉。"
 >
   <Header />
   <main id="main-content" class="app-layout py-14 sm:py-20">
@@ -22,8 +22,7 @@ const cases = getSortedPosts(await getCollection("posts")).filter(post =>
       实战案例
     </h1>
     <p class="text-muted-foreground mt-5 max-w-2xl text-lg leading-8">
-      不是职位描述，而是 Problem → Observation → Decision → System → Execution →
-      Learning。
+      几个可以公开的工作记录。名字和敏感资料已经拿掉。
     </p>
     <ul class="mt-10 grid gap-x-12 sm:grid-cols-2">
       {cases.map(post => <Card {...post} />)}

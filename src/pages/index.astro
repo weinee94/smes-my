@@ -17,71 +17,18 @@ const notes = posts.filter(post => post.data.tags.includes("工作笔记"));
 <Layout>
   <Header />
   <main id="main-content" class="app-layout">
-    <section
-      class="border-border grid gap-10 border-b py-14 sm:grid-cols-[1.4fr_0.6fr] sm:py-24"
-    >
-      <div>
-        <p
-          class="text-accent mb-5 text-sm font-semibold tracking-[0.16em] uppercase"
-        >
-          Malaysia Small Business Operating Lab
-        </p>
-        <h1
-          class="editorial-title max-w-4xl text-4xl leading-tight font-semibold sm:text-6xl sm:leading-[1.15]"
-        >
-          把散乱的生意资料、流程和行动，整理成可以真正使用的系统。
-        </h1>
-        <p class="text-muted-foreground mt-7 max-w-2xl text-lg leading-8">
-          SMEs.MY 是一个关于小生意怎样减少混乱、建立
-          visibility，并把商业活动推进到真实执行的独立空间。
-        </p>
-      </div>
-      <aside class="border-accent self-end border-l-2 pl-5 text-sm leading-7">
-        <p class="text-accent font-semibold">由 Wei Nee 主理</p>
-        <p>Commercial × Business Operations</p>
-        <a
-          class="mt-3 inline-block underline underline-offset-4"
-          href={getRelativeLocaleUrl(locale, "weineetan")}>认识主理人 →</a
-        >
-      </aside>
-    </section>
-
     <section class="border-border border-b py-14 sm:py-20">
-      <p class="text-accent text-sm font-semibold">WHAT WE LOOK AT</p>
-      <h2
-        class="editorial-title mt-2 max-w-3xl text-3xl font-semibold sm:text-4xl"
+      <p class="text-accent text-sm font-semibold tracking-[0.14em] uppercase">
+        SMEs.MY
+      </p>
+      <h1
+        class="editorial-title mt-4 max-w-3xl text-4xl leading-[1.2] font-semibold sm:text-5xl"
       >
-        小团队的问题，很多时候不是不够努力，而是信息、责任和下一步没有被整理清楚。
-      </h2>
-      <div class="mt-10 grid gap-8 sm:grid-cols-3">
-        <article>
-          <span class="text-muted-foreground text-sm">01</span><h3
-            class="mt-3 text-xl font-semibold"
-          >
-            商业运营
-          </h3><p class="text-muted-foreground mt-2 leading-7">
-            一盘生意怎样从询问、判断、报价走到交付和跟进。
-          </p>
-        </article>
-        <article>
-          <span class="text-muted-foreground text-sm">02</span><h3
-            class="mt-3 text-xl font-semibold"
-          >
-            系统与流程
-          </h3><p class="text-muted-foreground mt-2 leading-7">
-            怎样减少依赖记忆，让状态、责任与决策变得可见。
-          </p>
-        </article>
-        <article>
-          <span class="text-muted-foreground text-sm">03</span><h3
-            class="mt-3 text-xl font-semibold"
-          >
-            Execution
-          </h3><p class="text-muted-foreground mt-2 leading-7">
-            不只产出文件，而是让下一步有人接、事情真的继续走。
-          </p>
-        </article>
-      </div>
+        把乱的东西整理清楚，让事情继续走。
+      </h1>
+      <p class="text-muted-foreground mt-6 max-w-2xl text-lg leading-8">
+        写的都是真实发生过的事：钱混在一个数字里算不清楚的时候；几个工互相等、排不下去的时候；一个网站做得出来、却决定不做的时候。
+      </p>
     </section>
 
     <section class="border-border border-b py-14 sm:py-20">
@@ -99,7 +46,7 @@ const notes = posts.filter(post => post.data.tags.includes("工作笔记"));
         >
       </div>
       <ul class="grid gap-x-10 sm:grid-cols-2">
-        {notes.slice(0, 4).map(post => <Card variant="h3" {...post} />)}
+        {notes.slice(0, 3).map(post => <Card variant="h3" {...post} />)}
       </ul>
     </section>
 
@@ -122,34 +69,26 @@ const notes = posts.filter(post => post.data.tags.includes("工作笔记"));
       </ul>
     </section>
 
-    <section class="grid gap-10 py-14 sm:grid-cols-2 sm:py-20">
+    <section
+      class="grid gap-8 py-12 sm:grid-cols-[1fr_auto] sm:items-end sm:py-16"
+    >
       <div>
-        <p class="text-accent text-sm font-semibold">LAB</p><h2
-          class="editorial-title mt-2 text-3xl font-semibold"
+        <p class="text-accent text-sm font-semibold">ABOUT</p>
+        <p
+          class="editorial-title mt-3 max-w-2xl text-2xl leading-9 font-semibold"
         >
-          实验室
-        </h2>
-        <p class="text-muted-foreground mt-4 max-w-md leading-7">
-          只记录从真实观察和重复问题长出来的实验。没有 demand
-          evidence，就不会包装成产品。
+          我是 Wei Nee。在 Johor Bahru 工作，做过 Sales &
+          Marketing，也跟过项目、客户和 vendor。
         </p>
-        <a
-          class="mt-5 inline-block underline underline-offset-4"
-          href={getRelativeLocaleUrl(locale, "lab")}>查看目前实验 →</a
-        >
       </div>
-      <div>
-        <p class="text-accent text-sm font-semibold">NOW</p><h2
-          class="editorial-title mt-2 text-3xl font-semibold"
-        >
-          现在关注什么
-        </h2>
-        <p class="text-muted-foreground mt-4 max-w-md leading-7">
-          记录 SMEs.MY 与 Wei Nee 眼下真正投入时间的方向，不用宏大目标填满页面。
-        </p>
+      <div class="flex gap-5 text-sm">
         <a
-          class="mt-5 inline-block underline underline-offset-4"
-          href={getRelativeLocaleUrl(locale, "now")}>查看 Now →</a
+          class="underline underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "weineetan")}>关于</a
+        >
+        <a
+          class="underline underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "contact")}>联系</a
         >
       </div>
     </section>

@@ -1,35 +1,16 @@
 ---
 title: "关于 Wei Nee"
-description: "Wei Nee 的工作方向、方法与专业关注。"
+description: "Wei Nee 的一些工作经历，以及为什么留下这些记录。"
 ---
 
-我反复在做的一件事，是看懂一盘工作怎样运作，再把零散信息、责任与下一步整理清楚。
+我叫 Wei Nee，在 Johor Bahru 工作。做过 Sales & Marketing，也跟过项目、客户和 vendor。
 
-我的经验横跨 Sales & Marketing 执行、商业协调、项目协调、装修相关工作与个人项目。产业会变，但关注的问题相似：为什么大家明明都很忙，事情还是会漏、会等、会不断重新解释？
+工作里碰到的事情很杂。几个工互相等，项目排不下去；钱都有记录，临时问还剩多少时，我还是要回去找；网站已经做出来了，最后还是决定不做。
 
-## 我关注的工作
+有一个装修项目，我其实有准备 dashboard。屋主是老一辈的，还是习惯直接问我。我自己真的想不起的时候，就回去 dashboard track，不猜。
 
-- Business Operations
-- Commercial Coordination
-- Business Development
-- Project Coordination
-- Client & Stakeholder Management
-- Process / System Improvement
-- Execution Planning
-- Workflow Design
+后来整理项目的钱，我把客户还要付的、直接付给 vendor 的、公司成本和个人代付分开。不是因为数字很多，是因为它们本来就在回答不同的问题。
 
-## How I Work
+以前 SMEs.MY 做成过一个 directory，有分类、profile、地区页面和申请流程。东西做得出来，但我回答不了谁会一直用，资料以后要怎样顾，所以关了。
 
-- 先弄清问题，再增加工具。
-- 先建立 visibility，再增加 complexity。
-- 区分 activity 与 ownership。
-- 关注 business outcome，而不是单纯 output。
-- 把决策记录下来，减少执行依赖记忆。
-
-我不会把协作经验包装成超出事实的职位权力。这里的案例经过匿名化，只保留能说明判断、结构与执行的部分。
-
-## 为什么建立 SMEs.MY
-
-SMEs.MY 是一个长期经营的独立空间。它从真实工作与商业观察开始，慢慢形成 insight、case 和实验；只有出现重复问题与真实需求以后，才进一步发展产品或服务。
-
-它也是我的长期 professional proof：不靠头衔说明能力，而是让方法、判断和做过的事情持续留下来。
+现在我把可以公开的事情写下来。记得的就写，记不清的就回去找记录。没有记录的，不补。

@@ -5,7 +5,7 @@ pubDatetime: 2026-08-13T09:00:00+08:00
 eventPeriod: "2026 年 8 月上旬"
 featured: true
 tags: ["案例", "商业运营", "项目协调"]
-draft: false
+draft: true
 ---
 
 ## 情境

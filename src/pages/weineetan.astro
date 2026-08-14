@@ -3,38 +3,34 @@ import { getEntry, render } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import config from "@/config";
 
 const about = await getEntry("pages", "about");
 if (!about) throw new Error("Missing about content");
 const { Content } = await render(about);
+const locale = Astro.currentLocale ?? config.site.lang;
 ---
 
 <Layout
-  title="Wei Nee | SMEs.MY"
-  description="Wei Nee — Commercial × Business Operations; Business Operator / System Builder。"
+  title="关于 | SMEs.MY"
+  description="Wei Nee 的一些工作经历，以及为什么留下这些记录。"
 >
   <Header />
   <main id="main-content" class="app-layout py-14 sm:py-20">
-    <p class="text-accent text-sm font-semibold">
-      COMMERCIAL × BUSINESS OPERATIONS
-    </p>
-    <h1 class="editorial-title mt-2 text-4xl font-semibold sm:text-6xl">
-      Wei Nee
+    <p class="text-accent text-sm font-semibold">ABOUT</p>
+    <h1 class="editorial-title mt-3 text-4xl font-semibold sm:text-5xl">
+      关于
     </h1>
-    <p class="text-muted-foreground mt-5 max-w-2xl text-xl leading-8">
-      Business Operator / System Builder
+    <article class="app-prose mt-10 max-w-3xl"><Content /></article>
+    <p
+      class="border-border text-muted-foreground mt-12 border-t pt-8 text-sm leading-7"
+    >
+      Wei Nee · Johor Bahru · <a
+        class="text-accent underline underline-offset-4"
+        href={getRelativeLocaleUrl(locale, "contact")}>联系</a
+      >
     </p>
-    <article class="app-prose mt-12 max-w-3xl"><Content /></article>
-    <section class="border-border mt-14 border-t pt-10">
-      <p class="text-accent text-sm font-semibold">CONTACT</p>
-      <h2 class="editorial-title mt-2 text-3xl font-semibold">Contact</h2>
-      <p class="text-muted-foreground mt-4 leading-7">
-        专业合作或工作机会，可电邮 <a
-          class="text-accent underline underline-offset-4"
-          href="mailto:weineetan@smes.com.my">weineetan@smes.com.my</a
-        >。
-      </p>
-    </section>
   </main>
   <Footer />
 </Layout>

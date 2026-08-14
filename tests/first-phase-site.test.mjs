@@ -11,36 +11,46 @@ const postFiles = () =>
     .filter(name => name.endsWith(".md"))
     .map(name => `src/content/posts/${name}`);
 
-test("SMEs.MY is the platform-first homepage", () => {
+test("SMEs.MY is a quiet evidence-first homepage", () => {
   const home = read("src/pages/index.astro");
   assert.match(home, /SMEs\.MY/);
-  assert.match(home, /由 Wei Nee 主理/);
-  assert.match(home, /把散乱的生意资料[、，]流程和行动/);
+  assert.match(home, /把乱的东西整理清楚/);
+  assert.match(home, /真实发生过的事/);
   assert.match(home, /经营笔记/);
   assert.match(home, /实战案例/);
-  assert.match(home, /实验室/);
-  assert.doesNotMatch(home, /我是 Wei Nee/);
+  assert.match(home, /notes\.slice\(0, 3\)/);
+  assert.match(home, /cases\.slice\(0, 3\)/);
+  assert.doesNotMatch(home, /由 Wei Nee 主理|Business Operator|Commercial × Business Operations|实验室/);
 });
 
-test("Wei Nee has one stable professional route", () => {
+test("About keeps one stable route without a personal-brand hero", () => {
   assert.equal(existsSync(join(root, "src/pages/weineetan.astro")), true);
   const page = `${read("src/pages/weineetan.astro")}\n${read("src/content/pages/about.md")}`;
-  assert.match(page, /Commercial × Business Operations/);
-  assert.match(page, /Business Operator \/ System Builder/);
-  assert.match(page, /How I Work/);
+  assert.match(page, /关于/);
+  assert.match(page, /dashboard/);
+  assert.match(page, /directory/);
+  assert.doesNotMatch(page, /How I Work|visionary|guru|Head of Department/i);
 });
 
-test("first-phase information architecture exists", () => {
+test("primary information architecture is notes, cases, about, and contact", () => {
   for (const path of [
     "src/pages/index.astro",
     "src/pages/posts/[...page].astro",
     "src/pages/cases.astro",
-    "src/pages/lab.astro",
     "src/pages/weineetan.astro",
-    "src/pages/now.astro",
+    "src/pages/contact.astro",
   ]) {
     assert.equal(existsSync(join(root, path)), true, `${path} should exist`);
   }
+  assert.equal(existsSync(join(root, "src/pages/lab.astro")), false);
+
+  const header = read("src/components/Header.astro");
+  for (const label of ["首页", "经营笔记", "案例", "关于", "联系"]) {
+    assert.match(header, new RegExp(`>${label}<`));
+  }
+  const menuButton = header.match(/<button[\s\S]*?id="menu-btn"[\s\S]*?<\/button>/)?.[0] ?? "";
+  assert.doesNotMatch(menuButton, /<li>/);
+  assert.doesNotMatch(header, /实验室|由 Wei Nee 主理/);
 });
 
 test("retired directory and sensitive employment language stay absent", () => {
@@ -81,7 +91,7 @@ test("public posts separate event dates from publication timestamps", () => {
 test("public contact uses Wei Nee's SMEs.MY mailbox", () => {
   const bundle = [
     "src/pages/weineetan.astro",
-    "src/content/pages/now.md",
+    "src/pages/contact.astro",
     "src/pages/index.astro",
   ].map(read).join("\n");
   assert.match(bundle, /weineetan@smes\.com\.my/);
@@ -117,4 +127,50 @@ test("the first public set favors distinct experience lanes over duplicate angle
   ]) {
     assert.equal(existsSync(join(root, path)), false, `${path} should be consolidated`);
   }
+});
+
+test("the site follows Wei Nee's approved voice guide", () => {
+  const voice = read("docs/SMES_MY_VOICE.md");
+  assert.match(voice, /马来西亚华语/);
+  assert.match(voice, /只写真实发生过的事/);
+  assert.match(voice, /不总结人生道理/);
+
+  const publicCopy = [
+    "site.config.ts",
+    "src/pages/index.astro",
+    "src/pages/cases.astro",
+    "src/pages/contact.astro",
+    "src/pages/weineetan.astro",
+    "src/components/Footer.astro",
+    "src/content/pages/about.md",
+  ].map(read).join("\n");
+
+  assert.doesNotMatch(
+    publicCopy,
+    /visibility|ownership|business outcome|professional proof|可执行的结构|判断过程|不是完整履历/i
+  );
+});
+
+test("only the four concrete pieces remain public", () => {
+  for (const path of [
+    "src/content/posts/case-operational-visibility.md",
+    "src/content/posts/case-readiness-after-attention.md",
+    "src/content/posts/note-clear-states.md",
+    "src/content/posts/note-service-is-not-the-asset.md",
+  ]) {
+    assert.match(read(path), /^draft: true$/m, `${path} should stay hidden`);
+  }
+
+  const retained = [
+    "src/content/posts/note-receivable-is-not-profit.md",
+    "src/content/posts/note-one-authoritative-record.md",
+    "src/content/posts/case-project-critical-path.md",
+    "src/content/posts/case-smes-my-retiring-the-directory.md",
+  ].map(read).join("\n");
+
+  assert.match(retained, /整理尾款的时候/);
+  assert.match(retained, /几个工互相等/);
+  assert.match(retained, /directory 已经做出来/);
+  assert.match(retained, /一时也不知道该看哪一份/);
+  assert.doesNotMatch(retained, /这个案例证明什么|结果与学习|可迁移的能力|我的价值不在于/);
 });
