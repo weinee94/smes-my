@@ -4,6 +4,7 @@ description: "旧 checklist、改过的总数、付款截图和按空间分的�
 pubDatetime: 2026-08-13T12:30:00+08:00
 eventPeriod: "2026 年 5 月 26 日至 7 月 5 日"
 tags: ["工作笔记", "系统笔记", "项目运营", "系统与流程"]
+lane: "系统"
 draft: false
 ---
 

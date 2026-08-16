@@ -8,29 +8,32 @@ export const BLOG_PATH = "src/content/posts";
 const posts = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${BLOG_PATH}` }),
   schema: ({ image }) =>
-    z.object({
-      author: z.string().default(config.site.author),
-      pubDatetime: z.date(),
-      modDatetime: z.date().optional().nullable(),
-      eventDate: z.date().optional(),
-      eventPeriod: z.string().min(1).optional(),
-      title: z.string(),
-      featured: z.boolean().optional(),
-      draft: z.boolean().optional(),
-      tags: z.array(z.string()).default(["others"]),
-      ogImage: image().or(z.string()).optional(),
-      description: z.string(),
-      canonicalURL: z.string().optional(),
-      hideEditPost: z.boolean().optional(),
-      timezone: z.string().optional(),
-    }).superRefine((data, ctx) => {
-      if (Boolean(data.eventDate) === Boolean(data.eventPeriod)) {
-        ctx.addIssue({
-          code: "custom",
-          message: "Provide exactly one of eventDate or eventPeriod",
-        });
-      }
-    }),
+    z
+      .object({
+        author: z.string().default(config.site.author),
+        pubDatetime: z.date(),
+        modDatetime: z.date().optional().nullable(),
+        eventDate: z.date().optional(),
+        eventPeriod: z.string().min(1).optional(),
+        title: z.string(),
+        featured: z.boolean().optional(),
+        draft: z.boolean().optional(),
+        tags: z.array(z.string()).default(["others"]),
+        lane: z.enum(["现场", "系统", "判断"]),
+        ogImage: image().or(z.string()).optional(),
+        description: z.string(),
+        canonicalURL: z.string().optional(),
+        hideEditPost: z.boolean().optional(),
+        timezone: z.string().optional(),
+      })
+      .superRefine((data, ctx) => {
+        if (Boolean(data.eventDate) === Boolean(data.eventPeriod)) {
+          ctx.addIssue({
+            code: "custom",
+            message: "Provide exactly one of eventDate or eventPeriod",
+          });
+        }
+      }),
 });
 
 const pages = defineCollection({

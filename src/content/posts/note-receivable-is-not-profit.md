@@ -4,6 +4,7 @@ description: "客户还要付的、要直接付给 vendor 的、公司成本和�
 pubDatetime: 2026-08-13T12:10:00+08:00
 eventPeriod: "2026 年 6 月 20 日至 7 月 8 日"
 tags: ["工作笔记", "系统笔记", "项目运营", "商业判断"]
+lane: "系统"
 draft: false
 ---
 

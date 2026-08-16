@@ -4,6 +4,7 @@ description: "Status 只写 Waiting 或 Doing 还不够，我要知道下一步�
 pubDatetime: 2026-08-16T10:20:00+08:00
 eventPeriod: "2026 年 8 月"
 tags: ["工作笔记", "系统笔记", "商业运营", "系统与流程"]
+lane: "系统"
 ---
 
 8 月的 weekly task view 里，有一项 F&B promotion。下一步不是先做 poster，是先等 product brief：卖什么、给谁、offer 是什么、call-to-action 要放什么。

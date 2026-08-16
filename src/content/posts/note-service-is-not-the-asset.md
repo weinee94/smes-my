@@ -4,6 +4,7 @@ description: "从高接触统筹转向可持续产品时，先分清哪些判断
 pubDatetime: 2026-08-13T12:40:00+08:00
 eventPeriod: "2026 年 7 月 6 日至 7 月 16 日"
 tags: ["工作笔记", "商业判断", "产品实验"]
+lane: "判断"
 draft: true
 ---
 

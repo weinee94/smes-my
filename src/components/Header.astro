@@ -31,10 +31,17 @@ const isActive = (path: string) =>
   <div
     class="border-border flex items-center justify-between border-b py-5 sm:py-7"
   >
-    <a href={getRelativeLocaleUrl(locale, "")} class="flex items-baseline">
+    <a
+      href={getRelativeLocaleUrl(locale, "")}
+      class="group flex items-baseline gap-3"
+    >
       <span
         class="editorial-title text-2xl font-semibold tracking-tight sm:text-3xl"
         >{site.title}</span
+      >
+      <span
+        class="text-muted-foreground hidden text-xs tracking-[0.12em] sm:inline"
+        >WORKING NOTES</span
       >
     </a>
     <nav id="nav-menu" class="flex items-center">
@@ -72,18 +79,7 @@ const isActive = (path: string) =>
                 "text-accent underline underline-offset-8": isActive("/posts"),
               },
             ]}
-            href={getRelativeLocaleUrl(locale, "posts")}>经营笔记</a
-          >
-        </li>
-        <li>
-          <a
-            class:list={[
-              "block px-2 py-2",
-              {
-                "text-accent underline underline-offset-8": isActive("/cases"),
-              },
-            ]}
-            href={getRelativeLocaleUrl(locale, "cases")}>案例</a
+            href={getRelativeLocaleUrl(locale, "posts")}>记录</a
           >
         </li>
         <li>
@@ -95,7 +91,7 @@ const isActive = (path: string) =>
                   isActive("/weineetan"),
               },
             ]}
-            href={getRelativeLocaleUrl(locale, "weineetan")}>关于</a
+            href={getRelativeLocaleUrl(locale, "weineetan")}>Wei Nee</a
           >
         </li>
         <li>

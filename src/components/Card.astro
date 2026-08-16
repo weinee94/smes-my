@@ -6,36 +6,39 @@ import Datetime from "./Datetime.astro";
 
 type Props = {
   variant?: "h2" | "h3";
+  showLane?: boolean;
 } & CollectionEntry<"posts">;
 
-const { variant: Heading = "h2", id, data, filePath } = Astro.props;
+const {
+  variant: Heading = "h2",
+  showLane = true,
+  id,
+  data,
+  filePath,
+} = Astro.props;
 
-const { title, description, ...props } = data;
-const contentLane = data.tags.find(tag =>
-  ["经营现场", "系统笔记", "案例拆解", "职业观察", "实验室"].includes(tag)
-);
+const { title, description, lane, ...props } = data;
 ---
 
-<li class="my-6">
-  {
-    contentLane && (
-      <p class="text-muted-foreground mb-2 text-xs font-semibold tracking-[0.12em]">
-        {contentLane}
-      </p>
-    )
-  }
+<li class="record-card border-border border-t py-6 sm:py-7">
+  <div class="mb-3 flex items-center justify-between gap-4">
+    {showLane ? <p class="lane-label">{lane}</p> : <span />}
+    <Datetime {...props} />
+  </div>
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
     class:list={[
-      "text-accent inline-block text-lg font-medium",
-      "decoration-dashed underline-offset-4 hover:underline",
+      "group inline-block",
+      "decoration-dashed underline-offset-4",
       "focus-visible:no-underline focus-visible:underline-offset-0",
     ]}
   >
-    <Heading transition:name={toTransitionName(id)}>
+    <Heading
+      class="editorial-title text-foreground group-hover:text-accent text-xl leading-8 font-semibold transition-colors sm:text-2xl"
+      transition:name={toTransitionName(id)}
+    >
       {title}
     </Heading>
   </a>
-  <Datetime {...props} />
-  <p>{description}</p>
+  <p class="text-muted-foreground mt-3 max-w-2xl leading-7">{description}</p>
 </li>

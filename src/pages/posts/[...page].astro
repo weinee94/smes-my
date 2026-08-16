@@ -3,41 +3,79 @@ import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
-import Breadcrumb from "@/components/Breadcrumb.astro";
-import Main from "@/components/Main.astro";
 import Card from "@/components/Card.astro";
 import Footer from "@/components/Footer.astro";
-import Pagination from "@/components/Pagination.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
-import { useTranslations } from "@/i18n";
 import config from "@/config";
 
-export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getCollection(
-    "posts",
-    ({ data }) => !data.draft && data.tags.includes("工作笔记")
-  );
-  return paginate(getSortedPosts(posts), { pageSize: config.posts.perPage });
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  return [
+    { params: { page: undefined }, props: { posts: getSortedPosts(posts) } },
+  ];
 }) satisfies GetStaticPaths;
 
-const { page } = Astro.props;
-
-const locale = Astro.currentLocale ?? config.site.lang;
-const t = useTranslations(locale);
+const { posts } = Astro.props;
+const lanes = [
+  {
+    name: "现场",
+    desc: "事情在哪里发生、牵涉哪些人，以及当时有哪些限制。",
+  },
+  {
+    name: "系统",
+    desc: "资料、owner、状态和下一步，怎样放进一个可以继续维护的结构。",
+  },
+  {
+    name: "判断",
+    desc: "实际做过的取舍，以及哪些数字或结论还不能写得太早。",
+  },
+] as const;
 ---
 
-<Layout title={`${t.pages.postsTitle} | ${config.site.title}`}>
+<Layout
+  title={`记录 | ${config.site.title}`}
+  description="来自真实商业现场的工作记录，按现场、系统与判断整理。"
+>
   <Header />
+  <main id="main-content" class="app-layout py-14 sm:py-20">
+    <section class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
+      <div>
+        <p class="eyebrow">RECORDS</p>
+        <h1 class="editorial-title mt-3 text-4xl font-semibold sm:text-5xl">
+          记录
+        </h1>
+      </div>
+      <p class="text-muted-foreground self-end text-lg leading-8">
+        不是每件做过的事都放进来。这里留下有具体背景、存在实际 business
+        problem、做过判断或取舍，而且之后仍然值得回看的记录。
+      </p>
+    </section>
 
-  <Breadcrumb />
-
-  <Main pageTitle={t.pages.postsTitle} pageDesc={t.pages.postsDesc}>
-    <ul>
-      {page.data.map(data => <Card {...data} />)}
-    </ul>
-  </Main>
-
-  <Pagination {page} />
-
-  <Footer noMarginTop={page.lastPage > 1} />
+    <div class="mt-14 sm:mt-20">
+      {
+        lanes.map(lane => {
+          const lanePosts = posts.filter(post => post.data.lane === lane.name);
+          return (
+            <section
+              id={lane.name}
+              class="border-border grid gap-8 border-t py-12 lg:grid-cols-[0.42fr_1fr] lg:gap-16"
+            >
+              <div>
+                <p class="lane-label">{lane.name}</p>
+                <p class="text-muted-foreground mt-3 max-w-xs text-sm leading-7">
+                  {lane.desc}
+                </p>
+              </div>
+              <ul>
+                {lanePosts.map(post => (
+                  <Card showLane={false} {...post} />
+                ))}
+              </ul>
+            </section>
+          );
+        })
+      }
+    </div>
+  </main>
+  <Footer />
 </Layout>

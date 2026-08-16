@@ -23,7 +23,7 @@
 }
 
 @utility max-w-app {
-  @apply max-w-5xl;
+  @apply max-w-6xl;
 }
 
 @utility app-layout {
@@ -41,4 +41,16 @@
 .editorial-title {
   font-family: "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
   text-wrap: balance;
+}
+
+.lane-label {
+  @apply text-accent text-xs font-semibold tracking-[0.18em];
+}
+
+.eyebrow {
+  @apply text-accent text-xs font-semibold tracking-[0.16em] uppercase;
+}
+
+.record-card time {
+  @apply text-muted-foreground m-0 text-xs;
 }

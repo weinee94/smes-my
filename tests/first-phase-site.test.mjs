@@ -11,15 +11,15 @@ const postFiles = () =>
     .filter(name => name.endsWith(".md"))
     .map(name => `src/content/posts/${name}`);
 
-test("SMEs.MY is a quiet evidence-first homepage", () => {
+test("SMEs.MY homepage leads with representative work instead of a personal-brand pitch", () => {
   const home = read("src/pages/index.astro");
-  assert.match(home, /SMEs\.MY/);
-  assert.match(home, /把乱的东西整理清楚/);
-  assert.match(home, /真实发生过的事/);
-  assert.match(home, /经营笔记/);
-  assert.match(home, /实战案例/);
-  assert.match(home, /notes\.slice\(0, 4\)/);
-  assert.match(home, /cases\.slice\(0, 4\)/);
+  assert.match(home, /商业现场很少按部门分开/);
+  assert.match(home, /case-hosted-stay-needs-operations/);
+  assert.match(home, /note-task-is-waiting-for-whom/);
+  assert.match(home, /note-confirmed-is-not-final-revenue/);
+  assert.match(home, /现场/);
+  assert.match(home, /系统/);
+  assert.match(home, /判断/);
   assert.doesNotMatch(home, /由 Wei Nee 主理|Business Operator|Commercial × Business Operations|实验室/);
 });
 
@@ -27,16 +27,16 @@ test("About keeps one stable route without a personal-brand hero", () => {
   assert.equal(existsSync(join(root, "src/pages/weineetan.astro")), true);
   const page = `${read("src/pages/weineetan.astro")}\n${read("src/content/pages/about.md")}`;
   assert.match(page, /关于/);
-  assert.match(page, /dashboard/);
+  assert.match(page, /部门交界/);
   assert.match(page, /directory/);
+  assert.match(page, /Hotel 是目前最具体的现场，但不是这里要建立的职业标签/);
   assert.doesNotMatch(page, /How I Work|visionary|guru|Head of Department/i);
 });
 
-test("primary information architecture is notes, cases, about, and contact", () => {
+test("primary information architecture is records, Wei Nee, and contact", () => {
   for (const path of [
     "src/pages/index.astro",
     "src/pages/posts/[...page].astro",
-    "src/pages/cases.astro",
     "src/pages/weineetan.astro",
     "src/pages/contact.astro",
   ]) {
@@ -45,12 +45,20 @@ test("primary information architecture is notes, cases, about, and contact", () 
   assert.equal(existsSync(join(root, "src/pages/lab.astro")), false);
 
   const header = read("src/components/Header.astro");
-  for (const label of ["首页", "经营笔记", "案例", "关于", "联系"]) {
+  for (const label of ["首页", "记录", "Wei Nee", "联系"]) {
     assert.match(header, new RegExp(`>${label}<`));
   }
+  assert.doesNotMatch(header, />案例<|>经营笔记</);
   const menuButton = header.match(/<button[\s\S]*?id="menu-btn"[\s\S]*?<\/button>/)?.[0] ?? "";
   assert.doesNotMatch(menuButton, /<li>/);
   assert.doesNotMatch(header, /实验室|由 Wei Nee 主理/);
+});
+
+test("every record has one editorial lane", () => {
+  for (const path of postFiles()) {
+    const post = read(path);
+    assert.match(post, /^lane: "(现场|系统|判断)"$/m, `${path} needs one editorial lane`);
+  }
 });
 
 test("retired directory and sensitive employment language stay absent", () => {

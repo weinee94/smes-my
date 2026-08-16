@@ -4,6 +4,7 @@ description: "Confirmed date、event date、quoted amount 和 final figure，本
 pubDatetime: 2026-08-16T10:25:00+08:00
 eventPeriod: "2026 年 7 月至 8 月"
 tags: ["工作笔记", "经营现场", "商业判断", "销售与运营"]
+lane: "判断"
 ---
 
 整理 event sales 的时候，我把 Sales Month 和 Event Month 分开。Sales Month 看 Confirmed Date；Event Month 看 Event Start Date。这个月 confirm 的 event，可能过几个月才做。

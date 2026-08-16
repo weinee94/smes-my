@@ -5,6 +5,7 @@ pubDatetime: 2026-08-13T12:00:00+08:00
 eventPeriod: "2026 年 6 月 3 日至 6 月 20 日"
 featured: true
 tags: ["案例", "案例拆解", "项目运营", "项目协调"]
+lane: "现场"
 draft: false
 ---
 

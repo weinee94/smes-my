@@ -4,6 +4,7 @@ description: "Room sales、F&B 和 content 都在走时，management view 只留
 pubDatetime: 2026-08-16T10:15:00+08:00
 eventPeriod: "2026 年 8 月"
 tags: ["工作笔记", "经营现场", "商业判断", "商业运营"]
+lane: "判断"
 ---
 
 8 月的工作不只三件。Event、room sales、F&B、content、内部 follow-up 都同时在走。

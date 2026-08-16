@@ -119,6 +119,24 @@
     @apply bg-(--shiki-dark-bg) text-(--shiki-dark) [&_span]:text-(--shiki-dark);
   }
 
+  .editorial-prose {
+    @apply prose-lg leading-8;
+
+    p {
+      @apply my-6;
+    }
+
+    h2 {
+      @apply mt-12 text-2xl not-italic;
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+    }
+
+    h3 {
+      @apply mt-10 text-xl not-italic;
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+    }
+  }
+
   /* Styles for Shiki transformers */
   /* https://shiki.style/packages/transformers */
   .astro-code {

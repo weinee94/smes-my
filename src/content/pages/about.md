@@ -1,18 +1,27 @@
 ---
 title: "关于 Wei Nee"
-description: "Wei Nee 的一些工作经历，以及为什么留下这些记录。"
+description: "Wei Nee 的工作背景、处理问题的方式，以及 SMEs.MY 为什么留下这些记录。"
 ---
 
-我叫 Wei Nee，在 Johor Bahru 工作。现在的工作现场会同时碰到 event sales、campaign、room 和 F&B offer、客户、不同部门，还有 vendor。
+现在的工作现场在 hotel commercial team。日常会同时碰到 event sales、campaign、room 和 F&B offer、客户 enquiry、不同部门，以及外部 partner。Hotel 是目前最具体的现场，但不是这里要建立的职业标签。
 
-有些东西看起来是 marketing task，做起来却不是只有出 post。Creator 来酒店以前，要先确认房、approval、各边要交付什么；event confirmed 以后，也要分清楚是哪一个月 confirm、哪一天做、最后 revenue 和 costing 有没有回来。
+我比较常接手的，是已经有人在做、但信息还散着的事情。先确认现在有哪些记录、谁在等谁、哪些状态其实说的是不同阶段，再决定要不要加一张表或改一个 workflow。
 
-我把这些工作放进不同的 view。Management 看 risk 和需要决定的事；做 event 的人看 next action、owner 和 due date；sales 数字则分 confirm、delivery 和 final figure。不是所有东西都塞进同一个 status。
+例如 event confirmed 以后，我会分开看 confirmed date、event date、quoted amount 和 final figure；creator 到酒店以前，要对的不只有 post，也包括 approval、room readiness、现场交接和离店后的 publication record。
 
-有一个装修项目，我其实有准备 dashboard。屋主是老一辈的，还是习惯直接问我。我自己真的想不起的时候，就回去 dashboard track，不猜。
+过去做装修项目时，问题换成 vendor、付款、尺寸、安装次序和屋主沟通。工作环境不同，处理方式很接近：先找到会让后面几项都停住的部分，再把证据、owner 和 next action 放回同一个可以追踪的位置。
 
-后来整理项目的钱，我把客户还要付的、直接付给 vendor 的、公司成本和个人代付分开。不是因为数字很多，是因为它们本来就在回答不同的问题。
+## 这里为什么存在
 
-以前 SMEs.MY 做成过一个 directory，有分类、profile、地区页面和申请流程。东西做得出来，但我回答不了谁会一直用，资料以后要怎样顾，所以关了。
+很多判断完成以后，只留在 WhatsApp、spreadsheet、meeting 或个人记忆里。外面的人最后只看见职位名称，很难知道一个人实际怎样处理事情。
 
-现在我把可以公开的事情写下来。公司名、客户名、金额和内部资料不放。记得的就写，记不清的就回去找记录。没有记录的，不补。
+SMEs.MY 留下可以公开的部分。它不是公司案例库，也不是 hotel 教学站。公司名、客户名、同事姓名、金额和内部资料不会放进来；没有记录支持的结果，也不会补写。
+
+## 可以从哪里开始
+
+- [Creator 来住一晚以前，我先追的不是 post](/posts/case-hosted-stay-needs-operations/)：一次 marketing activity 怎样变成跨部门的现场准备。
+- [任务写进表里以后，我还会看它在等谁](/posts/note-task-is-waiting-for-whom/)：status 以外，怎样看真正的 blocker。
+- [Event confirmed 了，我还是不能把它当成这个月的 revenue](/posts/note-confirmed-is-not-final-revenue/)：为什么同一个 event 需要几套不同的日期和数字。
+- [几个工互相等的时候，我先排谁不能再等](/posts/case-project-critical-path/)：project coordination 里怎样处理前置条件。
+
+SMEs.MY 自己也在这套筛选里。旧 directory 虽然做得出来，但没有持续使用和维护依据，所以停掉。现在的网站只保留真实工作、系统和判断。

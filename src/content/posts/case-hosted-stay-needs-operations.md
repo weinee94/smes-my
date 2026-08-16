@@ -5,6 +5,7 @@ pubDatetime: 2026-08-16T10:30:00+08:00
 eventPeriod: "2026 年 8 月 7 日至 8 日"
 featured: true
 tags: ["案例", "经营现场", "案例拆解", "商业运营", "项目协调"]
+lane: "现场"
 ---
 
 8 月初，有一位 creator 到酒店住一晚，安排 room tour 和 review。Campaign 里要记的，不只是她几时来、post 去哪个平台。

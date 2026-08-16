@@ -5,6 +5,7 @@ pubDatetime: 2026-08-13T12:20:00+08:00
 eventDate: 2026-08-13T09:00:00+08:00
 featured: true
 tags: ["案例", "实验室", "案例拆解", "SMEs.MY", "商业判断"]
+lane: "判断"
 draft: false
 ---
 
