@@ -4,7 +4,7 @@ description: "网站有分类、profile、地区页面和申请流程，但我�
 pubDatetime: 2026-08-13T12:20:00+08:00
 eventDate: 2026-08-13T09:00:00+08:00
 featured: true
-tags: ["案例", "SMEs.MY", "商业判断"]
+tags: ["案例", "实验室", "案例拆解", "SMEs.MY", "商业判断"]
 draft: false
 ---
 
