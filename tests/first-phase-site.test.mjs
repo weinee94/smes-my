@@ -18,8 +18,8 @@ test("SMEs.MY is a quiet evidence-first homepage", () => {
   assert.match(home, /真实发生过的事/);
   assert.match(home, /经营笔记/);
   assert.match(home, /实战案例/);
-  assert.match(home, /notes\.slice\(0, 3\)/);
-  assert.match(home, /cases\.slice\(0, 3\)/);
+  assert.match(home, /notes\.slice\(0, 4\)/);
+  assert.match(home, /cases\.slice\(0, 4\)/);
   assert.doesNotMatch(home, /由 Wei Nee 主理|Business Operator|Commercial × Business Operations|实验室/);
 });
 
@@ -113,6 +113,45 @@ test("public evidence spans work, project operations, and SMEs.MY decisions", ()
   assert.doesNotMatch(posts, /A-34-07|D Elegance|Ms Low|Amelia|\bAlan\b|Urban Reno|ES Nice/i);
 });
 
+test("hotel work appears as anonymised commercial operations evidence", () => {
+  for (const path of [
+    "src/content/posts/case-hosted-stay-needs-operations.md",
+    "src/content/posts/note-confirmed-is-not-final-revenue.md",
+    "src/content/posts/note-task-is-waiting-for-whom.md",
+    "src/content/posts/note-three-active-priorities.md",
+  ]) {
+    const post = read(path);
+    assert.doesNotMatch(post, /^draft: true$/m);
+  }
+
+  const publicPosts = postFiles()
+    .map(read)
+    .filter(post => !/^draft: true$/m.test(post))
+    .join("\n");
+  assert.match(publicPosts, /creator/i);
+  assert.match(publicPosts, /Confirmed Date/);
+  assert.match(publicPosts, /Waiting For/);
+  assert.match(publicPosts, /经营现场/);
+  assert.match(publicPosts, /系统笔记/);
+  assert.match(publicPosts, /案例拆解/);
+  assert.match(publicPosts, /实验室/);
+  assert.doesNotMatch(
+    publicPosts,
+    /D Elegance|Politeknik|Ryo Wedding|Kim Hao|Teacher Nor|Elain ROM|AOEMM|KLK Refineries|Ms YZ|Amelia|Izzati|\bAlan\b/i
+  );
+});
+
+test("public writing avoids AI-drama turns of phrase", () => {
+  const publicPosts = postFiles()
+    .map(read)
+    .filter(post => !/^draft: true$/m.test(post))
+    .join("\n");
+  assert.doesNotMatch(
+    publicPosts,
+    /我以为.+后来才|真正的问题[，,]?从来都?不是|那一刻我(才)?意识到|这件事让我重新思考|很多人以为.+其实/
+  );
+});
+
 test("the first public set favors distinct experience lanes over duplicate angles", () => {
   for (const path of [
     "src/content/posts/note-one-authoritative-record.md",
@@ -151,7 +190,7 @@ test("the site follows Wei Nee's approved voice guide", () => {
   );
 });
 
-test("only the four concrete pieces remain public", () => {
+test("the four abstract drafts stay hidden while concrete pieces remain public", () => {
   for (const path of [
     "src/content/posts/case-operational-visibility.md",
     "src/content/posts/case-readiness-after-attention.md",
