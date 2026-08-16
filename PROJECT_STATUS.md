@@ -1,6 +1,6 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-08-14 Asia/Singapore
+Last updated: 2026-08-16 Asia/Singapore
 
 ## Authority
 
@@ -35,6 +35,8 @@ Provider listings, directories, supplier databases, claim flows, provider record
 - The evidence-led content update was deployed and verified on 2026-08-13. It adds separate event dates/periods, a private candidate inventory in the existing Obsidian Dashboard, and cross-experience public evidence from work, project operations, personal renovation records, product strategy, and SMEs.MY itself.
 - The Malaysian-Chinese voice rewrite was deployed and verified on 2026-08-14. Commit `9c2de46` updates the homepage and `/weineetan`, keeps four concrete public pieces, hides four abstract drafts, adds Contact, and removes the public Lab and Now routes.
 - Public contact email is `weineetan@smes.com.my`.
+- The 2026-08-16 content expansion adds four anonymised pieces grounded in current hotel work: a creator hosted stay, the separation of confirmation/delivery/final figures, task blockers, and the three-priority monthly view. The public framing stays Commercial × Business Operations; the employer, clients, names, amounts, and confidential figures remain absent.
+- Public cards now show a small evidence lane drawn from `经营现场`, `系统笔记`, `案例拆解`, and `实验室`. These are tags, not new filler sections or empty landing-page promises.
 
 ## Next Step
 
