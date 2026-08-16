@@ -11,9 +11,19 @@ type Props = {
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
 const { title, description, ...props } = data;
+const contentLane = data.tags.find(tag =>
+  ["经营现场", "系统笔记", "案例拆解", "职业观察", "实验室"].includes(tag)
+);
 ---
 
 <li class="my-6">
+  {
+    contentLane && (
+      <p class="text-muted-foreground mb-2 text-xs font-semibold tracking-[0.12em]">
+        {contentLane}
+      </p>
+    )
+  }
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
     class:list={[
