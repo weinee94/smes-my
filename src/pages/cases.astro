@@ -13,7 +13,7 @@ const cases = getSortedPosts(await getCollection("posts")).filter(post =>
 
 <Layout
   title="实战案例 | SMEs.MY"
-  description="几个可以公开的工作记录。名字和敏感资料已经拿掉。"
+  description="可以公开的工作记录。名字、金额和内部资料已经拿掉。"
 >
   <Header />
   <main id="main-content" class="app-layout py-14 sm:py-20">
@@ -22,7 +22,7 @@ const cases = getSortedPosts(await getCollection("posts")).filter(post =>
       实战案例
     </h1>
     <p class="text-muted-foreground mt-5 max-w-2xl text-lg leading-8">
-      几个可以公开的工作记录。名字和敏感资料已经拿掉。
+      这里放可以公开的工作记录。名字、金额和内部资料拿掉；事情走到哪里，就写到哪里。
     </p>
     <ul class="mt-10 grid gap-x-12 sm:grid-cols-2">
       {cases.map(post => <Card {...post} />)}
