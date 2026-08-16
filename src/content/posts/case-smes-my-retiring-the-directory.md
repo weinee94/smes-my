@@ -17,4 +17,4 @@ SMEs.MY 的 directory 已经做出来了。我放了分类、profile、地区页
 
 所以我把旧 directory 停掉。provider records、claim flow 和相关页面都不再放进现在的网站，也不再继续排进 roadmap。
 
-域名还是 SMEs.MY。现在先留下我真的做过、也有记录可以回去查的事情。新方向有没有用，还不知道。
+域名还是 SMEs.MY。旧页面停止更新，新的内容改成工作记录。这个方向有没有持续价值，之后再看。

@@ -25,9 +25,7 @@ const latest = posts.filter(post => !featured.includes(post)).slice(0, 5);
 <Layout>
   <Header />
   <main id="main-content" class="app-layout">
-    <section
-      class="grid gap-10 py-16 sm:py-24 lg:grid-cols-[1.35fr_0.65fr] lg:gap-20"
-    >
+    <section class="py-16 sm:py-24">
       <div>
         <p class="eyebrow">商业现场 · 系统 · 判断</p>
         <h1
@@ -42,11 +40,6 @@ const latest = posts.filter(post => !featured.includes(post)).slice(0, 5);
           到场前谁要接手，系统里还有哪件事在等人。这里记录这些实际发生的工作。
         </p>
       </div>
-      <aside class="border-border self-end border-t pt-5 lg:mb-1">
-        <p class="text-muted-foreground text-sm leading-7">
-          公司名、客户名、金额和内部资料不公开。事情还没有结果时，就只写到当时走到的位置。
-        </p>
-      </aside>
     </section>
 
     <section class="border-border border-t py-14 sm:py-20">

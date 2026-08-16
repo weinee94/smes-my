@@ -15,8 +15,6 @@ description: "Wei Nee 的工作背景、处理问题的方式，以及 SMEs.MY �
 
 很多判断完成以后，只留在 WhatsApp、spreadsheet、meeting 或个人记忆里。外面的人最后只看见职位名称，很难知道一个人实际怎样处理事情。
 
-SMEs.MY 留下可以公开的部分。它不是公司案例库，也不是 hotel 教学站。公司名、客户名、同事姓名、金额和内部资料不会放进来；没有记录支持的结果，也不会补写。
-
 ## 可以从哪里开始
 
 - [Creator 来住一晚以前，我先追的不是 post](/posts/case-hosted-stay-needs-operations/)：一次 marketing activity 怎样变成跨部门的现场准备。
@@ -24,4 +22,4 @@ SMEs.MY 留下可以公开的部分。它不是公司案例库，也不是 hotel
 - [Event confirmed 了，我还是不能把它当成这个月的 revenue](/posts/note-confirmed-is-not-final-revenue/)：为什么同一个 event 需要几套不同的日期和数字。
 - [几个工互相等的时候，我先排谁不能再等](/posts/case-project-critical-path/)：project coordination 里怎样处理前置条件。
 
-SMEs.MY 自己也在这套筛选里。旧 directory 虽然做得出来，但没有持续使用和维护依据，所以停掉。现在的网站只保留真实工作、系统和判断。
+SMEs.MY 以前做成过 directory。分类、profile、地区页面和申请流程都已经有了，但没有持续使用和维护依据，所以停掉。现在这个域名用来放工作、系统和判断的记录。

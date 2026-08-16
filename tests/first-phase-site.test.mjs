@@ -160,6 +160,24 @@ test("public writing avoids AI-drama turns of phrase", () => {
   );
 });
 
+test("internal editorial rules do not leak into reader-facing copy", () => {
+  const publicCopy = [
+    "src/pages/index.astro",
+    "src/pages/posts/[...page].astro",
+    "src/pages/cases.astro",
+    "src/pages/weineetan.astro",
+    "src/content/pages/about.md",
+    ...postFiles(),
+  ]
+    .map(read)
+    .join("\n");
+
+  assert.doesNotMatch(
+    publicCopy,
+    /公司名、客户名、金额和内部资料|名字、金额和内部资料|事情还没有结果时，就只写到|不是每件做过的事都放进来|这篇也不写成|这套筛选/
+  );
+});
+
 test("the first public set favors distinct experience lanes over duplicate angles", () => {
   for (const path of [
     "src/content/posts/note-one-authoritative-record.md",

@@ -12,6 +12,6 @@ lane: "现场"
 
 Stay confirmed 以后，我把 approval、room readiness、说好的 deliverables 和 owner 放在同一项。需要其他部门配合的，也先确认。人约到了，不代表现场已经 ready。
 
-离店也不代表事情结束。Publication link 还要存，reach、engagement 和 enquiries 也要回到 campaign record。当时这些还没全部回来，所以这篇也不写成一个已经有结果的 case。
+离店也不代表事情结束。Publication link 还要存，reach、engagement 和 enquiries 也要回到 campaign record。当时这些还没全部回来，campaign record 仍然停在 follow-up。
 
 我在表里追的是几个很实际的状态：人来了没有、房好了没有、说好的内容出了没有、之后有没有 enquiry。
