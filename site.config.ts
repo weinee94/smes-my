@@ -5,7 +5,7 @@ export default defineAstroPaperConfig({
     url: "https://smes.my/",
     title: "SMEs.MY",
     description:
-      "真实发生过的工作记录：钱怎样拆开算、几个工怎样排、做出来的网站为什么停。",
+      "真实工作记录：event、campaign、项目和系统实际怎样卡住、怎样继续走。",
     author: "Wei Nee",
     profile: "https://smes.my/weineetan",
     ogImage: "og.svg",
