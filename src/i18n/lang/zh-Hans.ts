@@ -43,7 +43,8 @@ export default {
     tagsTitle: "主题",
     tagsDesc: "浏览所有文章主题。",
     postsTitle: "经营笔记",
-    postsDesc: "关于商业运营、系统、流程与执行的真实工作观察。",
+    postsDesc:
+      "这里放工作现场里的记录：event、campaign、项目、表格和 follow-up 实际怎样卡住、怎样继续走。",
     archivesTitle: "归档",
     archivesDesc: "按年份浏览文章。",
     searchTitle: "搜索",
