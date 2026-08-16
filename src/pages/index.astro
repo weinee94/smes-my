@@ -27,7 +27,8 @@ const notes = posts.filter(post => post.data.tags.includes("工作笔记"));
         把乱的东西整理清楚，让事情继续走。
       </h1>
       <p class="text-muted-foreground mt-6 max-w-2xl text-lg leading-8">
-        写的都是真实发生过的事：钱混在一个数字里算不清楚的时候；几个工互相等、排不下去的时候；一个网站做得出来、却决定不做的时候。
+        写的都是真实发生过的事：event confirmed 以后，数字还要怎样分；creator
+        到酒店以前，哪些事情要先对上；几个工互相等的时候，谁不能再等；一个网站做得出来，却决定不做。
       </p>
     </section>
 
@@ -46,7 +47,7 @@ const notes = posts.filter(post => post.data.tags.includes("工作笔记"));
         >
       </div>
       <ul class="grid gap-x-10 sm:grid-cols-2">
-        {notes.slice(0, 3).map(post => <Card variant="h3" {...post} />)}
+        {notes.slice(0, 4).map(post => <Card variant="h3" {...post} />)}
       </ul>
     </section>
 
@@ -65,7 +66,7 @@ const notes = posts.filter(post => post.data.tags.includes("工作笔记"));
         >
       </div>
       <ul class="grid gap-x-10 sm:grid-cols-2">
-        {cases.slice(0, 3).map(post => <Card variant="h3" {...post} />)}
+        {cases.slice(0, 4).map(post => <Card variant="h3" {...post} />)}
       </ul>
     </section>
 
@@ -77,8 +78,8 @@ const notes = posts.filter(post => post.data.tags.includes("工作笔记"));
         <p
           class="editorial-title mt-3 max-w-2xl text-2xl leading-9 font-semibold"
         >
-          我是 Wei Nee。在 Johor Bahru 工作，做过 Sales &
-          Marketing，也跟过项目、客户和 vendor。
+          我是 Wei Nee。在 Johor Bahru 工作。这里留下的是
+          event、campaign、项目、客户和 vendor 之间，真的发生过的工作记录。
         </p>
       </div>
       <div class="flex gap-5 text-sm">
