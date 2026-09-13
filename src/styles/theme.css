@@ -16,10 +16,20 @@
 [data-theme="dark"] {
   --background: #f6f8f7;
   --foreground: #17201c;
-  --accent: #087f5b;
+  --accent: #0b6b52;
   --accent-foreground: #ffffff;
   --muted: #e9efec;
   --muted-foreground: #66736d;
   --border: #dce4e0;
   color-scheme: light;
+}
+
+@theme {
+  --color-emerald-50: #eef4f1;
+  --color-emerald-100: #dbeae4;
+  --color-emerald-200: #bfd8cd;
+  --color-emerald-300: #8cbbaa;
+  --color-emerald-600: #0b6b52;
+  --color-emerald-700: #095842;
+  --color-emerald-800: #074737;
 }
