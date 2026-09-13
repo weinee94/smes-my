@@ -35,8 +35,8 @@ Google Drive 主项目为 smes-my（文件夹 ID 1f1_0lTJ8w6tKu39IjElYqxx6odfXbc
 
 ## 同步与发布状态
 
-已与 GitHub main 的较新源码合并并在独立分支完成本地提交。测试、lint、Astro check、build 与主要页面访问检查均通过。当前 GitHub App 只可读取该公开仓库，写入接口返回 403，因此尚未推送、触发 Vercel 或修改线上网站。
+已与 GitHub main 的较新源码合并。分支 `update/natural-records-20260913` 经 PR #1 合并到 main；合并 commit 为 `89b27f923bd8441050ae8d7d2ff5f54c2b4faa38`。Vercel production 部署成功，正式域名 https://smes.my 已回读确认。
 
-下一步是在 ChatGPT 的 GitHub 连接中授权 `weinee94/smes-my`，然后推送 `update/natural-records-20260913`、建立 PR 并合并到 main 触发 Vercel。
+测试、lint、Astro check、build 与主要页面访问检查均通过。线上确认首页与 About 已更新，记录索引包含十篇公开记录，两篇新公开文章可访问，`/cases` 转至 `/posts`，另外两篇草稿 URL 返回 404。
 
-本次已完成完整项目构建与本地页面验证；线上验证要等 main 部署后进行。
+本次源码、Google Drive 主项目与线上网站已完成同步。
