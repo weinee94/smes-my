@@ -1,0 +1,160 @@
+---
+type Props = { compact?: boolean };
+const { compact = false } = Astro.props;
+---
+
+<form
+  class:list={["js-enquiry-form grid gap-4", compact ? "" : "sm:grid-cols-2"]}
+  action="https://script.google.com/macros/s/AKfycbw66TcCNpD1fXsv0YRV5j9hhzS0LPNd8ojxogAmqQzYkZt0qZkvzOD9aygpl1-xUtkRcw/exec"
+  method="post"
+>
+  <input type="hidden" name="form_type" value="quote_request" />
+  <input
+    type="hidden"
+    name="_subject"
+    value="New focused service request from SMEs.MY"
+  />
+  <input type="hidden" name="page_url" value="" />
+  <input type="hidden" name="user_agent" value="" />
+  <input type="hidden" name="lead_status" value="new" />
+
+  <label class="grid gap-2">
+    <span class="text-sm font-semibold text-slate-800">需要什么服务？</span>
+    <select
+      name="service"
+      required
+      class="h-12 rounded-xl border border-slate-300 bg-white px-3 text-slate-950 outline-none focus:border-emerald-600"
+    >
+      <option value="">请选择</option>
+      <option value="Accounting services">Accounting／Bookkeeping</option>
+      <option value="Company secretary">Company Secretary</option>
+      <option value="Not sure - accounting or company secretary"
+        >不确定，需要先说明情况</option
+      >
+    </select>
+  </label>
+
+  <label class="grid gap-2">
+    <span class="text-sm font-semibold text-slate-800">地点</span>
+    <input
+      name="location"
+      required
+      placeholder="例如 Johor Bahru、KL、线上皆可"
+      class="h-12 rounded-xl border border-slate-300 bg-white px-3 text-slate-950 outline-none placeholder:text-slate-400 focus:border-emerald-600"
+    />
+  </label>
+
+  <label class="grid gap-2">
+    <span class="text-sm font-semibold text-slate-800">Business type</span>
+    <select
+      name="business_type"
+      class="h-12 rounded-xl border border-slate-300 bg-white px-3 text-slate-950 outline-none focus:border-emerald-600"
+    >
+      <option value="">如果知道，可以选择</option>
+      <option value="Sdn. Bhd.">Sdn. Bhd.</option>
+      <option value="Enterprise / Sole proprietor"
+        >Enterprise／Sole proprietor</option
+      >
+      <option value="LLP / Partnership">LLP／Partnership</option>
+      <option value="New business / Not registered">新业务／尚未注册</option>
+      <option value="Not sure">不确定</option>
+    </select>
+  </label>
+
+  <label class="grid gap-2">
+    <span class="text-sm font-semibold text-slate-800">Email 或 WhatsApp</span>
+    <input
+      name="contact"
+      required
+      placeholder="方便 provider 回复你的联系方式"
+      class="h-12 rounded-xl border border-slate-300 bg-white px-3 text-slate-950 outline-none placeholder:text-slate-400 focus:border-emerald-600"
+    />
+  </label>
+
+  <label class:list={["grid gap-2", compact ? "" : "sm:col-span-2"]}>
+    <span class="text-sm font-semibold text-slate-800">简单说明需求</span>
+    <textarea
+      name="details"
+      required
+      rows="4"
+      placeholder="例如：准备成立 Sdn. Bhd.，想了解秘书与年度费用；或现有账目需要找人接手。"
+      class="rounded-xl border border-slate-300 bg-white p-3 text-slate-950 outline-none placeholder:text-slate-400 focus:border-emerald-600"
+    ></textarea>
+  </label>
+
+  <label
+    class:list={[
+      "flex items-start gap-3 text-sm leading-6 text-slate-600",
+      compact ? "" : "sm:col-span-2",
+    ]}
+  >
+    <input
+      type="checkbox"
+      required
+      class="mt-1 size-4 shrink-0 accent-emerald-700"
+    />
+    <span
+      >我同意 SMEs.MY
+      查看这项需求，并在适合时把我提交的资料分享给相关服务提供者。详见 <a
+        class="font-semibold text-emerald-700 underline"
+        href="/privacy">隐私说明</a
+      >。</span
+    >
+  </label>
+
+  <div class:list={[compact ? "" : "sm:col-span-2"]}>
+    <button
+      type="submit"
+      class="w-full rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-wait disabled:opacity-60"
+      >提交需求</button
+    >
+    <p
+      class="form-status mt-3 min-h-6 text-sm text-slate-600"
+      aria-live="polite"
+    >
+    </p>
+  </div>
+</form>
+
+<script>
+  function setupEnquiryForms() {
+    document
+      .querySelectorAll<HTMLFormElement>(".js-enquiry-form")
+      .forEach(form => {
+        if (form.dataset.ready) return;
+        form.dataset.ready = "true";
+        form.querySelector<HTMLInputElement>('[name="page_url"]')!.value =
+          window.location.href;
+        form.querySelector<HTMLInputElement>('[name="user_agent"]')!.value =
+          navigator.userAgent;
+
+        form.addEventListener("submit", async event => {
+          event.preventDefault();
+          const button = form.querySelector<HTMLButtonElement>(
+            'button[type="submit"]'
+          );
+          const status = form.querySelector<HTMLElement>(".form-status");
+          if (!button || !status) return;
+          button.disabled = true;
+          status.textContent = "正在提交…";
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+            });
+            if (!response.ok) throw new Error("Request failed");
+            form.reset();
+            status.textContent =
+              "已收到。SMEs.MY 会先查看需求；有适合的 provider 才会进一步联系。";
+          } catch {
+            status.innerHTML =
+              '暂时无法提交。请直接 email <a class="underline" href="mailto:weineetan@smes.com.my">weineetan@smes.com.my</a>。';
+          } finally {
+            button.disabled = false;
+          }
+        });
+      });
+  }
+  setupEnquiryForms();
+  document.addEventListener("astro:after-swap", setupEnquiryForms);
+</script>
