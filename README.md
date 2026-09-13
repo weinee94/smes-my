@@ -1,25 +1,32 @@
 # SMEs.MY
 
-Wei Nee 留下工作记录、商业观察和自己做过的项目的地方。
+给小团队使用的项目整理、工作流程与轻量工具网站。
 
-当前方向见 [SMES_MY_POSITIONING.md](SMES_MY_POSITIONING.md)，公开写作规则见 [docs/SMES_MY_VOICE.md](docs/SMES_MY_VOICE.md)。
+当前方向见 [SMES_MY_POSITIONING.md](SMES_MY_POSITIONING.md)，公开写作与隐私规则见 [docs/SMES_MY_VOICE.md](docs/SMES_MY_VOICE.md)。
 
-## 当前云端源文件
+## 页面
 
-Astro 页面在 src/pages，About 正文在 src/content/pages/about.md，记录在 src/content/posts。site.config.ts 提供站点信息，src/components 提供导航、页脚和记录卡片。
+- `/`：服务入口、工具与近期资料
+- `/services`：可以处理的项目范围与合作方式
+- `/tools`：免费轻量工具
+- `/tools/project-brief`：浏览器端 Project Brief Generator
+- `/posts`：项目记录与工作资料
+- `/weineetan`：维护者简介
+- `/contact`：联系
+- `/cases`：旧入口，转到 `/posts`
 
-- /：首页与最近的记录
-- /posts：所有公开记录，包含原来的笔记和案例
-- /cases：旧索引入口，转到 /posts
-- /weineetan：关于
-- /contact：联系
-
-保留原文章路径、事件日期和发布时间。目前十篇记录公开，两篇草稿隐藏。旧 handover、dist、.astro、node_modules 及旧目录站点文件不是页面编辑源。
+公开内容不包含当前酒店工作或可以推断雇主的资料。Planurhome 作为独立的装修项目管理实践出现，不与 SMEs.MY 合并为同一品牌。
 
 ## 开发与发布
 
-本地开发：corepack pnpm install，然后 corepack pnpm dev。
+本地开发：`corepack pnpm install`，然后执行 `corepack pnpm dev`。
 
-发布前执行 corepack pnpm test、corepack pnpm lint、corepack pnpm build。
+发布前执行：
 
-生产由 Vercel 从 GitHub main 部署。当前合并结果见 PROJECT_STATUS.md；上线前先推送独立分支、检查 PR，再合并到 main。
+```sh
+corepack pnpm test
+corepack pnpm lint
+corepack pnpm build
+```
+
+生产由 Vercel 从 GitHub `main` 部署。修改先经独立分支与 PR 验证，再合并到 `main`。

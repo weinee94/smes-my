@@ -1,18 +1,14 @@
 ---
-title: "SMEs.MY 的 directory 已经做出来了，我还是关掉了"
-description: "网站有分类、profile、地区页面和申请流程，但我回答不了谁会一直用，资料以后要怎样顾。"
+title: "SMEs.MY directory 停止维护记录"
+description: "旧版 directory 已完成基本功能，但长期使用者与资料维护方式仍不明确，因此停止继续扩充。"
 pubDatetime: 2026-08-13T12:20:00+08:00
 eventDate: 2026-08-13T09:00:00+08:00
 tags: ["SMEs.MY"]
 draft: false
 ---
 
-SMEs.MY 的 directory 已经做出来了。我放了分类、profile、地区页面，也做了申请流程。不是只有一个 idea，网站是真的可以上线。
+SMEs.MY 最早做成一个供应商 directory，已经有分类、商家 profile、地区页面和申请流程，技术上可以继续上线和增加内容。
 
-可是我一直回答不了两个问题：谁会一直用它，资料以后要怎样顾。
+项目停止的原因不是功能做不出来，而是两个基础问题还没有答案：哪些人会持续使用，以及商家资料由谁长期检查和更新。继续增加 listing 和 SEO 页面会同步增加维护量，但当时还没有稳定的使用需求支持这项工作。
 
-继续加 listing 和 SEO page 不难。问题是页面越多，我以后要检查和更新的东西也越多。网站做得到，不等于我应该继续做。
-
-所以我把旧 directory 停掉。provider records、claim flow 和相关页面都不再放进现在的网站，也不再继续排进 roadmap。
-
-域名还是 SMEs.MY。现在先留下我真的做过、也有记录可以回去查的事情。新方向有没有用，还不知道。
+因此，旧 directory、provider records、claim flow 和相关页面不再继续开发。域名继续保留，网站接下来会用于测试更具体的 SME 工具与服务；每一项新功能会先确认实际使用场景，再决定是否扩充。

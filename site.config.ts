@@ -5,7 +5,7 @@ export default defineAstroPaperConfig({
     url: "https://smes.my/",
     title: "SMEs.MY",
     description:
-      "Wei Nee 留下的工作和项目记录，有酒店、装修、自己做的网站和小实验。",
+      "为小团队整理项目资料、工作流程和轻量工具。",
     author: "Wei Nee",
     profile: "https://smes.my/weineetan",
     ogImage: "og.svg",
@@ -14,12 +14,12 @@ export default defineAstroPaperConfig({
     dir: "ltr",
   },
   posts: {
-    perPage: 6,
+    perPage: 9,
     perIndex: 6,
     scheduledPostMargin: 15 * 60 * 1000,
   },
   features: {
-    lightAndDarkMode: true,
+    lightAndDarkMode: false,
     dynamicOgImage: false,
     showArchives: false,
     showBackButton: true,

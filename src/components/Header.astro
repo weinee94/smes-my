@@ -1,150 +1,125 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
-import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
-import IconSearch from "@/assets/icons/IconSearch.svg";
-import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconX from "@/assets/icons/IconX.svg";
-import LinkButton from "./LinkButton.astro";
-import { stripBase, stripLocale } from "@/utils/withBase";
-import { useTranslations } from "@/i18n";
 import config from "@/config";
+import { stripBase, stripLocale } from "@/utils/withBase";
 
-const { site, features } = config;
-const locale = Astro.currentLocale ?? site.lang;
-const t = useTranslations(locale);
+const locale = Astro.currentLocale ?? config.site.lang;
 const relativePath = stripBase(Astro.url.pathname);
 const currentPath = stripLocale(relativePath.replace(/\/$/, "") || "/", locale);
 const isActive = (path: string) =>
   currentPath === path || currentPath.startsWith(`${path}/`);
+const nav = [
+  { href: "services", path: "/services", label: "可以帮什么" },
+  { href: "tools", path: "/tools", label: "工具" },
+  { href: "posts", path: "/posts", label: "资料" },
+  { href: "weineetan", path: "/weineetan", label: "关于" },
+];
 ---
 
-<a
-  id="skip-to-content"
-  href="#main-content"
-  class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 focus:top-4"
+<a id="skip-to-content" href="#main-content" class="sr-only focus:not-sr-only"
+  >跳到主要内容</a
 >
-  {t.a11y.skipToContent}
-</a>
 
-<header class="app-layout">
-  <div
-    class="border-border flex items-center justify-between border-b py-5 sm:py-7"
-  >
-    <a href={getRelativeLocaleUrl(locale, "")} class="flex items-baseline">
+<header
+  class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl"
+>
+  <div class="app-layout flex h-18 items-center justify-between">
+    <a
+      href={getRelativeLocaleUrl(locale, "")}
+      class="flex items-center gap-2 font-semibold tracking-tight text-slate-950"
+    >
       <span
-        class="editorial-title text-2xl font-semibold tracking-tight sm:text-3xl"
-        >{site.title}</span
+        class="grid size-8 place-items-center rounded-xl bg-emerald-600 text-sm font-bold text-white"
+        >S</span
       >
+      <span>SMEs.MY</span>
     </a>
-    <nav id="nav-menu" class="flex items-center">
-      <button
-        id="menu-btn"
-        class="focus-outline p-2 sm:hidden"
-        aria-label={t.a11y.openMenu}
-        aria-expanded="false"
-        data-label-open={t.a11y.openMenu}
-        data-label-close={t.a11y.closeMenu}
-      >
-        <IconX id="close-icon" class="hidden" />
-        <IconMenuDeep id="menu-icon" />
-      </button>
-      <ul
-        id="menu-items"
-        class="bg-background border-border absolute top-16 right-5 z-40 hidden w-40 border p-3 shadow-sm sm:static sm:flex sm:w-auto sm:items-center sm:gap-5 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none"
-      >
-        <li>
-          <a
-            class:list={[
-              "block px-2 py-2",
-              {
-                "text-accent underline underline-offset-8": isActive("/posts"),
-              },
-            ]}
-            href={getRelativeLocaleUrl(locale, "posts")}>记录</a
-          >
-        </li>
-        <li>
-          <a
-            class:list={[
-              "block px-2 py-2",
-              {
-                "text-accent underline underline-offset-8":
-                  isActive("/weineetan"),
-              },
-            ]}
-            href={getRelativeLocaleUrl(locale, "weineetan")}>关于</a
-          >
-        </li>
-        <li>
-          <a
-            class:list={[
-              "block px-2 py-2",
-              {
-                "text-accent underline underline-offset-8":
-                  isActive("/contact"),
-              },
-            ]}
-            href={getRelativeLocaleUrl(locale, "contact")}>联系</a
-          >
-        </li>
+
+    <button
+      id="menu-btn"
+      class="rounded-xl border border-slate-200 p-2 sm:hidden"
+      aria-label="打开菜单"
+      aria-expanded="false"
+    >
+      <IconMenuDeep id="menu-icon" class="size-5" />
+      <IconX id="close-icon" class="hidden size-5" />
+    </button>
+
+    <nav id="nav-menu" class="hidden sm:block">
+      <ul id="menu-items" class="items-center gap-1 sm:flex">
         {
-          features.search !== false && (
+          nav.map(item => (
             <li>
-              <LinkButton
-                class="focus-outline relative block size-10"
-                href={getRelativeLocaleUrl(locale, "search")}
-                aria-label={t.nav.search}
+              <a
+                href={getRelativeLocaleUrl(locale, item.href)}
+                class:list={[
+                  "block rounded-xl px-3 py-2 text-sm font-medium transition hover:bg-slate-100",
+                  isActive(item.path)
+                    ? "bg-slate-100 text-slate-950"
+                    : "text-slate-600",
+                ]}
               >
-                <IconSearch class="absolute top-1/2 left-1/2 size-5 -translate-x-1/2 -translate-y-1/2" />
-              </LinkButton>
+                {item.label}
+              </a>
             </li>
-          )
+          ))
         }
-        {
-          features.lightAndDarkMode && (
-            <li>
-              <button
-                id="theme-btn"
-                class="focus-outline relative size-10"
-                title={t.a11y.toggleTheme}
-                aria-label="auto"
-                aria-live="polite"
-              >
-                <IconMoon class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 transition-all dark:scale-0" />
-                <IconSunHigh class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 transition-all dark:scale-100" />
-              </button>
-            </li>
-          )
-        }
+        <li class="ml-2">
+          <a
+            href={getRelativeLocaleUrl(locale, "contact")}
+            class="block rounded-xl bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-700"
+            >联系</a
+          >
+        </li>
       </ul>
     </nav>
   </div>
+
+  <nav
+    id="mobile-menu"
+    class="hidden border-t border-slate-200 bg-white px-5 py-3 sm:hidden"
+  >
+    <ul class="space-y-1">
+      {
+        nav.map(item => (
+          <li>
+            <a
+              class="block rounded-xl px-3 py-2 text-sm"
+              href={getRelativeLocaleUrl(locale, item.href)}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          class="block rounded-xl bg-slate-950 px-3 py-2 text-sm text-white"
+          href={getRelativeLocaleUrl(locale, "contact")}>联系</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <script>
-  function setupHeader() {
+  function setupMenu() {
     const button = document.querySelector<HTMLButtonElement>("#menu-btn");
-    const menu = document.querySelector("#menu-items");
+    const menu = document.querySelector("#mobile-menu");
     const menuIcon = document.querySelector("#menu-icon");
     const closeIcon = document.querySelector("#close-icon");
     if (!button || !menu || !menuIcon || !closeIcon || button.dataset.ready)
       return;
     button.dataset.ready = "true";
     button.addEventListener("click", () => {
-      const isOpen = button.getAttribute("aria-expanded") === "true";
-      button.setAttribute("aria-expanded", String(!isOpen));
-      button.setAttribute(
-        "aria-label",
-        isOpen
-          ? (button.dataset.labelOpen ?? "")
-          : (button.dataset.labelClose ?? "")
-      );
+      const open = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!open));
       menu.classList.toggle("hidden");
       menuIcon.classList.toggle("hidden");
       closeIcon.classList.toggle("hidden");
     });
   }
-  setupHeader();
-  document.addEventListener("astro:after-swap", setupHeader);
+  setupMenu();
+  document.addEventListener("astro:after-swap", setupMenu);
 </script>
