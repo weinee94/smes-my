@@ -29,4 +29,6 @@ Planurhome 是独立的装修项目管理实践，可以作为项目出现，但
 
 `corepack pnpm test`、`corepack pnpm lint`、Astro check 与完整 build 均通过。本轮建立 26 个静态页面，Pagefind 索引六篇公开资料。
 
-待完成：GitHub PR、Vercel preview 检查、合并发布、正式域名回读和 Google Drive 同步。
+PR #2 已经合并，Vercel production 部署成功。正式域名已用真实浏览器检查首页、服务、工具、资料、About 与联系页；公开页面没有酒店或可推断当前雇主的内容。Project Brief Generator 已实际填写并确认输出正常。
+
+本轮源码、正式网站与 Google Drive 主项目已完成同步。
