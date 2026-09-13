@@ -5,6 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Card from "@/components/Card.astro";
+import EnquiryForm from "@/components/EnquiryForm.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import config from "@/config";
 
@@ -15,8 +16,8 @@ const posts = getSortedPosts(
 ---
 
 <Layout
-  title="SMEs.MY｜马来西亚小团队的项目与工作流程整理"
-  description="为马来西亚的小团队整理项目资料、工作流程与轻量内部工具。由 Wei Nee 在 Johor Bahru 维护。"
+  title="SMEs.MY｜Accounting 与 Company Secretary 服务需求"
+  description="提交 accounting、bookkeeping 或 company secretary 服务需求。SMEs.MY 会先核对资料，有适合 provider 时再作介绍。"
 >
   <Header />
   <main id="main-content">
@@ -24,155 +25,92 @@ const posts = getSortedPosts(
       class="relative overflow-hidden border-b border-slate-200 bg-white"
     >
       <div
-        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_84%_18%,rgba(242,193,78,0.22),transparent_30%),radial-gradient(circle_at_12%_88%,rgba(39,111,191,0.10),transparent_25%)]"
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_86%_12%,rgba(242,193,78,0.26),transparent_28%),radial-gradient(circle_at_8%_90%,rgba(39,111,191,0.10),transparent_26%)]"
       >
       </div>
-      <div class="app-layout relative py-18 sm:py-24 lg:py-28">
-        <div class="grid gap-12 lg:grid-cols-[1.18fr_.82fr] lg:items-center">
-          <div>
-            <p
-              class="mb-5 text-sm font-semibold tracking-[0.14em] text-emerald-700 uppercase"
-            >
-              Operations &amp; project systems · Malaysia
-            </p>
-            <h1
-              class="max-w-4xl text-4xl font-bold tracking-[-0.04em] text-slate-950 sm:text-6xl sm:leading-[1.06]"
-            >
-              为小团队整理项目资料、工作流程和内部工具。
-            </h1>
-            <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
-              SMEs.MY 是 Wei Nee 在 Johor Bahru 维护的独立项目，帮助仍靠
-              WhatsApp、Excel
-              和零散文件推进工作的团队，把资料、负责人和下一步整理成一套真正用得下去的做法。
-            </p>
-            <div class="mt-9 flex flex-wrap gap-3">
-              <a
-                class="rounded-2xl bg-slate-950 px-5 py-3 font-semibold text-white transition hover:bg-emerald-700"
-                href={getRelativeLocaleUrl(locale, "contact")}
-              >
-                说明你目前的问题
-              </a>
-              <a
-                class="rounded-2xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 transition hover:border-emerald-500 hover:text-emerald-700"
-                href={getRelativeLocaleUrl(locale, "services")}
-              >
-                查看服务与交付
-              </a>
-            </div>
-          </div>
-
-          <aside
-            class="rounded-[2rem] border border-slate-800 bg-slate-950 p-7 text-white shadow-2xl shadow-slate-300/50 sm:p-9"
+      <div
+        class="app-layout relative grid gap-12 py-16 sm:py-22 lg:grid-cols-[1fr_.9fr] lg:items-center"
+      >
+        <div>
+          <p
+            class="text-sm font-semibold tracking-[0.14em] text-emerald-700 uppercase"
           >
-            <p
-              class="text-sm font-semibold tracking-[0.12em] text-emerald-300 uppercase"
+            Malaysia business service enquiries
+          </p>
+          <h1
+            class="mt-5 max-w-3xl text-4xl font-bold tracking-[-0.04em] text-slate-950 sm:text-6xl sm:leading-[1.06]"
+          >
+            找 accountant 或 company secretary，不必先一家一家问。
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
+            告诉 SMEs.MY 你的 business
+            type、地点和目前需要处理的事情。我们会先核对需求，有适合的独立服务提供者时才作介绍。
+          </p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a
+              class="rounded-2xl bg-emerald-600 px-5 py-3 font-semibold text-white transition hover:bg-emerald-700"
+              href={getRelativeLocaleUrl(locale, "request")}>免费提交需求</a
             >
-              最常见的起点
-            </p>
-            <h2 class="mt-4 text-2xl leading-9 font-semibold">
-              工作不是没有做，只是每次都要重新找、重新问、重新确认。
-            </h2>
-            <ul class="mt-7 space-y-4 text-slate-300">
-              <li class="border-t border-slate-800 pt-4">
-                <strong class="text-white">资料版本不清楚</strong><br
-                />报价、付款、图片和确认记录散在不同地方。
-              </li>
-              <li class="border-t border-slate-800 pt-4">
-                <strong class="text-white">进度靠人记得</strong><br
-                />负责人、下一步和等待对象没有放在同一个视图。
-              </li>
-              <li class="border-t border-slate-800 pt-4">
-                <strong class="text-white">工具跟工作脱节</strong><br
-                />表格越做越多，团队最后还是回到 WhatsApp。
-              </li>
-            </ul>
-          </aside>
+            <a
+              class="rounded-2xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 transition hover:border-emerald-600"
+              href={getRelativeLocaleUrl(locale, "blog")}>阅读 SME 观察</a
+            >
+          </div>
+          <p class="mt-5 text-sm text-slate-500">
+            目前只开放 Accounting／Bookkeeping 与 Company
+            Secretary。提交不保证一定获得报价。
+          </p>
         </div>
 
         <div
-          class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-3"
+          class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-2xl shadow-slate-300/50 sm:p-8"
         >
-          <div class="bg-slate-50 px-5 py-4">
-            <p class="text-sm font-semibold text-slate-950">现有工具优先</p><p
-              class="mt-1 text-sm text-slate-600"
-            >
-              不要求团队先换软件
-            </p>
+          <div class="mb-6">
+            <p class="text-sm font-semibold text-emerald-700">提交一项需求</p>
+            <h2 class="mt-2 text-2xl font-semibold text-slate-950">
+              先说明情况，再决定要找谁。
+            </h2>
           </div>
-          <div class="bg-slate-50 px-5 py-4">
-            <p class="text-sm font-semibold text-slate-950">范围与交付明确</p><p
-              class="mt-1 text-sm text-slate-600"
-            >
-              先解决一段具体工作
-            </p>
-          </div>
-          <div class="bg-slate-50 px-5 py-4">
-            <p class="text-sm font-semibold text-slate-950">
-              团队可以继续维护
-            </p><p class="mt-1 text-sm text-slate-600">文件与方法都会留下</p>
-          </div>
+          <EnquiryForm compact />
         </div>
       </div>
     </section>
 
-    <section class="app-layout py-16 sm:py-22">
-      <div class="grid gap-10 lg:grid-cols-[.7fr_1.3fr]">
+    <section class="app-layout py-16 sm:py-20">
+      <div class="grid gap-10 lg:grid-cols-[.72fr_1.28fr]">
         <div>
-          <p class="text-sm font-semibold text-emerald-700">服务范围</p>
-          <h2
-            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
-          >
-            从一个卡住团队的问题开始。
+          <p class="text-sm font-semibold text-emerald-700">目前接受的需求</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+            先做两个明确类别。
           </h2>
           <p class="mt-4 leading-7 text-slate-600">
-            适合规模不大、工作已经在进行，但缺少统一资料和清楚流程的团队。
+            SMEs.MY 目前不是完整 directory，也不会列出未经核对的大量
+            provider。先把需求收集和介绍这一步做好。
           </p>
         </div>
-        <div class="grid gap-5 md:grid-cols-3">
-          <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <div class="grid gap-5 sm:grid-cols-2">
+          <article class="rounded-3xl border border-slate-200 bg-white p-7">
             <p class="text-sm font-semibold text-emerald-700">
-              01 · Project records
+              Accounting／Bookkeeping
             </p>
             <h3 class="mt-4 text-xl font-semibold text-slate-950">
-              项目资料整理
+              账目需要开始、整理或换人接手
             </h3>
             <p class="mt-3 leading-7 text-slate-600">
-              把分散的项目资料核对清楚，建立 current
-              record、资料索引和更新规则。
-            </p>
-            <p
-              class="mt-5 border-t border-slate-200 pt-4 text-sm text-slate-500"
-            >
-              交付：主记录、缺口清单、文件结构
+              适合需要 bookkeeping、management accounts、year-end account
+              preparation，或暂时不确定该找 accountant 还是 tax agent 的企业。
             </p>
           </article>
-          <article class="rounded-3xl border border-slate-200 bg-white p-6">
-            <p class="text-sm font-semibold text-emerald-700">02 · Workflow</p>
+          <article class="rounded-3xl border border-slate-200 bg-white p-7">
+            <p class="text-sm font-semibold text-emerald-700">
+              Company Secretary
+            </p>
             <h3 class="mt-4 text-xl font-semibold text-slate-950">
-              Tracker 与流程
+              成立公司、年度事项或更换秘书
             </h3>
             <p class="mt-3 leading-7 text-slate-600">
-              按实际工作方式整理 status、owner、next step、waiting for 和
-              handover。
-            </p>
-            <p
-              class="mt-5 border-t border-slate-200 pt-4 text-sm text-slate-500"
-            >
-              交付：tracker、状态定义、使用说明
-            </p>
-          </article>
-          <article class="rounded-3xl border border-slate-200 bg-white p-6">
-            <p class="text-sm font-semibold text-emerald-700">03 · Prototype</p>
-            <h3 class="mt-4 text-xl font-semibold text-slate-950">
-              轻量内部工具
-            </h3>
-            <p class="mt-3 leading-7 text-slate-600">
-              把重复整理、复制或转发的工作做成简单表单、生成器或内部页面。
-            </p>
-            <p
-              class="mt-5 border-t border-slate-200 pt-4 text-sm text-slate-500"
-            >
-              交付：可用 prototype、操作说明
+              适合准备成立 Sdn. Bhd.、想了解年度费用，或需要处理现有 company
+              secretary 服务安排的企业。
             </p>
           </article>
         </div>
@@ -180,119 +118,84 @@ const posts = getSortedPosts(
     </section>
 
     <section class="border-y border-slate-200 bg-slate-950 text-white">
-      <div
-        class="app-layout grid gap-10 py-16 sm:py-20 lg:grid-cols-[.8fr_1.2fr] lg:items-start"
-      >
+      <div class="app-layout grid gap-10 py-16 lg:grid-cols-[.72fr_1.28fr]">
         <div>
-          <p class="text-sm font-semibold text-emerald-300">合作方式</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight">
-            先看现况，再定义一个值得解决的范围。
+          <p class="text-sm font-semibold text-emerald-300">怎样运作</p>
+          <h2 class="mt-3 text-3xl font-bold">
+            不是自动把你的号码发给一堆人。
           </h2>
-          <p class="mt-4 leading-7 text-slate-300">
-            这不是整套企业数码转型，也不是先卖一套软件。每次合作都从现有资料和实际使用者开始。
-          </p>
         </div>
         <ol class="grid gap-4 sm:grid-cols-3">
           <li class="rounded-2xl border border-slate-800 p-5">
             <span class="text-sm font-semibold text-emerald-300">01</span><h3
               class="mt-3 font-semibold"
             >
-              看现有资料
+              提交需求
             </h3><p class="mt-2 text-sm leading-6 text-slate-400">
-              用目前的表格、截图、文件和说明理解工作怎样进行。
+              说明服务类别、地点、business type 和目前情况。
             </p>
           </li>
           <li class="rounded-2xl border border-slate-800 p-5">
             <span class="text-sm font-semibold text-emerald-300">02</span><h3
               class="mt-3 font-semibold"
             >
-              确认范围
+              先核对范围
             </h3><p class="mt-2 text-sm leading-6 text-slate-400">
-              写清楚要解决的问题、使用者、交付物和完成标准。
+              资料不足时，SMEs.MY 才会联系你补充。
             </p>
           </li>
           <li class="rounded-2xl border border-slate-800 p-5">
             <span class="text-sm font-semibold text-emerald-300">03</span><h3
               class="mt-3 font-semibold"
             >
-              交付并移交
+              适合才介绍
             </h3><p class="mt-2 text-sm leading-6 text-slate-400">
-              完成可直接使用的版本，并留下维护方式。
+              是否接受服务与报价，仍由你和 provider 自己决定。
             </p>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="app-layout py-16 sm:py-22">
-      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-        <div>
-          <p class="text-sm font-semibold text-emerald-700">免费工具</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950">
-            先把项目说明整理清楚。
-          </h2>
-          <p class="mt-4 max-w-xl leading-7 text-slate-600">
-            Project Brief Generator
-            会把目标、已确认事项、缺少资料和下一步整理成可复制的
-            brief。内容只在浏览器内处理。
-          </p>
-          <a
-            class="mt-7 inline-flex rounded-2xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
-            href={getRelativeLocaleUrl(locale, "tools/project-brief")}
-            >使用免费工具</a
-          >
-        </div>
-        <div class="rounded-3xl border border-slate-200 bg-slate-50 p-7">
-          <p class="text-sm font-semibold text-slate-500">生成内容示例</p>
-          <div
-            class="mt-4 rounded-2xl border border-slate-200 bg-white p-5 font-mono text-sm leading-7 text-slate-600"
-          >
-            <p class="font-semibold text-slate-950">项目：网站更新</p>
-            <p class="mt-3">目标：整理现有页面与导航</p>
-            <p>已确认：保留现有域名</p>
-            <p>下一步：确认首页内容</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="border-t border-slate-200 bg-white">
-      <div class="app-layout py-16 sm:py-20">
-        <div
-          class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
-        >
-          <div>
-            <p class="text-sm font-semibold text-emerald-700">SME 观察</p><h2
-              class="mt-3 text-3xl font-bold tracking-tight text-slate-950"
-            >
-              从实际工作里，理解小团队为什么会卡住。
-            </h2>
-          </div>
-          <a
-            class="text-sm font-semibold text-emerald-700"
-            href={getRelativeLocaleUrl(locale, "blog")}>阅读博客 →</a
-          >
-        </div>
-        <ul class="mt-9 grid gap-5 md:grid-cols-3">
-          {posts.slice(0, 3).map(post => <Card variant="h3" {...post} />)}
-        </ul>
-      </div>
-    </section>
-
-    <section class="app-layout py-16 sm:py-22">
+    <section class="app-layout py-16 sm:py-20">
       <div
-        class="rounded-[2rem] bg-emerald-600 p-8 text-white sm:flex sm:items-center sm:justify-between sm:p-10"
+        class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
       >
         <div>
-          <p class="text-sm font-semibold text-emerald-100">
-            开始前不需要准备 proposal
-          </p><h2 class="mt-2 text-2xl font-semibold">
-            告诉我目前哪一段工作最难整理。
+          <p class="text-sm font-semibold text-emerald-700">SME 观察</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+            把中小型企业里经常发生的问题写清楚。
           </h2>
         </div>
         <a
-          class="mt-6 inline-flex rounded-2xl bg-white px-5 py-3 font-semibold text-emerald-800 sm:mt-0"
-          href={getRelativeLocaleUrl(locale, "contact")}>联系 SMEs.MY</a
+          class="text-sm font-semibold text-emerald-700"
+          href={getRelativeLocaleUrl(locale, "blog")}>阅读博客 →</a
+        >
+      </div>
+      <ul class="mt-9 grid gap-5 md:grid-cols-3">
+        {posts.slice(0, 3).map(post => <Card variant="h3" {...post} />)}
+      </ul>
+    </section>
+
+    <section class="app-layout pb-16 sm:pb-20">
+      <div
+        class="rounded-[2rem] border border-slate-200 bg-white p-8 sm:flex sm:items-center sm:justify-between"
+      >
+        <div>
+          <p class="text-sm font-semibold text-emerald-700">
+            For service providers
+          </p>
+          <h2 class="mt-2 text-2xl font-semibold text-slate-950">
+            提供 accounting 或 company secretary 服务？
+          </h2>
+          <p class="mt-2 text-slate-600">
+            欢迎说明服务范围、地点、客户类型和合作方式。所有合作会先核对，不自动刊登。
+          </p>
+        </div>
+        <a
+          class="mt-6 inline-flex rounded-2xl bg-slate-950 px-5 py-3 font-semibold text-white sm:mt-0"
+          href="mailto:weineetan@smes.com.my?subject=Provider%20partnership%20with%20SMEs.MY"
+          >联系 SMEs.MY</a
         >
       </div>
     </section>
