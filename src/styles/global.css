@@ -23,7 +23,7 @@
 }
 
 @utility max-w-app {
-  @apply max-w-6xl;
+  @apply max-w-7xl;
 }
 
 @utility app-layout {
@@ -38,19 +38,14 @@
   scroll-margin-block: 1rem;
 }
 
-.editorial-title {
-  font-family: "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+html {
+  background: var(--background);
+}
+body {
+  letter-spacing: -0.006em;
+}
+h1,
+h2,
+h3 {
   text-wrap: balance;
-}
-
-.lane-label {
-  @apply text-accent text-xs font-semibold tracking-[0.18em];
-}
-
-.eyebrow {
-  @apply text-accent text-xs font-semibold tracking-[0.16em] uppercase;
-}
-
-.record-card time {
-  @apply text-muted-foreground m-0 text-xs;
 }

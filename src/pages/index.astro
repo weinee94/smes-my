@@ -9,34 +9,174 @@ import { getSortedPosts } from "@/utils/getSortedPosts";
 import config from "@/config";
 
 const locale = Astro.currentLocale ?? config.site.lang;
-const posts = getSortedPosts(await getCollection("posts"));
+const posts = getSortedPosts(
+  await getCollection("posts", ({ data }) => !data.draft)
+);
 ---
 
-<Layout>
+<Layout title="SMEs.MY｜项目整理、工作流程与轻量工具">
   <Header />
-  <main id="main-content" class="app-layout">
-    <section class="border-border border-b py-14 sm:py-20">
-      <h1 class="editorial-title text-3xl font-semibold sm:text-4xl">SMEs.MY</h1>
-      <p class="mt-6 max-w-2xl text-lg leading-8">我把一些实际做过的工作和项目记录留在这里。</p>
-      <p class="text-muted-foreground mt-3 max-w-2xl leading-8">
-        有酒店里的事情、装修项目，也有自己做网站和其他小实验时遇到的东西。有些当时就有答案，有些后来才补上。
-      </p>
-      <a class="mt-6 inline-block text-sm underline underline-offset-4" href={getRelativeLocaleUrl(locale, "posts")}>看全部记录</a>
+  <main id="main-content">
+    <section
+      class="relative overflow-hidden border-b border-slate-200 bg-white"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(16,185,129,0.12),transparent_32%),radial-gradient(circle_at_10%_90%,rgba(59,130,246,0.08),transparent_28%)]"
+      >
+      </div>
+      <div
+        class="app-layout relative grid gap-12 py-18 sm:py-24 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:py-30"
+      >
+        <div>
+          <p
+            class="mb-5 inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-800"
+          >
+            给小团队的实际解决方式
+          </p>
+          <h1
+            class="max-w-4xl text-4xl font-bold tracking-[-0.035em] text-slate-950 sm:text-6xl sm:leading-[1.08]"
+          >
+            把散在 WhatsApp、Excel 和不同人手上的工作，整理成可以继续用的系统。
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
+            SMEs.MY 处理的是很实际的问题，例如项目资料找不到最新版、大家写的
+            status 意思不同，或者每次 follow-up
+            都要重新问一遍。可以先从现有资料开始，不需要一开始就换一套复杂软件。
+          </p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a
+              class="rounded-2xl bg-slate-950 px-5 py-3 font-semibold text-white transition hover:bg-emerald-700"
+              href={getRelativeLocaleUrl(locale, "services")}>看看可以怎么做</a
+            >
+            <a
+              class="rounded-2xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 transition hover:border-emerald-500 hover:text-emerald-700"
+              href={getRelativeLocaleUrl(locale, "tools/project-brief")}
+              >先用 Project Brief 工具</a
+            >
+          </div>
+        </div>
+        <div
+          class="rounded-[2rem] border border-slate-200 bg-slate-950 p-7 text-white shadow-2xl shadow-slate-300/50 sm:p-9"
+        >
+          <p class="text-sm font-medium text-emerald-300">适合先整理的情况</p>
+          <ul class="mt-6 space-y-5 text-base leading-7 text-slate-200">
+            <li class="flex gap-3">
+              <span
+                class="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300"
+                >1</span
+              ><span>资料其实都有，但散在聊天、表格和文件夹里。</span>
+            </li>
+            <li class="flex gap-3">
+              <span
+                class="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300"
+                >2</span
+              ><span>工作有在进行，不过负责人、下一步和等待对象不够清楚。</span>
+            </li>
+            <li class="flex gap-3">
+              <span
+                class="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300"
+                >3</span
+              ><span>现有工具太多或太复杂，团队最后还是回到 WhatsApp。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section class="border-border border-b py-12 sm:py-16" aria-labelledby="recent-records">
-      <h2 id="recent-records" class="editorial-title text-2xl font-semibold">最近的记录</h2>
-      <ul class="mt-5">
-        {posts.slice(0, 6).map(post => <Card variant="h3" {...post} />)}
+    <section class="app-layout py-16 sm:py-22">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-emerald-700">可以帮忙的部分</p>
+        <h2
+          class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+        >
+          先解决一个明确的问题
+        </h2>
+        <p class="mt-4 leading-7 text-slate-600">
+          不需要先买系统或做很大的
+          transformation。把目前最影响工作的那一段整理好，确认有人会继续使用，再决定下一步。
+        </p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <article class="rounded-3xl border border-slate-200 bg-white p-6">
+          <span class="text-sm font-semibold text-emerald-700">01</span><h3
+            class="mt-4 text-xl font-semibold text-slate-950"
+          >
+            项目资料整理
+          </h3><p class="mt-3 leading-7 text-slate-600">
+            核对现有表格、聊天记录和文件，把当前版本、缺少的资料与后续负责人整理出来。
+          </p>
+        </article>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6">
+          <span class="text-sm font-semibold text-emerald-700">02</span><h3
+            class="mt-4 text-xl font-semibold text-slate-950"
+          >
+            Tracker 与工作流程
+          </h3><p class="mt-3 leading-7 text-slate-600">
+            按照团队本来怎样工作来设置 status、owner、next step 和
+            handover，不额外增加没有人更新的栏位。
+          </p>
+        </article>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6">
+          <span class="text-sm font-semibold text-emerald-700">03</span><h3
+            class="mt-4 text-xl font-semibold text-slate-950"
+          >
+            轻量工具与 prototype
+          </h3><p class="mt-3 leading-7 text-slate-600">
+            重复整理或转发的资料，可以先做成简单表单、生成器或内部页面，验证有用以后再扩充。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="border-y border-slate-200 bg-white py-16 sm:py-22">
+      <div
+        class="app-layout grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center"
+      >
+        <div>
+          <p class="text-sm font-semibold text-emerald-700">免费工具</p><h2
+            class="mt-3 text-3xl font-bold tracking-tight text-slate-950"
+          >
+            Project Brief Generator
+          </h2><p class="mt-4 leading-7 text-slate-600">
+            把项目目标、已确认事项、还缺的资料和下一步整理成一段清楚的
+            brief。所有内容只在浏览器里处理，不会上传。
+          </p><a
+            class="mt-7 inline-flex rounded-2xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
+            href={getRelativeLocaleUrl(locale, "tools/project-brief")}
+            >打开工具</a>
+        </div>
+        <div
+          class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+        >
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="h-12 rounded-xl border border-slate-200 bg-white">
+            </div><div class="h-12 rounded-xl border border-slate-200 bg-white">
+            </div><div
+              class="h-24 rounded-xl border border-slate-200 bg-white sm:col-span-2"
+            >
+            </div><div class="h-12 rounded-xl bg-slate-950 sm:col-span-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-layout py-16 sm:py-22">
+      <div
+        class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+      >
+        <div>
+          <p class="text-sm font-semibold text-emerald-700">资料</p><h2
+            class="mt-3 text-3xl font-bold tracking-tight text-slate-950"
+          >
+            目前整理好的内容
+          </h2>
+        </div><a
+          class="text-sm font-semibold text-emerald-700"
+          href={getRelativeLocaleUrl(locale, "posts")}>查看全部 →</a>
+      </div>
+      <ul class="mt-9 grid gap-5 md:grid-cols-3">
+        {posts.slice(0, 3).map(post => <Card variant="h3" {...post} />)}
       </ul>
-    </section>
-
-    <section class="py-12 sm:py-16" aria-labelledby="about-site">
-      <h2 id="about-site" class="editorial-title text-2xl font-semibold">关于这个网站</h2>
-      <p class="text-muted-foreground mt-4 max-w-2xl leading-8">
-        SMEs.MY 最初只是想把我真正做过的事情留下来。有些事情当时没觉得特别，后来有值得补的，就继续补。
-      </p>
-      <a class="mt-5 inline-block text-sm underline underline-offset-4" href={getRelativeLocaleUrl(locale, "weineetan")}>关于 Wei Nee</a>
     </section>
   </main>
   <Footer />

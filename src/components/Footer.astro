@@ -1,21 +1,34 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import config from "@/config";
 
 type Props = { noMarginTop?: boolean } & HTMLAttributes<"footer">;
 const { noMarginTop = false, class: className, ...attrs } = Astro.props;
 const currentYear = new Date().getFullYear();
+const locale = Astro.currentLocale ?? config.site.lang;
 ---
 
 <footer
-  class:list={["app-layout", { "mt-auto": !noMarginTop }, className]}
+  class:list={[
+    "border-t border-slate-200 bg-white",
+    { "mt-auto": !noMarginTop },
+    className,
+  ]}
   {...attrs}
 >
-  <div
-    class="border-border text-muted-foreground flex flex-col gap-2 border-t py-7 text-sm sm:flex-row sm:justify-between"
-  >
-    <span>SMEs.MY</span>
-    <span>Johor Bahru, Malaysia</span>
-    <a class="underline underline-offset-4" href="mailto:weineetan@smes.com.my">Email</a>
-    <span>© {currentYear}</span>
+  <div class="app-layout grid gap-8 py-10 sm:grid-cols-[1fr_auto] sm:items-end">
+    <div>
+      <p class="font-semibold text-slate-950">SMEs.MY</p>
+      <p class="mt-2 max-w-md text-sm leading-6 text-slate-500">
+        给小团队使用的项目整理、工作流程和轻量工具。
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-500">
+      <a href={getRelativeLocaleUrl(locale, "tools")}>工具</a>
+      <a href={getRelativeLocaleUrl(locale, "posts")}>资料</a>
+      <a href="mailto:weineetan@smes.com.my">Email</a>
+      <span>© {currentYear}</span>
+    </div>
   </div>
 </footer>

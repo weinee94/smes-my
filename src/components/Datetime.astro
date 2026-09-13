@@ -30,15 +30,17 @@ const datetime = dayjs(eventDate ?? pubDatetime).tz(
   postTimezone ?? config.site.timezone
 );
 
-const date = eventPeriod ?? new Intl.DateTimeFormat(
-  Astro.currentLocale === "zh-Hans" ? "zh-CN" : Astro.currentLocale,
-  {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: postTimezone ?? config.site.timezone,
-  }
-).format(datetime.toDate());
+const date =
+  eventPeriod ??
+  new Intl.DateTimeFormat(
+    Astro.currentLocale === "zh-Hans" ? "zh-CN" : Astro.currentLocale,
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: postTimezone ?? config.site.timezone,
+    }
+  ).format(datetime.toDate());
 ---
 
 <div
@@ -51,7 +53,11 @@ const date = eventPeriod ?? new Intl.DateTimeFormat(
     ]}
   />
   {
-    <span class:list={["text-sm", { "sm:text-base": size === "lg" }]}>发生于</span>
+    (
+      <span class:list={["text-sm", { "sm:text-base": size === "lg" }]}>
+        发生于
+      </span>
+    )
   }
   <time
     class:list={["text-sm", { "sm:text-base": size === "lg" }]}

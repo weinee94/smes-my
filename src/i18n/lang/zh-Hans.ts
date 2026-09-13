@@ -3,7 +3,7 @@ import type { UIStrings } from "../types";
 export default {
   nav: {
     home: "首页",
-    posts: "记录",
+    posts: "资料",
     tags: "主题",
     about: "关于",
     archives: "归档",
@@ -29,9 +29,9 @@ export default {
   },
   home: {
     socialLinks: "联系",
-    featured: "记录",
-    recentPosts: "最近的记录",
-    allPosts: "看全部记录",
+    featured: "资料",
+    recentPosts: "最近资料",
+    allPosts: "查看全部资料",
   },
   footer: {
     copyright: "版权所有",
@@ -42,12 +42,13 @@ export default {
     tagDesc: "此主题下的文章",
     tagsTitle: "主题",
     tagsDesc: "浏览所有文章主题。",
-    postsTitle: "记录",
-    postsDesc: "工作、装修项目和自己做过的网站，按最近发布或更新排列。",
+    postsTitle: "资料",
+    postsDesc:
+      "目前整理好的项目记录、工作方法和后续更新。内容会说明实际做法，也会保留还没有验证的部分。",
     archivesTitle: "归档",
     archivesDesc: "按年份浏览文章。",
     searchTitle: "搜索",
-    searchDesc: "搜索记录。",
+    searchDesc: "搜索工具与资料。",
   },
   a11y: {
     skipToContent: "跳到主要内容",
