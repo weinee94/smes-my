@@ -7,9 +7,11 @@ const root = process.cwd();
 const read = path => readFileSync(join(root, path), "utf8");
 const postPaths = () => readdirSync(join(root, "src/content/posts")).filter(name => name.endsWith(".md")).map(name => `src/content/posts/${name}`);
 
-test("homepage is a service and tools entry point", () => {
+test("homepage clearly identifies the audience, service and tools", () => {
   const home = read("src/pages/index.astro");
-  assert.match(home, /可以帮忙的部分/);
+  assert.match(home, /Operations &amp; project systems · Malaysia/);
+  assert.match(home, /为小团队整理项目资料、工作流程和内部工具/);
+  assert.match(home, /服务与交付/);
   assert.match(home, /Project Brief Generator/);
   assert.match(home, /项目资料整理/);
   assert.doesNotMatch(home, /关于这个网站|最近的记录|小生意运营实验室|现场 · 系统 · 判断/);
@@ -17,7 +19,7 @@ test("homepage is a service and tools entry point", () => {
 
 test("navigation prioritizes services, tools, resources and contact", () => {
   const header = read("src/components/Header.astro");
-  for (const label of ["可以帮什么", "工具", "资料", "关于", "联系"]) assert.match(header, new RegExp(label));
+  for (const label of ["服务", "工具", "资料", "关于", "讨论项目"]) assert.match(header, new RegExp(label));
   assert.doesNotMatch(header, />记录<|>案例</);
 });
 
