@@ -17,10 +17,23 @@ test("homepage clearly identifies the audience, service and tools", () => {
   assert.doesNotMatch(home, /关于这个网站|最近的记录|小生意运营实验室|现场 · 系统 · 判断/);
 });
 
-test("navigation prioritizes services, tools, resources and contact", () => {
+test("navigation prioritizes services, tools, blog and contact", () => {
   const header = read("src/components/Header.astro");
-  for (const label of ["服务", "工具", "资料", "关于", "讨论项目"]) assert.match(header, new RegExp(label));
+  for (const label of ["服务", "工具", "博客", "关于", "讨论项目"])
+    assert.match(header, new RegExp(label));
   assert.doesNotMatch(header, />记录<|>案例</);
+});
+
+test("blog has a clear SME observation remit", () => {
+  const blog = read("src/pages/blog.astro");
+  assert.match(blog, /对中小型企业的实际观察/);
+  assert.match(blog, /不会写成针对某家公司或某个人的抱怨/);
+  assert.equal(
+    existsSync(
+      join(root, "src/content/posts/why-more-approval-makes-work-slower.md")
+    ),
+    true
+  );
 });
 
 test("a useful browser-only tool is included", () => {
@@ -79,5 +92,5 @@ test("positioning preserves service, Planurhome and privacy boundaries", () => {
   assert.match(positioning, /服务/);
   assert.match(positioning, /Planurhome/);
   assert.match(positioning, /不透露 Wei Nee 在酒店任职/);
-  assert.match(positioning, /不是个人博客/);
+  assert.match(positioning, /不是个人生活博客/);
 });
