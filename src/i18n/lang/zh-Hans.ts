@@ -3,7 +3,7 @@ import type { UIStrings } from "../types";
 export default {
   nav: {
     home: "首页",
-    posts: "经营笔记",
+    posts: "记录",
     tags: "主题",
     about: "关于",
     archives: "归档",
@@ -29,9 +29,9 @@ export default {
   },
   home: {
     socialLinks: "联系",
-    featured: "精选案例",
-    recentPosts: "工作笔记",
-    allPosts: "查看全部文章",
+    featured: "记录",
+    recentPosts: "最近的记录",
+    allPosts: "看全部记录",
   },
   footer: {
     copyright: "版权所有",
@@ -42,13 +42,12 @@ export default {
     tagDesc: "此主题下的文章",
     tagsTitle: "主题",
     tagsDesc: "浏览所有文章主题。",
-    postsTitle: "经营笔记",
-    postsDesc:
-      "这里放工作现场里的记录：event、campaign、项目、表格和 follow-up 实际怎样卡住、怎样继续走。",
+    postsTitle: "记录",
+    postsDesc: "工作、装修项目和自己做过的网站，按最近发布或更新排列。",
     archivesTitle: "归档",
     archivesDesc: "按年份浏览文章。",
     searchTitle: "搜索",
-    searchDesc: "搜索案例与文章。",
+    searchDesc: "搜索记录。",
   },
   a11y: {
     skipToContent: "跳到主要内容",

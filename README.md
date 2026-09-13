@@ -1,36 +1,25 @@
 # SMEs.MY
 
-**商业运营、系统与执行的工作笔记。**
+Wei Nee 留下工作记录、商业观察和自己做过的项目的地方。
 
-把散乱的信息、决定和行动，整理成可以执行的结构。
+当前方向见 [SMES_MY_POSITIONING.md](SMES_MY_POSITIONING.md)，公开写作规则见 [docs/SMES_MY_VOICE.md](docs/SMES_MY_VOICE.md)。
 
-The single source of truth for this project's direction is [`SMES_MY_POSITIONING.md`](SMES_MY_POSITIONING.md).
+## 当前云端源文件
 
-## Current state
+Astro 页面在 src/pages，About 正文在 src/content/pages/about.md，记录在 src/content/posts。site.config.ts 提供站点信息，src/components 提供导航、页脚和记录卡片。
 
-The first editorial version of SMEs.MY is implemented as an Astro site.
+- /：首页与最近的记录
+- /posts：所有公开记录，包含原来的笔记和案例
+- /cases：旧索引入口，转到 /posts
+- /weineetan：关于
+- /contact：联系
 
-Core routes:
+保留原文章路径、事件日期和发布时间。目前十篇记录公开，两篇草稿隐藏。旧 handover、dist、.astro、node_modules 及旧目录站点文件不是页面编辑源。
 
-- `/` — SMEs.MY platform homepage
-- `/posts` — 经营笔记
-- `/cases` — 匿名化实战案例
-- `/weineetan` — 关于 / How I Work
-- `/contact` — 联系
+## 开发与发布
 
-## Local development
+本地开发：corepack pnpm install，然后 corepack pnpm dev。
 
-```powershell
-corepack pnpm install
-corepack pnpm dev
-```
+发布前执行 corepack pnpm test、corepack pnpm lint、corepack pnpm build。
 
-Before publishing:
-
-```powershell
-corepack pnpm test
-corepack pnpm lint
-corepack pnpm build
-```
-
-Production is hosted by Vercel and deployed from the GitHub `main` branch.
+生产由 Vercel 从 GitHub main 部署。当前合并结果见 PROJECT_STATUS.md；上线前先推送独立分支、检查 PR，再合并到 main。
