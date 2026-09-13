@@ -1,198 +1,62 @@
-# SMEs.MY 网站唯一权威定位
+# SMEs.MY 网站定位
 
-Last confirmed by Wei Nee: 2026-08-16
+Last confirmed by Wei Nee: 2026-09-13
 
-本文件是 SMEs.MY 所有设计、开发、内容与信息架构决策的长期唯一权威方向。它覆盖此前所有与个人域名、provider directory、SEO portal 或传统求职 portfolio 有关的旧方案。
+本文件与 docs/SMES_MY_VOICE.md 是当前内容和信息架构的依据。此次方向取代旧版要求网站证明能力、建立 professional evidence layer 的规则，以及旧 handover、设计方案中的冲突说明。
 
-公开文案另以 [`docs/SMES_MY_VOICE.md`](docs/SMES_MY_VOICE.md) 为准。下面出现的旧口号、文章格式或专业术语，只能当内部定位说明，不能直接放回网站。
+## SMEs.MY 是什么
 
-## 1. 域名决策
+SMEs.MY 是 Wei Nee 长期留下工作记录、商业观察和自己做过的项目的地方。
 
-唯一主域名是 **smes.my**。
+它不是履历网站，也不需要每篇内容证明 Wei Nee 有什么能力。酒店、装修、自己做的网站和未来的商业实验都可以出现，不必被解释成同一套方法，也不必服务同一个职业标签。
 
-目前不购买、不建立 `weinee.my` 或其他个人姓名域名。
+有些记录只是当时发生的一件小事；有些后来有结果；有些隔一段时间才补上后续；有些最后证明当时的判断不完整。都可以留下。
 
-`smes.my` 同时承担两个角色：
+能力是这些记录长期累积后的副产品，不是单篇文章的任务。不要预先规定读者必须看见判断力、ownership、协调或系统思维，再找文章作证明。
 
-1. Wei Nee 的长期个人专业资产；
-2. 可逐步发展成真实商业项目、产品或服务的平台品牌。
+## 读者能看到什么
 
-网站不能被设计成单纯为了找工作的个人履历网站。即使 Wei Nee 未来不再受雇、开始经营自己的公司、咨询服务或产品，SMEs.MY 仍然应该成立。
+让人看清实际发生过什么、Wei Nee 当时负责哪一段、为什么处理某件事，以及后来发生了什么。读者怎样评价，由记录本身产生。页面不替读者总结作者属于哪种人。
 
-## 2. 核心品牌定位
+## 信息架构
 
-- 品牌名称：**SMEs.MY**
-- 公开定位：**一个低调公开的工作记录与 professional evidence layer**
-- 首页现在使用：**商业现场很少按部门分开。**
-- Wei Nee 的专业能力应由笔记与案例自然证明，不在首页以大字号职业标签或个人宣言自我定义。
+- 首页：简短介绍网站，接最近的记录，不安排三篇代表作或能力展示。
+- 记录：统一收录公开记录，按最近发布或实质更新排列，不再分经营笔记与实战案例。
+- 关于：姓名、可核实的工作背景、为什么留下这些记录。不列 How I Work，不用不同经历证明同一种能力。
+- 联系：简短说明与现有电邮，不增加获客 funnel 或求职式 CTA。
 
-相关能力包括：
+主域名保留 smes.my；About 保留 /weineetan，联系保留 /contact。云端现有 /posts 用作统一记录索引，/cases 保留旧链接入口并指向 /posts。文章路径和历史日期保留。
 
-- Business Operations
-- Commercial Coordination
-- Business Development
-- Project Coordination
-- Client & Stakeholder Management
-- Process / System Improvement
-- Execution Planning
-- Workflow Design
+移除“现场／系统／判断”、THE THREAD、SELECTED RECORDS、01／02／03 能力策展。也不要换一组三分法继续包装。首页不再使用“把乱的东西整理清楚，让事情继续走”作为作者总定义。
 
-不要把 Wei Nee 定位成 Hotel Sales specialist、Social Media Executive、Marketing-only professional、Administrative coordinator 或 Traditional consultant persona。
+Tag 只帮助找东西，例如 Hotel、Renovation、SMEs.MY、Project、Money。根据文章实际内容选择，写完以后才分类，不设能力类别，也不为补齐 tag 制造内容。
 
-Hospitality、events 和当前工作只作为真实商业案例来源，不成为个人品牌主体。
+## 首页内容
 
-## 3. 网站真正要实现的效果
+我把一些实际做过的工作和项目记录留在这里。
 
-未来招聘经理、老板、合作方、SME owner 或潜在客户进入 SMEs.MY 后，应该从具体事情里看见 Wei Nee 怎样整理资料、排工作、跟进项目和作取舍。网站本身不要替读者下结论。
+有酒店里的事情、装修项目，也有自己做网站和其他小实验时遇到的东西。有些当时就有答案，有些后来才补上。
 
-网站不是为了强调职位名称，而是证明：
+接“最近的记录”，每项显示日期、原标题、事实摘要和轻量 tag；最多六篇，少于六篇就显示实际篇数。不为填满首页编文章或解除草稿状态。
 
-- 判断能力
-- 商业理解
-- 系统思维
-- execution ability
-- ownership
-- 跨部门协调能力
-- 把问题结构化的能力
+“最近还在想的事”可以以后加入，但必须来自 Wei Nee 确认过的当前问题。对话中的示例不直接当成公开事实。
 
-长期目标是形成持续累积的 professional proof，而不是一次性的求职包装。
+## 写作与维护
 
-## 4. Editorial thesis
+按事情本身写，不要求每篇独立成立为 lesson，也不强制套背景／问题／判断／结果／学习。可以在最后一个真实动作处停下，之后有后续再注明时间追加。
 
-网站给人的主要结论不是“Wei Nee 很专业”，而是：
+区分当时知道、当时不知道、后来发现。记不清的细节不补成确定事实。标题、段落长短和结尾不必统一；连续看最近五篇，拆掉重复的反转、金句和自我证明结构。
 
-- 这个人会看出混乱背后的结构问题；
-- 她不是只会执行，也会整理系统、协调人和事情；
-- 她有 commercial judgment，不是只做 marketing output。
+没有发布频率或内容数量指标。记录不必依次升级成 insight、case、产品或服务。未来有实际需求再讨论新业务，不让每篇记录承担商业任务。
 
-受众优先级：
+## 事实与隐私
 
-1. 未来雇主、recruiter、合作方，以及能理解工作层次的人；
-2. SME owner、管理者与项目合作方；
-3. 普通读者。
+只使用可核实、可公开的材料，不发明数字、引语、反应、结果或新的职责。协作经验不写成职位权力。
 
-流量和发布频率不是目标。
+私人的职业证据库不是待发布清单。不公开雇主、同事、客户姓名、具体金额、内部冲突、员工表现、管理层私人谈话或商业机密。现有匿名化要求继续保留。
 
-## 5. 内容删留标准
+## 视觉与旧方向
 
-一篇公开记录必须同时满足以下四项：
+保留清楚易读的排版、留白和简单导航。让网站适合持续写与读，不用大号宣言、能力徽章或整齐的故事模板制造个人品牌。
 
-1. 有具体背景；
-2. 存在真实的 business / operational problem；
-3. Wei Nee 做过某种判断、设计或取舍；
-4. 半年以后再读，仍然看得见处理方式或长期价值。
-
-缺少两项就不发表。不能从“网站需要内容”倒推 insight。
-
-## 6. 第一阶段网站结构
-
-只建立以下核心栏目。
-
-### 首页
-
-核心信息：**商业现场很少按部门分开。**
-
-第一屏直接说网站里有哪些真实事情，不列能力标签。
-
-首页必须先显示 **SMEs.MY** 与内容定位，不在 Hero、页头或页脚反复强调 Wei Nee。个人信息只在 About 里克制出现。
-
-### 记录
-
-所有公开内容按一个主要阅读层次归类：
-
-- **现场**：事情在哪里发生、牵涉谁、当时有哪些限制；
-- **系统**：资料、owner、状态和下一步怎样进入可维护的结构；
-- **判断**：实际做过的取舍，以及哪些数字或结论还不能写得太早。
-
-语言以自然华语为主，保留必要英文专业术语。风格成熟、克制、有真实工作经验感。
-
-不要写成职场鸡汤、LinkedIn motivational post、AI 生成式商业文章或空泛创业建议。
-
-所有案例必须经过匿名化与 sanitisation。
-
-案例按事情发生的顺序写。原本没有结果，就停在最后一个已知动作，不补 Result / Learning。
-
-案例应强调 Wei Nee 如何看出问题、判断优先级、整理信息、建立 workflow、推动其他人执行、管理 stakeholder、降低遗漏、改善 visibility，以及将 marketing / commercial activity 与 operations 连接。
-
-禁止公开当前雇主人名、同事姓名、内部冲突、员工表现问题、管理层私人谈话、内部敏感数据或 confidential commercial information。
-
-Career Evidence Register 是 private source。网站只使用其中约 5–10% 最适合公开的内容。
-
-### 关于 Wei Nee
-
-只写可以由具体经历支撑的背景，以及为什么留下这些记录。
-
-固定公开路径为 **`smes.my/weineetan`**。这是 Wei Nee 的个人专业主页；`smes.my` 根路径仍然是 SMEs.MY 平台首页。
-
-不另外列 **How I Work** 或能力清单。让 dashboard、付款记录、排工和关掉 directory 这些事情自己说明。避免 `visionary leader` 类语言、夸大管理经验或过度突出 HOD 身份。
-
-### Contact
-
-Contact 只提供简短说明与专业电邮。不要设计复杂 CRM、contact funnel 或主动求职式 CTA。
-
-## 7. 明确取消的旧方向
-
-以下方向全部视为历史方案，不再进入当前 roadmap：
-
-- Provider listing
-- SME directory
-- Supplier database
-- Claim provider flow
-- Provider records
-- 大量 SEO landing pages
-- SME 新闻转载
-- 免费 AI tools portal
-- 没有明确商业价值的小工具
-- 为了显得内容很多而增加栏目
-- 自动生成大量文章
-- 传统 resume portfolio homepage
-
-除非未来出现明确需求与商业证据，否则不要重新加入。
-
-## 8. 维护模型
-
-这是一个低维护、长期累积的网站：
-
-- 每月约 1–2 篇真正值得写的经营笔记
-- 有真实职业或商业案例才新增 Case Study
-- 实验有验证才增加 Product / Service
-- About 只在经历或工作方法有实质变化时更新
-- 不追求发布频率
-- 不追求页面数量
-- 不为了 SEO 制造内容
-
-目标是：**少，但长期有价值。**
-
-## 9. 视觉方向
-
-整体风格：**Editorial business publication × operator notebook**
-
-关键词：calm、intelligent、understated、editorial、structured、warm professional、credible、minimal。
-
-不要做成 recruitment portfolio template、corporate consulting agency、SaaS landing page、startup hype website、directory portal、AI tools website 或 influencer personal brand。
-
-视觉上应该让人感觉这是一个长期经营的独立商业思考空间。
-
-## 10. 长期战略原则
-
-SMEs.MY 的发展顺序必须是：
-
-`真实工作 / 商业观察 → 形成记录 → 整理成 insight → 形成 case → 发现重复问题 → 进行实验 → 验证需求 → 形成产品 / 服务`
-
-而不是：
-
-`先设计业务 → 再强迫自己制造内容填满网站`
-
-SMEs.MY 应随着 Wei Nee 的真实职业与商业经历自然成长。
-
-## 11. 最重要的设计判断
-
-如果任何页面、功能或内容无法回答下面至少一个问题，就不要做：
-
-1. 它是否证明 Wei Nee 的判断能力？
-2. 它是否证明 Wei Nee 能把混乱变得可执行？
-3. 它是否可能成为未来职业或商业资产？
-4. 它是否能帮助真正的 SME owner 或 business operator？
-5. 它是否值得一年以后仍然存在？
-
-如果五个答案全部是否定，删除该功能或内容。
+旧 directory、provider listing、claim flow、大量 SEO 页面、新闻转载、免费工具门户和自动量产文章不恢复。旧 handover、dist、.astro 和其他 build 产物是历史资料或生成文件，不能作为本次页面改稿源文件。

@@ -6,39 +6,29 @@ import Datetime from "./Datetime.astro";
 
 type Props = {
   variant?: "h2" | "h3";
-  showLane?: boolean;
 } & CollectionEntry<"posts">;
 
-const {
-  variant: Heading = "h2",
-  showLane = true,
-  id,
-  data,
-  filePath,
-} = Astro.props;
+const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
-const { title, description, lane, ...props } = data;
+const { title, description, ...props } = data;
 ---
 
-<li class="record-card border-border border-t py-6 sm:py-7">
-  <div class="mb-3 flex items-center justify-between gap-4">
-    {showLane ? <p class="lane-label">{lane}</p> : <span />}
-    <Datetime {...props} />
-  </div>
+<li class="my-6">
+  <Datetime {...props} />
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
     class:list={[
-      "group inline-block",
-      "decoration-dashed underline-offset-4",
+      "text-accent inline-block text-lg font-medium",
+      "decoration-dashed underline-offset-4 hover:underline",
       "focus-visible:no-underline focus-visible:underline-offset-0",
     ]}
   >
-    <Heading
-      class="editorial-title text-foreground group-hover:text-accent text-xl leading-8 font-semibold transition-colors sm:text-2xl"
-      transition:name={toTransitionName(id)}
-    >
+    <Heading transition:name={toTransitionName(id)}>
       {title}
     </Heading>
   </a>
-  <p class="text-muted-foreground mt-3 max-w-2xl leading-7">{description}</p>
+  <p>{description}</p>
+  <ul class="text-muted-foreground mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm" aria-label="主题">
+    {data.tags.map(tag => <li>{tag}</li>)}
+  </ul>
 </li>
