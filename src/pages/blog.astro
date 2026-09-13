@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+
+const posts = getSortedPosts(
+  await getCollection("posts", ({ data }) => !data.draft)
+);
+---
+
+<Layout
+  title="SME 观察 | SMEs.MY"
+  description="Wei Nee 对马来西亚中小型企业、项目协作、管理方式和工作系统的观察。"
+>
+  <Header />
+  <main id="main-content">
+    <section class="border-b border-slate-200 bg-white">
+      <div class="app-layout py-14 sm:py-20">
+        <p class="text-sm font-semibold text-emerald-700">SMEs.MY Blog</p>
+        <h1
+          class="mt-4 max-w-4xl text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl"
+        >
+          对中小型企业的实际观察。
+        </h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-slate-600">
+          这里写小团队怎样做决定、为什么流程会失效、资料如何影响执行，以及管理方式怎样改变一个人愿不愿意继续主动做事。文章来自实际经验，但不会写成针对某家公司或某个人的抱怨。
+        </p>
+      </div>
+    </section>
+
+    <section class="app-layout py-14 sm:py-20">
+      <ul class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map(post => <Card {...post} />)}
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>

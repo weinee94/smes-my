@@ -13,7 +13,7 @@ const isActive = (path: string) =>
 const nav = [
   { href: "services", path: "/services", label: "服务" },
   { href: "tools", path: "/tools", label: "工具" },
-  { href: "posts", path: "/posts", label: "资料" },
+  { href: "blog", path: "/blog", label: "博客" },
   { href: "weineetan", path: "/weineetan", label: "关于" },
 ];
 ---
@@ -30,10 +30,13 @@ const nav = [
       href={getRelativeLocaleUrl(locale, "")}
       class="flex items-center gap-2 font-semibold tracking-tight text-slate-950"
     >
-      <span
-        class="grid size-8 place-items-center rounded-xl bg-emerald-600 text-sm font-bold text-white"
-        >S</span
-      >
+      <img
+        src="/assets/smes-site-icon.png"
+        width="32"
+        height="32"
+        alt=""
+        class="size-8 object-contain"
+      />
       <span>SMEs.MY</span>
     </a>
 
