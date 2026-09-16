@@ -1,30 +1,29 @@
 # SMEs.MY Project Status
 
-Last updated: 2026-09-17, Asia/Singapore
+Last verified: 2026-09-17, Asia/Singapore
 
 ## Current direction
 
-Wei Nee directed a reset toward talent management and marketing, focused on one problem: customer enquiries arrive but a small team does not consistently own and follow them up. BeforeTax 省税会计 is an earlier brand and credible background, not a current tax/accounting service. See [SMES_MY_POSITIONING.md](SMES_MY_POSITIONING.md).
+SMEs.MY focuses on one Malaysian small-business problem: marketing creates customer enquiries, but team ownership and follow-up break down. Wei Nee's BeforeTax 省税会计 is earlier background, not a current tax/accounting service. [SMES_MY_POSITIONING.md](SMES_MY_POSITIONING.md) is the authority.
 
-## Previously live
+## Live public site
 
-As checked on 2026-09-17 before this change, smes.my still led with Accounting／Bookkeeping and Company Secretary referrals. The request form, receipt page and Google Sheet/App Script lead flow were live from the previous test. Project Brief Generator existed and worked as a browser tool, but Wei Nee judged it unnecessary. The old lead backend holds internal test records, not proven revenue or current provider coverage.
+PR #9 merged as `1b93b0b`; Vercel reported success. On `https://smes.my`, homepage, /contact, /weineetan and /blog returned the new content. /request and /tools/project-brief returned 404. Old provider matching and Project Brief Generator are no longer public. Only the discussed talent-management article remains published.
 
-## This change
+## Google-only backend
 
-Homepage, navigation, about, blog and contact now follow the new focus. The first screen identifies Wei Nee and explains her BeforeTax background with a clear current-service boundary. Public request and tool routes are removed; historic lead data and backend files are retained. Unrelated posts are drafts and do not appear in blog or RSS. Contact uses email with a short problem prompt so there is a real reply trail, but no claim that an automated CRM exists.
+Current public intake is a dedicated Google Form linked from /contact, with a private Google response Sheet, Gmail notification and manual tracking columns. Form publication, link access, sheet linkage and notification setting were verified. A synthetic `TEST ONLY` submission was recorded in row 2; Gmail received the notification; row 2 is marked `test` and excluded from business counts. See [docs/TALENT_INTAKE_OPERATIONS.md](docs/TALENT_INTAKE_OPERATIONS.md) for exact links and daily handling. The old Google Apps Script and service-lead Sheet remain for historic enquiries only.
 
-## Remaining dependencies
+## Still unverified
 
-- Verify the site deployment and the live route set after merge.
-- Confirm the mailbox receives a real external message. A mailto click alone is not a verified received lead.
-- Get an actual non-test owner conversation about the enquiry-to-follow-up gap; record whether a scoped paid pilot is wanted. No customer demand, paid offer or revenue is verified yet.
-- If inbound volume justifies it, replace email with a consented, trackable form dedicated to this problem. Do not repurpose old Accounting／Company Secretary form data.
+- Website deployment of the Google Form link and updated privacy copy after this change merges.
+- A real unknown visitor completing the form and a genuine owner discussion. Only one synthetic test exists.
+- A priced pilot, a paying customer or revenue. Keep proposed price and actual money received separate.
 
-## Nearest revenue step
+## Next revenue step
 
-Use one real owner conversation to define a fixed-scope paid pilot around enquiry ownership and follow-up. Agree the price, deliverable and success measure before claiming a product or launching broad marketing.
+Review the first real enquiry in the Google Sheet, speak with its owner about where enquiries are lost, and offer one fixed-scope paid pilot with a clear deliverable and price. Do not build broad tools, content or marketing before that signal.
 
 ## Deployment
 
-GitHub main deploys to Vercel. The original main checkout has pre-existing uncommitted changes; this work was made in an isolated worktree. Do not overwrite the main checkout.
+GitHub main deploys to Vercel. The original local main checkout has pre-existing uncommitted changes and should not be overwritten; work from isolated worktrees.

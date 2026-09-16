@@ -2,11 +2,8 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-const subject = encodeURIComponent("SMEs.MY｜客户询问与团队跟进");
-const body = encodeURIComponent(
-  "生意类型：\n目前的询问来源：\n谁负责回复和跟进：\n最常卡住的一步：\n方便联系我的方式："
-);
-const emailUrl = `mailto:weineetan@smes.com.my?subject=${subject}&body=${body}`;
+const formUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLScYofVzVrFY2hBHSfGb4TdXB-e_NMauZP1GdkBmVp8ak000cA/viewform";
 ---
 
 <Layout
@@ -24,31 +21,34 @@ const emailUrl = `mailto:weineetan@smes.com.my?subject=${subject}&body=${body}`;
           先把客户询问卡住的地方说清楚。
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-          如果你经营马来西亚小生意，正在处理获客、回复与团队交接之间的断点，欢迎直接写给我。目前是首轮问题收集，不承诺现成服务、即时回复或具体结果。
+          如果你经营马来西亚小生意，正在处理获客、回复与团队交接之间的断点，请用下面的
+          Google
+          表单说明情况。目前是首轮问题收集，不承诺现成服务、即时回复或具体结果。
         </p>
         <a
-          href={emailUrl}
+          href={formUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           class="mt-8 inline-flex rounded-2xl bg-emerald-700 px-6 py-3 font-semibold text-white hover:bg-emerald-800"
-          >用 Email 说明情况 →</a
+          >打开 Google 表单 →</a
         >
         <p class="mt-4 text-sm text-slate-500">
-          或直接发至 <a class="underline" href="mailto:weineetan@smes.com.my"
-            >weineetan@smes.com.my</a
-          >。邮件会留在你的已发送记录中，也方便继续跟进。
+          提交后会看到 Google 的确认画面。资料进入 SMEs.MY 的私有 Google
+          表格，由 Wei Nee 在那里记录处理状态和下一步。
         </p>
       </div>
       <aside class="rounded-3xl border border-slate-200 bg-white p-7">
-        <h2 class="text-xl font-semibold text-slate-950">写这 4 件事就够了</h2>
+        <h2 class="text-xl font-semibold text-slate-950">表单会问这 4 件事</h2>
         <ol class="mt-5 space-y-4 leading-7 text-slate-600">
-          <li>1. 你做什么生意，客户通常从哪里询问？</li>
-          <li>2. 现在谁回复，谁决定下一步？</li>
-          <li>3. 最常漏掉或拖慢的是哪一步？</li>
-          <li>4. 你希望改善后能看见什么变化？</li>
+          <li>1. 你做什么生意？</li>
+          <li>2. 客户通常从哪里询问？</li>
+          <li>3. 现在谁负责回复与跟进？</li>
+          <li>4. 最常卡在哪一步？</li>
         </ol>
         <p
           class="mt-6 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-500"
         >
-          请先不要寄客户个人资料或员工敏感资料。税务、会计与公司秘书需求目前不在本站承接范围。
+          表单也会询问你的回复邮箱及资料使用同意。请勿填写客户或员工敏感资料。税务、会计与公司秘书需求目前不在本站承接范围。
         </p>
       </aside>
     </div>

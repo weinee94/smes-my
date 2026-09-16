@@ -1,4 +1,6 @@
-# Lead operations — money architecture v1
+# Archived lead operations — Accounting／Company Secretary test
+
+This is the historical 2026-09-16 service-referral workflow. It is not the current SMEs.MY public intake. Current operation is in [TALENT_INTAKE_OPERATIONS.md](TALENT_INTAKE_OPERATIONS.md). Do not reuse the old submissions or provider fields for talent/marketing outreach.
 
 ## Commercial test
 
