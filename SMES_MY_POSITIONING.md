@@ -1,43 +1,48 @@
 # SMEs.MY Positioning
 
-Last confirmed by Wei Nee: 2026-09-13
+Last confirmed by Wei Nee: 2026-09-16
 
-## 网站的工作
+## Current job
 
-SMEs.MY 是一个面向马来西亚小团队的 business operations 与 project setup 网站。它先说明可以处理哪些实际问题，提供能直接使用的工具，再用博客整理对中小型企业、项目协作和管理方式的观察。
+SMEs.MY is a focused business-service enquiry and content site for Malaysian SMEs. Its first commercial test covers only Accounting／Bookkeeping and Company Secretary enquiries.
 
-它不是个人生活博客、求职作品集或商业目录。博客可以承载比社交媒体更完整的观点，但不能把观点包装成未经验证的咨询能力；服务页面只承诺 Wei Nee 实际能够完成的范围。
+The site collects a structured request, checks whether the scope is sufficiently clear, and may introduce it to a relevant independent provider. It does not promise a fixed number of quotations or imply that SMEs.MY already operates a large provider network.
 
-## 适合处理的问题
+## Revenue hypothesis
 
-- 项目资料散在 WhatsApp、Excel、文件夹和不同人手上；
-- 同一个状态在团队里有不同意思；
-- 工作有人做，但责任、下一步和等待对象不清楚；
-- 现有表格很多，却没有一份可以继续维护的当前记录；
-- 小团队需要轻量工具或 prototype，不适合一开始就买复杂系统。
+- Provider pays for a qualified enquiry or successful referral;
+- no fee or commercial arrangement is claimed until agreed with an actual provider;
+- any commercial relationship must not change the user's freedom to accept or reject a quotation.
 
-## 网站结构
+This is a small matching-desk test, not a return to a broad directory. Do not rebuild mass provider listings until one focused category has demonstrated demand, provider willingness to pay and a manageable matching process.
 
-1. 首页：说明可以帮忙处理什么，并带访客进入服务、工具或资料。
-2. 可以帮什么：列出实际交付，不包装成大型管理咨询。
-3. 工具：可以直接使用的免费小工具与模板。
-4. 博客：对中小型企业、项目协作、管理和工作系统的观察；不影射具体雇主或个人。
-5. 关于与联系：简单交代维护者和联系方式。
+## Website structure
 
-## Planurhome 的位置
+1. Homepage: focused enquiry capture and honest explanation of the matching process.
+2. Request: full Accounting／Bookkeeping and Company Secretary request form.
+3. Blog: Wei Nee's observations about Malaysian SMEs, project work and management.
+4. About: operator, current test scope and independence disclaimer.
+5. Privacy: data use, third-party sharing and possible referral compensation.
+6. Provider partnership: direct email entry; providers are checked before any introduction arrangement.
 
-Planurhome 是装修项目管理方向的独立实践，可以作为 SMEs.MY 的一个项目或测试案例出现。两个品牌不合并，也不把 SMEs.MY 写成装修公司。
+The homepage and navigation have two paths: find a service (/request) and solve it yourself (/tools). Project Brief Generator (/tools/project-brief) is a free browser-only utility and must never redirect to the enquiry form. Digital products retain a small future entry on /tools; do not build a store or paid catalogue before demand is validated. Workflow consulting is not a primary offer and must not position revenue around Wei Nee personally delivering projects.
 
-## 隐私
+## Boundaries
 
-网站不透露 Wei Nee 在酒店任职，也不公开任何可以推断当前雇主的酒店、住宿、活动、餐饮、creator campaign 或内部营运细节。雇主、同事、客户、具体金额、内部冲突与商业机密全部不公开。
+- SMEs.MY is not an accounting firm, tax agent, company secretary, law firm or professional adviser.
+- Providers are independent third parties.
+- A submitted request does not guarantee a match, quotation or outcome.
+- Never invent provider coverage, verification, response time, customer numbers or commercial terms.
+- Do not accept categories that Wei Nee has no time to review and route.
 
-## 内容标准
+## Planurhome
 
-文章标题直接说明主题，像正常的文件名或资料标题，不使用悬念、反差或短剧式句型。正文用完整句子交代事情，不故意断句，不用排比制造节奏，也不在结尾补一个人生感悟。
+Planurhome remains Wei Nee's separate renovation project-management direction. It is not merged into this initial Accounting／Company Secretary matching test.
 
-记录可以保留不确定性和后续变化。没有验证过的结果要明确写明，不为了让内容完整而发明数字、反应或结论。
+## Privacy
 
-## 服务边界
+The public site must not reveal Wei Nee's hotel employment or any employer-identifying operations, events, accommodation, F&B, colleague, customer or commercial information.
 
-现阶段只承接范围明确的项目资料整理、tracker 与 workflow setup，以及简单内部工具 prototype。SMEs.MY 不把 Wei Nee 包装成 broad SME consultant，也不承诺大型软件开发、全公司转型、法律／税务／会计意见或未经验证的增长结果。
+## Content
+
+The blog carries analysis and observations, not personal workplace complaints. Titles state the topic directly. Prose uses complete, connected sentences and does not use suspense, formulaic contrast hooks or forced moral endings.

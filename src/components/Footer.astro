@@ -21,11 +21,13 @@ const locale = Astro.currentLocale ?? config.site.lang;
     <div>
       <p class="font-semibold text-slate-950">SMEs.MY</p>
       <p class="mt-2 max-w-md text-sm leading-6 text-slate-500">
-        给小团队使用的项目整理、工作流程和轻量工具。
+        马来西亚 SME 服务需求对接，以及可自行使用的工具与资源。
       </p>
     </div>
     <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-500">
-      <a href={getRelativeLocaleUrl(locale, "tools")}>工具</a>
+      <a href={getRelativeLocaleUrl(locale, "request")}>找服务</a>
+      <a href={getRelativeLocaleUrl(locale, "tools")}>工具与资源</a>
+      <a href="/privacy">隐私说明</a>
       <a href={getRelativeLocaleUrl(locale, "posts")}>资料</a>
       <a href="mailto:weineetan@smes.com.my">Email</a>
       <span>© {currentYear}</span>

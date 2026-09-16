@@ -1,3 +1,173 @@
 ---
-return Astro.redirect("/request", 301);
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 ---
+
+<Layout
+  title="Project Brief Generator | SMEs.MY"
+  description="把零散项目资料整理成一段可以发送的 brief。"
+>
+  <Header />
+  <main id="main-content" class="app-layout py-12 sm:py-16">
+    <div class="max-w-3xl">
+      <a class="text-sm font-semibold text-emerald-700" href="/tools"
+        >← 返回工具</a
+      >
+      <h1
+        class="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl"
+      >
+        Project Brief Generator
+      </h1>
+      <p class="mt-5 text-lg leading-8 text-slate-600">
+        填入目前已经知道的资料，工具会整理成一段适合 WhatsApp 或 email 的
+        brief。没有填写的项目不会出现；内容只在这个页面处理。
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
+      <form
+        id="brief-form"
+        class="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+      >
+        <label class="block"
+          ><span class="text-sm font-semibold text-slate-800">项目名称</span
+          ><input
+            name="project"
+            class="form-field"
+            placeholder="例如：Office renovation"
+          /></label
+        >
+        <label class="block"
+          ><span class="text-sm font-semibold text-slate-800"
+            >这次要完成什么</span
+          ><textarea
+            name="objective"
+            class="form-field min-h-24"
+            placeholder="简单说明目标，不需要写得很正式。"></textarea></label
+        >
+        <label class="block"
+          ><span class="text-sm font-semibold text-slate-800">已经确认</span
+          ><textarea
+            name="confirmed"
+            class="form-field min-h-24"
+            placeholder="日期、范围、预算、负责人等，一行一项。"
+          ></textarea></label
+        >
+        <label class="block"
+          ><span class="text-sm font-semibold text-slate-800">还缺什么资料</span
+          ><textarea
+            name="missing"
+            class="form-field min-h-24"
+            placeholder="报价、尺寸、approval、照片等，一行一项。"
+          ></textarea></label
+        >
+        <label class="block"
+          ><span class="text-sm font-semibold text-slate-800">下一步</span
+          ><textarea
+            name="next"
+            class="form-field min-h-24"
+            placeholder="谁需要做什么，以及大概什么时候。"></textarea></label
+        >
+        <label class="block"
+          ><span class="text-sm font-semibold text-slate-800">补充说明</span
+          ><textarea name="notes" class="form-field min-h-20" placeholder="选填"
+          ></textarea></label
+        >
+        <button
+          type="submit"
+          class="w-full rounded-2xl bg-slate-950 px-5 py-3 font-semibold text-white transition hover:bg-emerald-700"
+          >生成 brief</button
+        >
+      </form>
+
+      <section
+        class="sticky top-24 rounded-3xl bg-slate-950 p-6 text-white shadow-xl sm:p-8"
+        aria-live="polite"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="text-lg font-semibold">整理结果</h2><button
+            id="copy-brief"
+            class="rounded-xl border border-slate-600 px-3 py-2 text-sm font-medium text-slate-200 hover:border-emerald-400 hover:text-emerald-300"
+            type="button">复制</button
+          >
+        </div>
+        <pre
+          id="brief-output"
+          class="mt-6 min-h-80 font-sans text-sm leading-7 whitespace-pre-wrap text-slate-300">填写左边资料后，brief 会出现在这里。</pre>
+        <p id="copy-status" class="mt-4 text-sm text-emerald-300"></p>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  function setupBrief() {
+    const form = document.querySelector<HTMLFormElement>("#brief-form");
+    const output = document.querySelector<HTMLElement>("#brief-output");
+    const copyButton = document.querySelector<HTMLButtonElement>("#copy-brief");
+    const copyStatus = document.querySelector<HTMLElement>("#copy-status");
+    if (!form || !output || !copyButton || !copyStatus || form.dataset.ready)
+      return;
+    form.dataset.ready = "true";
+
+    const value = (data: FormData, key: string) =>
+      String(data.get(key) ?? "").trim();
+    const list = (text: string) =>
+      text
+        .split(/\n+/)
+        .map(item => item.trim())
+        .filter(Boolean)
+        .map(item => `- ${item}`)
+        .join("\n");
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const sections: string[] = [];
+      const project = value(data, "project");
+      if (project) sections.push(`项目：${project}`);
+      const fields = [
+        ["目标", "objective"],
+        ["已经确认", "confirmed"],
+        ["还缺的资料", "missing"],
+        ["下一步", "next"],
+        ["补充说明", "notes"],
+      ] as const;
+      for (const [label, key] of fields) {
+        const text = value(data, key);
+        if (text) sections.push(`${label}：\n${list(text)}`);
+      }
+      output.textContent = sections.length
+        ? sections.join("\n\n")
+        : "还没有填写任何资料。";
+      copyStatus.textContent = "";
+    });
+
+    copyButton.addEventListener("click", async () => {
+      if (!output.textContent) return;
+      await navigator.clipboard.writeText(output.textContent);
+      copyStatus.textContent = "已复制。";
+    });
+  }
+  setupBrief();
+  document.addEventListener("astro:after-swap", setupBrief);
+</script>
+
+<style>
+  .form-field {
+    width: 100%;
+    margin-top: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.875rem;
+    background: #fff;
+    padding: 0.75rem 0.875rem;
+    color: #0f172a;
+    outline: none;
+  }
+  .form-field:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+  }
+</style>

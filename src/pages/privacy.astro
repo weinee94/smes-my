@@ -14,7 +14,7 @@ import Footer from "@/components/Footer.astro";
       <h1>隐私说明</h1>
       <p>
         当你提交服务需求时，SMEs.MY 会收集你主动填写的服务类别、地点、business
-        type、联系方式和需求说明，并记录提交页面及基本浏览器资料，以便辨认和处理
+        type、联系方式和需求说明，并记录提交页面、来源标签、需求编号及同意时间，以便辨认和处理
         enquiry。
       </p>
       <p>
@@ -30,7 +30,12 @@ import Footer from "@/components/Footer.astro";
           href="mailto:weineetan@smes.com.my">weineetan@smes.com.my</a
         >。
       </p>
-      <p>最后更新：2026 年 9 月 13 日。</p>
+      <p>
+        需求资料保存在限制访问的 Google Sheets，通过 Google Apps Script
+        接收。通知邮件仅提示新需求及编号。工具内的 brief
+        内容只在你的浏览器处理，不会自动上传。浏览器会暂存提交参考编号用于重试和显示结果，不储存联系方式或需求正文。
+      </p>
+      <p>最后更新：2026 年 9 月 16 日。</p>
     </article>
   </main>
   <Footer />

@@ -17,6 +17,10 @@ const { compact = false } = Astro.props;
   <input type="hidden" name="page_url" value="" />
   <input type="hidden" name="user_agent" value="" />
   <input type="hidden" name="lead_status" value="new" />
+  <input type="hidden" name="consent_version" value="2026-09-16" />
+  <label class="hidden" aria-hidden="true"
+    >Website<input name="website" tabindex="-1" autocomplete="off" /></label
+  >
 
   <label class="grid gap-2">
     <span class="text-sm font-semibold text-slate-800">需要什么服务？</span>
@@ -38,6 +42,7 @@ const { compact = false } = Astro.props;
     <span class="text-sm font-semibold text-slate-800">地点</span>
     <input
       name="location"
+      maxlength="120"
       required
       placeholder="例如 Johor Bahru、KL、线上皆可"
       class="h-12 rounded-xl border border-slate-300 bg-white px-3 text-slate-950 outline-none placeholder:text-slate-400 focus:border-emerald-600"
@@ -65,8 +70,9 @@ const { compact = false } = Astro.props;
     <span class="text-sm font-semibold text-slate-800">Email 或 WhatsApp</span>
     <input
       name="contact"
+      maxlength="160"
       required
-      placeholder="方便 provider 回复你的联系方式"
+      placeholder="例如 name@example.com 或 +60123456789"
       class="h-12 rounded-xl border border-slate-300 bg-white px-3 text-slate-950 outline-none placeholder:text-slate-400 focus:border-emerald-600"
     />
   </label>
@@ -75,9 +81,11 @@ const { compact = false } = Astro.props;
     <span class="text-sm font-semibold text-slate-800">简单说明需求</span>
     <textarea
       name="details"
+      minlength="10"
+      maxlength="3000"
       required
       rows="4"
-      placeholder="例如：准备成立 Sdn. Bhd.，想了解秘书与年度费用；或现有账目需要找人接手。"
+      placeholder="请用至少 10 个字说明需求，暂不填写网址。例如：准备成立 Sdn. Bhd.，想了解秘书与年度费用。"
       class="rounded-xl border border-slate-300 bg-white p-3 text-slate-950 outline-none placeholder:text-slate-400 focus:border-emerald-600"
     ></textarea>
   </label>
@@ -90,6 +98,8 @@ const { compact = false } = Astro.props;
   >
     <input
       type="checkbox"
+      name="consent"
+      value="yes"
       required
       class="mt-1 size-4 shrink-0 accent-emerald-700"
     />
@@ -117,6 +127,7 @@ const { compact = false } = Astro.props;
 </form>
 
 <script>
+  import { confirmedLead } from "@/utils/lead-response";
   function setupEnquiryForms() {
     document
       .querySelectorAll<HTMLFormElement>(".js-enquiry-form")
@@ -124,9 +135,33 @@ const { compact = false } = Astro.props;
         if (form.dataset.ready) return;
         form.dataset.ready = "true";
         form.querySelector<HTMLInputElement>('[name="page_url"]')!.value =
-          window.location.href;
+          window.location.origin + window.location.pathname;
         form.querySelector<HTMLInputElement>('[name="user_agent"]')!.value =
           navigator.userAgent;
+        const params = new URLSearchParams(window.location.search);
+        const services: Record<string, string> = {
+          accounting: "Accounting services",
+          "company-secretary": "Company secretary",
+        };
+        const selected = services[params.get("service") || ""];
+        if (selected)
+          form.querySelector<HTMLSelectElement>('[name="service"]')!.value =
+            selected;
+        const started = Date.now();
+        let requestId: string = crypto.randomUUID();
+        // Keep only the retry ID, never contact details or the free-text request.
+        try {
+          const pending = sessionStorage.getItem("smes-pending-lead");
+          if (
+            pending &&
+            /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(
+              pending
+            )
+          )
+            requestId = pending;
+        } catch {
+          /* Storage may be disabled. */
+        }
 
         form.addEventListener("submit", async event => {
           event.preventDefault();
@@ -138,17 +173,99 @@ const { compact = false } = Astro.props;
           button.disabled = true;
           status.textContent = "正在提交…";
           try {
+            const data = new FormData(form);
+            const fingerprintBytes = await crypto.subtle.digest(
+              "SHA-256",
+              new TextEncoder().encode(
+                JSON.stringify(
+                  [
+                    "service",
+                    "location",
+                    "business_type",
+                    "contact",
+                    "details",
+                  ].map(key => data.get(key))
+                )
+              )
+            );
+            const fingerprint = Array.from(
+              new Uint8Array(fingerprintBytes),
+              byte => byte.toString(16).padStart(2, "0")
+            ).join("");
+            try {
+              const previous = sessionStorage.getItem(
+                "smes-pending-fingerprint"
+              );
+              if (previous && previous !== fingerprint)
+                requestId = crypto.randomUUID();
+              sessionStorage.setItem("smes-pending-lead", requestId);
+              sessionStorage.setItem("smes-pending-fingerprint", fingerprint);
+            } catch {
+              /* In-page retries still reuse the ID. */
+            }
+            let attribution: Record<string, string> = {};
+            try {
+              attribution = JSON.parse(
+                sessionStorage.getItem("smes-lead-source") || "{}"
+              );
+            } catch {
+              /* Optional. */
+            }
+            data.set("request_id", requestId);
+            data.set("started_at", String(started));
+            for (const key of [
+              "source",
+              "utm_source",
+              "utm_medium",
+              "utm_campaign",
+            ])
+              data.set(
+                key,
+                (
+                  params.get(key) ||
+                  attribution[key] ||
+                  (key === "source"
+                    ? location.pathname === "/"
+                      ? "homepage-form"
+                      : "request-form"
+                    : "")
+                ).slice(0, 120)
+              );
+            try {
+              data.set(
+                "referrer",
+                attribution.referrer ||
+                  (document.referrer ? new URL(document.referrer).origin : "")
+              );
+            } catch {
+              /* Optional attribution. */
+            }
             const response = await fetch(form.action, {
               method: "POST",
-              body: new FormData(form),
+              body: data,
+              signal: AbortSignal.timeout(25000),
             });
             if (!response.ok) throw new Error("Request failed");
+            const leadId = confirmedLead(await response.json());
             form.reset();
-            status.textContent =
-              "已收到。SMEs.MY 会先查看需求；有适合的 provider 才会进一步联系。";
+            status.textContent = `需求已保存。编号：${leadId}。补充资料请注明编号，email weineetan@smes.com.my。`;
+            try {
+              sessionStorage.removeItem("smes-pending-lead");
+              sessionStorage.removeItem("smes-pending-fingerprint");
+              sessionStorage.setItem(
+                "smes-lead-receipt",
+                JSON.stringify({ id: leadId, at: Date.now() })
+              );
+              window.location.assign("/request/received");
+            } catch {
+              /* Inline receipt remains available when storage is blocked. */
+            }
+            requestId = crypto.randomUUID();
           } catch {
             status.innerHTML =
-              '暂时无法提交。请直接 email <a class="underline" href="mailto:weineetan@smes.com.my">weineetan@smes.com.my</a>。';
+              '暂时无法确认提交结果，你填写的资料仍保留。可重试，或 email <a class="underline" href="mailto:weineetan@smes.com.my">weineetan@smes.com.my</a>，并注明参考编号 SME-' +
+              requestId +
+              "。";
           } finally {
             button.disabled = false;
           }

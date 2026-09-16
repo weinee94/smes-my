@@ -93,6 +93,30 @@ const rssHref = getRelativeLocaleUrl(
     }
 
     <ClientRouter />
+    <script>
+      function rememberLeadSource() {
+        try {
+          const params = new URLSearchParams(location.search);
+          const tags: Record<string, string> = {};
+          for (const key of ["utm_source", "utm_medium", "utm_campaign"]) {
+            if (params.has(key)) tags[key] = params.get(key)!.slice(0, 120);
+          }
+          if (
+            Object.keys(tags).length ||
+            !sessionStorage.getItem("smes-lead-source")
+          ) {
+            tags.referrer = document.referrer
+              ? new URL(document.referrer).origin
+              : "";
+            sessionStorage.setItem("smes-lead-source", JSON.stringify(tags));
+          }
+        } catch {
+          /* Attribution is optional when storage is unavailable. */
+        }
+      }
+      rememberLeadSource();
+      document.addEventListener("astro:page-load", rememberLeadSource);
+    </script>
   </head>
   <body
     class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"
