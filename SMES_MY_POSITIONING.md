@@ -1,48 +1,31 @@
 # SMEs.MY Positioning
 
-Last confirmed by Wei Nee: 2026-09-16
+Last direction from Wei Nee: 2026-09-17
 
-## Current job
+## One problem
 
-SMEs.MY is a focused business-service enquiry and content site for Malaysian SMEs. Its first commercial test covers only Accounting／Bookkeeping and Company Secretary enquiries.
+SMEs.MY focuses on Malaysian small businesses whose marketing brings customer enquiries but whose team does not reliably answer, own, hand over and follow them up. This joins market work to talent management around one observable commercial outcome: a valuable enquiry reaches a clear next step.
 
-The site collects a structured request, checks whether the scope is sufficiently clear, and may introduce it to a relevant independent provider. It does not promise a fixed number of quotations or imply that SMEs.MY already operates a large provider network.
+The first public action is to email Wei Nee with the business type, enquiry source, current owner and point where follow-up stalls. This is problem discovery and pilot interest, not a promise of an existing service or guaranteed result. Only after repeated demand should SMEs.MY define a repeatable paid offer, template or digital product.
 
-## Revenue hypothesis
+## Operator and proof
 
-- Provider pays for a qualified enquiry or successful referral;
-- no fee or commercial arrangement is claimed until agreed with an actual provider;
-- any commercial relationship must not change the user's freedom to accept or reject a quotation.
+SMEs.MY is maintained by Wei Nee Tan in Johor Bahru. BeforeTax 省税会计 was her former brand serving individuals and small businesses in tax accounting. It is background, not a current tax/accounting offer or a claim of licensed tax-agent status. Other background includes project coordination, websites and internal work systems. Do not invent customers, outcomes, staff or formal credentials.
 
-This is a small matching-desk test, not a return to a broad directory. Do not rebuild mass provider listings until one focused category has demonstrated demand, provider willingness to pay and a manageable matching process.
+## Public site
 
-## Website structure
+1. Homepage: one problem, operator identity, one contact path.
+2. About (/weineetan): true background, scope and limits.
+3. Blog: only talent-management observations already discussed with Wei Nee. The current public post is about approvals slowing work and reducing initiative. Other historic topics remain in git but unpublished.
+4. Contact: email-based problem intake; no sensitive customer or employee data requested.
+5. Privacy: current contact use and treatment of historical service requests.
 
-1. Homepage: focused enquiry capture and honest explanation of the matching process.
-2. Request: full Accounting／Bookkeeping and Company Secretary request form.
-3. Blog: Wei Nee's observations about Malaysian SMEs, project work and management.
-4. About: operator, current test scope and independence disclaimer.
-5. Privacy: data use, third-party sharing and possible referral compensation.
-6. Provider partnership: direct email entry; providers are checked before any introduction arrangement.
+The Project Brief Generator, generic tools hub and Accounting／Company Secretary request flow are retired from public routes. Old lead records and code are preserved privately for historical requests and audit, but not reused for the new purpose without consent. Planurhome remains separate. Do not make unnecessary brand changes.
 
-The homepage and navigation have two paths: find a service (/request) and solve it yourself (/tools). Project Brief Generator (/tools/project-brief) is a free browser-only utility and must never redirect to the enquiry form. Digital products retain a small future entry on /tools; do not build a store or paid catalogue before demand is validated. Workflow consulting is not a primary offer and must not position revenue around Wei Nee personally delivering projects.
+## Commercial test
 
-## Boundaries
+Validate whether a small-business owner will describe a real enquiry-to-follow-up failure and pay for a clearly scoped, repeatable fix. Do not claim revenue, case studies or a delivery team until verified. Avoid a business model that depends on Wei Nee continuously delivering bespoke consulting.
 
-- SMEs.MY is not an accounting firm, tax agent, company secretary, law firm or professional adviser.
-- Providers are independent third parties.
-- A submitted request does not guarantee a match, quotation or outcome.
-- Never invent provider coverage, verification, response time, customer numbers or commercial terms.
-- Do not accept categories that Wei Nee has no time to review and route.
+## Privacy and boundaries
 
-## Planurhome
-
-Planurhome remains Wei Nee's separate renovation project-management direction. It is not merged into this initial Accounting／Company Secretary matching test.
-
-## Privacy
-
-The public site must not reveal Wei Nee's hotel employment or any employer-identifying operations, events, accommodation, F&B, colleague, customer or commercial information.
-
-## Content
-
-The blog carries analysis and observations, not personal workplace complaints. Titles state the topic directly. Prose uses complete, connected sentences and does not use suspense, formulaic contrast hooks or forced moral endings.
+Never reveal Wei Nee's current employer or employer-identifying operations. Do not publish personal workplace complaints. Explain the higher-control boundary for regulated or high-risk work. Do not promise marketing, HR, legal, tax or accounting results.

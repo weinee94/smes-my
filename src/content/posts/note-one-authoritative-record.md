@@ -4,7 +4,7 @@ description: "旧 checklist、付款截图和空间清单继续存档，当前�
 pubDatetime: 2026-08-13T12:30:00+08:00
 eventPeriod: "2026 年 5 月 26 日至 7 月 5 日"
 tags: ["装修项目", "资料整理"]
-draft: false
+draft: true
 ---
 
 装修项目的开销原本分散在旧 checklist、几次修改过的总数、付款截图和按空间整理的清单里。资料没有遗失，但每份文件的更新时间不同，无法直接判断哪一个余额仍然有效。

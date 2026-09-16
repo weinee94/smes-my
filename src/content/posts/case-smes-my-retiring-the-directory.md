@@ -4,7 +4,7 @@ description: "旧版 directory 已完成基本功能，但长期使用者与资�
 pubDatetime: 2026-08-13T12:20:00+08:00
 eventDate: 2026-08-13T09:00:00+08:00
 tags: ["SMEs.MY"]
-draft: false
+draft: true
 ---
 
 SMEs.MY 最早做成一个供应商 directory，已经有分类、商家 profile、地区页面和申请流程，技术上可以继续上线和增加内容。
