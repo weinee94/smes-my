@@ -39,11 +39,12 @@ test("only discussed talent observations are publicly listed", () => {
   assert.match(blog, /人才与管理观察/);
 });
 
-test("contact asks for the specific problem without sensitive data", () => {
+test("contact uses the dedicated Google form and avoids sensitive data", () => {
   const contact = read("src/pages/contact.astro");
-  assert.match(contact, /mailto:weineetan@smes.com.my/);
-  assert.match(contact, /谁负责回复和跟进/);
-  assert.match(contact, /不要寄客户个人资料或员工敏感资料/);
+  assert.match(contact, /docs.google.com\/forms\/d\/e\//);
+  assert.match(contact, /现在谁负责回复与跟进/);
+  assert.match(contact, /请勿填写客户或员工敏感资料/);
+  assert.doesNotMatch(contact, /mailto:/);
 });
 
 test("public copy does not reveal current hotel work", () => {
