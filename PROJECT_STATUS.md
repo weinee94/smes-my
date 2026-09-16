@@ -20,6 +20,10 @@ Current public intake is a dedicated Google Form linked from /contact, with a pr
 - A real unknown visitor completing the form and a genuine owner discussion. Only one synthetic test exists.
 - A priced pilot, a paying customer or revenue. Keep proposed price and actual money received separate.
 
+## Legal identity and data notice (2026-09-17)
+
+The SSM LLP registration certificate identifies **WYNNE CONSULTANCY GROUP PLT**, **202204002416 (LLP0032703-LGN)**. Section 20(3) of the Limited Liability Partnerships Act 2012 requires an LLP's name and registration number on its website. The site footer, About and contact pages now show them; /privacy has Bahasa Melayu and English notices, with a Chinese summary. The Google Form description shows the operator and links to /privacy. Confirm the live deployment after merge and keep the private Sheet's monthly retention review in operation. The certificate proves registration on 1 September 2022, not live 2026 SSM status. No public claim of current good standing is made.
+
 ## Next revenue step
 
 Review the first real enquiry in the Google Sheet, speak with its owner about where enquiries are lost, and offer one fixed-scope paid pilot with a clear deliverable and price. Do not build broad tools, content or marketing before that signal.
