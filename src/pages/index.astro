@@ -49,11 +49,12 @@ const posts = getSortedPosts(
           <div class="mt-9 flex flex-wrap gap-3">
             <a
               class="rounded-2xl bg-emerald-600 px-5 py-3 font-semibold text-white transition hover:bg-emerald-700"
-              href={getRelativeLocaleUrl(locale, "request")}>免费提交需求</a
+              href="/request?source=home-hero">找服务：免费提交需求</a
             >
             <a
               class="rounded-2xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 transition hover:border-emerald-600"
-              href={getRelativeLocaleUrl(locale, "blog")}>阅读 SME 观察</a
+              href={getRelativeLocaleUrl(locale, "tools")}
+              >自己解决：工具与资源</a
             >
           </div>
           <p class="mt-5 text-sm text-slate-500">
@@ -100,6 +101,11 @@ const posts = getSortedPosts(
               适合需要 bookkeeping、management accounts、year-end account
               preparation，或暂时不确定该找 accountant 还是 tax agent 的企业。
             </p>
+            <a
+              class="mt-5 inline-block font-semibold text-emerald-700 underline"
+              href="/request?service=accounting&source=home-category"
+              >提交 Accounting 需求 →</a
+            >
           </article>
           <article class="rounded-3xl border border-slate-200 bg-white p-7">
             <p class="text-sm font-semibold text-emerald-700">
@@ -112,6 +118,11 @@ const posts = getSortedPosts(
               适合准备成立 Sdn. Bhd.、想了解年度费用，或需要处理现有 company
               secretary 服务安排的企业。
             </p>
+            <a
+              class="mt-5 inline-block font-semibold text-emerald-700 underline"
+              href="/request?service=company-secretary&source=home-category"
+              >提交 Company Secretary 需求 →</a
+            >
           </article>
         </div>
       </div>

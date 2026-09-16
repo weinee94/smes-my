@@ -37,11 +37,9 @@ test("enquiry form is bounded, consented and connected", () => {
   assert.doesNotMatch(form, /Digital marketing|Renovation contractors|Payroll/);
 });
 
-test("retired service and generator routes redirect", () => {
+test("retired consulting and contact routes redirect", () => {
   for (const path of [
     "src/pages/services.astro",
-    "src/pages/tools/index.astro",
-    "src/pages/tools/project-brief.astro",
     "src/pages/contact.astro",
   ])
     assert.match(read(path), /Astro\.redirect\("\/request", 301\)/);

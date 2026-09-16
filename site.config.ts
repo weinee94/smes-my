@@ -5,7 +5,7 @@ export default defineAstroPaperConfig({
     url: "https://smes.my/",
     title: "SMEs.MY",
     description:
-      "为小团队整理项目资料、工作流程和轻量工具。",
+      "马来西亚 SME Accounting、Bookkeeping 与 Company Secretary 服务需求对接，以及自助工具与资源。",
     author: "Wei Nee",
     profile: "https://smes.my/weineetan",
     ogImage: "og.svg",
