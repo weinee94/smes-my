@@ -36,3 +36,5 @@ Validate whether a small-business owner will describe a real enquiry-to-follow-u
 ## Privacy and boundaries
 
 Never reveal Wei Nee's current employer or employer-identifying operations. Do not publish personal workplace complaints. Explain the higher-control boundary for regulated or high-risk work. Do not promise marketing, HR, legal, tax or accounting results.
+
+The /weineetan page may also serve as a professional work sample for a prospective employer. Use verified degree, prior bank roles, bounded accounting and project work, and problem-solving method. Do not turn it into a public resume, suggest current-employer identity, invent training certificates or claim unmeasured sales outcomes. A career enquiry should use a separate direct email route rather than the SME pilot intake form.
