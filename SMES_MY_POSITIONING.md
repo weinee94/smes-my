@@ -8,7 +8,13 @@ Public copy is written for a Malaysian small-business owner, not as a transcript
 
 BeforeTax 省税会计 was Wei Nee's independent accounts and administrative support brand, not a separate formal employer in her resume. It was stopped as an actively delivered service because growth depended on her personal time. PlanurHome is an ongoing separate renovation project and may be linked as truthful founder context. Do not claim a vetted provider network, client outcomes or current availability without verification. The two brands must not share enquiry data without a fresh basis and consent.
 
-## One problem
+## Two commercial markets, one current front door (2026-09-17 clarification)
+
+Wei Nee's intended meaning of Talent × Marketing is two potential customer markets: businesses needing capable people, and businesses needing effective marketing help. The present site tests one overlap between them: existing customer enquiries that a small team fails to own and follow up. That narrow public entry is a test, not a permanent definition of the whole platform.
+
+Do not imply SMEs.MY currently recruits, places candidates, runs advertising, or has a vetted agency network. Paid job-seeker/employer matching is not a launch offer: JTKSM says intermediary recruitment activity requires a Private Employment Agency (APS) licence under Act 246; eligibility and legal scope must be resolved before any such activity or placement fee. The present LLP registration must not be described as an APS licence. Marketing-provider introductions may be explored first, but require actual provider checks, a separate enquiry purpose and permission before data sharing. Neither lane should reuse the current Google Form responses for a new purpose.
+
+## Current front door
 
 SMEs.MY focuses on Malaysian small businesses whose marketing brings customer enquiries but whose team does not reliably answer, own, hand over and follow them up. This joins market work to talent management around one observable commercial outcome: a valuable enquiry reaches a clear next step.
 
