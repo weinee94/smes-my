@@ -34,7 +34,12 @@ test("retired public offers are gone", () => {
 
 test("only discussed talent observations are publicly listed", () => {
   const published = postPaths().filter(path => !/^draft: true$/m.test(read(path)));
-  assert.deepEqual(published, ["src/content/posts/why-more-approval-makes-work-slower.md"]);
+  assert.deepEqual(published.sort(), [
+    "src/content/posts/best-doer-not-necessarily-manager.md",
+    "src/content/posts/management-system-selects-people.md",
+    "src/content/posts/why-more-approval-makes-work-slower.md",
+    "src/content/posts/why-proactive-staff-start-waiting.md",
+  ]);
   const blog = read("src/pages/blog.astro");
   assert.match(blog, /人才与管理观察/);
 });
@@ -54,6 +59,9 @@ test("public copy does not reveal current hotel work", () => {
     read("src/content/pages/about.md"),
     read("src/pages/blog.astro"),
     read("src/content/posts/why-more-approval-makes-work-slower.md"),
+    read("src/content/posts/best-doer-not-necessarily-manager.md"),
+    read("src/content/posts/management-system-selects-people.md"),
+    read("src/content/posts/why-proactive-staff-start-waiting.md"),
   ].join("\n");
   assert.doesNotMatch(bundle, /hotel|酒店|D Elegance|F&B|breakfast|住宿|房间|餐饮/i);
 });
