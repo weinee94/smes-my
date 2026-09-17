@@ -31,23 +31,27 @@ const posts = getSortedPosts(await getCollection("posts"));
             客户有询问，团队却接不住？
           </h1>
           <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
-            营销把人带来，只是开始。谁回复、谁跟进、谁知道这笔生意走到哪里，决定机会会不会流失。SMEs.MY
-            先聚焦这个小生意常见的断点。
+            营销把人带来，只是开始。谁回复、谁跟进、谁知道这笔生意走到哪里，决定机会会不会流失。先检查客户询问从进入到下一步的交接方式，找出最该先补的一环。
           </p>
           <div class="mt-9 flex flex-wrap gap-3">
             <a
-              href="/contact"
+              href="/follow-up-check"
               class="rounded-2xl bg-emerald-700 px-6 py-3 font-semibold text-white hover:bg-emerald-800"
-              >说说你的跟进问题</a
+              >免费检查跟进断点</a
             >
             <a
               href="/weineetan"
               class="rounded-2xl border border-slate-300 px-6 py-3 font-semibold text-slate-800 hover:border-emerald-700"
               >认识背后的人</a
             >
+            <a
+              href="/contact"
+              class="self-center px-3 py-2 font-medium text-emerald-700 underline"
+              >已有具体问题？联系</a
+            >
           </div>
           <p class="mt-5 text-sm leading-6 text-slate-500">
-            目前在收集真实问题与首轮试点意向；没有现成团队或结果保证。
+            两分钟完成，不需要留下联系方式；结果可以直接带回团队使用。
           </p>
         </div>
         <aside
@@ -56,16 +60,16 @@ const posts = getSortedPosts(await getCollection("posts"));
           <p class="text-sm font-semibold text-emerald-700">谁在做 SMEs.MY</p>
           <h2 class="mt-3 text-2xl font-bold text-slate-950">Wei Nee Tan</h2>
           <p class="mt-4 leading-7 text-slate-600">
-            我在 Johor Bahru。曾做 BeforeTax 省税会计，面向个人与小生意的 tax
-            accounting；也做过项目协调、网站和工作系统。现在把对小团队管理的观察，集中到获客之后的跟进执行。
+            我在 Johor Bahru，曾独立经营 BeforeTax 省税会计，也在 PlanurHome
+            处理装修项目的询问与交接。现在聚焦一个反复出现的问题：机会进来之后，谁负责把它推进。
           </p>
           <p class="mt-4 text-sm leading-6 text-slate-500">
-            BeforeTax 是过往项目背景，不代表本站目前提供税务代理或会计服务。
+            BeforeTax 已停止主动承接税务及会计相关工作。
           </p>
           <a
             href="/weineetan"
             class="mt-6 inline-block font-semibold text-emerald-700 underline"
-            >了解经历与边界 →</a
+            >关于 Wei Nee →</a
           >
         </aside>
       </div>
@@ -108,7 +112,7 @@ const posts = getSortedPosts(await getCollection("posts"));
         </article>
       </div>
       <p class="mt-7 max-w-3xl leading-7 text-slate-600">
-        这不是代投广告、代招聘或一套通用管理软件。首轮将从现有询问与团队交接方式着手，先确认问题是否值得做成可重复使用的方案。
+        不妨先用你最近收到的一条询问，对照负责人、回复状态和下一步。少一项，就有一个可以先改的地方。
       </p>
     </section>
 
@@ -117,18 +121,18 @@ const posts = getSortedPosts(await getCollection("posts"));
         class="app-layout grid gap-8 py-14 lg:grid-cols-[1fr_auto] lg:items-center"
       >
         <div>
-          <p class="text-sm font-semibold text-emerald-300">首轮问题收集</p><h2
+          <p class="text-sm font-semibold text-emerald-300">免费自查</p><h2
             class="mt-3 text-3xl font-bold"
           >
-            你的客户询问，通常卡在哪一步？
+            用两分钟，找出第一处漏掉的交接。
           </h2><p class="mt-4 max-w-2xl leading-7 text-slate-300">
-            告诉我生意类型、询问来源、目前谁负责回复，以及最常漏掉的下一步。我会先判断是否属于这次聚焦的问题，再回复是否有合适的试点方式。
+            先用四个问题检查现有做法，马上得到可以带回团队的行动清单。不需注册，也不收集你的答案。
           </p>
         </div>
         <a
-          href="/contact"
+          href="/follow-up-check"
           class="inline-flex rounded-2xl bg-white px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-100"
-          >说明目前情况 →</a
+          >开始免费检查 →</a
         >
       </div>
     </section>
@@ -142,7 +146,8 @@ const posts = getSortedPosts(await getCollection("posts"));
             从团队真实的工作方式开始。
           </h2>
         </div><a href="/blog" class="font-semibold text-emerald-700 underline"
-          >阅读全部 →</a>
+          >阅读全部 →</a
+        >
       </div>
       <ul class="mt-8 grid gap-5 md:grid-cols-3">
         {posts.slice(0, 3).map(post => <Card variant="h3" {...post} />)}
