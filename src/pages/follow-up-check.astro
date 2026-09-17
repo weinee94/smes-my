@@ -1,0 +1,236 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const checks = [
+  {
+    id: "owner",
+    label: "新询问进来后，没有明确一个人负责到底",
+    action: "为每条新询问指定一位负责人；交接时要写明由谁接手。",
+  },
+  {
+    id: "reply",
+    label: "团队没有约定什么时候必须先回复",
+    action: "定一个团队做得到的首次回复时限，并把超时的询问标出来。",
+  },
+  {
+    id: "status",
+    label: "聊天还在继续，但老板看不到进展状态",
+    action: "只用四种状态记录：待回复、沟通中、等客户、已结束。",
+  },
+  {
+    id: "next",
+    label: "回复过一次后，没有下一步和跟进日期",
+    action: "每次沟通结束前，写下一步动作和具体跟进日期。",
+  },
+];
+---
+
+<Layout
+  title="客户询问跟进自查｜SMEs.MY"
+  description="不用留邮箱，检查客户询问从进入到跟进的四个断点，并带走一份今天就能用的行动清单。"
+>
+  <Header />
+  <main id="main-content">
+    <section class="border-b border-slate-200 bg-white">
+      <div class="app-layout max-w-4xl py-14 sm:py-20">
+        <p class="text-sm font-semibold text-emerald-700">免费 · 不需留资料</p>
+        <h1
+          class="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl"
+        >
+          客户问了，后来是谁跟？
+        </h1>
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          有些生意不缺询问，缺的是一个人把它带到下一步。花两分钟检查团队目前最容易漏掉的地方，带走一份可以直接用的跟进清单。
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="app-layout grid gap-10 py-14 sm:py-20 lg:grid-cols-[1fr_.85fr] lg:items-start"
+    >
+      <div>
+        <h2 class="text-2xl font-bold text-slate-950">
+          以下哪种情况正在发生？
+        </h2>
+        <p class="mt-3 leading-7 text-slate-600">
+          勾选真实情况即可。答案只在你的浏览器内生成，不会提交给 SMEs.MY。
+        </p>
+        <fieldset class="mt-7 space-y-3" id="follow-up-checks">
+          <legend class="sr-only">选择目前遇到的跟进问题</legend>
+          {
+            checks.map(check => (
+              <label class="flex cursor-pointer gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-emerald-500">
+                <input
+                  type="checkbox"
+                  name="gap"
+                  value={check.id}
+                  class="mt-1 size-5 accent-emerald-700"
+                />
+                <span class="leading-7 font-medium text-slate-800">
+                  {check.label}
+                </span>
+              </label>
+            ))
+          }
+        </fieldset>
+        <p class="mt-5 text-sm leading-6 text-slate-500">
+          如果四项都没发生，可以用右边的记录方式检查是否真的每条询问都有下一步。
+        </p>
+      </div>
+
+      <aside
+        class="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8"
+        aria-live="polite"
+      >
+        <p class="text-sm font-semibold text-emerald-700">你的行动清单</p>
+        <h2 class="mt-3 text-2xl font-bold text-slate-950" id="result-title">
+          先选出卡住的地方
+        </h2>
+        <ol
+          class="mt-5 list-decimal space-y-3 pl-5 leading-7 text-slate-700"
+          id="result-actions"
+        >
+          <li>选择左边的情况，这里会列出对应的第一步。</li>
+        </ol>
+        <button
+          type="button"
+          id="copy-actions"
+          class="mt-7 rounded-xl bg-emerald-700 px-5 py-3 font-semibold text-white hover:bg-emerald-800"
+        >
+          复制行动清单
+        </button>
+        <p
+          class="mt-2 min-h-6 text-sm text-slate-600"
+          id="copy-status"
+          role="status"
+        >
+        </p>
+      </aside>
+    </section>
+
+    <section class="border-y border-slate-200 bg-white">
+      <div class="app-layout max-w-4xl py-14 sm:py-18">
+        <p class="text-sm font-semibold text-emerald-700">今天就能开始</p>
+        <h2 class="mt-3 text-3xl font-bold text-slate-950">
+          先用一行记录每条询问
+        </h2>
+        <p class="mt-4 leading-7 text-slate-600">
+          不用换系统。你可以把下面五个栏位复制到现有 Google
+          表格；团队先把交接与下一步记录清楚，再判断需不需要更复杂的工具。
+        </p>
+        <div class="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+          <table class="w-full min-w-[620px] text-left text-sm">
+            <thead class="bg-slate-50 text-slate-900"
+              ><tr
+                ><th class="p-4">收到时间</th><th class="p-4">来源</th><th
+                  class="p-4">负责人</th
+                ><th class="p-4">目前状态</th><th class="p-4">下一步／日期</th
+                ></tr
+              ></thead
+            >
+            <tbody
+              ><tr class="border-t border-slate-200 text-slate-600"
+                ><td class="p-4">周一 10:30</td><td class="p-4">WhatsApp</td><td
+                  class="p-4">负责回复的人</td
+                ><td class="p-4">等客户</td><td class="p-4">周三确认需求</td
+                ></tr
+              ></tbody
+            >
+          </table>
+        </div>
+        <button
+          type="button"
+          id="copy-columns"
+          class="mt-5 rounded-xl border border-emerald-700 px-5 py-3 font-semibold text-emerald-800 hover:bg-emerald-50"
+          >复制 Google 表格栏位</button
+        >
+        <p
+          id="columns-status"
+          class="mt-2 min-h-6 text-sm text-slate-600"
+          role="status"
+        >
+        </p>
+      </div>
+    </section>
+
+    <section class="app-layout max-w-4xl py-14 sm:py-20">
+      <h2 class="text-3xl font-bold text-slate-950">
+        需要把做法用到你的团队？
+      </h2>
+      <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+        如果你已看出断点，却很难让团队持续执行，可以告诉我目前怎样接收和跟进询问。我会先判断是否适合做一个范围明确的试点；费用和交付内容会在你决定前说明。
+      </p>
+      <a
+        href="/contact"
+        class="mt-7 inline-flex rounded-2xl bg-slate-950 px-6 py-3 font-semibold text-white hover:bg-emerald-700"
+        >了解试点是否适合 →</a
+      >
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script is:inline define:vars={{ checks }}>
+  const list = document.querySelector("#follow-up-checks");
+  const title = document.querySelector("#result-title");
+  const actions = document.querySelector("#result-actions");
+  const copy = document.querySelector("#copy-actions");
+  const status = document.querySelector("#copy-status");
+  const getActions = () => {
+    const selected = [...list.querySelectorAll("input:checked")].map(
+      input => input.value
+    );
+    return checks
+      .filter(check => selected.includes(check.id))
+      .map(check => check.action);
+  };
+  const render = () => {
+    const selected = getActions();
+    title.textContent = selected.length
+      ? `先处理这 ${selected.length} 个断点`
+      : "先选出卡住的地方";
+    actions.replaceChildren();
+    for (const action of selected.length
+      ? selected
+      : ["选择左边的情况，这里会列出对应的第一步。"]) {
+      const item = document.createElement("li");
+      item.textContent = action;
+      actions.append(item);
+    }
+    status.textContent = "";
+  };
+  list.addEventListener("change", render);
+  copy.addEventListener("click", async () => {
+    const selected = getActions();
+    if (!selected.length) {
+      status.textContent = "先选出至少一种情况。";
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(
+        [
+          "本周客户询问跟进行动",
+          ...selected.map((action, index) => `${index + 1}. ${action}`),
+        ].join("\n")
+      );
+      status.textContent = "已复制。可以贴到团队现有的 Google 表格或工作群。";
+    } catch {
+      status.textContent = "复制未成功，请直接选取上面的清单文字。";
+    }
+  });
+  document
+    .querySelector("#copy-columns")
+    .addEventListener("click", async () => {
+      const message = document.querySelector("#columns-status");
+      try {
+        await navigator.clipboard.writeText(
+          "收到时间\t来源\t负责人\t目前状态\t下一步／日期"
+        );
+        message.textContent = "已复制。打开 Google 表格，贴到第一行即可。";
+      } catch {
+        message.textContent = "复制未成功，请直接选取上面的栏位名称。";
+      }
+    });
+</script>

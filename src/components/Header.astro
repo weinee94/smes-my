@@ -11,6 +11,7 @@ const currentPath = stripLocale(relativePath.replace(/\/$/, "") || "/", locale);
 const isActive = (path: string) =>
   currentPath === path || currentPath.startsWith(`${path}/`);
 const nav = [
+  { href: "follow-up-check", path: "/follow-up-check", label: "免费自查" },
   { href: "blog", path: "/blog", label: "人才观察" },
   { href: "weineetan", path: "/weineetan", label: "关于 Wei Nee" },
 ];
@@ -71,7 +72,7 @@ const nav = [
           <a
             href={getRelativeLocaleUrl(locale, "contact")}
             class="block rounded-xl bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-700"
-            >说说你的问题</a
+            >联系</a
           >
         </li>
       </ul>
@@ -98,7 +99,7 @@ const nav = [
       <li>
         <a
           class="block rounded-xl bg-slate-950 px-3 py-2 text-sm text-white"
-          href={getRelativeLocaleUrl(locale, "contact")}>说说你的问题</a
+          href={getRelativeLocaleUrl(locale, "contact")}>联系</a
         >
       </li>
     </ul>

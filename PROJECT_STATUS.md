@@ -6,6 +6,8 @@ Last verified: 2026-09-17, Asia/Singapore
 
 SMEs.MY focuses on one Malaysian small-business problem: marketing creates customer enquiries, but team ownership and follow-up break down. Wei Nee's BeforeTax 省税会计 is earlier background, not a current tax/accounting service. [SMES_MY_POSITIONING.md](SMES_MY_POSITIONING.md) is the authority.
 
+2026-09-17 funnel correction: visitors should get immediate practical value before being asked to fill a form. The new /follow-up-check page gives an on-device four-point check and copyable action list without collecting answers. Homepage and navigation lead there; the existing Google Form is a later, optional route for a scoped pilot discussion. Public copy should sound useful to owners, not like internal business planning.
+
 ## Live public site
 
 PR #9 merged as `1b93b0b`; Vercel reported success. On `https://smes.my`, homepage, /contact, /weineetan and /blog returned the new content. /request and /tools/project-brief returned 404. Old provider matching and Project Brief Generator are no longer public. Only the discussed talent-management article remains published.
@@ -16,7 +18,7 @@ Current public intake is a dedicated Google Form linked from /contact, with a pr
 
 ## Still unverified
 
-- Website deployment of the Google Form link and updated privacy copy after this change merges.
+- The legal-identity and bilingual-privacy update from PR #11 was live-verified on /contact and /privacy on 2026-09-17.
 - A real unknown visitor completing the form and a genuine owner discussion. Only one synthetic test exists.
 - A priced pilot, a paying customer or revenue. Keep proposed price and actual money received separate.
 
@@ -26,7 +28,7 @@ The SSM LLP registration certificate identifies **WYNNE CONSULTANCY GROUP PLT**,
 
 ## Next revenue step
 
-Review the first real enquiry in the Google Sheet, speak with its owner about where enquiries are lost, and offer one fixed-scope paid pilot with a clear deliverable and price. Do not build broad tools, content or marketing before that signal.
+Get a real relevant visitor to use the free check, then seek one qualified enquiry and test a tightly scoped paid pilot. Record actual price agreed and money received separately. Do not expand generic tools or content without a demand signal.
 
 ## Deployment
 
