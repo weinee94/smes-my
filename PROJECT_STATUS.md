@@ -10,7 +10,7 @@ SMEs.MY focuses on one Malaysian small-business problem: marketing creates custo
 
 ## Live public site
 
-PR #9 merged as `1b93b0b`; Vercel reported success. On `https://smes.my`, homepage, /contact, /weineetan and /blog returned the new content. /request and /tools/project-brief returned 404. Old provider matching and Project Brief Generator are no longer public. Only the discussed talent-management article remains published.
+PR #12 merged as `7ea99eb`; the free /follow-up-check route was live-verified. On `https://smes.my`, homepage, /contact, /weineetan and /blog return the current content. /request and /tools/project-brief return 404. Old provider matching and Project Brief Generator are no longer public. This branch expands the discussed talent-management observations from one article to four; confirm production after deployment.
 
 ## Google-only backend
 
@@ -29,6 +29,8 @@ The SSM LLP registration certificate identifies **WYNNE CONSULTANCY GROUP PLT**,
 ## Next revenue step
 
 Get a real relevant visitor to use the free check, then seek one qualified enquiry and test a tightly scoped paid pilot. Record actual price agreed and money received separately. Do not expand generic tools or content without a demand signal.
+
+Internal 2026-09-17 delivery design: an Enquiry Handoff Kit is scoped to one channel, a customer-owned Google Sheet, responsibility rules and a seven-day adoption check. It is not yet sold or proven delegable. A second operator must complete setup without Wei Nee within 60–90 minutes before calling it repeatable; payment, support and distribution remain separate from template replication. See the private revenue blueprint in the active Codex workspace for the SOP and unit-economics gate.
 
 ## Deployment
 

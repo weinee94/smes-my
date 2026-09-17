@@ -22,7 +22,7 @@ SMEs.MY is maintained by Wei Nee Tan in Johor Bahru. BeforeTax 省税会计 was 
 
 1. Homepage: one problem, operator identity, free self-check first and optional contact.
 2. About (/weineetan): true background, scope and limits.
-3. Blog: only talent-management observations already discussed with Wei Nee. The current public post is about approvals slowing work and reducing initiative. Other historic topics remain in git but unpublished.
+3. Blog: only talent-management observations already discussed with Wei Nee. Four public posts cover approval overhead, lost initiative, promotion into management and the way management rules affect who stays. Other historic topics remain in git but unpublished.
 4. Free check (/follow-up-check): immediate, browser-only actions without collecting answers.
 5. Contact: Google Form problem intake; no sensitive customer or employee data requested.
 6. Privacy: current contact use and treatment of historical service requests.
